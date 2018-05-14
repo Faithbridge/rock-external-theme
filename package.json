@@ -1,0 +1,28 @@
+{
+  "name": "rock-front-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NewSpring/rock-front-end.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NewSpring/rock-front-end/issues"
+  },
+  "homepage": "https://github.com/NewSpring/rock-front-end#readme"
+}
