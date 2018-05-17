@@ -11,7 +11,9 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp": "^3.9.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-nunjucks-render": "^2.2.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

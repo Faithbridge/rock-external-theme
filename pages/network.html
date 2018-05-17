@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    {% include "partials/section-nav.html" %}
+
+    <hr>
+    
+    {% set heroData = { 
+        title: 'NewSpring Network', 
+        copy: 'The NewSpring Network Exists to Serve, Equip and Connect Church Leaders so More People are Reached for the Gospel.', 
+        buttonUrl: 'https://newspringnetwork.com',
+        buttonText: 'Visit NewSpring Network',
+        buttonClasses: 'btn btn-primary',
+        image: 'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/all/heroes/newspringnetwork/network.double.connecting.2014.2x1_1700_850_90_c1.jpg'
+    } %}
+
+    {% include "partials/hero.html" %}
+
+    <section>
+        <div class="text-constrained center-block text-center">
+            <h2>Free Resources</h2>
+            <p>NewSpring Network provides free resources for churches and church leaders, including children's ministry curriculum, series graphics and videos from our Sunday series, series graphics and videos from our student ministry series, chord charts from NewSpring Worship, and volunteer training tools.</p>
+            <p><a href="#" class="btn btn-primary">Get Free Resources</a></p>
+        </div>
+    </section>
+
+    {% set adUnitData = { 
+        title: 'Who We Are', 
+        copy: 'In August 2014, NewSpring Network launched as a ministry to serve other churches. Today, NewSpring Network has served more than 45,000 church leaders around the world, and over 75,000 free resources have been downloaded from NewSpringNetwork.com.', 
+        buttonUrl: 'https://newspringnetwork.com',
+        buttonText: 'Visit NewSpring Network',
+        buttonClasses: 'btn btn-primary',
+        image: 'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/all/heroes/newspringnetwork/network.home.faq_1700_1133_90_c1.jpg'
+    } %}
+
+    {% include "partials/ad-unit.html" %}
+
+{% endblock %}

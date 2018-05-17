@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    {% include "partials/section-nav.html" %}
+
+    <hr>
+
+<!--     <section class="jumbotron relative overflow-hidden rounded bg-gray-darker flush">
+        <span class="full-screen background-cover background-center" style="background-image: url('https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/baptism/2x1.hero_1700_850_90_c1.jpg'); opacity: .6;"></span>
+        <div class="bring-forward center-block text-constrained text-center soft-double">
+            <h1 class="text-white">Baptism</h1>
+            <p class="text-white">Baptism is going public about your faith in Jesus and communicating to the world your heart-felt commitment to following Him. It's the next step after salvation.</p>
+            <p><a href="#" class="btn btn-primary">Sign Up Now</a></p>
+        </div>
+    </section> -->
+
+    {% set heroData = { 
+        title: 'Baptism', 
+        copy: 'Baptism is going public about your faith in Jesus and communicating to the world your heart-felt commitment to following Him. It&apos;s the next step after salvation.', 
+        buttonUrl: '/baptism.html',
+        buttonText: 'Sign Up Now',
+        buttonClasses: 'btn btn-primary',
+        image: 'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/baptism/2x1.hero_1700_850_90_c1.jpg'
+    } %}
+    
+    {% include "partials/hero.html" %}
+
+    <section>
+        <div class="text-constrained center-block text-center">
+            <h2>Questions About Baptism?</h2>
+            <p>People often have questions regarding baptism: Why should I be baptized? What if I’ve already been baptized—do I have to do it again? Does it matter if someone is sprinkled or dunked? Take a few minutes to read the answers to <a href="https://newspring.cc/articles/6-common-questions-about-baptism">these 6 common questions</a> about baptism.</p>
+        </div>
+    </section>
+    
+
+    <section class="relative overflow-hidden rounded bg-info flush">
+        <div class="soft-double-sides">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="#">
+                        <img src="https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/stories/benji.hero_1880_800_90.jpg" alt="" class="push-bottom">
+                    </a>
+                </div><div class="col-md-6">
+                    <div class="text-white">
+                        <h2>A Baptism of Obedience - Benji Merritt’s Story</h2>
+                        <p>Benji Merritt realized that pride was stopping him from taking his next step in baptism at NewSpring. Watch the video to find out what changed his mind...</p>
+                        <p><a href="#" class="btn btn-default">Watch Story</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
