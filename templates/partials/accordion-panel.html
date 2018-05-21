@@ -1,0 +1,10 @@
+<div class="panel panel-primary shadowed">
+    <a id="headingOne" role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ accordionPanelData.index }}" aria-expanded="true" aria-controls="{{ accordionPanelData.index }}" class="panel-heading display-block sans-serif strong text-decoration-none text-white">
+        {{ accordionPanelData.title }}
+    </a>
+    <div id="{{ accordionPanelData.index }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body hard-bottom">
+            {{ accordionPanelData.copy | safe }}
+        </div>
+    </div>
+</div>

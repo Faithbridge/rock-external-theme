@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	{#
+
+    {% set heroData = { 
+        title: 'My Account', 
+        copy: 'Ut esse excepteur occaecat laboris aute ad consequat eu consectetur nulla ad laboris.', 
+        buttonUrl: '/give.html',
+        buttonText: 'Give Now',
+        buttonClasses: 'btn btn-primary',
+        image: 'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/baptism/2x1.hero_1700_850_90_c1.jpg'
+    } %}
+    {% include "partials/hero.html" %}
+
+    #}
+
+    <section class="hard">
+    	<div class="row">
+    		<div class="col-md-12">
+    			<span class="text-center">
+	    			<p><img src="https://rock.newspring.cc/GetImage.ashx?id=523137" alt="" class="img-circle" style="max-width: 140px;"></p>
+	    			<h1>Hello, Brian!</h1>
+    			</span>
+    			<ul class="nav nav-pills">
+					<li role="presentation" class="active"><a href="#">My Account</a></li>
+					<li role="presentation"><a href="#">My Groups</a></li>
+					<li role="presentation"><a href="#">My Giving</a></li>
+				</ul>
+    		</div>
+    	</div>
+    </section>
+
+{% endblock %}

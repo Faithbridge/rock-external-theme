@@ -24,48 +24,45 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-    <!-- jQuery + Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Core JS -->    
+    <script src="js/main.js"></script>
 
 	</head>
 	<body>
         <div class="sidebar">
             <ul class="nav-primary sans-serif strong text-decoration-none hard flush">
 	<li>
-		<a href="/">
-			<i class="fas fa-fw fa-lg fa-home"></i> <span>Home</span>
+		<a href="/" class="nav-logo">
+			<img src="//dg0ddngxdz549.cloudfront.net/newspring/icons/newspring_mark.png" alt="" class="nav-icon  nav-logo-regular"> 
+			<img src="//dg0ddngxdz549.cloudfront.net/newspring/icons/newspring_mark_light.png" alt="" class="nav-icon  nav-logo-light">
+			<span>Home</span>
 		</a>
 	</li><li>
-		<a href="#">
-			<i class="fas fa-fw fa-lg fa-bars"></i> <span>Menu</span>
-		</a>
+		<a><i class="fas fa-fw fa-lg fa-bars"></i> <span>Menu</span></a>
 	</li><li>
-		<a href="/locations.html">
-			<i class="fas fa-fw fa-lg fa-map-marker-alt"></i> <span>Locations</span>
-		</a>
+		<a href="/locations.html"><i class="fas fa-fw fa-lg fa-map-marker-alt"></i> <span>Locations</span></a>
 	</li><li>
-		<a href="#">
-			<i class="fas fa-fw fa-lg fa-search"></i> <span>Search</span>
-		</a>
+		<a><i class="fas fa-fw fa-lg fa-search"></i> <span>Search</span></a>
 	</li><li>
-		<a href="/give.html">
-			<i class="fas fa-fw fa-lg fa-dollar-sign"></i> <span>Give</span>
-		</a>
+		<a href="/give.html"><i class="fas fa-fw fa-lg fa-money-bill-alt"></i> <span>Give</span></a>
 	</li><li>
-		<a href="/profile.html">
-			<i class="fas fa-fw fa-lg fa-user-circle"></i> <span>Profile</span>
-		</a>
+		<a href="/account.html"><img src="https://rock.newspring.cc/GetImage.ashx?id=523137" alt="" class="nav-icon circular" style="border: 2px solid rgba(255,255,255,1)">
+			<!-- <i class="fas fa-fw fa-lg fa-user-circle"></i>  -->
+			<span>My&nbsp;Account</span></a>
 	</li><li class="hidden-xs">
-		<a href="/help.html">
-			<i class="fas fa-fw fa-lg fa-question-circle"></i> <span>Help</span>
-		</a>
+		<a href="/help.html"><i class="fas fa-fw fa-lg fa-question-circle"></i> <span>Help</span></a>
 	</li>
 </ul>
         </div>
         <div class="content">
-            <div class="soft">
-                <div class="page-constrained center-block">
+            <div class="page-constrained center-block">
+                <div class="soft">
                     <!-- You write code for this content block in another file -->
                     
 
@@ -73,20 +70,30 @@
     
 <!-- Hero -->
 <section class="jumbotron relative overflow-hidden rounded bg-gray-darker flush">
-    <span class="full-screen background-cover background-center" style="background-image: url('https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/baptism/2x1.hero_1700_850_90_c1.jpg'); opacity: .6;"></span>
+
+	<!-- Background Video -->
+	
+		<video class="video " style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: 1;" width="1280" height="720" loop="" autoplay="">
+			<source src="//s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps.mp4" type="video/mp4">
+			<source src="//s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps.webm" type="video/webm">
+		</video>
+	
+	
+	<!-- Background Image -->
+	
+	
+
     <div class="bring-forward center-block text-constrained text-center soft-double">
         <h1 class="text-white">Welcome to NewSpring</h1>
         <p class="text-white"></p>
-        <p><a class="btn btn-primary" href="/.html" role="button">Find a Location</a></p>
+        <p><a href="/.html" class="btn btn-primary btn-lg" role="button">Find a Location</a></p>
     </div>
+
 </section>
 
 
                 </div>
             </div>
         </div>
-
-		<script src="bower_components/jquery/dist/jquery.js"></script>
-		<script src="js/main.js"></script>
 	</body>
 </html>

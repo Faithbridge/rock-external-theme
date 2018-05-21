@@ -24,9 +24,14 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-    <!-- jQuery + Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Core JS -->    
+    <script src="js/main.js"></script>
 
 	</head>
 	<body>
@@ -34,15 +39,12 @@
             {% include "partials/navigation.html" %}
         </div>
         <div class="content">
-            <div class="soft">
-                <div class="page-constrained center-block">
+            <div class="page-constrained center-block">
+                <div class="soft">
                     <!-- You write code for this content block in another file -->
                     {% block content %} {% endblock %}
                 </div>
             </div>
         </div>
-
-		<script src="bower_components/jquery/dist/jquery.js"></script>
-		<script src="js/main.js"></script>
 	</body>
 </html>

@@ -3,165 +3,70 @@
 {% block content %}
 
     {% set heroData = { 
-        title: 'Find a Location', 
+        title: "Find a Location", 
         copy: 'NewSpring is one church with 14 campuses across South Carolina. Find the location closest to you and plan a visit.', 
-        buttonUrl: '/locations.html',
+        buttonUrl: '#slider',
         buttonText: 'Find a Location',
         buttonClasses: 'btn btn-primary',
-        image: 'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/fpo.Parking_1700_850_90_c1.jpg'
+        bgOpacity: '.8',
+        bgImage: 'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/fpo.Parking_1700_850_90_c1.jpg',
+        bgVideo: '//s3.amazonaws.com/ns.video/newspring/promotions/locations/locations.bgvideo'
     } %}
     
     {% include "partials/hero.html" %}
 
-    <section>
+    <section id="slider">
+
         <div class="text-center">
             <h2>Find a Campus Near You</h2>
             <p class="lead text-primary"><i>Swipe to discover more.</i></p>
         </div>
-        
-        <div class="slider-wrapper" data-slider>
-            <div class="slider">
-                <div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Aiken</h4>
-                            <p>Sunday at 9:15am & 11:15am</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Anderson</h4>
-                            <p>Sunday at 9:15am, 11:15am & 5pm</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Charleston</h4>
-                            <p>Sunday at 9:15am & 11:15am</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Clemson</h4>
-                            <p>Sunday at 9:15am & 11:15am</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Columbia</h4>
-                            <p>Sunday at 9:15am, 11:15am & 5pm</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Florence</h4>
-                            <p>Sunday at 9:15am & 11:15am</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Greenville</h4>
-                            <p>Sunday at 9:15am & 11:15am</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Greenwood</h4>
-                            <p>Sunday at 9:15am & 11:15am</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Hilton Head</h4>
-                            <p>Sunday at 9:15am & 11:15am</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Myrtle Beach</h4>
-                            <p>Sunday at 9:15am & 11:15am</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Northeast Columbia</h4>
-                            <p>Sunday at 9:15am & 11:15am</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Powdersville</h4>
-                            <p>Sunday at 9:15am & 11:15am</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div><div class="slider-item">
-                    <div class="panel panel-default shadowed">
-                        <div class="panel-body hard-bottom">
-                            <h4>Rock Hill</h4>
-                            <p>Sunday at 9:15am & 11:15am</p>
-                            <p><a href="#">Get Directions</a></p>
-                            <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+        {% include "partials/locations-slider.html" %}
     </section>
 
-    <script>
-        // Get all sliders on page
-        var sliders = document.querySelectorAll('[data-slider]');
+    <section class="bg-tertiary rounded">
+        <div class="soft center-block text-constrained">
+            <div class="text-center text-white">
+                <h2>Plan a Visit</h2>
+                <p>If it's your first time at NewSpring, <b>you are our honored guest.</b> We do church a little differently than other places, so here are a few frequently asked questions to help you plan your trip.</p>
+                <br>
+            </div>
 
-        // Loop through them and adjust container width
-        sliders.forEach(function(element) {
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-            // Set slider element
-            var slider = element.children[0];
+                {% set accordionPanelData = { 
+                    index: "1",
+                    title: "Where do I go when I get there?", 
+                    copy: "<p>Our parking team will direct you to the closest available spot. Just follow the smiling faces in the bright orange vests. We reserve parking spots for our first time guests, so if you're new to NewSpring, be sure to turn your flashers on when you enter the parking lot.</p><p>As you're walking to the building, our greeting team will meet you and show you where to find the auditorium, restrooms, and children's ministry. If you need anything throughout the day—mints, ear plugs, a Bible, or a pen—feel free to stop by the Guest Services desk. Or, just ask anyone with a NewSpring lanyard or name tag. We’re a friendly bunch, and we’d love to serve you.</p>"
+                } %}{% include "partials/accordion-panel.html" %}
 
-            // Calculate count of slider child elements
-            var sliderItemCount = slider.children.length;
+                {% set accordionPanelData = { 
+                    index: "2",
+                    title: "What do you do for kids?", 
+                    copy: "<p>In KidSpring, children fifth grade and younger experience Jesus on their level. KidSpring is a safe, age-appropriate environment where kids have their own service with singing, a Bible lesson, and small group time. To see what our kids are learning, check out KidSpring’s <a href='https://www.youtube.com/channel/UCR3DeWGhdC_igCreHStybwA' target='_blank'>YouTube channel.</a></p><p>For nursing mothers, every campus also has a viewing room where moms and infants can watch the service together.</p>"
+                } %}{% include "partials/accordion-panel.html" %}
 
-            // Calculate slider width
-            var sliderWrapperWidth = sliderItemCount * 330 - 30;
+                {% set accordionPanelData = { 
+                    index: "3",
+                    title: "How long is the service?", 
+                    copy: "<p>Gatherings last about one hour and 10 minutes. We start by singing three to four songs. Then the speaker preaches. If you want to see our preaching style, check out our <a href='/sermons'>current series.</a></p><p>If you’re visiting for the first time, you’ll want to give yourself a few extra minutes to stop by the VIP Room after the service. You are a very important person to us! We’d love to meet you, answer any questions you may have, and give you a gift.</p>"
+                } %}{% include "partials/accordion-panel.html" %}
 
-            // Adjust slider width
-            slider.style.width = sliderWrapperWidth + "px";
+                {% set accordionPanelData = { 
+                    index: "4",
+                    title: "What should I wear?", 
+                    copy: "<p>Don't feel like you have to dress up. Most people wear casual attire, but you are welcome to wear whatever makes you comfortable.</p>"
+                } %}{% include "partials/accordion-panel.html" %}
 
-        });
-    </script>
+                {% set accordionPanelData = { 
+                    index: "5",
+                    title: "Can I attend if I'm _____________?", 
+                    copy: "<p>Fill in the blank with whatever fear you have about not being accepted: divorced, single parent, broke, recovering addict, gay, transgender, atheist, skeptic, etc. Everyone is welcome at NewSpring. So come as you are, and we’ll see you on Sunday!</p>"
+                } %}{% include "partials/accordion-panel.html" %}
+            </div>
+
+        </div>
+    </section>
 
 {% endblock %}

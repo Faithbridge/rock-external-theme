@@ -1,9 +1,25 @@
 <!-- Hero -->
 <section class="jumbotron relative overflow-hidden rounded bg-gray-darker flush">
-    <span class="full-screen background-cover background-center" style="background-image: url('{{ heroData.image }}'); opacity: .6;"></span>
+
+	<!-- Background Video -->
+	{% if heroData.bgVideo %}
+		<video class="video " style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: {{ heroData.bgOpacity }};" width="1280" height="720" loop="" autoplay="">
+			<source src="{{ heroData.bgVideo }}.mp4" type="video/mp4">
+			<source src="{{ heroData.bgVideo }}.webm" type="video/webm">
+		</video>
+	{% endif %}
+	
+	<!-- Background Image -->
+	{% if heroData.bgVideo %}
+	{% else %}
+    	<span class="full-screen background-cover background-center" style="background-image: url('{{ heroData.bgImage }}'); opacity: {{ heroData.bgOpacity }};"></span>
+	}
+    {% endif %}
+
     <div class="bring-forward center-block text-constrained text-center soft-double">
         <h1 class="text-white">{{ heroData.title }}</h1>
-        <p class="text-white">{{ heroData.copy }}</p>
-        <p><a class="{{ heroData.buttonClasses }}" href="{{ heroData.buttonUrl }}" role="button">{{ heroData.buttonText }}</a></p>
+        <p class="text-white">{{ heroData.copy | escape }}</p>
+        <p><a href="{{ heroData.buttonUrl }}" class="{{ heroData.buttonClasses }} btn-lg" role="button">{{ heroData.buttonText }}</a></p>
     </div>
+
 </section>
