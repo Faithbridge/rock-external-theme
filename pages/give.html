@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    {% set heroData = { 
+        title: 'We Truly Believe You Cant Outgive God', 
+        copy: 'The Bible says in Matthew 6:24 that the top competitor for our commitment to Jesus is money. Giving allows us to demonstrate that He is more important to us than material things. Not having cash or check on hand doesn’t have to hold you back from giving. You can be obedient today by giving online. There is no organization with more potential to change the world than the local church!', 
+        buttonUrl: '/give.html',
+        buttonText: 'Give Now',
+        buttonClasses: 'btn btn-primary',
+        image: 'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/baptism/2x1.hero_1700_850_90_c1.jpg'
+    } %}
+    {% include "partials/hero.html" %}
+
+{% endblock %}

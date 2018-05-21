@@ -2,19 +2,6 @@
 
 {% block content %}
 
-    {% include "partials/section-nav.html" %}
-
-    <hr>
-
-<!--     <section class="jumbotron relative overflow-hidden rounded bg-gray-darker flush">
-        <span class="full-screen background-cover background-center" style="background-image: url('https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/baptism/2x1.hero_1700_850_90_c1.jpg'); opacity: .6;"></span>
-        <div class="bring-forward center-block text-constrained text-center soft-double">
-            <h1 class="text-white">Baptism</h1>
-            <p class="text-white">Baptism is going public about your faith in Jesus and communicating to the world your heart-felt commitment to following Him. It's the next step after salvation.</p>
-            <p><a href="#" class="btn btn-primary">Sign Up Now</a></p>
-        </div>
-    </section> -->
-
     {% set heroData = { 
         title: 'Baptism', 
         copy: 'Baptism is going public about your faith in Jesus and communicating to the world your heart-felt commitment to following Him. It&apos;s the next step after salvation.', 
@@ -23,8 +10,8 @@
         buttonClasses: 'btn btn-primary',
         image: 'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/baptism/2x1.hero_1700_850_90_c1.jpg'
     } %}
-    
     {% include "partials/hero.html" %}
+
 
     <section>
         <div class="text-constrained center-block text-center">

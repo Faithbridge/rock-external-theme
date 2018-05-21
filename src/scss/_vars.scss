@@ -154,8 +154,8 @@ $table-border-color:            #ddd !default;
 $btn-font-weight:                normal !default;
 
 $btn-default-color:              #1c1c1c !default;
-$btn-default-bg:                 #eee !default;
-$btn-default-border:             #eee !default;
+$btn-default-bg:                 #fff !default;
+$btn-default-border:             #ddd !default;
 
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
@@ -497,7 +497,7 @@ $jumbotron-padding:              60px !default;
 $jumbotron-color:                inherit !default;
 $jumbotron-bg:                   $gray-lighter !default;
 $jumbotron-heading-color:        inherit !default;
-$jumbotron-font-size:            ceil(($font-size-base * 1.2)) !default;
+$jumbotron-font-size:            ceil(($font-size-base * 1.1)) !default;
 $jumbotron-heading-font-size:    ceil(($font-size-base * 3)) !default;
 
 

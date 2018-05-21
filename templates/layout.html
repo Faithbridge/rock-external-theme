@@ -30,10 +30,15 @@
 
 	</head>
 	<body>
-        <div class="soft">
-            <div class="page-constrained center-block">
-                <!-- You write code for this content block in another file -->
-                {% block content %} {% endblock %}
+        <div class="sidebar">
+            {% include "partials/navigation.html" %}
+        </div>
+        <div class="content">
+            <div class="soft">
+                <div class="page-constrained center-block">
+                    <!-- You write code for this content block in another file -->
+                    {% block content %} {% endblock %}
+                </div>
             </div>
         </div>
 
