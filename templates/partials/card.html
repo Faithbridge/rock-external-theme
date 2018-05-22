@@ -1,0 +1,44 @@
+{#
+
+{{ cardData.title }}
+{{ cardData.type }}
+{{ cardData.typeIcon }}
+{{ cardData.copy }}
+{{ cardData.imageUrl }}
+{{ cardData.linkUrl }}
+{{ cardData.linkText }}
+
+#}
+
+<div class="panel panel-default">
+
+    {% if cardData.imageUrl %}
+        {% if cardData.linkUrl %}<a href="{{ cardData.linkUrl }}" class="panel-image">{% endif %}
+            <img src="{{ cardData.imageUrl }}" alt="">
+        {% if cardData.linkUrl %}</a>{% endif %}
+    {% endif %}
+
+    <div class="panel-body hard-bottom">
+        
+        {% if cardData.title %}
+            <h3>
+                {% if cardData.linkUrl %}<a href="{{ cardData.linkUrl }}">{% endif %}
+                    {{ cardData.title }}
+                {% if cardData.linkUrl %}</a>{% endif %}
+            </h3>
+        {% endif %}
+
+        {% if cardData.type %}
+            <p><small class="sans-serif strong">
+                {% if cardData.typeIcon %}<i class="{{ cardData.typeIcon }}"></i> {% endif %}{{ cardData.type }}</small>
+            </p>
+        {% endif %}
+
+        {{ cardData.copy | safe }}
+
+        {% if cardData.linkUrl %}
+            <p><a href="{{ cardData.linkUrl }}" class="btn btn-primary" role="button">{% if cardData.linkText %}{{ cardData.linkText }}{% else %}Read More{% endif %}</a></p>
+        {% endif %}
+
+    </div>
+</div>
