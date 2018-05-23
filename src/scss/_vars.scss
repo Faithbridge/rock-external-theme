@@ -19,7 +19,7 @@ $black:					#000 !default;
 
 $brand-primary:         #6bac43 !default;
 $brand-success:         #6bac43 !default;
-$brand-info:            #00a5d6 !default;
+$brand-info:            #19a3cc !default; // #00a5d6
 $brand-warning:         #fabc00 !default;
 $brand-danger:          #c64f55 !default;
 
@@ -57,8 +57,8 @@ $font-size-base:          20px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
-$font-size-h1:            floor(($font-size-base * 2.3)) !default; // ~36px
-$font-size-h2:            floor(($font-size-base * 2)) !default; // ~30px
+$font-size-h1:            floor(($font-size-base * 2.5)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.3)) !default; // ~30px
 $font-size-h3:            ceil(($font-size-base * 1.45)) !default; // ~24px
 $font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-h5:            ceil(($font-size-base * 1.1)) !default; // ~12px
@@ -209,7 +209,7 @@ $input-border-radius-large:      $border-radius-large !default;
 $input-border-radius-small:      $border-radius-small !default;
 
 //** Border color for inputs on focus
-$input-border-focus:             #66afe9 !default;
+$input-border-focus:             $brand-primary !default;
 
 //** Placeholder text color
 $input-color-placeholder:        #999 !default;
@@ -577,6 +577,10 @@ $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%
 $label-default-bg:            $gray-light !default;
 //** Primary label background color
 $label-primary-bg:            $brand-primary !default;
+//** Secondary label background color
+$label-secondary-bg:            $brand-secondary !default;
+//** Tertiary label background color
+$label-tertiary-bg:            $brand-tertiary !default;
 //** Success label background color
 $label-success-bg:            $brand-success !default;
 //** Info label background color

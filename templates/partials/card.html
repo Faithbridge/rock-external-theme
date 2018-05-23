@@ -1,12 +1,14 @@
 {#
 
-{{ cardData.title }}
-{{ cardData.type }}
-{{ cardData.typeIcon }}
-{{ cardData.copy }}
-{{ cardData.imageUrl }}
-{{ cardData.linkUrl }}
-{{ cardData.linkText }}
+{% set cardData = { 
+    type: '',
+    typeIcon: '',
+    title: "",
+    copy: "",
+    imageUrl: '',
+    linkUrl: '',
+    linkText: ''
+} %}{% include "partials/card.html" %}
 
 #}
 
@@ -28,16 +30,25 @@
             </h3>
         {% endif %}
 
-        {% if cardData.type %}
-            <p><small class="sans-serif strong">
-                {% if cardData.typeIcon %}<i class="{{ cardData.typeIcon }}"></i> {% endif %}{{ cardData.type }}</small>
-            </p>
-        {% endif %}
+        <p><small>
+            <a href="#" class="label label-secondary">spiritual gifts</a>
+            <a href="#" class="label label-secondary">holy spirit</a> 
+            <a href="#" class="label label-secondary">prayer</a>
+        </small></p>
 
         {{ cardData.copy | safe }}
 
-        {% if cardData.linkUrl %}
-            <p><a href="{{ cardData.linkUrl }}" class="btn btn-primary" role="button">{% if cardData.linkText %}{{ cardData.linkText }}{% else %}Read More{% endif %}</a></p>
+        <!-- {% if cardData.type %}
+            <p class="pull-right"><small class="sans-serif strong">
+                {% if cardData.typeIcon %}<i class="{{ cardData.typeIcon }}"></i> {% endif %}{{ cardData.type }}</small>
+            </p>
+        {% endif %} -->
+
+        {% if cardData.linkUrl or cardData.type %}
+            <p>
+                <a href="{{ cardData.linkUrl }}" class="btn btn-sm btn-primary" role="button">{% if cardData.linkText %}{{ cardData.linkText }}{% else %}Read More{% endif %}</a> <span class="btn btn-sm btn-size sans-serif strong pull-right">
+                {% if cardData.typeIcon %}<i class="{{ cardData.typeIcon }}"></i> {% endif %}{{ cardData.type }}</span>
+            </p>
         {% endif %}
 
     </div>

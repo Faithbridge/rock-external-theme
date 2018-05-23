@@ -1,20 +1,20 @@
 {% extends "full-width.html" %}
 
 {% block content %}
-
-    {% set heroData = { 
-        title: "Find a Location", 
-        copy: 'NewSpring is one church with 14 campuses across South Carolina. Find the location closest to you and plan a visit.', 
-        buttonUrl: '#slider',
-        buttonText: 'Find a Location',
-        buttonClasses: 'btn btn-primary',
-        bgOpacity: '.8',
-        bgImage: 'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/fpo.Parking_1700_850_90_c1.jpg',
-        bgVideo: '//s3.amazonaws.com/ns.video/newspring/promotions/locations/locations.bgvideo'
-    } %}
     
-    {% include "partials/hero.html" %}
-
+    {% set heroData = { 
+        title: 'Find a Location',
+        copy: "<p>NewSpring is one church with 14 campuses across South Carolina. Find the location closest to you and plan a visit.</p><form class='form-inline'><div class='form-group'><input type='text' class='form-control form-control-static sans-serif strong push-bottom text-center' placeholder='Enter Your Address'> <button type='submit' class='form-control form-control-static btn btn-primary push-bottom'>Find a Location</button></div></form><p>or view the <a href='#' class='text-white'>locations directory.</a></p>",
+        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/fpo.Parking_1700_850_90_c1.jpg',
+        backgroundVideoUrl: '//s3.amazonaws.com/ns.video/newspring/promotions/locations/locations.bgvideo',
+        backgroundOpacity: '.5',
+        textColorClass: 'text-white',
+        backgroundColorClass: 'bg-gray-darker',
+        linkUrl: '',
+        linkText: '',
+        linkClasses: ''
+    } %}{% include "partials/hero.html" %}
+    
     <section id="slider">
 
         <div class="text-center">
@@ -23,9 +23,10 @@
         </div>
 
         {% include "partials/locations-slider.html" %}
+
     </section>
 
-    <section class="bg-tertiary rounded">
+    <section class="bg-tertiary rounded push-bottom">
         <div class="soft center-block text-constrained">
             <div class="text-center text-white">
                 <h2>Plan a Visit</h2>
@@ -68,5 +69,7 @@
 
         </div>
     </section>
+
+    {% include "partials/footer.html" %}
 
 {% endblock %}

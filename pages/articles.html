@@ -117,22 +117,27 @@
         </div>
     </section>
 
-    <!-- Full Width Ad -->
-    <section class="rounded bg-gray-darker flush">
-        <div class="bring-forward center-block text-constrained text-center soft-double">
-            <h2 class="text-white">Get Notifications</h2>
-            <p class="text-white">Subscribe to the <b>Articles</b> feed to be notified of new posts.</p>
-            <p><a href="#" class="btn btn-primary">Subscribe Now</a></p>
-        </div>
-    </section>
+    {% set adUnitData = { 
+        title: "Get Notifications", 
+        copy: "<p>Subscribe to the <b>Articles</b> feed to be notified of new posts.</p>",
+        textColorClass: 'text-white',
+        backgroundColorClass: 'bg-gray-dark',
+        imageUrl: '',
+        imageOpacity: '',
+        linkUrl: '#',
+        linkText: 'Subscribe Now'
+    } %}{% include "partials/ad-unit.html" %}
 
-    <section>
-        <div class="text-constrained center-block text-center">
-            <h2>What Can We Help You Find?</h2>
-            <p>Are you looking for <a href="#">Need to Know</a>, <a href="#">Rally</a>, <a href="#">Fuse</a>, or <a href="#">KidSpring</a>?</p>
-            <p><a href="#" class="btn btn-primary">Search <i class="fas fa-search"></i></a></p>
-        </div>
-    </section>
+    {% set adUnitData = { 
+        title: "What Can We Help You Find?", 
+        copy: "<p>Are you looking for <a href='#' class='label label-secondary'>Need to Know</a>, <a href='#' class='label label-secondary'>Rally</a>, <a href='#' class='label label-secondary'>Fuse</a>, or <a href='#' class='label label-secondary'>KidSpring</a>?</p>",
+        textColorClass: '',
+        backgroundColorClass: '',
+        imageUrl: '',
+        imageOpacity: '',
+        linkUrl: '#',
+        linkText: 'Search More'
+    } %}{% include "partials/ad-unit.html" %}
 
     {% include "partials/footer.html" %}
 

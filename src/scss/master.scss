@@ -183,8 +183,8 @@ $nav-width: 80px;
 	.slider-item {
 		display: inline-block;
 		width: 300px;
-		margin-right: 15px;
-		margin-left: 15px;
+		margin-right: 10px;
+		margin-left: 10px;
 		vertical-align: middle;
 
 		.panel {
@@ -213,7 +213,8 @@ body {
 }
 
 section {
-	padding: $base-spacing-unit*5 0 $base-spacing-unit*4;
+	padding: $base-spacing-unit*4 0 $base-spacing-unit*3;
+	margin-bottom: $base-spacing-unit;
 }
 
 a {
@@ -236,7 +237,7 @@ h6, .h6 {
 		transition: color .1s;
 
 		&:hover {
-			color: $brand-primary;
+			color: $gray;
 			text-decoration: none;
 		}
 	}
@@ -310,7 +311,7 @@ mark, .mark {
 	}
 
 	@media (min-width: $screen-sm-min) {
-    	padding: $base-spacing-unit*12 0 $base-spacing-unit;
+    	padding: $base-spacing-unit*10 0 $base-spacing-unit;
   	}
 }
 
@@ -406,7 +407,7 @@ mark, .mark {
 .panel {
 	border: 0;
 	overflow: hidden;
-	box-shadow: 0 1px 5px rgba($gray-darker, .15), 0 2px 0px rgba($gray-darker, .05);
+	box-shadow: 0 1px 3px rgba($gray-darker, .15), 0 2px 0px rgba($gray-darker, .05);
 }
 
 .panel-body {
@@ -442,14 +443,14 @@ mark, .mark {
 
 	&:hover {
 		&:after {
-			background-color: rgba(0,0,0,.3);
+			background-color: rgba(0,0,0,.5);
 		}
 	}
 }
 
 
 
-.strong { font-weight: 700; }
+.strong { font-weight: 500; }
 .serif { font-family: $font-family-serif; }
 .sans-serif { font-family: $font-family-sans-serif; }
 .text-constrained { max-width: 800px; }
@@ -460,7 +461,7 @@ mark, .mark {
 
 .rounded { border-radius: 5px; }
 .circular { border-radius: 1000px; }
-.shadowed { box-shadow: 0 2px 3px rgba($gray-darker, .2); }
+.shadowed { box-shadow: 0 1px 3px rgba($gray-darker, .15), 0 2px 0px rgba($gray-darker, .05); }
 .background-cover { background-position: center; background-size: cover; }
 .grayscale { filter: grayscale(1); }
 .relative { position: relative; }

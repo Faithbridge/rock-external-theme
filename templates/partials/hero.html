@@ -1,25 +1,61 @@
-<!-- Hero -->
-<section class="jumbotron relative overflow-hidden rounded bg-gray-darker flush">
+{#
 
-	<!-- Background Video -->
-	{% if heroData.bgVideo %}
-		<video class="video " style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: {{ heroData.bgOpacity }};" width="1280" height="720" loop="" autoplay="">
-			<source src="{{ heroData.bgVideo }}.mp4" type="video/mp4">
-			<source src="{{ heroData.bgVideo }}.webm" type="video/webm">
+{% set heroData = { 
+    title: "",
+    copy: "",
+    imageUrl: '',
+    backgroundVideoUrl: '',
+    backgroundOpacity: '',
+    textColorClass: '',
+    backgroundColorClass: '',
+    linkUrl: '',
+    linkText: '',
+    linkClasses: ''
+} %}{% include "partials/hero.html" %}
+
+#}
+
+<!-- Hero -->
+<section class="jumbotron relative rounded {% if heroData.backgroundColorClass %}{{ heroData.backgroundColorClass }}{% else %}bg-gray-dark{% endif %} {% if heroData.backgroundVideoUrl or heroData.imageUrl %}{% else %}soft-double-top soft-bottom{% endif %} push-bottom">
+
+	{% if heroData.backgroundVideoUrl %}
+
+        <!-- Background Video -->
+		<video class="video " style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: {{ heroData.backgroundOpacity }};" width="1280" height="720" loop="" autoplay="">
+			<source src="{{ heroData.backgroundVideoUrl }}.mp4" type="video/mp4">
+			<source src="{{ heroData.backgroundVideoUrl }}.webm" type="video/webm">
 		</video>
-	{% endif %}
+
+    {% else %}
 	
-	<!-- Background Image -->
-	{% if heroData.bgVideo %}
-	{% else %}
-    	<span class="full-screen background-cover background-center" style="background-image: url('{{ heroData.bgImage }}'); opacity: {{ heroData.bgOpacity }};"></span>
-	}
+    	<!-- Background Image -->
+    	{% if heroData.imageUrl %}
+        	<span class="full-screen background-cover background-center" style="background-image: url('{{ heroData.imageUrl }}'); {% if heroData.backgroundOpacity %}opacity: {{ heroData.backgroundOpacity }};{% endif %}"></span>
+        {% endif %}
+        
     {% endif %}
 
     <div class="bring-forward center-block text-constrained text-center soft-double">
-        <h1 class="text-white">{{ heroData.title }}</h1>
-        <p class="text-white">{{ heroData.copy | escape }}</p>
-        <p><a href="{{ heroData.buttonUrl }}" class="{{ heroData.buttonClasses }}" role="button">{{ heroData.buttonText }}</a></p>
+
+		<span class="{% if heroData.textColorClass %}{{ heroData.textColorClass }}{% else %}text-white{% endif %}">
+
+			{% if heroData.title %}
+        		<h1>{{ heroData.title }}</h1>
+        	{% endif %}
+
+        	{{ heroData.copy | safe }}
+
+        </span>
+
+
+        {% if heroData.linkUrl %}
+	        <p>
+	        	<a href="{{ heroData.linkUrl }}" class="{% if heroData.linkClasses %}{{ heroData.linkClasses }}{% else %}btn btn-primary{% endif %}">
+	        		{% if heroData.linkText %}{{ heroData.linkText }}{% else %}Learn More{% endif %}
+	        	</a>
+	        </p>
+        {% endif %}
+
     </div>
 
 </section>

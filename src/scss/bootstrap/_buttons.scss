@@ -54,6 +54,21 @@
   // [converter] extracted a& to a.btn
 }
 
+.btn-size {
+  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
+  &.btn {
+    cursor: default;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
 a.btn {
   &.disabled,
   fieldset[disabled] & {

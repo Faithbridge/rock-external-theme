@@ -12,7 +12,7 @@ var sliders = document.querySelectorAll('[data-slider]');
 // Loop through them and adjust container width
 sliders.forEach(function(element) {
 
-    var cardWidth = "300";
+    var cardWidth = "280";
 
     // Set slider element
     var slider = element.children[0];
@@ -27,11 +27,11 @@ sliders.forEach(function(element) {
 
     // Loop through child elements array and set widths
     for (i = 0; i < sliderChildren.length; ++i) {
-        sliderChildren[i].style.width = cardWidth - 30 + "px";
+        sliderChildren[i].style.width = cardWidth - 20 + "px";
     }
 
     // Calculate slider width
-    var sliderWrapperWidth = sliderItemCount * cardWidth - 30;
+    var sliderWrapperWidth = sliderItemCount * cardWidth - 20;
 
     // Adjust slider width
     slider.style.width = sliderWrapperWidth + "px";

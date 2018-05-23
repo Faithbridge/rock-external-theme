@@ -3,15 +3,17 @@
 {% block content %}
 
     {% set heroData = { 
-        title: 'Baptism', 
-        copy: 'Baptism is going public about your faith in Jesus and communicating to the world your heart-felt commitment to following Him. It&apos;s the next step after salvation.', 
-        buttonUrl: '/baptism.html',
-        buttonText: 'Sign Up Now',
-        buttonClasses: 'btn btn-primary',
-        image: 'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/baptism/2x1.hero_1700_850_90_c1.jpg'
-    } %}
-    {% include "partials/hero.html" %}
-
+        title: 'Baptism',
+        copy: "<p>Baptism is going public about your faith in Jesus and communicating to the world your heart-felt commitment to following Him. It&apos;s the next step after salvation.</p>",
+        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/baptism/2x1.hero_1700_850_90_c1.jpg',
+        backgroundVideoUrl: '',
+        backgroundOpacity: '.4',
+        textColorClass: 'text-white',
+        backgroundColorClass: '',
+        linkUrl: '/baptism.html',
+        linkText: 'Sign Up Now',
+        linkClasses: ''
+    } %}{% include "partials/hero.html" %}
 
     <section>
         <div class="text-constrained center-block text-center">
@@ -21,7 +23,7 @@
     </section>
     
 
-    <section class="relative overflow-hidden rounded bg-info flush">
+    <section class="relative overflow-hidden rounded bg-info">
         <div class="soft-double-sides">
             <div class="row">
                 <div class="col-md-6">
@@ -38,5 +40,7 @@
             </div>
         </div>
     </section>
+
+    {% include "partials/footer.html" %}
 
 {% endblock %}
