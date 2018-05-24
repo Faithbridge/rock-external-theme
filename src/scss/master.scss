@@ -4,7 +4,6 @@
 $base-spacing-unit: 20px;
 $nav-width: 80px;
 
-
 // Layout
 .sidebar {
 	position: absolute;
@@ -31,6 +30,7 @@ $nav-width: 80px;
 	left: 0;
 	overflow-y: scroll;
 	padding-bottom: $nav-width;
+	-webkit-overflow-scrolling: touch;
 
 	@media (min-width: $screen-sm-min) {
 		left: $nav-width;
@@ -541,16 +541,6 @@ mark, .mark {
 .hard-ends { padding-top: 0 !important; padding-bottom: 0 !important; }
 .hard-sides { padding-left: 0 !important; padding-right: 0 !important; }
 
-@media (max-width: $screen-sm-min) {
-	.xs-hard { padding: 0 !important; }
-	.xs-hard-top { padding-top: 0 !important; }
-	.xs-hard-bottom { padding-bottom: 0 !important; }
-	.xs-hard-right { padding-right: 0 !important; }
-	.xs-hard-left { padding-left: 0 !important; }
-	.xs-hard-ends { padding-top: 0 !important; padding-bottom: 0 !important; }
-	.xs-hard-sides { padding-left: 0 !important; padding-right: 0 !important; }
-}
-
 .push-half { margin: $base-spacing-unit / 2 !important; }
 .push-half-top { margin-top: $base-spacing-unit / 2 !important; }
 .push-half-bottom { margin-bottom: $base-spacing-unit / 2 !important; }
@@ -582,6 +572,24 @@ mark, .mark {
 .flush-left { margin-left: 0 !important; }
 .flush-ends { margin-top: 0 !important; margin-bottom: 0 !important; }
 .flush-sides { margin-left: 0 !important; margin-right: 0 !important; }
+
+@media (max-width: $screen-sm-min) {
+	.xs-hard { padding: 0 !important; }
+	.xs-hard-top { padding-top: 0 !important; }
+	.xs-hard-bottom { padding-bottom: 0 !important; }
+	.xs-hard-right { padding-right: 0 !important; }
+	.xs-hard-left { padding-left: 0 !important; }
+	.xs-hard-ends { padding-top: 0 !important; padding-bottom: 0 !important; }
+	.xs-hard-sides { padding-left: 0 !important; padding-right: 0 !important; }
+
+	.xs-flush { margin: 0 !important; }
+	.xs-flush-top { margin-top: 0 !important; }
+	.xs-flush-bottom { margin-bottom: 0 !important; }
+	.xs-flush-right { margin-right: 0 !important; }
+	.xs-flush-left { margin-left: 0 !important; }
+	.xs-flush-ends { margin-top: 0 !important; margin-bottom: 0 !important; }
+	.xs-flush-sides { margin-left: 0 !important; margin-right: 0 !important; }
+}
 
 // Converted Grid to Inline
 .col-xs-1, 
