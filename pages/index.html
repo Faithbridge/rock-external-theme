@@ -2,9 +2,10 @@
 
 {% block content %}
 
+
 	{% set heroData = { 
-        title: 'Welcome to NewSpring', 
-        copy: "<form class='form-inline'><div class='form-group'><input type='text' class='form-control form-control-static sans-serif strong push-bottom text-center' placeholder='Enter Your Address'> <button type='submit' class='form-control form-control-static btn btn-primary push-bottom'>Find a Location</button></div></form><p>or <a href='#' class='text-white'>watch past sermons.</a></p>",
+        title: 'Welcome to NewSpring!', 
+        copy: "<form class='form-inline'><div class='form-group'><input type='text' class='form-control form-control-static sans-serif strong push-half-bottom text-center no-border' placeholder='Enter Your Address'> <button type='submit' class='form-control form-control-static btn btn-primary push-half-bottom'>Find a Location</button></div></form><p>or <a href='#' class='text-white'>watch past sermons.</a></p>",
         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/homepage/homepage_update2x1__1700_850_90_c1.jpg',
         backgroundVideoUrl: '//s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps',
         backgroundOpacity: '.9',
@@ -14,6 +15,36 @@
         linkText: '',
         linkClasses: ''
     } %}{% include "partials/hero.html" %}
+
+
+    {% set cardData = { 
+        id: '5',
+        brandHex: '1AB262',
+        type: '',
+        typeIcon: '',
+        title: "See You at Gauntlet",
+        copy: "<p>Here's how you can get involved!</p><p><b>Go.</b> If you're in middle or high school, sign up today and invite your friends.</p><p><b>Give.</b> Help students go to Gauntlet by giving to the Gauntlet Fund.</p><p><b>Serve.</b> Invest in the next generation and experience the miracles first hand.</p>",
+        tags: '',
+        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/remote/http_images.newspring.cc/section/worship/app1024x10240000.gauntlet18.png',
+        imageAlignment: 'left',
+        linkUrl: 'http://gauntlet.cc',
+        linkText: ''
+    } %}{% include "partials/card-side-by-side.html" %}
+
+    {% set cardData = { 
+        id: '3',
+        brandHex: '24454a',
+        type: '',
+        typeIcon: '',
+        title: "Want to make your marriage different?",
+        copy: "<p>You don’t have to look far to find an opportunity to give up on marriage. But for all the reasons to break the knot, there's always a better reason to tighten it. Find your reason next Sunday.</p><p>Join us for a new series, <a href='https://newspring.cc/sermons/tighten-the-knot'>'Tighten The Knot.'</a> Series begins on Feb. 18.</p>",
+        tags: '',
+        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/all/heroes/newspring/1x1TightenKnot_2000_2000_90.jpg',
+        imageAlignment: 'right',
+        linkUrl: 'https://newspring.cc/sermons/tighten-the-knot',
+        linkText: ''
+    } %}{% include "partials/card-side-by-side.html" %}
+
 
     {% include "partials/footer.html" %}
     

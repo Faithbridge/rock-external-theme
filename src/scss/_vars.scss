@@ -13,7 +13,7 @@ $gray-darker:            #1c1c1c !default; // #1c1c1c
 $gray-dark:              #303030 !default;   // #303030
 $gray:                   #555 !default; // #555
 $gray-light:             #858585 !default; // #858585
-$gray-lighter:           #f5f5f5 !default; // #dddddd
+$gray-lighter:           #f0f0f0 !default; // #dddddd
 $white:					#fff !default;
 $black:					#000 !default;
 
@@ -57,8 +57,8 @@ $font-size-base:          20px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
-$font-size-h1:            floor(($font-size-base * 2.5)) !default; // ~36px
-$font-size-h2:            floor(($font-size-base * 2.3)) !default; // ~30px
+$font-size-h1:            floor(($font-size-base * 2.3)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2)) !default; // ~30px
 $font-size-h3:            ceil(($font-size-base * 1.45)) !default; // ~24px
 $font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-h5:            ceil(($font-size-base * 1.1)) !default; // ~12px
