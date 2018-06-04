@@ -1,7 +1,7 @@
 @import "vars";
 @import '_bootstrap';
 
-$base-spacing-unit: 20px;
+$base-spacing-unit: 25px;
 $nav-width: 80px;
 
 // Layout
@@ -39,6 +39,14 @@ $nav-width: 80px;
 	}
 }
 
+.full-screen {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
 .split {
 	position: absolute;
 	top: 0;
@@ -53,7 +61,7 @@ $nav-width: 80px;
 		right: 0;
 	}
 
-	@media (max-width: $screen-xs-max) {
+	@media (max-width: $screen-sm-max) {
 		position: relative;
 		top: auto;
 		right: auto;
@@ -71,6 +79,12 @@ $nav-width: 80px;
 	}
 }
 
+.page-brand-bar {
+	position: absolute;
+	height: $base-spacing-unit*4;
+	width: 100%;
+	transform: scale(7, 7) rotate(-4deg);
+}
 
 // Fixed Aspect Ratios
 .ratio-landscape, .ratio-square, .ratio-portrait {
@@ -87,6 +101,8 @@ $nav-width: 80px;
 .ratio-square:before{ padding-top: 100%; }
 .ratio-portrait:before{ padding-top: 200%; }
 
+
+// Split Layout For Editorial Entry
 .split-image {
 	position: relative;
     display: block;
@@ -103,7 +119,7 @@ $nav-width: 80px;
 		top: 0; 
 		right: 0; 
 		bottom: 0; 
-		width: 39%; 
+		width: 35%; 
 	}
 }
 
@@ -111,7 +127,7 @@ $nav-width: 80px;
 	width: 100%;
 
 	@media (min-width: $screen-sm-min) {
-		width: 60%;
+		width: 65%;
 	}
 }
 
@@ -272,7 +288,7 @@ body {
 
 section, footer {
 	padding: $base-spacing-unit*2 0 $base-spacing-unit;
-	margin-bottom: $base-spacing-unit / 2;
+	margin-bottom: $base-spacing-unit;
 
 	@media (min-width: $screen-sm-min) {
 		padding: $base-spacing-unit*4 0 $base-spacing-unit*3;
@@ -303,10 +319,14 @@ h6, .h6 {
 		transition: color .1s;
 
 		&:hover {
-			color: $gray;
+			color: $brand-primary;
 			text-decoration: none;
 		}
 	}
+}
+
+h6, .h6 {
+	letter-spacing: 0;
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -367,9 +387,8 @@ mark, .mark {
 
 // Jumbotron
 .jumbotron {
-	padding: $base-spacing-unit*6 0 $base-spacing-unit*4;
+	padding: $base-spacing-unit*4 0 $base-spacing-unit*2;
 	position: relative;
-	overflow: hidden;
 
 	& > div {
 		position: relative;
@@ -377,7 +396,7 @@ mark, .mark {
 	}
 
 	@media (min-width: $screen-sm-min) {
-    	padding: $base-spacing-unit*12 0 $base-spacing-unit;
+    	padding: $base-spacing-unit*8 0 $base-spacing-unit;
   	}
 }
 
@@ -465,6 +484,58 @@ mark, .mark {
 	.fa-lg {
 		position: relative;
 		top: 1px;
+	}
+}
+
+.btn-play {
+	position: absolute !important;
+	top: auto;
+	bottom: -$base-spacing-unit*1.8;
+	left: 50%;
+	margin-left: -$base-spacing-unit*1.8;
+	height: $base-spacing-unit*3.6;
+	width: $base-spacing-unit*3.6;
+	line-height: $base-spacing-unit*3.3;
+	border-radius: 1000px;
+	background-color: $brand-primary;
+	border: 4px solid $white;
+	transition: background-color .1s;
+
+	@media (min-width: $screen-sm-min) {
+		width: $base-spacing-unit*4;
+		height: $base-spacing-unit*4;
+		line-height: $base-spacing-unit*3.7;
+		margin-left: -$base-spacing-unit*2;
+		bottom: -$base-spacing-unit*2;
+	}
+
+	.wistia_embed {
+		display: inline-block;
+		position: absolute !important;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border-radius: 1000px;
+
+		.wistia_click_to_play {
+			position: absolute !important;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border-radius: 1000px;
+		}
+	}
+
+	&:hover, &:focus {
+		color: $white;
+		background-color: $brand-secondary;
+	}
+
+	i {
+		position: relative;
+		left: 2px;
 	}
 }
 
@@ -573,7 +644,12 @@ mark, .mark {
 .text-gray { color: $gray; }
 .text-gray-dark { color: $gray-dark; }
 .text-gray-darker { color: $gray-darker; }
-.text-white { color: $white !important; }
+
+.text-white, .text-white a, .text-white a:hover { color: $white; }
+
+.text-kidspring-primary { color: $kidspring-primary; }
+.text-kidspring-secondary { color: $kidspring-secondary; }
+.text-kidspring-tertiary { color: $kidspring-tertiary; }
 
 .bg-white { background-color: $white; }
 .bg-secondary { background-color: $brand-secondary; }
@@ -582,6 +658,9 @@ mark, .mark {
 .bg-info { background-color: $brand-info; }
 .bg-warning { background-color: $brand-warning; }
 .bg-danger { background-color: $brand-danger; }
+.bg-kidspring-primary { background-color: $kidspring-primary; }
+.bg-kidspring-secondary { background-color: $kidspring-secondary; }
+.bg-kidspring-tertiary { background-color: $kidspring-tertiary; }
 
 .bg-gray-lighter { background-color: $gray-lighter; }
 .bg-gray-light { background-color: $gray-light; }
@@ -600,8 +679,13 @@ mark, .mark {
 .bg-danger a:hover,
 .bg-gray a:hover,
 .bg-gray-dark a:hover,
-.bg-gray-darker a:hover {
-	color: $white;
+.bg-gray-darker a:hover,
+.bg-kidspring-primary a:hover,
+.bg-kidspring-secondary a:hover,
+.bg-kidspring-tertiary a:hover {
+	*:not(.panel-body) {
+		color: $white;
+	}
 }
 
 
@@ -745,8 +829,15 @@ mark, .mark {
 
 	// Font Size Adjustments
 	body {
-		font-size: 2em;
+		font-size: 2.1em;
 	}
+
+	h1, .h1 { font-size: floor(($font-size-base * 2)); }
+	h2, .h2 { font-size: floor(($font-size-base * 1.7)); }
+	h3, .h3 { font-size: ceil(($font-size-base * 1.45)); }
+	h4, .h4 { font-size: ceil(($font-size-base * 1.25)); }
+	h5, .h5 { font-size: ceil(($font-size-base * 1.1)); }
+	h6, .h6 { font-size: $font-size-base; }
 
 	// Positioning
 

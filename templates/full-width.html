@@ -1,10 +1,14 @@
 {% extends "global.html" %}
 
 {% block globalContent %}
-<div class="page-constrained center-block">
-    <div class="soft-half hard-bottom">
-        {% block content %}
-        {% endblock %}
-    </div>
+
+{% if pageColor %}
+	<div class="page-brand-bar" style="background-color: #{{ pageColor }}"></div>
+{% endif %}
+
+<div class="soft hard-bottom">
+    {% block content %}
+    {% endblock %}
 </div>
+
 {% endblock %}

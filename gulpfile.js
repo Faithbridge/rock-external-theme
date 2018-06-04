@@ -27,7 +27,7 @@ gulp.task('styles', function () {
 
 
 // Watch Styles Task
-gulp.task('watch', ['browserSync'], function(){
+gulp.task('watch', function(){
 	gulp.watch('src/scss/**/*.scss', ['styles']);
 	gulp.watch('pages/**/*.html', ['nunjucks']);
 	gulp.watch('templates/**/*.html', ['nunjucks']);
@@ -35,7 +35,7 @@ gulp.task('watch', ['browserSync'], function(){
 
 
 // Compile Nunjucks Task
-gulp.task('nunjucks', function() {
+gulp.task('nunjucks', ['browserSync'], function() {
 
   // Gets .html and .nunjucks files in pages
   gulp.src('pages/**/*.+(html|nunjucks)')
