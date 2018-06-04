@@ -5,6 +5,7 @@
     brandHex: '',
     type: '',
     typeIcon: '',
+    titleSize:'',
     title: "",
     copy: "",
     tags: '',
@@ -35,12 +36,12 @@
 {% endif %}
 
 <!-- EVERYTHING goes in a row! -->
-<section class="relative overflow-hidden bg-white rounded shadowed xs-hard-top"><!-- Section Color Classes -->
+<section class="relative overflow-hidden soft-top hard-bottom xs-soft-top xs-hard-bottom bg-white rounded shadowed xs-hard-top"><!-- Section Color Classes -->
 
     {% if cardData.imageUrl %}
         {% if cardData.linkUrl %}<a href="{{ cardData.linkUrl }}">{% endif %}
 
-            <div class="split {% if cardData.imageAlignment == 'left' %}split-left{% else %}split-right{% endif %} xs-push-double-bottom background-center background-cover" style=" background-image: url('{{ cardData.imageUrl }}');"
+            <div class="split {% if cardData.imageAlignment == 'left' %}split-left{% else %}split-right{% endif %} background-center background-cover xs-push-bottom" style=" background-image: url('{{ cardData.imageUrl }}');"
         ></div>
 
         {% if cardData.linkUrl %}</a>{% endif %}
@@ -48,30 +49,28 @@
     
 
     <div class="row {% if cardData.imageAlignment == 'left' %}text-right{% else %}text-left{% endif %} flush"><!-- Section Padding and Alignement Classes -->
-        <div class="col-xs-12 col-sm-6 text-left xs-text-center hard"><!-- Text Alignment Classes -->
-            <div class="soft-double-sides soft-top xs-soft-half-sides">
-                <div class="soft-sides sm-hard">
+        <div class="col-xs-12 col-sm-12 col-md-6 text-left hard"><!-- Text Alignment Classes -->
+            <div class="soft-sides xs-soft-sides">
 
-                    {% if cardData.title %}
-                        <h2 class="{% if cardData.id and cardData.brandHex %}text-brand-{{ cardData.id  }}{% endif %}">
-                            {% if cardData.linkUrl %}<a href="{{ cardData.linkUrl }}">{% endif %}
-                                {{ cardData.title }}
-                            {% if cardData.linkUrl %}</a>{% endif %}
-                        </h2>
-                    {% endif %}
+                {% if cardData.title %}
+                    <h2 class="{{ cardData.titleSize }} {% if cardData.id and cardData.brandHex %}text-brand-{{ cardData.id  }}{% endif %}">
+                        {% if cardData.linkUrl %}<a href="{{ cardData.linkUrl }}">{% endif %}
+                            {{ cardData.title }}
+                        {% if cardData.linkUrl %}</a>{% endif %}
+                    </h2>
+                {% endif %}
 
-                    <span class="link-brand-{{ cardData.id }}">
-                        {{ cardData.copy | safe }}
-                    </span>
+                <span class="link-brand-{{ cardData.id }}">
+                    {{ cardData.copy | safe }}
+                </span>
 
-                    {% if cardData.linkUrl or cardData.type %}
-                        <p>
-                            <a href="{{ cardData.linkUrl }}" class="btn btn-primary {% if cardData.id and cardData.brandHex %}bg-brand-{{ cardData.id  }}{% endif %}" role="button">{% if cardData.linkText %}{{ cardData.linkText }}{% else %}Learn More{% endif %}</a> <span class="btn btn-sm btn-size sans-serif strong pull-right">
-                            {% if cardData.typeIcon %}<i class="{{ cardData.typeIcon }}"></i> {% endif %}{{ cardData.type }}</span>
-                        </p>
-                    {% endif %}
+                {% if cardData.linkUrl or cardData.type %}
+                    <p>
+                        <a href="{{ cardData.linkUrl }}" class="btn btn-sm btn-primary {% if cardData.id and cardData.brandHex %}bg-brand-{{ cardData.id  }}{% endif %}" role="button">{% if cardData.linkText %}{{ cardData.linkText }}{% else %}Learn More{% endif %}</a> <span class="btn btn-sm btn-size sans-serif strong pull-right">
+                        {% if cardData.typeIcon %}<i class="{{ cardData.typeIcon }}"></i> {% endif %}{{ cardData.type }}</span>
+                    </p>
+                {% endif %}
 
-                </div>
             </div>
         </div>
     </div>

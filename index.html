@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=false, viewport-fit=cover">
-    <title>Sandbox | NewSpring Church</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Home | NewSpring Church</title>
     
     <!-- Typekit -->
     <script>
@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="./dest/css/master.css">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-oi8o31xSQq8S0RpBcb4FaLB8LJi9AT8oIdmS1QldR8Ui7KUQjNAnDlJjp55Ba8FG" crossorigin="anonymous">
+    
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
 
@@ -45,7 +45,7 @@
 			<span>Home</span>
 		</a>
 	</li><li>
-		<a href="/articles.html"><i class="fas fa-fw fa-lg fa-bars"></i> <span>Menu</span></a>
+		<a href="#" data-toggle="modal" data-target="#navigation-modal"><i class="fas fa-fw fa-lg fa-bars"></i> <span>Menu</span></a>
 	</li><li>
 		<a href="/locations.html"><i class="fas fa-fw fa-lg fa-map-marker-alt"></i> <span>Locations</span></a>
 	</li><li>
@@ -63,27 +63,36 @@
         </div>
         <div class="content">
             
-<div class="page-constrained center-block">
-    <div class="soft-half hard-bottom">
-        
+
+
+
+<div class="soft hard-bottom">
+    
 
 
 	
 
 <!-- Hero -->
-<section class="jumbotron relative overflow-hidden rounded bg-black  push-half-bottom">
+<section class="jumbotron relative rounded shadowed text-white bg-secondary  push-bottom">
 
 	
 
         <!-- Background Video -->
-		<video class="video rounded" style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: .9;" width="1280" height="720" loop="" autoplay="">
+		<video class="video rounded grayscale hidden-xs hidden-sm" style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: .1;" width="1280" height="720" loop="" autoplay="">
 			<source src="//s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps.mp4" type="video/mp4">
 			<source src="//s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps.webm" type="video/webm">
 		</video>
 
     
+	
+	<!-- Background Image -->
+	
+    	<span class="full-screen background-cover background-center rounded grayscale hidden-md hidden-lg" style="background-image: url('//dg0ddngxdz549.cloudfront.net/newspring/homepage/hero_1x1.gif'); opacity: .1;"></span>
+    
 
-    <div class="bring-forward center-block text-constrained text-center soft-double xs-soft">
+    <div class="bring-forward center-block text-constrained text-center soft-double  xs-soft">
+
+        
 
 		<span class="text-white">
 
@@ -100,8 +109,9 @@
 
     </div>
 
-</section>
+    
 
+</section>
 
     
 
@@ -124,12 +134,12 @@
 
 
 <!-- EVERYTHING goes in a row! -->
-<section class="relative overflow-hidden bg-white rounded shadowed xs-hard-top"><!-- Section Color Classes -->
+<section class="relative overflow-hidden soft-top hard-bottom xs-soft-top xs-hard-bottom bg-white rounded shadowed xs-hard-top"><!-- Section Color Classes -->
 
     
         <a href="http://gauntlet.cc">
 
-            <div class="split split-left xs-push-double-bottom background-center background-cover" style=" background-image: url('//dg0ddngxdz549.cloudfront.net/images/remote/http_images.newspring.cc/section/worship/app1024x10240000.gauntlet18.png');"
+            <div class="split split-left background-center background-cover xs-push-bottom" style=" background-image: url('//dg0ddngxdz549.cloudfront.net/images/remote/http_images.newspring.cc/section/worship/app1024x10240000.gauntlet18.png');"
         ></div>
 
         </a>
@@ -137,30 +147,28 @@
     
 
     <div class="row text-right flush"><!-- Section Padding and Alignement Classes -->
-        <div class="col-xs-12 col-sm-6 text-left xs-text-center hard"><!-- Text Alignment Classes -->
-            <div class="soft-double-sides soft-top xs-soft-half-sides">
-                <div class="soft-sides sm-hard">
+        <div class="col-xs-12 col-sm-12 col-md-6 text-left hard"><!-- Text Alignment Classes -->
+            <div class="soft-sides xs-soft-sides">
 
-                    
-                        <h2 class="text-brand-5">
-                            <a href="http://gauntlet.cc">
-                                See You at Gauntlet
-                            </a>
-                        </h2>
-                    
+                
+                    <h2 class=" text-brand-5">
+                        <a href="http://gauntlet.cc">
+                            See You at Gauntlet
+                        </a>
+                    </h2>
+                
 
-                    <span class="link-brand-5">
-                        <p>Here's how you can get involved!</p><p><b>Go.</b> If you're in middle or high school, sign up today and invite your friends.</p><p><b>Give.</b> Help students go to Gauntlet by giving to the Gauntlet Fund.</p><p><b>Serve.</b> Invest in the next generation and experience the miracles first hand.</p>
-                    </span>
+                <span class="link-brand-5">
+                    <p>Here's how you can get involved!</p><p><b>Go.</b> If you're in middle or high school, sign up today and invite your friends.</p><p><b>Give.</b> Help students go to Gauntlet by giving to the Gauntlet Fund.</p><p><b>Serve.</b> Invest in the next generation and experience the miracles first hand.</p>
+                </span>
 
-                    
-                        <p>
-                            <a href="http://gauntlet.cc" class="btn btn-primary bg-brand-5" role="button">Learn More</a> <span class="btn btn-sm btn-size sans-serif strong pull-right">
-                            </span>
-                        </p>
-                    
+                
+                    <p>
+                        <a href="http://gauntlet.cc" class="btn btn-sm btn-primary bg-brand-5" role="button">Learn More</a> <span class="btn btn-sm btn-size sans-serif strong pull-right">
+                        </span>
+                    </p>
+                
 
-                </div>
             </div>
         </div>
     </div>
@@ -187,12 +195,12 @@
 
 
 <!-- EVERYTHING goes in a row! -->
-<section class="relative overflow-hidden bg-white rounded shadowed xs-hard-top"><!-- Section Color Classes -->
+<section class="relative overflow-hidden soft-top hard-bottom xs-soft-top xs-hard-bottom bg-white rounded shadowed xs-hard-top"><!-- Section Color Classes -->
 
     
         <a href="https://newspring.cc/sermons/tighten-the-knot">
 
-            <div class="split split-right xs-push-double-bottom background-center background-cover" style=" background-image: url('//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/all/heroes/newspring/1x1TightenKnot_2000_2000_90.jpg');"
+            <div class="split split-right background-center background-cover xs-push-bottom" style=" background-image: url('//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/all/heroes/newspring/1x1TightenKnot_2000_2000_90.jpg');"
         ></div>
 
         </a>
@@ -200,41 +208,39 @@
     
 
     <div class="row text-left flush"><!-- Section Padding and Alignement Classes -->
-        <div class="col-xs-12 col-sm-6 text-left xs-text-center hard"><!-- Text Alignment Classes -->
-            <div class="soft-double-sides soft-top xs-soft-half-sides">
-                <div class="soft-sides sm-hard">
+        <div class="col-xs-12 col-sm-12 col-md-6 text-left hard"><!-- Text Alignment Classes -->
+            <div class="soft-sides xs-soft-sides">
 
-                    
-                        <h2 class="text-brand-3">
-                            <a href="https://newspring.cc/sermons/tighten-the-knot">
-                                Want to make your marriage different?
-                            </a>
-                        </h2>
-                    
+                
+                    <h2 class=" text-brand-3">
+                        <a href="https://newspring.cc/sermons/tighten-the-knot">
+                            Want to make your marriage different?
+                        </a>
+                    </h2>
+                
 
-                    <span class="link-brand-3">
-                        <p>You don’t have to look far to find an opportunity to give up on marriage. But for all the reasons to break the knot, there's always a better reason to tighten it. Find your reason next Sunday.</p><p>Join us for a new series, <a href='https://newspring.cc/sermons/tighten-the-knot'>'Tighten The Knot.'</a> Series begins on Feb. 18.</p>
-                    </span>
+                <span class="link-brand-3">
+                    <p>You don’t have to look far to find an opportunity to give up on marriage. But for all the reasons to break the knot, there's always a better reason to tighten it. Find your reason next Sunday.</p><p>Join us for a new series, <a href='https://newspring.cc/sermons/tighten-the-knot'>'Tighten The Knot.'</a> Series begins on Feb. 18.</p>
+                </span>
 
-                    
-                        <p>
-                            <a href="https://newspring.cc/sermons/tighten-the-knot" class="btn btn-primary bg-brand-3" role="button">Learn More</a> <span class="btn btn-sm btn-size sans-serif strong pull-right">
-                            </span>
-                        </p>
-                    
+                
+                    <p>
+                        <a href="https://newspring.cc/sermons/tighten-the-knot" class="btn btn-sm btn-primary bg-brand-3" role="button">Learn More</a> <span class="btn btn-sm btn-size sans-serif strong pull-right">
+                        </span>
+                    </p>
+                
 
-                </div>
             </div>
         </div>
     </div>
 </section>
 
 
-    <footer class="rounded bg-gray-darker text-white push-bottom xs-soft-double-ends">
+    <footer class="rounded bg-gray-darker push-bottom xs-soft-double-ends">
     <div class="page-constrained center-block soft-double-sides">
         <div class="row push-double-bottom xs-flush-bottom">
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <h4>About Us</h4>
+                <h4 class="text-white">About Us</h4>
                 <hr class="push-half-ends">
                 <ul class="sans-serif strong text-decoration-none list-style-none hard">
                     <li><a href="/about.html">Who We Are</a></li>
@@ -244,7 +250,7 @@
                     <li><a href="/contact.html">Contact Us</a></li>
                 </ul>
             </div><div class="col-xs-12 col-sm-6 col-md-4">
-                <h4>Watch &amp; Read</h4>
+                <h4 class="text-white">Watch &amp; Read</h4>
                 <hr class="push-half-ends">
                 <ul class="sans-serif strong text-decoration-none list-style-none hard">
                     <li><a href="/watchandread.html">Watch &amp; Read</a></li>
@@ -255,7 +261,7 @@
                     <li><a href="/stories.html">Stories</a></li>
                 </ul>
             </div><div class="col-xs-12 col-sm-6 col-md-4">
-                <h4>Ministries</h4>
+                <h4 class="text-white">Ministries</h4>
                 <hr class="push-half-ends">
                 <ul class="sans-serif strong text-decoration-none list-style-none hard">
                     <li><a href="/kidspring.html">Kids</a></li>
@@ -271,7 +277,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-8">
-                <h4>Next Steps</h4>
+                <h4 class="text-white">Next Steps</h4>
                 <hr class="push-half-ends">
                 <div class="row">
                     <div class="col-xs-12 col-md-6">
@@ -293,7 +299,7 @@
                     </div>
                 </div>
             </div><div class="col-xs-12 col-sm-6 col-md-4">
-                <h4>Giving</h4>
+                <h4 class="text-white">Giving</h4>
                 <hr class="push-half-ends">
                 <ul class="sans-serif strong text-decoration-none list-style-none hard flush">
                     <li><a href="/give.html">Why We Give</a></li>
@@ -313,9 +319,86 @@
 </footer>
     
 
-    </div>
 </div>
 
+
         </div>
+
+        <div id="navigation-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content soft">
+      <div class="modal-header">
+        <i class="fa fa-times close" data-dismiss="modal" aria-hidden="true"></i>
+        <h1 class="modal-title">Hi Brian!</h1>
+      </div>
+      <div class="modal-body">
+        <p>Where would you like to go?</p>
+        <ul class="list-style-none hard">
+          <li><h3 class="text-primary"><a href="#">About Us</a></h3></li>
+          <li><h3 class="text-primary"><a href="#">Locations</a></h3></li>
+          <li><h3 class="text-primary"><a href="#">Watch &amp; Read</a></h3></li>
+          <li><h3 class="text-primary"><a href="#">Give Now</a></h3></li>
+        </ul>
+        <hr>
+        <p>Looking for something specific?</p>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+            <h6 class="text-uppercase" style="font-weight: 900;">Next Steps</h6>
+            <ul class="sans-serif strong text-decoration-none list-style-none hard">
+                <li><a href="/bible.html"><small>Read Your Bible</small></a></li>
+                <li><a href="/connect.html"><small>Connect</small></a></li>
+                <li><a href="/groups.html"><small>Groups</small></a></li>
+                <li><a href="/care.html"><small>Care</small></a></li>
+                <li><a href="/serving.html"><small>Serving</small></a></li>
+                <li><a href="/salvation.html"><small>Salvation</small></a></li>
+                <li><a href="/baptism.html"><small>Baptism</small></a></li>
+                <li><a href="/missions.html"><small>Missions</small></a></li>
+                <li><a href="/finances.html"><small>Finances</small></a></li>
+                <li><a href="/discover-year.html"><small>Discovery Year</small></a></li>
+            </ul>
+          </div><div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+            <h6 class="text-uppercase" style="font-weight: 900;">Watch &amp; Read</h6>
+            <ul class="sans-serif strong text-decoration-none list-style-none hard">
+                <li><a href="/articles.html"><small>Articles</small></a></li>
+                <li><a href="/sermons.html"><small>Sermons</small></a></li>
+                <li><a href="/devotionals.html"><small>Devotionals</small></a></li>
+                <li><a href="/news.html"><small>News</small></a></li>
+                <li><a href="/stories.html"><small>Stories</small></a></li>
+            </ul>
+          </div><div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+            <h6 class="text-uppercase" style="font-weight: 900;">Ministries</h6>
+            <ul class="sans-serif strong text-decoration-none list-style-none hard">
+                <li><a href="/kidspring.html"><small>Kids</small></a></li>
+                <li><a href="/fuse.html"><small>Students</small></a></li>
+                <li><a href="/rally.html"><small>Young Adults</small></a></li>
+                <li><a href="/discover-year.html"><small>Discovery Year</small></a></li>
+                <li><a href="/worship.html"><small>Worship</small></a></li>
+                <li><a href="/missions.html"><small>Missions</small></a></li>
+                <li><a href="/network.html"><small>NewSpring Network</small></a></li>
+                <li><a href="/store.html"><small>Store</small></a></li>
+            </ul>
+          </div><div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+            <h6 class="text-uppercase" style="font-weight: 900;">Giving</h6>
+            <ul class="sans-serif strong text-decoration-none list-style-none hard flush">
+                <li><a href="/give.html"><small>Why We Give</small></a></li>
+                <li><a href="https://my.newspring.cc/give/now.html"><small>Give Now</small></a></li>
+                <li><a href="https://my.newspring.cc/give/schedules.html"><small>Schedule Your Giving</small></a></li>
+                <li><a href="https://my.newspring.cc/give/history.html"><small>Giving History</small></a></li>
+                <li><a href="/annualreport.html"><small>Annual Report</small></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer hidden">
+        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-sm btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+        <script>
+            // $('#navigation-modal').modal('show');
+        </script>
 	</body>
 </html>

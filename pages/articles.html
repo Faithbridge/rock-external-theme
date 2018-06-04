@@ -17,6 +17,7 @@
                     {% set cardData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
+                        titleSize:'h3',
                         title: 'What is stopping you from sharing your faith?', 
                         copy: "<p>Recently, my husband was discussing why he believes the Bible with his sister. She is not a Christian and asked many hard questions.</p>", 
                         tags: {
@@ -34,6 +35,7 @@
                     {% set cardData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
+                        titleSize:'h3',
                         title: 'Three things you need to know about speaking in tongues', 
                         copy: "<p>The spiritual gift of speaking in tongues is largely-debated among believers. Some wonder whether speaking in tongues is an archaic gift — one that existed when Jesus walked the earth and died out shortly thereafter.</p>", 
                         tags: {
@@ -50,6 +52,7 @@
                     {% set cardData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
+                        titleSize: 'h4',
                         title: 'Four questions to ask when you want to make the right decision', 
                         copy: "<p>We’ve all heard of buyer’s remorse — that feeling you get when you purchase something and later regret it. Most of us have experienced it at some point, perhaps after the purchase of a new shirt, a TV, or even a car.</p>", 
                         tags: '',
@@ -63,6 +66,7 @@
                     {% set cardData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
+                        titleSize: 'h4',
                         title: 'What are spiritual gifts?', 
                         copy: "<p>What do you have to offer? I love the story of the little boy who shared his five loaves and two fish with Jesus. John 6 tells us Jesus took the boy’s meal and fed thousands of people with it.</p>", 
                         tags: '',
@@ -76,6 +80,7 @@
                     {% set cardData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
+                        titleSize: 'h4',
                         title: 'What to remember when you open a college rejection letter', 
                         copy: "<p>Recently, my husband was discussing why he believes the Bible with his sister. She is not a Christian and asked many hard questions.</p>", 
                         tags: {
@@ -92,6 +97,7 @@
                     {% set cardData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
+                        titleSize: 'h4',
                         title: 'How listening to the Holy Spirit helps you navigate life’s obstacles', 
                         copy: "<p>High above the stadium, someone watches cars zip around the racetrack. Each NASCAR team has a spotter, who acts as the</p>", 
                         tags: '',
@@ -105,6 +111,7 @@
                     {% set cardData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
+                        titleSize: 'h4',
                         title: 'What happens when Christians stop living scared', 
                         copy: "<p>We’ve all heard of buyer’s remorse — that feeling you get when you purchase something and later regret it. Most of us have experienced it at some point, perhaps after the purchase of a new shirt, a TV, or even a car.</p>", 
                         tags: '',
@@ -118,6 +125,7 @@
                     {% set cardData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
+                        titleSize: 'h4',
                         title: 'Divorced? 4 promises God wants you to embrace', 
                         copy: "<p>There was a season when I couldn’t walk in to a room without feeling like every eye was on me. I was the Christian...</p>", 
                         tags: '',
@@ -136,15 +144,15 @@
 
     {% set adUnitData = { 
         title: "Get Notifications", 
-        copy: "<p>Subscribe to the <b>Articles</b> feed to be notified of new posts.</p>",
+        copy: "<p>Subscribe to the articles feed to be notified of new posts.</p>",
         textColorClass: 'text-white',
-        backgroundColorClass: 'bg-gray-dark',
+        backgroundColorClass: 'bg-secondary',
         imageUrl: '',
         imageOpacity: '',
         linkUrl: '#',
         linkText: 'Subscribe Now'
     } %}{% include "partials/ad-unit.html" %}
-
+<!-- 
     {% set adUnitData = { 
         title: "What Can We Help You Find?", 
         copy: "<p>Are you looking for <a href='#' class='label label-secondary'>Need to Know</a>, <a href='#' class='label label-secondary'>Rally</a>, <a href='#' class='label label-secondary'>Fuse</a>, or <a href='#' class='label label-secondary'>KidSpring</a>?</p>",
@@ -154,7 +162,7 @@
         imageOpacity: '',
         linkUrl: '#',
         linkText: 'Search More'
-    } %}{% include "partials/ad-unit.html" %}
+    } %}{% include "partials/ad-unit.html" %} -->
 
     {% include "partials/footer.html" %}
 

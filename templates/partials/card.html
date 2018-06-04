@@ -3,6 +3,7 @@
 {% set cardData = { 
     type: '',
     typeIcon: '',
+    titleSize:'',
     title: "",
     copy: "",
     tags: '',
@@ -24,11 +25,11 @@
     <div class="panel-body hard-bottom">
         
         {% if cardData.title %}
-            <h3>
+            <h2 class="{{ cardData.titleSize }}">
                 {% if cardData.linkUrl %}<a href="{{ cardData.linkUrl }}">{% endif %}
                     {{ cardData.title }}
                 {% if cardData.linkUrl %}</a>{% endif %}
-            </h3>
+            </h2>
         {% endif %}
 
         <p><small>
