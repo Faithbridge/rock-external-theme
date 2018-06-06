@@ -2,11 +2,11 @@
 
 {% block globalContent %}
 
-{% if pageColor %}
-	<div class="page-brand-bar" style="background-color: #{{ pageColor }}"></div>
+{% if pageBackgroundColor %}
+	<div class="page-brand-bar" style="background-color: #{{ pageBackgroundColor }}; opacity: .9;"></div>
 {% endif %}
 
-<div class="soft hard-bottom">
+<div class="soft xs-soft-half hard-bottom">
     {% block content %}
     {% endblock %}
 </div>

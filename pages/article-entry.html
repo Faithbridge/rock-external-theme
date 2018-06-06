@@ -53,8 +53,9 @@
 
     <p><em>Not sure what your spiritual gifts are? Take <a href="http://www.newspring.cc/gifts" target="_blank">this test</a> then ask a godly friend or mentor whether the result line up with what they see in you.</em></p>
 
-    <hr class="invisible">
+{% endblock %}
 
+{% block related %}
     <div class="container-fluid hard">
         <div class="row">
             <div class="col-sm-12 col-md-12">
@@ -70,7 +71,7 @@
                     tags: '',
                     imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring.blog.hero.forkinwoods_3310_1655_90_c1.jpg',
                     imageAlignment: 'left',
-                    linkUrl: '#',
+                    linkUrl: '/article-entry.html',
                     linkText: 'Read More'
                 } %}{% include "partials/card-side-by-side.html" %}
 
@@ -89,12 +90,11 @@
                     tags: '',
                     imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/2x1.faith.gospel.evangelism_2000_1000_90_c1.jpg',
                     imageAlignment: 'left',
-                    linkUrl: '#',
+                    linkUrl: '/article-entry.html',
                     linkText: 'Read More'
                 } %}{% include "partials/card-side-by-side.html" %}
 
             </div>
         </div>
     </div>
-
 {% endblock %}

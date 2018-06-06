@@ -80,10 +80,15 @@ $nav-width: 80px;
 }
 
 .page-brand-bar {
-	position: absolute;
-	height: $base-spacing-unit*4;
+	position: fixed;
+	z-index: -1;
+	height: $base-spacing-unit*2.5;
 	width: 100%;
 	transform: scale(7, 7) rotate(-4deg);
+
+	@media (min-width: $screen-sm-max) {
+		height: $base-spacing-unit*3;
+	}
 }
 
 // Fixed Aspect Ratios
@@ -287,11 +292,12 @@ body {
 }
 
 section, footer {
-	padding: $base-spacing-unit*2 0 $base-spacing-unit;
-	margin-bottom: $base-spacing-unit;
+	margin-bottom: $base-spacing-unit/2;
+	padding: $base-spacing-unit*2 $base-spacing-unit $base-spacing-unit;
 
 	@media (min-width: $screen-sm-min) {
-		padding: $base-spacing-unit*4 0 $base-spacing-unit*3;
+		margin-bottom: $base-spacing-unit;
+		padding: $base-spacing-unit*3 $base-spacing-unit $base-spacing-unit*2;
 	}
 }
 
@@ -346,14 +352,18 @@ hr {
 	&.invisible {
 		border-width: 0;
 	}
+
+	&.tiny {
+		max-width: 120px;
+	}
 }
 
 blockquote {
 	border-color: $brand-primary;
-	font-weight: 700;
+	font-weight: 500;
+	font-style: italic;
 	letter-spacing: -.2px;
 	padding: $base-spacing-unit;
-	background-color: $gray-lighter;
 
 	footer {
 		font-family: $font-family-serif;
@@ -369,7 +379,7 @@ blockquote {
 }
 
 mark, .mark {
-	background-color: #fff900;
+	background-color: #ffffa6;
 }
 
 .nav {
@@ -396,8 +406,29 @@ mark, .mark {
 	}
 
 	@media (min-width: $screen-sm-min) {
-    	padding: $base-spacing-unit*8 0 $base-spacing-unit;
+    	padding: $base-spacing-unit*5 0 0;
   	}
+}
+
+// Dropdowns
+.dropdown-menu {
+	font-family: $font-family-sans-serif;
+
+	& > li {
+		& > a {
+			font-weight: 500;
+			text-decoration: none;
+			padding-top: $base-spacing-unit/3;
+			padding-bottom: $base-spacing-unit/3;
+			border-bottom: 1px solid rgba(0,0,0,.1);
+		}
+
+		&:last-child {
+			& > a {
+				border-bottom: none;
+			}
+		}
+	}
 }
 
 // Breadcrumbs
@@ -462,10 +493,6 @@ mark, .mark {
 	text-decoration: none;
 }
 
-.dropdown-menu a {
-	font-size: 14px;
-}
-
 // Buttons
 .btn {
 	font-family: $font-family-sans-serif;
@@ -490,23 +517,23 @@ mark, .mark {
 .btn-play {
 	position: absolute !important;
 	top: auto;
-	bottom: -$base-spacing-unit*1.8;
+	bottom: -$base-spacing-unit*1.25;
 	left: 50%;
-	margin-left: -$base-spacing-unit*1.8;
-	height: $base-spacing-unit*3.6;
-	width: $base-spacing-unit*3.6;
-	line-height: $base-spacing-unit*3.3;
+	margin-left: -$base-spacing-unit*1.25;
+	height: $base-spacing-unit*2.5;
+	width: $base-spacing-unit*2.5;
+	line-height: $base-spacing-unit*2.35;
 	border-radius: 1000px;
 	background-color: $brand-primary;
 	border: 4px solid $white;
 	transition: background-color .1s;
 
 	@media (min-width: $screen-sm-min) {
-		width: $base-spacing-unit*4;
-		height: $base-spacing-unit*4;
-		line-height: $base-spacing-unit*3.7;
-		margin-left: -$base-spacing-unit*2;
-		bottom: -$base-spacing-unit*2;
+		width: $base-spacing-unit*2.5;
+		height: $base-spacing-unit*2.5;
+		line-height: $base-spacing-unit*2.4;
+		margin-left: -$base-spacing-unit*1.25;
+		bottom: -$base-spacing-unit*1.75;
 	}
 
 	.wistia_embed {
@@ -544,11 +571,16 @@ mark, .mark {
 .panel {
 	border: 0;
 	overflow: hidden;
-	box-shadow: 0 1px 3px rgba($gray-darker, .15), 0 2px 0px rgba($gray-darker, .05);
+	box-shadow: 0 1px 3px rgba($gray-darker, .25), 0 3px 0px rgba($gray-darker, .1);
+	margin-bottom: $base-spacing-unit/2;
+
+	@media (min-width: $screen-sm-min) {
+		margin-bottom: $base-spacing-unit;
+	}
 }
 
 .panel-body {
-	padding: 20px;
+	padding: $base-spacing-unit;
 }
 
 .panel-image {
@@ -590,16 +622,16 @@ mark, .mark {
 .strong { font-weight: 500; }
 .serif { font-family: $font-family-serif; }
 .sans-serif { font-family: $font-family-sans-serif; }
-.text-constrained { max-width: 800px; }
+.text-constrained { max-width: 700px; }
 
 .page-constrained { 
 	max-width: 1400px; 
 }
 
 .no-border { border: none; }
-.rounded { border-radius: 8px; }
+.rounded { border-radius: 5px; }
 .circular { border-radius: 1000px; }
-.shadowed { box-shadow: 0 1px 3px rgba($gray-darker, .15), 0 2px 0px rgba($gray-darker, .05); }
+.shadowed { box-shadow: 0 1px 3px rgba($gray-darker, .25), 0 3px 0px rgba($gray-darker, .1); }
 .grayscale { filter: grayscale(1); }
 
 // Positioning
@@ -829,15 +861,31 @@ mark, .mark {
 
 	// Font Size Adjustments
 	body {
-		font-size: 2.1em;
+		font-size: ceil(($font-size-base * 1.15));
 	}
 
-	h1, .h1 { font-size: floor(($font-size-base * 2)); }
-	h2, .h2 { font-size: floor(($font-size-base * 1.7)); }
-	h3, .h3 { font-size: ceil(($font-size-base * 1.45)); }
-	h4, .h4 { font-size: ceil(($font-size-base * 1.25)); }
-	h5, .h5 { font-size: ceil(($font-size-base * 1.1)); }
+	.lead {
+		font-size: 1.2em;
+	}
+
+	h1, .h1 { font-size: floor(($font-size-base * 2.2)); }
+	h2, .h2 { font-size: floor(($font-size-base * 2.2)); }
+	h3, .h3 { font-size: ceil(($font-size-base * 1.65)); }
+	h4, .h4 { font-size: ceil(($font-size-base * 1.45)); }
+	h5, .h5 { font-size: ceil(($font-size-base * 1.3)); }
 	h6, .h6 { font-size: $font-size-base; }
+
+
+	// Navigation
+	.xs-nav-stacked {
+	  > li {
+	    float: none;
+	    + li {
+	      margin-top: 2px;
+	      margin-left: 0; // no need for this gap between nav items
+	    }
+	  }
+	}
 
 	// Positioning
 

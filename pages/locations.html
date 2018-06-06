@@ -4,21 +4,21 @@
     
     {% set heroData = { 
         title: 'Find a Location',
-        copy: "<p>NewSpring is one church with 14 campuses across South Carolina. Find the location closest to you and plan a visit.</p><form class='form-inline'><div class='form-group'><input type='text' class='form-control form-control-static sans-serif strong push-half-bottom text-center no-border' placeholder='Enter Your Address'> <button type='submit' class='form-control form-control-static btn btn-primary push-half-bottom'>Find a Location</button></div></form><p>or view the <a href='#' class='text-white'>locations directory.</a></p>",
+        copy: "<p>NewSpring is one church with 14 campuses across South Carolina. Find the location closest to you and plan a visit.</p><form class='form-inline'><div class='form-group'><input type='text' class='form-control form-control-static sans-serif strong push-half-bottom text-center no-border' placeholder='Address, City, or ZIP'> <button type='submit' class='form-control form-control-static btn btn-primary push-half-bottom'>Find a Location</button></div></form><p>or view the <a href='#' class='text-white'>locations directory.</a></p>",
         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/fpo.Parking_1700_850_90_c1.jpg',
         backgroundVideoUrl: '//s3.amazonaws.com/ns.video/newspring/promotions/locations/locations.bgvideo',
-        backgroundOpacity: '.2',
+        backgroundOpacity: '.5',
         textColorClass: 'text-white',
-        backgroundColorClass: 'bg-secondary',
+        backgroundColorClass: 'bg-black',
         linkUrl: '',
         linkText: '',
         linkClasses: ''
     } %}{% include "partials/hero.html" %}
     
-    <section id="slider">
+    <section id="slider" class="soft-double-top soft-bottom hard-sides">
 
         <div class="text-center">
-            <h2>Find a Campus Near You</h2>
+            <h2 class="xs-soft-sides">Find a Campus Near You</h2>
             <p class="lead text-primary"><i>Swipe to discover more.</i></p>
         </div>
 
@@ -26,9 +26,9 @@
 
     </section>
 
-    <section class="bg-tertiary rounded">
-        <div class="soft center-block text-constrained">
-            <div class="text-center text-white">
+    <section class="bg-tertiary rounded shadowed">
+        <div class="center-block text-constrained">
+            <div class="text-white text-center">
                 <h2>Plan a Visit</h2>
                 <p>If it's your first time at NewSpring, <b>you are our honored guest.</b> We do church a little differently than other places, so here are a few frequently asked questions to help you plan your trip.</p>
                 <br>

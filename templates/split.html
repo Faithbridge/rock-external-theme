@@ -12,10 +12,14 @@
 		</div>
 	</div>
 	
-	<div class="split-content bg-gray-lighter">
-		<div class="text-constrained center-block soft-top soft-double-sides xs-hard">
-			<div class="soft-half hard-bottom">
+	<div class="split-content">
+		<div class="text-constrained bg-white">
+			<div class="soft-double xs-soft">
 			    {% block content %}
+				{% endblock %}
+			</div>
+			<div class="soft xs-soft-half hard-bottom bg-gray-lighter">
+				{% block related %}
 				{% endblock %}
 			</div>
 		</div>

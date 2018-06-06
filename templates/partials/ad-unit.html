@@ -13,13 +13,13 @@
 
 #}
 
-<section class="relative rounded {{ adUnitData.backgroundColorClass }}">
+<section class="relative rounded {{ adUnitData.backgroundColorClass }} xs-push-half-bottom">
 	
 	{% if adUnitData.imageUrl %}
     	<span class="full-screen background-cover background-center" style="background-image: url('{{ adUnitData.imageUrl }}'); {% if adUnitData.imageOpacity %}opacity: {{ adUnitData.imageOpacity }};{% endif %}"></span>
     {% endif %}
 
-    <div class="bring-forward center-block text-constrained text-center soft-double xs-soft">
+    <div class="bring-forward center-block text-constrained text-center soft-double xs-soft-top xs-soft-half-sides xs-soft-bottom">
 		
 		{% if adUnitData.textColorClass %}<span class="{{ adUnitData.textColorClass }}">{% endif %}
 			{% if adUnitData.title %}

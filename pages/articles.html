@@ -2,9 +2,9 @@
 
 {% block content %}
 
-    <section class="soft xs-hard">
-        <div class="container-fluid hard-sides push-top">
-            <h3>Articles</h3>
+    <section class="soft-half xs-hard">
+        <div class="container-fluid hard-sides">
+            <h3 class="push-half-top">Articles</h3>
 
             <hr class="push-half-ends">
             
@@ -17,7 +17,7 @@
                     {% set cardData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
-                        titleSize:'h3',
+                        titleSize:'h4',
                         title: 'What is stopping you from sharing your faith?', 
                         copy: "<p>Recently, my husband was discussing why he believes the Bible with his sister. She is not a Christian and asked many hard questions.</p>", 
                         tags: {
@@ -35,7 +35,7 @@
                     {% set cardData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
-                        titleSize:'h3',
+                        titleSize:'h4',
                         title: 'Three things you need to know about speaking in tongues', 
                         copy: "<p>The spiritual gift of speaking in tongues is largely-debated among believers. Some wonder whether speaking in tongues is an archaic gift — one that existed when Jesus walked the earth and died out shortly thereafter.</p>", 
                         tags: {
@@ -85,7 +85,7 @@
                         copy: "<p>Recently, my husband was discussing why he believes the Bible with his sister. She is not a Christian and asked many hard questions.</p>", 
                         tags: {
                           '123': 'college',
-                          '512': "God's will"
+                          '512': "spiritual disciplines"
                         },
                         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/newspring.blog.hero.mailboxes.png',
                         linkUrl: '/article-entry.html',
@@ -134,6 +134,20 @@
                         linkText: ''
                     } %}{% include "partials/card.html" %}
 
+                </div><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+
+                    {% set cardData = { 
+                        type: 'Articles',
+                        typeIcon: 'fas fa-fw fa-file-alt',
+                        titleSize: 'h4',
+                        title: 'What are spiritual gifts?', 
+                        copy: "<p>What do you have to offer? I love the story of the little boy who shared his five loaves and two fish with Jesus. John 6 tells us Jesus took the boy’s meal and fed thousands of people with it.</p>", 
+                        tags: '',
+                        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring.blog.hero.sun.field_2000_1000_90_c1.jpg',
+                        linkUrl: '/article-entry.html',
+                        linkText: ''
+                    } %}{% include "partials/card.html" %}
+
                 </div>
             </div>
 
@@ -152,17 +166,6 @@
         linkUrl: '#',
         linkText: 'Subscribe Now'
     } %}{% include "partials/ad-unit.html" %}
-<!-- 
-    {% set adUnitData = { 
-        title: "What Can We Help You Find?", 
-        copy: "<p>Are you looking for <a href='#' class='label label-secondary'>Need to Know</a>, <a href='#' class='label label-secondary'>Rally</a>, <a href='#' class='label label-secondary'>Fuse</a>, or <a href='#' class='label label-secondary'>KidSpring</a>?</p>",
-        textColorClass: '',
-        backgroundColorClass: '',
-        imageUrl: '',
-        imageOpacity: '',
-        linkUrl: '#',
-        linkText: 'Search More'
-    } %}{% include "partials/ad-unit.html" %} -->
 
     {% include "partials/footer.html" %}
 

@@ -3,11 +3,12 @@
 {% set heroData = { 
     title: "",
     copy: "",
+    grayscale: '',
     imageUrl: '',
     backgroundVideoUrl: '',
     backgroundOpacity: '',
     textColorClass: '',
-    backgroundColorClass: '',
+    backgroundColorHex:'',
     linkUrl: '',
     linkText: '',
     linkClasses: '',
@@ -17,12 +18,31 @@
 #}
 
 <!-- Hero -->
-<section class="jumbotron relative rounded shadowed text-white {% if heroData.backgroundColorClass %}{{ heroData.backgroundColorClass }}{% else %}bg-gray-dark{% endif %} {% if heroData.backgroundVideoUrl or heroData.imageUrl %}{% else %}soft-double-top soft-bottom{% endif %} push-bottom">
+<section class="
+bg-secondary
+relative 
+rounded 
+shadowed 
+text-white 
+push-bottom
+xs-push-half-bottom
+
+{% if heroData.backgroundVideoUrl or heroData.imageUrl %}
+{% else %}
+    soft-double-top soft-bottom
+{% endif %} 
+
+" style="
+{% if heroData.backgroundColorHex %}
+    background-color: #{{ heroData.backgroundColorHex }};
+{% elif pageBackgroundColor %}
+    background-color: #{{ pageBackgroundColor }};
+{% endif %}">
 
 	{% if heroData.backgroundVideoUrl %}
 
         <!-- Background Video -->
-		<video class="video rounded grayscale hidden-xs hidden-sm" style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: {{ heroData.backgroundOpacity }};" width="1280" height="720" loop="" autoplay="">
+		<video class="video rounded hidden-xs hidden-sm {% if heroData.grayscale == 'y' %}grayscale{% endif %}" style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: {{ heroData.backgroundOpacity }};" width="1280" height="720" loop="" autoplay="">
 			<source src="{{ heroData.backgroundVideoUrl }}.mp4" type="video/mp4">
 			<source src="{{ heroData.backgroundVideoUrl }}.webm" type="video/webm">
 		</video>
@@ -31,13 +51,13 @@
 	
 	<!-- Background Image -->
 	{% if heroData.imageUrl %}
-    	<span class="full-screen background-cover background-center rounded grayscale {% if heroData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %}" style="background-image: url('{{ heroData.imageUrl }}'); {% if heroData.backgroundOpacity %}opacity: {{ heroData.backgroundOpacity }};{% endif %}"></span>
+    	<span class="full-screen background-cover background-center rounded {% if heroData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if heroData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ heroData.imageUrl }}'); {% if heroData.backgroundOpacity %}opacity: {{ heroData.backgroundOpacity }};{% endif %}"></span>
     {% endif %}
 
-    <div class="bring-forward center-block text-constrained text-center soft-double {% if heroData.imageOverlayUrl %}hard-top{% endif %} xs-soft">
+    <div class="bring-forward center-block text-constrained text-center soft-ends">
 
         {% if heroData.imageOverlayUrl %}
-            <img src="{{ heroData.imageOverlayUrl }}" alt="" class="push-double-bottom" style="max-width: 400px;">
+            <img src="{{ heroData.imageOverlayUrl }}" alt="" class="push-bottom" style="width: 80%; max-width: 300px;">
         {% endif %}
 
 		<span class="{% if heroData.textColorClass %}{{ heroData.textColorClass }}{% else %}text-white{% endif %}">

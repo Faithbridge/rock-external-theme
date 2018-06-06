@@ -36,6 +36,21 @@
 	</head>
 	<body>
 
+        <style>
+
+            {% if pageForegroundColor %}
+                .bg-page-foreground { background-color: #{{ pageForegroundColor }}; }
+                .text-page-foreground { color: #{{ pageForegroundColor }}; }
+                .btn-play, .btn-play:hover { background-color: #{{ pageForegroundColor }}; }
+            {% endif %}
+
+            {% if pageBackgroundColor %}
+                .bg-page-background { background-color: #{{ pageBackgroundColor }}; }
+                .text-page-background { color: #{{ pageBackgroundColor }}; }
+            {% endif %}
+
+        </style>
+
         <div class="sidebar">
             {% include "partials/navigation.html" %}
         </div>
@@ -46,8 +61,10 @@
 
         {% include "partials/navigation-modal.html" %}
 
+        {% include "partials/search-modal.html" %}
+
         <script>
-            // $('#navigation-modal').modal('show');
+            // $('#search-modal').modal('show');
         </script>
 	</body>
 </html>
