@@ -1,28 +1,45 @@
 <div id="navigation-modal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header soft">
-        <i class="fa fa-times close" data-dismiss="modal" aria-hidden="true"></i>
-        <h1 class="modal-title">Hi Brian!</h1>
-      </div>
       <div class="modal-body soft hard-bottom">
+        <i class="fa fa-times close" data-dismiss="modal" aria-hidden="true"></i>
+        <h1 class="h2">
+          {% if signedIn %}
+            Hello{% if userFirstName %} {{ userFirstName }}{% endif %}.
+          {% else %}
+            Hello!
+          {% endif %}
+        </h1>
+
         <p>Where would you like to go?</p>
+        <ul class="list-style-none hard xs-flush">
+          <li>
+            <span class="label label-sm label-default sans-serif">{{ userCampus }}</span><br>
+            <h3 class="text-primary push-half-bottom push-half-top"><a href="/news.html">News</a></h3>
+            <h3 class="text-primary push-half-bottom"><a href="/events.html">Events</a></h3>
+          </li>
+        </ul>
+        
+        <hr class="push-ends">
+
         <ul class="list-style-none hard xs-flush">
           <li><h3 class="text-primary push-half-bottom"><a href="/sermons.html">Sermons</a></h3></li>
           <li><h3 class="text-primary push-half-bottom"><a href="/articles.html">Articles</a></h3></li>
           <li><h3 class="text-primary push-half-bottom"><a href="/locations.html">Locations</a></h3></li>
-          <li><h3 class="text-primary push-half-bottom"><a href="/giving.html">Give Now</a></h3></li>
+          <li><h3 class="text-primary push-half-bottom"><a href="/giving.html">Giving</a></h3></li>
           <li><h3 class="text-primary push-half-bottom"><a href="/my-account.html">My Account</a></h3></li>
+          <li><h3 class="text-primary push-half-bottom"><a href="/help.html">Get Help</a></h3></li>
+          <li><h3 class="text-primary push-half-bottom"><a href="/workflows.html">Workflows</a></h3></li>
         </ul>
 
-        <hr class="xs-push-ends">
+        <hr class="push-ends">
         
         <p>Looking for something specific?</p>
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-            <h5 class="text-uppercase push-half-bottom" style="font-weight: 900;">Next Steps</h5>
+            <h5 class="push-half-bottom">Next Steps</h5>
             <ul class="sans-serif strong text-decoration-none list-style-none hard">
-                <li><a href="/bible.html">Read Your Bible</a></li>
+                <li><a href="/bible.html">Bible Reading</a></li>
                 <li><a href="/connect.html">Connect</a></li>
                 <li><a href="/groups.html">Groups</a></li>
                 <li><a href="/care.html">Care</a></li>
@@ -31,10 +48,10 @@
                 <li><a href="/baptism.html">Baptism</a></li>
                 <li><a href="/missions.html">Missions</a></li>
                 <li><a href="/finances.html">Finances</a></li>
-                <li><a href="/discover-year.html">Discovery Year</a></li>
+                <li><a href="/discover-year.html">Discover Year</a></li>
             </ul>
           </div><div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-            <h5 class="text-uppercase push-half-bottom" style="font-weight: 900;">Watch &amp; Read</h5>
+            <h5 class="push-half-bottom">Watch &amp; Read</h5>
             <ul class="sans-serif strong text-decoration-none list-style-none hard">
                 <li><a href="/articles.html">Articles</a></li>
                 <li><a href="/sermons.html">Sermons</a></li>
@@ -43,19 +60,19 @@
                 <li><a href="/stories.html">Stories</a></li>
             </ul>
           </div><div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-            <h5 class="text-uppercase push-half-bottom" style="font-weight: 900;">Ministries</h5>
+            <h5 class="push-half-bottom">Ministries</h5>
             <ul class="sans-serif strong text-decoration-none list-style-none hard">
                 <li><a href="/kidspring.html">Kids</a></li>
                 <li><a href="/fuse.html">Students</a></li>
                 <li><a href="/rally.html">Young Adults</a></li>
-                <li><a href="/discover-year.html">Discovery Year</a></li>
+                <li><a href="/discover-year.html">Discover Year</a></li>
                 <li><a href="/worship.html">Worship</a></li>
                 <li><a href="/missions.html">Missions</a></li>
                 <li><a href="/network.html">NewSpring Network</a></li>
                 <li><a href="/store.html">Store</a></li>
             </ul>
           </div><div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-            <h5 class="text-uppercase push-half-bottom" style="font-weight: 900;">Giving</h5>
+            <h5 class="push-half-bottom">Giving</h5>
             <ul class="sans-serif strong text-decoration-none list-style-none hard">
                 <li><a href="/give.html">Why We Give</a></li>
                 <li><a href="https://my.newspring.cc/give/now.html">Give Now</a></li>

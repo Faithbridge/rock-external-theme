@@ -1,24 +1,29 @@
+{% set pageTitle = "Locations" %}
+{% set pageBackgroundColor = "6bac43" %}
+{% set pageForegroundColor = "6bac43" %}
+
 {% extends "full-width.html" %}
 
 {% block content %}
     
-    {% set heroData = { 
+    {% set blockData = { 
         title: 'Find a Location',
         copy: "<p>NewSpring is one church with 14 campuses across South Carolina. Find the location closest to you and plan a visit.</p><form class='form-inline'><div class='form-group'><input type='text' class='form-control form-control-static sans-serif strong push-half-bottom text-center no-border' placeholder='Address, City, or ZIP'> <button type='submit' class='form-control form-control-static btn btn-primary push-half-bottom'>Find a Location</button></div></form><p>or view the <a href='#' class='text-white'>locations directory.</a></p>",
+        grayscale: 'y',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/fpo.Parking_1700_850_90_c1.jpg',
         backgroundVideoUrl: '//s3.amazonaws.com/ns.video/newspring/promotions/locations/locations.bgvideo',
-        backgroundOpacity: '.5',
+        backgroundOpacity: '.15',
         textColorClass: 'text-white',
-        backgroundColorClass: 'bg-black',
+        backgroundColorHex:'2a4930',
         linkUrl: '',
         linkText: '',
         linkClasses: ''
     } %}{% include "partials/hero.html" %}
     
-    <section id="slider" class="soft-double-top soft-bottom hard-sides">
+    <section id="slider" class="bg-gray-dark rounded shadowed soft-bottom hard-sides">
 
         <div class="text-center">
-            <h2 class="xs-soft-sides">Find a Campus Near You</h2>
+            <h2 class="text-white xs-soft-sides">Find a Campus Near You</h2>
             <p class="lead text-primary"><i>Swipe to discover more.</i></p>
         </div>
 
@@ -26,7 +31,7 @@
 
     </section>
 
-    <section class="bg-tertiary rounded shadowed">
+    <section class="bg-tertiary rounded shadowed xs-soft-half-sides">
         <div class="center-block text-constrained">
             <div class="text-white text-center">
                 <h2>Plan a Visit</h2>
@@ -36,31 +41,31 @@
 
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "1",
                     title: "Where do I go when I get there?", 
                     copy: "<p>Our parking team will direct you to the closest available spot. Just follow the smiling faces in the bright orange vests. We reserve parking spots for our first time guests, so if you're new to NewSpring, be sure to turn your flashers on when you enter the parking lot.</p><p>As you're walking to the building, our greeting team will meet you and show you where to find the auditorium, restrooms, and children's ministry. If you need anything throughout the day—mints, ear plugs, a Bible, or a pen—feel free to stop by the Guest Services desk. Or, just ask anyone with a NewSpring lanyard or name tag. We’re a friendly bunch, and we’d love to serve you.</p>"
                 } %}{% include "partials/accordion-panel.html" %}
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "2",
                     title: "What do you do for kids?", 
                     copy: "<p>In KidSpring, children fifth grade and younger experience Jesus on their level. KidSpring is a safe, age-appropriate environment where kids have their own service with singing, a Bible lesson, and small group time. To see what our kids are learning, check out KidSpring’s <a href='https://www.youtube.com/channel/UCR3DeWGhdC_igCreHStybwA' target='_blank'>YouTube channel.</a></p><p>For nursing mothers, every campus also has a viewing room where moms and infants can watch the service together.</p>"
                 } %}{% include "partials/accordion-panel.html" %}
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "3",
                     title: "How long is the service?", 
                     copy: "<p>Gatherings last about one hour and 10 minutes. We start by singing three to four songs. Then the speaker preaches. If you want to see our preaching style, check out our <a href='/sermons'>current series.</a></p><p>If you’re visiting for the first time, you’ll want to give yourself a few extra minutes to stop by the VIP Room after the service. You are a very important person to us! We’d love to meet you, answer any questions you may have, and give you a gift.</p>"
                 } %}{% include "partials/accordion-panel.html" %}
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "4",
                     title: "What should I wear?", 
                     copy: "<p>Don't feel like you have to dress up. Most people wear casual attire, but you are welcome to wear whatever makes you comfortable.</p>"
                 } %}{% include "partials/accordion-panel.html" %}
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "5",
                     title: "Can I attend if I'm _____________?", 
                     copy: "<p>Fill in the blank with whatever fear you have about not being accepted: divorced, single parent, broke, recovering addict, gay, transgender, atheist, skeptic, etc. Everyone is welcome at NewSpring. So come as you are, and we’ll see you on Sunday!</p>"

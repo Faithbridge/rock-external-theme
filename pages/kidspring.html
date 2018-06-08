@@ -1,3 +1,4 @@
+{% set pageTitle = "KidSpring" %}
 {% set pageBackgroundColor = "198AD3" %}
 {% set pageForegroundColor = "6BAC43" %}
 
@@ -5,7 +6,7 @@
 
 {% block content %}
     
-    {% set navigationData = {
+    {% set blockData = {
         pages: {
           '/kidspring.html': 'About KidSpring',
           '/special-needs.html': 'Special Needs',
@@ -14,7 +15,7 @@
         }
     } %}{% include "partials/navigation-section.html" %}
 
-    {% set heroData = { 
+    {% set blockData = { 
         title: '',
         copy: "<p>KidSpring is the children’s ministry at <a href='/'>NewSpring</a>. Watch this short video to see why kids love KidSpring and how we make learning about Jesus fun!</p>",
         grayscale: 'y',
@@ -52,13 +53,13 @@
             <h2 class="text-center">Frequently Asked Questions</h2>
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "1",
                     title: "What should kids wear?", 
                     copy: "<p>Play clothes are always welcome! KidSpring is a fun, active environment. Your kids will be playing, singing, and dancing as they learn about Jesus in small groups and large groups.</p>"
                 } %}{% include "partials/accordion-panel.html" %}
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "2",
                     title: "Can I take a tour of KidSpring at my campus?", 
                     copy: "<p>We'd love to have your family visit KidSpring during the week! If you're interested in a weekday tour or have any additional questions, please <a href='#'>let us know</a>.</p>"

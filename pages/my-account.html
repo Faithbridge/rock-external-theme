@@ -1,8 +1,12 @@
+{% set pageTitle = "My Account" %}
+{% set pageBackgroundColor = "2a4930" %}
+{% set pageForegroundColor = "6bac43" %}
+
 {% extends "full-width.html" %}
 
 {% block content %}
     
-    {% set navigationData = {
+    {% set blockData = {
         pages: {
           '/my-account.html': 'My Account',
           '/my-groups.html': 'My Groups',
@@ -14,14 +18,36 @@
     <section class="bg-white rounded shadowed">
         
 		<span class="text-center">
-			<p><img src="https://rock.newspring.cc/GetImage.ashx?id=523137" alt="" class="img-circle" style="max-width: 140px;"></p>
-			<h1>Hello, Brian.</h1>
+			<p class="push-half-bottom"><img src="{{ userImage }}" alt="" class="img-circle" style="max-width: 140px;"></p>
+      <p class="push-half-bottom text-center"><span class="label label-sm label-primary sans-serif">{{ userCampus }}</span></p>
+			<h1>Hello, {{ userFirstName }}.</h1>
 		</span>
 
-        <hr>
+        <hr class="push-ends">
 
-        <h3>Ea cupidatat incididunt deserunt culpa</h3>
-        <p>Reprehenderit nostrud in cillum amet aliquip et do non consectetur qui duis pariatur est ut dolore reprehenderit quis cillum mollit voluptate ut eu consequat do aliqua consequat elit nulla nulla aute.</p>
+        <div class="row">
+          <div class="col-md-6">
+            <label for="" class="sans-serif text-uppercase text-gray-lighter">
+              <small>First Name</small>
+            </label>
+            <h2 class="h4">{{ userFirstName }}</h2>
+          </div><div class="col-md-6">
+            <label for="" class="sans-serif text-uppercase text-gray-lighter">
+              <small>Last Name</small>
+            </label>
+            <h2 class="h4">{{ userLastName }}</h2>
+          </div><div class="col-xs-12 col-md-6">
+            <label for="" class="sans-serif text-uppercase text-gray-lighter">
+              <small>Email</small>
+            </label>
+            <p>{{ userEmail }}</p>
+          </div><div class="col-xs-12 col-md-6">
+            <label for="" class="sans-serif text-uppercase text-gray-lighter">
+              <small>Phone</small>
+            </label>
+            <p>{{ userPhone }}</p>
+          </div>
+        </div>
 
     </section>
 

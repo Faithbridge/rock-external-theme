@@ -1,10 +1,10 @@
 {#
 
-{% set adUnitData = { 
+{% set blockData = { 
     title: "", 
     copy: "",
     textColorClass: '',
-    backgroundColorClass: '',
+    backgroundColorHex: '',
     imageUrl: '',
     imageOpacity: '',
     linkUrl: '',
@@ -13,27 +13,27 @@
 
 #}
 
-<section class="relative rounded {{ adUnitData.backgroundColorClass }} xs-push-half-bottom">
+<section class="relative rounded xs-soft-half-sides xs-push-half-bottom" style="{% if blockData.backgroundColorHex %}background-color: #{{ blockData.backgroundColorHex }};{% endif %}">
 	
-	{% if adUnitData.imageUrl %}
-    	<span class="full-screen background-cover background-center" style="background-image: url('{{ adUnitData.imageUrl }}'); {% if adUnitData.imageOpacity %}opacity: {{ adUnitData.imageOpacity }};{% endif %}"></span>
+	{% if blockData.imageUrl %}
+    	<span class="full-screen background-cover background-center" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
     {% endif %}
 
-    <div class="bring-forward center-block text-constrained text-center soft-double xs-soft-top xs-soft-half-sides xs-soft-bottom">
+    <div class="bring-forward center-block text-constrained text-center soft xs-soft-top xs-soft-half-sides xs-soft-bottom">
 		
-		{% if adUnitData.textColorClass %}<span class="{{ adUnitData.textColorClass }}">{% endif %}
-			{% if adUnitData.title %}
-	        	<h2>{{ adUnitData.title }}</h2>
+		{% if blockData.textColorClass %}<span class="{{ blockData.textColorClass }}">{% endif %}
+			{% if blockData.title %}
+	        	<h2>{{ blockData.title }}</h2>
 	        {% endif %}
 
-			{{ adUnitData.copy | safe }}
-		{% if adUnitData.textColorClass %}</span>{% endif %}
+			{{ blockData.copy | safe }}
+		{% if blockData.textColorClass %}</span>{% endif %}
 		
 
-		{% if adUnitData.linkUrl %}
+		{% if blockData.linkUrl %}
 	        <p>
-	        	<a href="{{ adUnitData.linkUrl }}" class="btn btn-primary">
-	        		{% if adUnitData.linkText %}{{ adUnitData.linkText }}{% else %}Learn More{% endif %}
+	        	<a href="{{ blockData.linkUrl }}" class="btn btn-primary">
+	        		{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}
 	        	</a>
 	        </p>
         {% endif %}

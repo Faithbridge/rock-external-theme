@@ -1,6 +1,6 @@
 {#
 
-{% set heroData = { 
+{% set blockData = { 
     title: "",
     copy: "",
     grayscale: '',
@@ -8,6 +8,7 @@
     backgroundVideoUrl: '',
     backgroundOpacity: '',
     textColorClass: '',
+    foregroundColorHex:'',
     backgroundColorHex:'',
     linkUrl: '',
     linkText: '',
@@ -17,9 +18,48 @@
 
 #}
 
+<style>
+    {% if blockData.foregroundColorHex %}
+        .hero a,
+        .hero a:hover {
+            color: #{{ blockData.foregroundColorHex }};
+        }
+
+        .hero .btn, 
+        .hero .btn:hover, 
+        .hero .btn:focus {
+            background-color: #{{ blockData.foregroundColorHex }};
+        }
+
+        .hero .btn:not(.btn-play), 
+        .hero .btn:not(.btn-play):hover, 
+        .hero .btn:not(.btn-play):focus {
+            border-color: #{{ blockData.foregroundColorHex }};
+        }
+    {% elif pageForegroundColor %}
+        .hero a:not(.btn),
+        .hero a:not(.btn):hover {
+            color: #{{ pageForegroundColor }};
+        }
+
+        .hero .btn, 
+        .hero .btn:hover, 
+        .hero .btn:focus {
+            background-color: #{{ pageForegroundColor }};
+        }
+
+        .hero .btn:not(.btn-play), 
+        .hero .btn:not(.btn-play):hover, 
+        .hero .btn:not(.btn-play):focus {
+            border-color: #{{ pageForegroundColor }};
+        }
+    {% endif %}
+</style>
+
 <!-- Hero -->
 <section class="
-bg-secondary
+hero
+bg-gray-dark
 relative 
 rounded 
 shadowed 
@@ -27,68 +67,64 @@ text-white
 push-bottom
 xs-push-half-bottom
 
-{% if heroData.backgroundVideoUrl or heroData.imageUrl %}
+{% if blockData.backgroundVideoUrl or blockData.imageUrl %}
 {% else %}
     soft-double-top soft-bottom
 {% endif %} 
 
 " style="
-{% if heroData.backgroundColorHex %}
-    background-color: #{{ heroData.backgroundColorHex }};
+{% if blockData.backgroundColorHex %}
+    background-color: #{{ blockData.backgroundColorHex }};
 {% elif pageBackgroundColor %}
     background-color: #{{ pageBackgroundColor }};
-{% endif %}">
+{% endif %} z-index: 1;">
 
-	{% if heroData.backgroundVideoUrl %}
+	{% if blockData.backgroundVideoUrl %}
 
         <!-- Background Video -->
-		<video class="video rounded hidden-xs hidden-sm {% if heroData.grayscale == 'y' %}grayscale{% endif %}" style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: {{ heroData.backgroundOpacity }};" width="1280" height="720" loop="" autoplay="">
-			<source src="{{ heroData.backgroundVideoUrl }}.mp4" type="video/mp4">
-			<source src="{{ heroData.backgroundVideoUrl }}.webm" type="video/webm">
+		<video class="video rounded hidden-xs hidden-sm {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: {{ blockData.backgroundOpacity }};" width="1280" height="720" loop="" autoplay="">
+			<source src="{{ blockData.backgroundVideoUrl }}.mp4" type="video/mp4">
+			<source src="{{ blockData.backgroundVideoUrl }}.webm" type="video/webm">
 		</video>
 
     {% endif %}
 	
 	<!-- Background Image -->
-	{% if heroData.imageUrl %}
-    	<span class="full-screen background-cover background-center rounded {% if heroData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if heroData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ heroData.imageUrl }}'); {% if heroData.backgroundOpacity %}opacity: {{ heroData.backgroundOpacity }};{% endif %}"></span>
+	{% if blockData.imageUrl %}
+    	<span class="full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.backgroundOpacity %}opacity: {{ blockData.backgroundOpacity }};{% endif %}"></span>
     {% endif %}
 
-    <div class="bring-forward center-block text-constrained text-center soft-ends">
+    <div class="bring-forward center-block text-constrained text-center soft-top">
 
-        {% if heroData.imageOverlayUrl %}
-            <img src="{{ heroData.imageOverlayUrl }}" alt="" class="push-bottom" style="width: 80%; max-width: 300px;">
+        {% if blockData.imageOverlayUrl %}
+            <img src="{{ blockData.imageOverlayUrl }}" alt="" class="push-bottom" style="width: 80%; max-width: 340px;">
         {% endif %}
 
-		<span class="{% if heroData.textColorClass %}{{ heroData.textColorClass }}{% else %}text-white{% endif %}">
+		<span class="{% if blockData.textColorClass %}{{ blockData.textColorClass }}{% else %}text-white{% endif %}">
 
-			{% if heroData.title %}
-        		<h1>{{ heroData.title }}</h1>
+			{% if blockData.title %}
+        		<h1>{{ blockData.title }}</h1>
         	{% endif %}
 
-        	{{ heroData.copy | safe }}
+        	{{ blockData.copy | safe }}
 
         </span>
 
 
-        {% if heroData.linkUrl %}
+        {% if blockData.linkUrl %}
 	        <p>
-	        	<a href="{{ heroData.linkUrl }}" class="{% if heroData.linkClasses %}{{ heroData.linkClasses }}{% else %}btn btn-primary{% endif %}">
-	        		{% if heroData.linkText %}{{ heroData.linkText }}{% else %}Learn More{% endif %}
+	        	<a href="{{ blockData.linkUrl }}" class="{% if blockData.linkClasses %}{{ blockData.linkClasses }}{% else %}btn btn-primary{% endif %}">
+	        		{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}
 	        	</a>
 	        </p>
         {% endif %}
 
     </div>
 
-    {% if heroData.videoId %}
-        <div class="btn btn-play text-white shadowed">
-            <span class="wistia_embed wistia_async_{{ heroData.videoId }} popover=true popoverContent=link" style="display:inline;position:relative">
-                <i class="fas fa-fw fa-lg fa-play"></i>
-            </span>
-        </div>
+    {% if blockData.videoId %}
+        <div class="btn btn-play text-white shadowed"><span class="wistia_embed wistia_async_{{ blockData.videoId }} popover=true popoverContent=link" style="display:inline;position:relative"><i class="fas fa-fw fa-lg fa-play"></i></span></div>
 
-        <script src="https://fast.wistia.com/embed/medias/{{ heroData.videoId }}.jsonp" async></script>
+        <script src="https://fast.wistia.com/embed/medias/{{ blockData.videoId }}.jsonp" async></script>
         <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
     {% endif %}
 

@@ -1,6 +1,6 @@
 {#
 
-{% set cardData = { 
+{% set blockData = { 
     id: '',
     brandHex: '',
     type: '',
@@ -17,57 +17,73 @@
 
 #}
 
-{% if cardData.id and cardData.brandHex %}
+{% if blockData.id and blockData.brandHex %}
     <style>
-        .text-brand-{{ cardData.id }}, .text-brand-{{ cardData.id }}:hover * {
-            color: #{{ cardData.brandHex }} !important;
+        .text-brand-{{ blockData.id }}, .text-brand-{{ blockData.id }}:hover * {
+            color: #{{ blockData.brandHex }} !important;
         }
 
-        .link-brand-{{ cardData.id }} a,
-        .link-brand-{{ cardData.id }} a:hover {
-            color: #{{ cardData.brandHex }} !important;
+        .link-brand-{{ blockData.id }} a,
+        .link-brand-{{ blockData.id }} a:hover {
+            color: #{{ blockData.brandHex }} !important;
         }
 
-        .bg-brand-{{ cardData.id }}, .bg-brand-{{ cardData.id }}:hover * {
-            background-color: #{{ cardData.brandHex }} !important;
-            border-color: #{{ cardData.brandHex }} !important;
+        .bg-brand-{{ blockData.id }}, .bg-brand-{{ blockData.id }}:hover * {
+            background-color: #{{ blockData.brandHex }} !important;
+            border-color: #{{ blockData.brandHex }} !important;
+        }
+    </style>
+{% elif blockData.id and pageForegroundColor %}
+    <style>
+        .text-brand-{{ blockData.id }}, .text-brand-{{ blockData.id }}:hover * {
+            color: #{{ pageForegroundColor }} !important;
+        }
+
+        .link-brand-{{ blockData.id }} a,
+        .link-brand-{{ blockData.id }} a:hover {
+            color: #{{ pageForegroundColor }} !important;
+        }
+
+        .bg-brand-{{ blockData.id }}, .bg-brand-{{ blockData.id }}:hover * {
+            background-color: #{{ pageForegroundColor }} !important;
+            border-color: #{{ pageForegroundColor }} !important;
         }
     </style>
 {% endif %}
 
 <!-- EVERYTHING goes in a row! -->
-<section class="relative overflow-hidden bg-white rounded shadowed soft-top hard-bottom sm-hard-top xs-hard-top xs-push-half-bottom"><!-- Section Color Classes -->
+<section class="hard relative overflow-hidden bg-white rounded shadowed"><!-- Section Color Classes -->
 
-    {% if cardData.imageUrl %}
-        {% if cardData.linkUrl %}<a href="{{ cardData.linkUrl }}">{% endif %}
+    {% if blockData.imageUrl %}
+        {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
 
-            <div class="split {% if cardData.imageAlignment == 'left' %}split-left{% else %}split-right{% endif %} background-center background-cover sm-push-bottom xs-push-bottom" style=" background-image: url('{{ cardData.imageUrl }}');"
+            <div class="split {% if blockData.imageAlignment == 'left' %}split-left{% else %}split-right{% endif %} background-center background-cover sm-push-bottom xs-push-bottom" style=" background-image: url('{{ blockData.imageUrl }}');"
         ></div>
 
-        {% if cardData.linkUrl %}</a>{% endif %}
+        {% if blockData.linkUrl %}</a>{% endif %}
     {% endif %}
     
 
-    <div class="row {% if cardData.imageAlignment == 'left' %}text-right{% else %}text-left{% endif %} flush"><!-- Section Padding and Alignement Classes -->
+    <div class="row {% if blockData.imageAlignment == 'left' %}text-right{% else %}text-left{% endif %} flush"><!-- Section Padding and Alignement Classes -->
         <div class="col-xs-12 col-sm-12 col-md-6 text-left hard"><!-- Text Alignment Classes -->
-            <div class="soft-sides xs-soft-sides">
+            <div class="soft-double-ends soft-double-sides soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
 
-                {% if cardData.title %}
-                    <h2 class="{{ cardData.titleSize }} {% if cardData.id and cardData.brandHex %}text-brand-{{ cardData.id  }}{% endif %}">
-                        {% if cardData.linkUrl %}<a href="{{ cardData.linkUrl }}">{% endif %}
-                            {{ cardData.title }}
-                        {% if cardData.linkUrl %}</a>{% endif %}
+                {% if blockData.title %}
+                    <h2 class="{{ blockData.titleSize }} {% if blockData.id and blockData.brandHex or pageForegroundColor %}text-brand-{{ blockData.id  }}{% endif %}">
+                        {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
+                            {{ blockData.title }}
+                        {% if blockData.linkUrl %}</a>{% endif %}
                     </h2>
                 {% endif %}
 
-                <span class="link-brand-{{ cardData.id }}">
-                    {{ cardData.copy | safe }}
+                <span class="link-brand-{{ blockData.id }}">
+                    {{ blockData.copy | safe }}
                 </span>
 
-                {% if cardData.linkUrl or cardData.type %}
+                {% if blockData.linkUrl or blockData.type %}
                     <p>
-                        <a href="{{ cardData.linkUrl }}" class="btn btn-primary {% if cardData.id and cardData.brandHex %}bg-brand-{{ cardData.id  }}{% endif %}" role="button">{% if cardData.linkText %}{{ cardData.linkText }}{% else %}Learn More{% endif %}</a> <span class="btn btn-size sans-serif strong pull-right">
-                        {% if cardData.typeIcon %}<i class="{{ cardData.typeIcon }}"></i> {% endif %}{{ cardData.type }}</span>
+                        <a href="{{ blockData.linkUrl }}" class="btn btn-primary {% if blockData.id and blockData.brandHex or pageForegroundColor %}bg-brand-{{ blockData.id  }}{% endif %}" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a> {% if blockData.type and blockData.typeIcon %}<span class="btn btn-size sans-serif strong pull-right">
+                        {% if blockData.typeIcon %}<i class="{{ blockData.typeIcon }}"></i> {% endif %}{{ blockData.type }}</span>{% endif %}
                     </p>
                 {% endif %}
 

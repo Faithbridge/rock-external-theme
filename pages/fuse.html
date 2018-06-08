@@ -1,11 +1,12 @@
-{% set pageBackgroundColor = "6c4480" %}
-{% set pageForegroundColor = "46b784" %}
+{% set pageTitle = "Fuse" %}
+{% set pageBackgroundColor = "453a84" %}
+{% set pageForegroundColor = "6bac43" %}
 
 {% extends "full-width.html" %}
 
 {% block content %}
     
-    {% set navigationData = {
+    {% set blockData = {
         pages: {
           '/kidspring.html': 'About Fuse',
           '/locations.html': 'Locations',
@@ -14,30 +15,60 @@
         }
     } %}{% include "partials/navigation-section.html" %}
 
-    {% set heroData = { 
+    {% set blockData = { 
         title: '',
         copy: "<p>Fuse exists to show students how to love God and live the life He has for them.</p>",
         grayscale: '',
         imageOverlayUrl: '//dg0ddngxdz549.cloudfront.net/fuse/icons/fuse.logo.white.png',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/fuse/about/fuse_groups_stock_web-26.jpg',
         backgroundVideoUrl: '//ns.video.s3.amazonaws.com/fuse/promotions/Fuse_Generic_hero_video_v3_copy',
-        backgroundOpacity: '.2',
+        backgroundOpacity: '.15',
         textColorClass: 'text-white',
         backgroundColorHex: '',
         linkUrl: '',
         linkText: '',
         linkClasses: '',
-        videoId: 'mr4jl09jbd'
+        videoId: '7oqie6rx26'
     } %}{% include "partials/hero.html" %}
 
     <section class="bg-white rounded shadowed">
         <div class="text-constrained center-block text-center">
 
             <h2>What is Fuse?</h2>
-            <p>Fuse is the student ministry of NewSpring Church. At Fuse, middle and high school students hear the Gospel and have a whole lot of fun. Fuse is a place where students connect with God, with other students, and with older committed leaders who want to help them follow Jesus.</p>
+            <p>Fuse is the student ministry of <a href="/index.html">NewSpring Church.</a> At Fuse, middle and high school students hear the Gospel and have a whole lot of fun. Fuse is a place where students connect with God, with other students, and with older committed leaders who want to help them follow Jesus.</p>
 
         </div>
     </section>
+
+    {% set blockData = { 
+        id: '1',
+        brandHex: '1AB262',
+        type: '',
+        typeIcon: '',
+        title: "See You at Gauntlet",
+        titleSize: 'h2',
+        copy: "<p>Here's how you can get involved!</p><p><b>Go.</b> If you're in middle or high school, sign up today and invite your friends.</p><p><b>Give.</b> Help students go to Gauntlet by giving to the Gauntlet Fund.</p><p><b>Serve.</b> Invest in the next generation and experience the miracles first hand.</p>",
+        tags: '',
+        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/remote/http_images.newspring.cc/section/worship/app1024x10240000.gauntlet18.png',
+        imageAlignment: 'left',
+        linkUrl: 'http://gauntlet.cc',
+        linkText: ''
+    } %}{% include "partials/card-side-by-side.html" %}
+
+    {% set blockData = { 
+        id: '2',
+        brandHex: '',
+        type: '',
+        typeIcon: '',
+        title: "Watch Past Sermons",
+        titleSize: 'h2',
+        copy: "<p>Miss a week of Fuse? You can catch up on what you missed on the <a href='#'>sermons page.</a></p>",
+        tags: '',
+        imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/fpo/fpo.MusicWide.jpg',
+        imageAlignment: 'right',
+        linkUrl: 'http://gauntlet.cc',
+        linkText: 'Browse Sermons'
+    } %}{% include "partials/card-side-by-side.html" %}
 
     <section class="bg-page-background rounded shadowed">
         <div class="center-block text-constrained">
@@ -47,37 +78,37 @@
 
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-                {% set accordionPanelData = {
+                {% set blockData = {
                     index: "1",
                     title: "Who can attend Fuse?", 
                     copy: "<p>Fuse is for students in sixth to 12th grade.</p>"
                 } %}{% include "partials/accordion-panel.html" %}
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "2",
                     title: "When does Fuse meet?", 
                     copy: "<p>Fuse meets every Wednesday night at campuses across South Carolina. Find a <a href='http://newspringfuse.com/locations'>gathering time</a> and location near you.</p>"
                 } %}{% include "partials/accordion-panel.html" %}
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "3",
                     title: "Do Fuse volunteers have a background check?", 
                     copy: "<p>All Fuse volunteers must have an approved background check before serving at Fuse.</p>"
                 } %}{% include "partials/accordion-panel.html" %}
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "4",
                     title: "What can my child expect to do at Fuse?", 
                     copy: "<p>Doors open half hour to an hour before the service starts. This gives students an opportunity to connect with friends and Fuse leaders, usually over a snack or a game. Then, we all head into service. Every service includes singing and a sermon — think Sunday but louder and with more energy.</p>"
                 } %}{% include "partials/accordion-panel.html" %}
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "5",
                     title: "Do you have to be a Christian to attend?", 
                     copy: "<p>Fuse welcomes everyone. We unashamedly preach and teach the Gospel, but we try hard to create an environment where everyone can belong at Fuse.</p>"
                 } %}{% include "partials/accordion-panel.html" %}
 
-                {% set accordionPanelData = { 
+                {% set blockData = { 
                     index: "6",
                     title: "Who is teaching my child?", 
                     copy: "<p>Fuse messages come from a team of skilled communicators. Each week, your child will clearly hear what it means to follow Jesus. Watch some of our past messages <a href='#'>here.</a></p>"

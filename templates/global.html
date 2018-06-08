@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Home | NewSpring Church</title>
+    <title>{% if pageTitle %}{{ pageTitle }} {% else %}Home {% endif %}| NewSpring Church</title>
     
     <!-- Typekit -->
     <script>
@@ -35,6 +35,13 @@
 
 	</head>
 	<body>
+        {% set signedIn = "y" %}
+        {% set userCampus = "Clemson" %}
+        {% set userImage = "https://rock.newspring.cc/GetImage.ashx?id=523137" %}
+        {% set userFirstName = "Brian" %}
+        {% set userLastName = "Kalwat" %}
+        {% set userEmail = "test@testuser.com" %}
+        {% set userPhone = "(555) 555-5555" %}
 
         <style>
 

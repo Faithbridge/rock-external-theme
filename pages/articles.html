@@ -1,3 +1,7 @@
+{% set pageTitle = "Articles" %}
+{% set pageBackgroundColor = "6bac43" %}
+{% set pageForegroundColor = "" %}
+
 {% extends "full-width.html" %}
 
 {% block content %}
@@ -14,7 +18,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 
-                    {% set cardData = { 
+                    {% set blockData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
                         titleSize:'h4',
@@ -32,7 +36,7 @@
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 
-                    {% set cardData = { 
+                    {% set blockData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
                         titleSize:'h4',
@@ -49,7 +53,7 @@
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     
-                    {% set cardData = { 
+                    {% set blockData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
                         titleSize: 'h4',
@@ -63,7 +67,7 @@
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 
-                    {% set cardData = { 
+                    {% set blockData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
                         titleSize: 'h4',
@@ -77,7 +81,7 @@
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 
-                    {% set cardData = { 
+                    {% set blockData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
                         titleSize: 'h4',
@@ -94,7 +98,7 @@
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 
-                    {% set cardData = { 
+                    {% set blockData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
                         titleSize: 'h4',
@@ -108,7 +112,7 @@
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 
-                    {% set cardData = { 
+                    {% set blockData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
                         titleSize: 'h4',
@@ -122,7 +126,7 @@
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 
-                    {% set cardData = { 
+                    {% set blockData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
                         titleSize: 'h4',
@@ -136,7 +140,7 @@
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 
-                    {% set cardData = { 
+                    {% set blockData = { 
                         type: 'Articles',
                         typeIcon: 'fas fa-fw fa-file-alt',
                         titleSize: 'h4',
@@ -156,11 +160,11 @@
         </div>
     </section>
 
-    {% set adUnitData = { 
+    {% set blockData = { 
         title: "Get Notifications", 
         copy: "<p>Subscribe to the articles feed to be notified of new posts.</p>",
         textColorClass: 'text-white',
-        backgroundColorClass: 'bg-secondary',
+        backgroundColorHex: '2a4930',
         imageUrl: '',
         imageOpacity: '',
         linkUrl: '#',

@@ -1,13 +1,16 @@
 {#
 
-{% set cardData = { 
+{% set blockData = { 
+    count: '',
     type: '',
     typeIcon: '',
-    titleSize:'',
-    title: "",
-    copy: "",
+    titleSize: '',
+    title: '', 
+    copy: "", 
     tags: '',
     imageUrl: '',
+    foregroundColorHex:'',
+    backgroundColorHex:'',
     linkUrl: '',
     linkText: ''
 } %}{% include "partials/card.html" %}
@@ -16,40 +19,43 @@
 
 <div class="panel panel-default">
 
-    {% if cardData.imageUrl %}
-        {% if cardData.linkUrl %}<a href="{{ cardData.linkUrl }}" class="panel-image">{% endif %}
-            <img src="{{ cardData.imageUrl }}" alt="">
-        {% if cardData.linkUrl %}</a>{% endif %}
+    {% if blockData.imageUrl %}
+        {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}" class="panel-image">{% endif %}
+            {% if blockData.count %}
+                <span class="card-count sans-serif strong rounded bg-gray-dark text-white text-center">{{ blockData.count }}</span>
+            {% endif %}
+            <img src="{{ blockData.imageUrl }}" alt="">
+        {% if blockData.linkUrl %}</a>{% endif %}
     {% endif %}
 
     <div class="panel-body hard-bottom">
         
-        {% if cardData.title %}
-            <h2 class="{{ cardData.titleSize }}">
-                {% if cardData.linkUrl %}<a href="{{ cardData.linkUrl }}">{% endif %}
-                    {{ cardData.title }}
-                {% if cardData.linkUrl %}</a>{% endif %}
+        {% if blockData.title %}
+            <h2 class="{{ blockData.titleSize }}">
+                {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
+                    {{ blockData.title }}
+                {% if blockData.linkUrl %}</a>{% endif %}
             </h2>
         {% endif %}
 
         <p><small>
-            {% for id, title in cardData.tags %}
+            {% for id, title in blockData.tags %}
                 <a href="#" class="label label-secondary">{{ title }}</a>
             {% endfor %}
         </small></p>
 
-        {{ cardData.copy | safe }}
+        {{ blockData.copy | safe }}
 
-        <!-- {% if cardData.type %}
+        <!-- {% if blockData.type %}
             <p class="pull-right"><small class="sans-serif strong">
-                {% if cardData.typeIcon %}<i class="{{ cardData.typeIcon }}"></i> {% endif %}{{ cardData.type }}</small>
+                {% if blockData.typeIcon %}<i class="{{ blockData.typeIcon }}"></i> {% endif %}{{ blockData.type }}</small>
             </p>
         {% endif %} -->
 
-        {% if cardData.linkUrl or cardData.type %}
+        {% if blockData.linkUrl or blockData.type %}
             <p>
-                <a href="{{ cardData.linkUrl }}" class="btn btn-primary" role="button">{% if cardData.linkText %}{{ cardData.linkText }}{% else %}Learn More{% endif %}</a> <span class="btn btn-size sans-serif strong pull-right">
-                {% if cardData.typeIcon %}<i class="{{ cardData.typeIcon }}"></i> {% endif %}{{ cardData.type }}</span>
+                <a href="{{ blockData.linkUrl }}" class="btn btn-sm btn-primary" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a> <span class="btn btn-sm btn-size sans-serif strong pull-right">
+                {% if blockData.typeIcon %}<i class="{{ blockData.typeIcon }}"></i> {% endif %}{{ blockData.type }}</span>
             </p>
         {% endif %}
 

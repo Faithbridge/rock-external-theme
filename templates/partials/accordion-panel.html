@@ -1,10 +1,10 @@
 <div class="panel panel-primary">
-    <a id="headingOne" role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ accordionPanelData.index }}" aria-expanded="true" aria-controls="{{ accordionPanelData.index }}" class="panel-heading display-block sans-serif strong text-decoration-none text-white" style="{% if pageForegroundColor %}background-color: #{{ pageForegroundColor }};{% endif %}">
-        {{ accordionPanelData.title }}
+    <a id="headingOne" role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ blockData.index }}" aria-expanded="true" aria-controls="{{ blockData.index }}" class="panel-heading display-block sans-serif strong text-decoration-none text-white" style="{% if pageForegroundColor %}background-color: #{{ pageForegroundColor }}; border-color: #{{ pageForegroundColor }};{% endif %}">
+        {{ blockData.title }}
     </a>
-    <div id="{{ accordionPanelData.index }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div id="{{ blockData.index }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body hard-bottom">
-            {{ accordionPanelData.copy | safe }}
+            {{ blockData.copy | safe }}
         </div>
     </div>
 </div>

@@ -11,12 +11,21 @@
 		<a href="/locations.html"><i class="fas fa-fw fa-lg fa-map-marker-alt"></i> <span>Locations</span></a>
 	</li><li>
 		<a href="#" data-toggle="modal" data-target="#search-modal"><i class="fas fa-fw fa-lg fa-search"></i> <span>Search</span></a>
-	</li><!-- <li>
-		<a href="/give.html"><i class="fas fa-fw fa-lg fa-money-bill-alt"></i> <span>Give</span></a>
-	</li> --><li>
-		<a href="/my-account.html"><img src="https://rock.newspring.cc/GetImage.ashx?id=523137" alt="" class="nav-icon circular" style="border: 2px solid rgba(255,255,255,1)">
-			<!-- <i class="fas fa-fw fa-lg fa-user-circle"></i>  -->
-			<span>My&nbsp;Account</span></a>
+	</li><li>
+		
+			{% if userImage and signedIn %}
+				<a href="/my-account.html">
+					<img src="{{ userImage }}" alt="" class="nav-icon circular" style="border: 2px solid rgba(255,255,255,1)">
+					<span>My&nbsp;Account</span>
+				</a>
+			{% else %}
+				<a href="/sign-in.html">
+					<i class="fas fa-fw fa-lg fa-user-circle"></i>
+					<span>Sign&nbsp;In</span>
+				</a>
+			{% endif %}
+	
+		</a>
 	</li><li class="hidden-xs">
 		<a href="/help.html"><i class="fas fa-fw fa-lg fa-question-circle"></i> <span>Help</span></a>
 	</li>
