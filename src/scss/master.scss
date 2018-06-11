@@ -593,7 +593,26 @@ label {
 	}
 }
 
+.split-image-container {
 
+	@media (min-width: $screen-md-min) {
+		position: fixed;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    width: 39%; 
+	    z-index: -1;
+	    opacity: 1;
+
+		.split-image {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
 
 .strong { font-weight: 500; }
 .serif { font-family: $font-family-serif; }
@@ -845,11 +864,11 @@ label {
 	}
 
 	.lead {
-		font-size: 1.2em;
+		font-size: 1.05em;
 	}
 
-	h1, .h1 { font-size: floor(($font-size-base * 2.4)); }
-	h2, .h2 { font-size: floor(($font-size-base * 2)); }
+	h1, .h1 { font-size: floor(($font-size-base * 2)); }
+	h2, .h2 { font-size: floor(($font-size-base * 1.75)); }
 	h3, .h3 { font-size: ceil(($font-size-base * 1.65)); }
 	h4, .h4 { font-size: ceil(($font-size-base * 1.45)); }
 	h5, .h5 { font-size: ceil(($font-size-base * 1.3)); }
