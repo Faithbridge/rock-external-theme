@@ -23,15 +23,6 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-oi8o31xSQq8S0RpBcb4FaLB8LJi9AT8oIdmS1QldR8Ui7KUQjNAnDlJjp55Ba8FG" crossorigin="anonymous">
-    
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <!-- Core JS -->    
-    <script src="/dest/js/main.js"></script>
 
     <!-- Icons -->
     <link rel="apple-touch-icon" href="/dest/images/apple-touch-icon.png">
@@ -89,7 +80,7 @@
 	</li>
 </ul>
         </div>
-        <div class="content">
+        <div id="content" class="content">
             
 
 
@@ -198,7 +189,7 @@ xs-push-half-bottom
 
     <div class="row text-right flush"><!-- Section Padding and Alignement Classes -->
         <div class="col-xs-12 col-sm-12 col-md-6 text-left hard"><!-- Text Alignment Classes -->
-            <div class="soft-double-ends soft-double-sides soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
+            <div class="soft-double soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
 
                 
                     <h2 class="h2 text-brand-5">
@@ -258,7 +249,7 @@ xs-push-half-bottom
 
     <div class="row text-left flush"><!-- Section Padding and Alignement Classes -->
         <div class="col-xs-12 col-sm-12 col-md-6 text-left hard"><!-- Text Alignment Classes -->
-            <div class="soft-double-ends soft-double-sides soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
+            <div class="soft-double soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
 
                 
                     <h2 class="h2 text-brand-3">
@@ -482,8 +473,30 @@ xs-push-half-bottom
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Core JS -->    
+        <script src="/dest/js/main.js"></script>
+
         <script>
             // $('#search-modal').modal('show');
+            $('[data-toggle="popover"]').popover({ placement: 'auto' });  
+            
+            $('body').on('click', function (e) {
+                $('[data-toggle="popover"]').each(function () {
+                    //the 'is' for buttons that trigger popups
+                    //the 'has' for icons within a button that triggers a popup
+                    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                        $(this).popover('hide');
+                    }
+                });
+            });
+
         </script>
+
 	</body>
 </html>

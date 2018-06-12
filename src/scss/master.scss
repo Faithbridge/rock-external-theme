@@ -388,6 +388,11 @@ mark, .mark {
   	}
 }
 
+// Popovers
+.popover {
+	font-size: $font-size-base - 2;
+}
+
 // Dropdowns
 .dropdown-menu {
 	font-family: $font-family-sans-serif;
@@ -867,9 +872,9 @@ label {
 		font-size: 1.05em;
 	}
 
-	h1, .h1 { font-size: floor(($font-size-base * 2)); }
-	h2, .h2 { font-size: floor(($font-size-base * 1.75)); }
-	h3, .h3 { font-size: ceil(($font-size-base * 1.65)); }
+	h1, .h1 { font-size: floor(($font-size-base * 2.1)); }
+	h2, .h2 { font-size: floor(($font-size-base * 1.85)); }
+	h3, .h3 { font-size: ceil(($font-size-base * 1.75)); }
 	h4, .h4 { font-size: ceil(($font-size-base * 1.45)); }
 	h5, .h5 { font-size: ceil(($font-size-base * 1.3)); }
 	h6, .h6 { font-size: $font-size-base; }
@@ -1032,27 +1037,28 @@ label {
 	vertical-align: top;
 }
 
-body:after {
-	content: 'Xtra Small';
-	font-family: $font-family-sans-serif;
-	font-weight: 700;
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 1000;
-	color: white;
-	background-color: red;
-	padding: $base-spacing-unit/2;
+// Breakpoint Visualization Utility
+// body:after {
+// 	content: 'Xtra Small';
+// 	font-family: $font-family-sans-serif;
+// 	font-weight: 700;
+// 	position: absolute;
+// 	top: 0;
+// 	right: 0;
+// 	z-index: 1000;
+// 	color: white;
+// 	background-color: red;
+// 	padding: $base-spacing-unit/2;
 
-	@media (min-width: $screen-sm-min) {
-		content: 'Small';
-	}
+// 	@media (min-width: $screen-sm-min) {
+// 		content: 'Small';
+// 	}
 
-	@media (min-width: $screen-md-min) {
-		content: 'Medium';
-	}
+// 	@media (min-width: $screen-md-min) {
+// 		content: 'Medium';
+// 	}
 
-	@media (min-width: $screen-lg-min) {
-		content: 'Large';
-	}
-}
+// 	@media (min-width: $screen-lg-min) {
+// 		content: 'Large';
+// 	}
+// }
