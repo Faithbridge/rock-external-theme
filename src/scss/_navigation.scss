@@ -1,0 +1,122 @@
+// Navigation
+
+.nav {
+	font-family: $font-family-sans-serif;
+	font-weight: 700;
+
+	a {
+		font-size: 16px;
+		text-decoration: none;
+	}
+}
+
+.nav-primary {
+	position: relative;
+	z-index: 1;
+	box-shadow: 0 0 6px rgba(0,0,0,.2);
+	background-color: $gray-darker;
+
+	.nav-icon {
+		position: relative;
+		z-index: 1;
+		width: $nav-width / 3;
+	}
+
+	.nav-logo-light {
+		display: none;
+	}
+
+	li {
+		position: relative;
+		display: inline-block;
+		width: 20%;
+	}
+
+	a {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		height: $nav-width;
+		line-height: $nav-width;
+		text-align: center;
+		color: $white;
+		border-right: 1px solid rgba(0,0,0,.1);
+
+		span {
+			display: none;
+		}
+
+		i {
+			font-size: 1.1em;
+		}
+	}
+
+	li:last-child a {
+		border-right: 0;
+	}
+
+	li:nth-child(6n) a {
+		border-right: 0;
+	}
+
+	// Raise navigation icon position for iPhone X
+	@media only screen and (device-width : 375px) and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+		a {
+			line-height: $nav-width - 10;
+		}
+    }
+
+	@media (min-width: $screen-sm-min) {
+
+		.nav-icon {
+			width: $nav-width / 2.5;
+		}
+
+		li {
+			width: 100%;
+		}
+
+		a {
+			width: $nav-width;
+			border-bottom: 1px solid rgba(255,255,255,.08);
+			border-right: 0;
+
+			span {
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding-left: $nav-width;
+				padding-right: 30px;
+				background-color: $brand-primary;
+				color: $white;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+				box-shadow: 0 0 3px rgba(0,0,0,.4);
+			}
+
+			i {
+				position: relative;
+				z-index: 2;
+				font-size: 1.25em;
+			}
+
+			&:hover {
+				span {
+					display: inline-block;
+				}
+			}
+		}
+
+		.nav-logo:hover {
+			.nav-logo-regular {
+				display: none;
+			}
+
+			.nav-logo-light {
+				display: inline-block;
+			}
+		}
+	}
+}

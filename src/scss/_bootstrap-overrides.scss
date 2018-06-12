@@ -1,0 +1,21 @@
+.page-header { border-bottom-width: 3px; }
+
+// Jumbotron
+.jumbotron {
+	padding: $base-spacing-unit*4 0 $base-spacing-unit*2;
+	position: relative;
+
+	& > div {
+		position: relative;
+		z-index: 1;
+	}
+
+	@media (min-width: $screen-sm-min) {
+    	padding: $base-spacing-unit*5 0 0;
+  	}
+}
+
+// Popovers
+.popover {
+	font-size: $font-size-base - 2;
+}

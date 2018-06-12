@@ -1,0 +1,14 @@
+// Fixed Aspect Ratios
+.ratio-landscape, .ratio-square, .ratio-portrait {
+	position: relative;
+    display: block;
+
+	&:before{
+        content: "";
+        display: block;
+    }
+}
+
+.ratio-landscape:before{ padding-top: 50%; }
+.ratio-square:before{ padding-top: 100%; }
+.ratio-portrait:before{ padding-top: 150%; }

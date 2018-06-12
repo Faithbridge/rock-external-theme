@@ -1,0 +1,82 @@
+// Layout
+.sidebar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: $nav-width;
+	background-color: $gray-darker;
+	z-index: $zindex-navbar-fixed;
+
+	@media (min-width: $screen-sm-min) {
+    	top: 0;
+    	width: $nav-width;
+    	height: 100%;
+    	z-index: $zindex-navbar;
+  	}
+}
+
+.content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding-bottom: $nav-width;
+	-webkit-overflow-scrolling: touch;
+
+	@media (min-width: $screen-sm-min) {
+		left: $nav-width;
+		padding-bottom: 0;
+	}
+}
+
+
+
+.split {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 50%;
+
+	&.split-left {
+		left: 0;
+	}
+
+	&.split-right {
+		right: 0;
+	}
+
+	@media (max-width: $screen-sm-max) {
+		position: relative;
+		top: auto;
+		right: auto;
+		bottom: auto;
+		left: auto;
+		width: 100%;
+
+    	display: block;
+
+		&:before{
+	        content: "";
+	        display: block;
+	        padding-top: 100%;
+	    }
+	}
+}
+
+
+
+.page-brand-bar {
+	position: fixed;
+	z-index: -1;
+	height: $base-spacing-unit*2.5;
+	width: 100%;
+	transform: scale(7, 7) rotate(-6deg);
+
+	@media (min-width: $screen-sm-max) {
+		height: $base-spacing-unit*2.5;
+	}
+}

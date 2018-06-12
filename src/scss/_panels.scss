@@ -1,0 +1,29 @@
+// Panels
+.panel {
+	border: 0;
+	overflow: hidden;
+	box-shadow: 0 1px 3px rgba($gray-darker, .25), 0 3px 0px rgba($gray-darker, .1);
+	margin-bottom: $base-spacing-unit/2;
+
+	@media (min-width: $screen-sm-min) {
+		margin-bottom: $base-spacing-unit;
+	}
+}
+
+.panel-primary > .panel-heading {
+	color: $white !important;
+}
+
+.panel-body {
+	padding: $base-spacing-unit;
+}
+
+.panel-image {
+	position: relative;
+	display: inline-block;
+
+	img {
+		display: block;
+		max-width: 100%;
+	}
+}
