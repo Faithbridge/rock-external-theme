@@ -94,10 +94,10 @@ xs-push-half-bottom
     	<span class="full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.backgroundOpacity %}opacity: {{ blockData.backgroundOpacity }};{% endif %}"></span>
     {% endif %}
 
-    <div class="bring-forward center-block text-constrained text-center soft-top">
+    <div class="bring-forward center-block text-constrained text-center soft-double-top">
 
         {% if blockData.imageOverlayUrl %}
-            <img src="{{ blockData.imageOverlayUrl }}" alt="" class="push-bottom" style="width: 80%; max-width: 340px;">
+            <img src="{{ blockData.imageOverlayUrl }}" alt="" class="push-bottom" style="width: 70%; max-width: 280px;">
         {% endif %}
 
 		<span class="{% if blockData.textColorClass %}{{ blockData.textColorClass }}{% else %}text-white{% endif %}">
