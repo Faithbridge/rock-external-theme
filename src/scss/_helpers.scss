@@ -4,10 +4,8 @@
 .serif { font-family: $font-family-serif; }
 .sans-serif { font-family: $font-family-sans-serif; }
 .text-constrained { max-width: 700px; }
-
-.page-constrained { 
-	max-width: 1400px; 
-}
+.page-constrained { max-width: 1200px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
 
 .no-border { border: none; }
 .rounded { border-radius: 5px; }
