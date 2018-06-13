@@ -96,10 +96,13 @@ hr {
 
 blockquote {
 	border-color: $brand-primary;
-	font-weight: 500;
+	font-size: floor(($font-size-base * 1.4));
+	font-weight: 700;
 	font-style: italic;
-	letter-spacing: -.2px;
+	color: $brand-secondary;
 	padding: $base-spacing-unit;
+	margin: $base-spacing-unit;
+	letter-spacing: .2px;
 
 	footer {
 		font-family: $font-family-serif;
@@ -112,8 +115,19 @@ blockquote {
 	& .small:before {
 		font-weight: 500;
 	}
+
+	@media (max-width: $screen-xs-max) {
+		margin-left: 0;
+		padding-right: $base-spacing-unit/2;
+		font-size: floor(($font-size-base * 1.25));
+	}
 }
 
 mark, .mark {
 	background-color: #ffffa6;
+}
+
+.tags {
+	font-size: floor(($font-size-base * .9));
+	line-height: ceil(($line-height-computed * 1.1));
 }

@@ -1,5 +1,5 @@
 // Fixed Aspect Ratios
-.ratio-landscape, .ratio-square, .ratio-portrait {
+.ratio-landscape, .ratio-shuare, .ratio-square, .ratio-portrait {
 	position: relative;
     display: block;
 
@@ -10,5 +10,13 @@
 }
 
 .ratio-landscape:before{ padding-top: 50%; }
+.ratio-shuare:before{ padding-top: 70%; }
 .ratio-square:before{ padding-top: 100%; }
 .ratio-portrait:before{ padding-top: 150%; }
+
+@media (max-width: $screen-sm-min) {
+	.xs-ratio-landscape:before{ padding-top: 50%; }
+	.xs-ratio-shuare:before{ padding-top: 70%; }
+	.xs-ratio-square:before{ padding-top: 100%; }
+	.xs-ratio-portrait:before{ padding-top: 150%; }
+}
