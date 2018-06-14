@@ -35,6 +35,8 @@
 .background-center { background-position: center; }
 .bring-forward { position: relative; z-index: 1; }
 .overflow-hidden { overflow: hidden;  }
+
+.display-none { display: none !important; }
 .display-block { display: block; }
 .display-inline-block { display: inline-block; }
 
