@@ -19,3 +19,15 @@
 .popover {
 	font-size: $font-size-base - 2;
 }
+
+// Media Objects
+.media {
+	background-color: $gray-lighter;
+	border: 1px solid darken($gray-lighter, 5);
+}
+
+.media-body {
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p {
+		margin-bottom: $base-spacing-unit/2;
+	}
+}
