@@ -5,28 +5,28 @@
 			<img src="//dg0ddngxdz549.cloudfront.net/newspring/icons/newspring_mark_light.png" alt="" class="nav-icon  nav-logo-light">
 			<span>Home</span>
 		</a>
-	</li><li>
-		<a href="#" data-toggle="modal" data-target="#navigation-modal"><i class="fas fa-fw fa-lg fa-bars"></i> <span>Menu</span></a>
-	</li><li>
-		<a href="/locations.html"><i class="fas fa-fw fa-lg fa-map-marker-alt"></i> <span>Locations</span></a>
-	</li><li>
-		<a href="#" data-toggle="modal" data-target="#search-modal"><i class="fas fa-fw fa-lg fa-search"></i> <span>Search</span></a>
-	</li><li>
+	</li><span class="pull-right xs-pull-none"><li>
+			<a href="#" data-toggle="modal" data-target="#navigation-modal"><i class="fas fa-fw fa-lg fa-bars"></i> <span>Menu</span></a>
+		</li><li>
+			<a href="/locations.html"><i class="fas fa-fw fa-lg fa-map-marker-alt"></i> <span>Locations</span></a>
+		</li><li>
+			<a href="#" data-toggle="modal" data-target="#search-modal"><i class="fas fa-fw fa-lg fa-search"></i> <span>Search</span></a>
+		</li><li>
+			
+				{% if userImage and signedIn %}
+					<a href="/my-account.html">
+						<img src="{{ userImage }}" alt="" class="nav-icon circular" style="border: 2px solid rgba(255,255,255,1)">
+						<span>My&nbsp;Account</span>
+					</a>
+				{% else %}
+					<a href="/sign-in.html">
+						<i class="fas fa-fw fa-lg fa-user-circle"></i>
+						<span>Sign&nbsp;In</span>
+					</a>
+				{% endif %}
 		
-			{% if userImage and signedIn %}
-				<a href="/my-account.html">
-					<img src="{{ userImage }}" alt="" class="nav-icon circular" style="border: 2px solid rgba(255,255,255,1)">
-					<span>My&nbsp;Account</span>
-				</a>
-			{% else %}
-				<a href="/sign-in.html">
-					<i class="fas fa-fw fa-lg fa-user-circle"></i>
-					<span>Sign&nbsp;In</span>
-				</a>
-			{% endif %}
-	
-		</a>
-	</li><li class="hidden-xs">
-		<a href="/help.html"><i class="fas fa-fw fa-lg fa-question-circle"></i> <span>Help</span></a>
-	</li>
+			</a>
+		</li><li class="hidden-xs">
+			<a href="/help.html"><i class="fas fa-fw fa-lg fa-question-circle"></i> <span>Help</span></a>
+		</li></span>
 </ul>
