@@ -145,6 +145,10 @@
 	.xs-text-left { text-align: left; }
 	.xs-text-right { text-align: right; }
 
+	.xs-pull-none { float: none !important; }
+	.xs-pull-left { float: left; }
+	.xs-pull-right { float: right; }
+
 	.xs-soft-double { padding: $base-spacing-unit * 2 !important; }
 	.xs-soft-double-top { padding-top: $base-spacing-unit * 2 !important; }
 	.xs-soft-double-bottom { padding-bottom: $base-spacing-unit * 2 !important; }
