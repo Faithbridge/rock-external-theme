@@ -1,0 +1,101 @@
+{% set pageTitle = "KidSpring" %}
+{% set pageBackgroundColor = "E4A821" %}
+{% set pageForegroundColor = "2b4fb3" %}
+
+{% extends "full-width.html" %}
+
+{% block content %}
+    
+    {% set blockData = {
+        pages: {
+          '/kidspring.html': 'About KidSpring',
+          '/special-needs.html': 'Special Needs',
+          '/kidspring-watch-and-read.html': 'Watch & Read',
+          '/kidspring-mobile-app.html': 'Mobile App'
+        }
+    } %}{% include "partials/navigation-section.html" %}
+
+    {% set blockData = { 
+        title: 'Israel Fall 2018',
+        copy: "<p>Reading about Jesus’ life and ministry changes us. Seeing where Jesus lived and did ministry changes how we see Him.</p>",
+        grayscale: 'y',
+        imageOverlayUrl: '',
+        imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/kidspring/UpdatedWeb_FirstTimer-13.jpg',
+        backgroundVideoUrl: '//s3.amazonaws.com/ns.video/fuse/promotions/fuse2israel/76337_CEN_WEB_Fuse2IsraelWebHeader-ProRes-Web_Hero_2_000kbps',
+        backgroundOpacity: '.2',
+        textColorClass: 'text-white',
+        backgroundColorHex: '',
+        linkUrl: '',
+        linkText: '',
+        linkClasses: '',
+        videoId: 'mr4jl09jbd'
+    } %}{% include "partials/hero.html" %}
+
+    <section class="bg-white rounded shadowed">
+
+        <div class="text-constrained center-block text-center">
+            <p class="lead">Reading about Jesus’ life and ministry changes us. Seeing where Jesus lived and did ministry changes how we see Him.</p>
+            <p>During this trip, we’ll visit Bethlehem, travel the Sea of Galilee, and spend time in Capernaum, the home base for Jesus’ ministry. We’ll also explore Jerusalem and take communion at the empty tomb. <b>Space is limited, so register for your spot today!</b></p>
+            <p><a href="#" class="btn btn-primary" style="background-color: #{{ pageForegroundColor  }}; border-color: #{{ pageForegroundColor }};">Register Now</a></p>
+        </div>
+    </section>
+
+    <section class="bg-white rounded shadowed">
+        <div class="text-constrained center-block text-center">
+
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            <div class="panel-group" id="accordion-1" role="tablist" aria-multiselectable="true">
+
+                {% set blockData = { 
+                    parentIndex:"1",
+                    index: "1",
+                    title: "Lorem ipsum amet est dolore officia sit ea non?", 
+                    copy: "<p>Play clothes are always welcome! KidSpring is a fun, active environment. Your kids will be playing, singing, and dancing as they learn about Jesus in small groups and large groups.</p>"
+                } %}{% include "partials/accordion-panel.html" %}
+
+                {% set blockData = { 
+                    parentIndex:"1",
+                    index: "2",
+                    title: "Cillum incididunt commodo do quis laborum sant?", 
+                    copy: "<p>We'd love to have your family visit KidSpring during the week! If you're interested in a weekday tour or have any additional questions, please <a href='#'>let us know</a>.</p>"
+                } %}{% include "partials/accordion-panel.html" %}
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg-white rounded shadowed">
+        <div class="text-constrained center-block">
+            <h2 class="text-center">What to Expect</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Deserunt minim occaecat aliqua exercitation</h4>
+                    <p>Ullamco mollit amet minim deserunt minim in occaecat quis. Officia velit eu consequat dolor in veniam ad quis pariatur ex exercitation enim sunt et culpa dolore aliquip.</p>
+                </div><div class="col-md-6">
+                    <h4>Minim amet Labore velit Ea magna</h4>
+                    <p>Deserunt ut consequat dolore cillum nostrud eu et esse velit eiusmod dolor reprehenderit officia qui ut officia laboris. In in deserunt anim eiusmod mollit magna aliquip dolor.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    {% set blockData = { 
+        id: '5',
+        brandHex: '',
+        type: '',
+        typeIcon: '',
+        title: "Trip Cost",
+        titleSize: 'h2',
+        copy: "<p><b>Land Only:</b> $3,150<br><b>Land and Air:</b> $4,645</p><p class='flush'><b>Cost Includes:</b></p><ul class='flush-left'><li>All hotel accommodations</li><li>Ground transfer between Ben Gurion Airport and the hotel</li><li>Deluxe, air-conditioned motorcoaches for travel throughout the tour</li><li>Entrance fees for every site we visit</li><li>Gratuity for all drivers, guides, and hotel staff</li><li>English-speaking guides and drivers</li><li>Breakfast and dinner every day at every hotel</li><li>Five lunches and any associated gratuity</li><li>Bag service at every hotel</li></ul>",
+        tags: '',
+        imageUrl: 'http://ns.images.s3.amazonaws.com/newspring/Israel/bethlehem.1x1.jpg',
+        imageAlignment: 'left',
+        linkUrl: '#',
+        linkText: 'Register Now'
+    } %}{% include "partials/card-side-by-side.html" %}
+
+    {% include "partials/footer.html" %}
+
+{% endblock %}
