@@ -72,7 +72,7 @@
 
         </style>
 
-        <div class="sidebar">
+        <div id="sidebar" class="sidebar">
             <ul class="nav-primary sans-serif strong text-decoration-none hard flush">
 	<li>
 		<a href="/" class="nav-logo">
@@ -513,12 +513,16 @@ xs-push-half-bottom
 
         <!-- Bootstrap JS -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <script src="/dest/js/jquery.flip.min.js"></script>
 
         <!-- Core JS -->    
         <script src="/dest/js/main.js"></script>
 
         <script>
             // $('#search-modal').modal('show');
+
+            // Popovers
             $('[data-toggle="popover"]').popover({ placement: 'auto' });  
             
             $('body').on('click', function (e) {
@@ -531,6 +535,7 @@ xs-push-half-bottom
                 });
             });
 
+            // Custom Navigation Loading
             function coinFlip() {
                 return (Math.floor(Math.random() * 2) == 0) ? 'top' : 'side';
             }
@@ -544,9 +549,11 @@ xs-push-half-bottom
             }
 
             if (navStyle != 'side') {
-                    body.addClass('topbar');
+                body.addClass('topbar');
             }
 
+            // Card Flipping
+            $(".flippable").flip({axis: 'y', trigger: 'hover', speed: 200, autoSize: true });
         </script>
 
 	</body>

@@ -44,7 +44,9 @@
 .background-left { background-position: left; }
 .background-right { background-position: right; }
 .bring-forward { position: relative; z-index: 1; }
-.overflow-hidden { overflow: hidden;  }
+.overflow-hidden { overflow: hidden; }
+.overflow-y-auto { overflow-y: auto; }
+.overflow-x-auto { overflow-x: auto; }
 
 .display-none { display: none !important; }
 .display-block { display: block; }

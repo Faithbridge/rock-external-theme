@@ -1,5 +1,5 @@
 {% set pageTitle = "Sermons" %}
-{% set pageBackgroundColor = "858585" %}
+{% set pageBackgroundColor = "" %}
 {% set pageForegroundColor = "" %}
 
 {% extends "full-width.html" %}
@@ -8,111 +8,12 @@
 
     <section class="soft-half xs-hard">
         <div class="container-fluid hard-sides">
-            <h1 class="h2 push-half-top text-white flush-bottom">Sermons</h1>            
+            <h1 class="h2 push-half-top flush-bottom">Sermons</h1>            
         </div>
     </section>
-    
-    <section id="slider" class="bg-gray-darker rounded shadowed soft-ends hard-sides">
-		<div class="soft-sides xs-soft-ends">
-			<h3 class="text-white flush-bottom"><a href="#">Selected For You</a></h3>
-		</div>
 
-    	<div class="slider-wrapper" data-slider>
-        	
-		    <div class="slider">
-		        <div class="slider-item">
-
-					{% set blockData = { 
-						count: '1',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h4',
-		                title: 'Fear vs. Faith', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: 'https://embedwistia-a.akamaihd.net/deliveries/697fb79c42347b0bd3d776ab24cfa0839e0c6c18.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'E00C10',
-    					backgroundColorHex:'000000',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-
-		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '2',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h4',
-		                title: 'Generosity vs. Greed', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: 'https://embedwistia-a.akamaihd.net/deliveries/d2bf8ffbfe3a4ce5e6ef01e2c9a7333e8039428b.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'2C337C',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-
-		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '3',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h4',
-		                title: 'Unforgiveness vs. Freedom', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: '//embedwistia-a.akamaihd.net/deliveries/5a05ac328635e0a82dae01ed6a751c6f7005f7f7.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'F4C0A5',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-					
-		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '4',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h4',
-		                title: 'Comparison vs. Contentment', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: 'https://embedwistia-a.akamaihd.net/deliveries/4ecfc3c0f166996f3a037413ff2d057f2fa5859f.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'F4C0A5',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-					
-		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '5',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h4',
-		                title: 'Anxiety vs. Gratitude', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: '//embedwistia-a.akamaihd.net/deliveries/997ae8d91c21d2ecc0ebcb8eb6e33c8efbc31f1f.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'F4C0A5',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-					
-		        </div>
-		    </div>
-		</div>
-
-    </section>
-
-    <section id="slider" class="bg-gray rounded shadowed soft-ends hard-sides" style="background-color: #481673;">
-		<div class="soft-sides xs-soft-ends">
+    <section class="bg-gray rounded shadowed soft-ends hard-sides" style="background-color: #481673;">
+		<div class="soft-sides xs-soft-top">
 			<h3 class="text-white flush-bottom"><a href="#">Slaying Giants</a></h3>
 		</div>
 
@@ -125,7 +26,7 @@
 						count: '1',
 		                type: '',
 		                typeIcon: '',
-		                titleSize: 'h4',
+		                titleSize: 'h5',
 		                title: 'Fear vs. Faith', 
 		                copy: "", 
 		                tags: '',
@@ -142,7 +43,7 @@
 						count: '2',
 		                type: '',
 		                typeIcon: '',
-		                titleSize: 'h4',
+		                titleSize: 'h5',
 		                title: 'Generosity vs. Greed', 
 		                copy: "", 
 		                tags: '',
@@ -159,7 +60,7 @@
 						count: '3',
 		                type: '',
 		                typeIcon: '',
-		                titleSize: 'h4',
+		                titleSize: 'h5',
 		                title: 'Unforgiveness vs. Freedom', 
 		                copy: "", 
 		                tags: '',
@@ -176,7 +77,7 @@
 						count: '4',
 		                type: '',
 		                typeIcon: '',
-		                titleSize: 'h4',
+		                titleSize: 'h5',
 		                title: 'Comparison vs. Contentment', 
 		                copy: "", 
 		                tags: '',
@@ -193,7 +94,7 @@
 						count: '5',
 		                type: '',
 		                typeIcon: '',
-		                titleSize: 'h4',
+		                titleSize: 'h5',
 		                title: 'Anxiety vs. Gratitude', 
 		                copy: "", 
 		                tags: '',
@@ -207,108 +108,52 @@
 		        </div>
 		    </div>
 		</div>
-
     </section>
 
-    <section id="slider" class="bg-gray-darker rounded shadowed soft-ends hard-sides">
-		<div class="soft-sides xs-soft-ends">
-			<h3 class="text-white flush-bottom"><a href="#">By Series</a></h3>
+    <section class="bg-gray-darker rounded shadowed soft-ends hard-sides">
+		<div class="soft-sides xs-soft-top">
+			<h3 class="text-white push-half-bottom"><a href="#">Recent Series</a></h3>
 		</div>
 
-        <div class="slider-wrapper" data-slider>
+        <div class="slider-wrapper" data-slider="300">
         	
 		    <div class="slider">
 		        <div class="slider-item">
-
-					{% set blockData = { 
-						count: '1',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h4',
-		                title: 'Fear vs. Faith', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: 'https://embedwistia-a.akamaihd.net/deliveries/697fb79c42347b0bd3d776ab24cfa0839e0c6c18.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'E00C10',
-    					backgroundColorHex:'000000',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-
+		        	<div class="flippable">
+			        	<div class="front bg-gray-dark rounded overflow-hidden">
+			        		<div class="ratio-portrait background-center background-cover" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/fuse/hearnoevil.commassets.1x2.jpg');">
+			        			<h3 class="text-white flush">Front</h3>
+			        		</div>
+			        	</div>
+			        	<div class="back rounded overflow-hidden" style="background-clip: content-box;">
+			        		<div class="ratio-portrait bg-gray-dark">
+			        			<div class="full-screen soft-ends soft-half-sides overflow-y-auto text-white">
+			        				<h5>Hear No Evil</h5>
+			        				<p><small>Id velit duis sed veniam mollit non eu cillum pariatur aute irure excepteur incididunt laboris aliquip ut laboris eiusmod laboris cillum ut dolore aute velit in ut aute aliquip labore id dolore occaecat sint ut.</small></p>
+			        				<p><a href="#" class="btn btn-sm btn-primary">Watch Now <i class="fas fa-play-circle"></i></a></p>
+			        			</div>
+			        		</div>
+		        		
+			        	</div>
+			        </div>
 		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '2',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h4',
-		                title: 'Generosity vs. Greed', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: 'https://embedwistia-a.akamaihd.net/deliveries/d2bf8ffbfe3a4ce5e6ef01e2c9a7333e8039428b.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'2C337C',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-
+		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/HS1x2.jpg');"></div></a>
 		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '3',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h4',
-		                title: 'Unforgiveness vs. Freedom', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: '//embedwistia-a.akamaihd.net/deliveries/5a05ac328635e0a82dae01ed6a751c6f7005f7f7.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'F4C0A5',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-					
+		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/4325.sundays.cen.web.easter18.story1.jpg');"></div></a>
 		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '4',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h4',
-		                title: 'Comparison vs. Contentment', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: 'https://embedwistia-a.akamaihd.net/deliveries/4ecfc3c0f166996f3a037413ff2d057f2fa5859f.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'F4C0A5',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-					
+		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x2TightenKnot.jpg');"></div></a>
 		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '5',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h4',
-		                title: 'Anxiety vs. Gratitude', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: '//embedwistia-a.akamaihd.net/deliveries/997ae8d91c21d2ecc0ebcb8eb6e33c8efbc31f1f.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'F4C0A5',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-					
+		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/3490.sundays.cen.different.1x2.jpg');"></div></a>
+		        </div><div class="slider-item">
+		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/series.dyswis.1x2.jpg');"></div></a>
+		        </div><div class="slider-item">
+		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x2_promothankfull.marketing.png');"></div></a>
+		        </div><div class="slider-item">
+		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/1x2slayinggiants.png');"></div></a>
 		        </div>
 		    </div>
 		</div>
-
     </section>
-
 
     {% include "partials/footer.html" %}
 
