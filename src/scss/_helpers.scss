@@ -9,13 +9,13 @@
 
 .no-border { border: none; }
 
-.rounded { border-radius: 5px; }
-.rounded-top { border-top-left-radius: 5px; border-top-right-radius: 5px; }
-.rounded-bottom { border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }
-.rounded-top-left { border-top-left-radius: 5px; }
-.rounded-top-right { border-top-right-radius: 5px; }
-.rounded-bottom-left { border-bottom-left-radius: 5px; }
-.rounded-bottom-right { border-bottom-right-radius: 5px; }
+.rounded { border-radius: $border-radius-base; }
+.rounded-top { border-top-left-radius: $border-radius-base; border-top-right-radius: $border-radius-base; }
+.rounded-bottom { border-bottom-left-radius: $border-radius-base; border-bottom-right-radius: $border-radius-base; }
+.rounded-top-left { border-top-left-radius: $border-radius-base; }
+.rounded-top-right { border-top-right-radius: $border-radius-base; }
+.rounded-bottom-left { border-bottom-left-radius: $border-radius-base; }
+.rounded-bottom-right { border-bottom-right-radius: $border-radius-base; }
 .circular { border-radius: 1000px; }
 
 .shadowed { box-shadow: 0 1px 3px rgba($gray-darker, .25), 0 3px 0px rgba($gray-darker, .1); }
