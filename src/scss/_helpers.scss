@@ -16,14 +16,23 @@
 .rounded-top-right { border-top-right-radius: $border-radius-base; }
 .rounded-bottom-left { border-bottom-left-radius: $border-radius-base; }
 .rounded-bottom-right { border-bottom-right-radius: $border-radius-base; }
-.circular { border-radius: 1000px; }
+
+$circular-radius: 5000px;
+
+.circular { border-radius: $circular-radius; }
+.circular-top { border-top-left-radius: $circular-radius; border-top-right-radius: $circular-radius; }
+.circular-bottom { border-bottom-left-radius: $circular-radius; border-bottom-right-radius: $circular-radius; }
+.circular-top-left { border-top-left-radius: $circular-radius; }
+.circular-top-right { border-top-right-radius: $circular-radius; }
+.circular-bottom-left { border-bottom-left-radius: $circular-radius; }
+.circular-bottom-right { border-bottom-right-radius: $circular-radius; }
 
 .shadowed { box-shadow: 0 1px 3px rgba($gray-darker, .25), 0 3px 0px rgba($gray-darker, .1); }
 .grayscale { filter: grayscale(1); }
 
 // Positioning
-.position-absolute { position: absolute; }
-.position-relative { position: relative; }
+.position-absolute { position: absolute !important; }
+.position-relative { position: relative !important; }
 
 .top-zero { top: 0; }
 .right-zero { right: 0; }

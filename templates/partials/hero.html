@@ -66,12 +66,6 @@ shadowed
 text-white 
 push-bottom
 xs-push-half-bottom
-
-{% if blockData.backgroundVideoUrl or blockData.imageUrl %}
-{% else %}
-    soft-double-top soft-bottom
-{% endif %} 
-
 " style="
 {% if blockData.backgroundColorHex %}
     background-color: #{{ blockData.backgroundColorHex }};
