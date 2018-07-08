@@ -75,10 +75,14 @@
                         {% if blockData.linkUrl %}</a>{% endif %}
                     </h2>
                 {% endif %}
-
+                
+                <div>
                 <span class="link-brand-{{ blockData.id }}">
-                    {{ blockData.copy | safe }}
+                    {% set length = blockData.copy | length %}
+
+                    {{ blockData.copy | safe | truncate(350) }}{% if length > 300 %} <a href="#" data-toggle="modal" data-target="#readMoreModal">Read More</a>{% endif %}
                 </span>
+                </div>
 
                 {% if blockData.linkUrl or blockData.type %}
                     <p>
@@ -91,3 +95,24 @@
         </div>
     </div>
 </section>
+
+{% if length > 300 %}
+<div class="modal fade" id="readMoreModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="text-gray-darker pull-right" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-lg fa-times"></i>
+                </a>
+                <h3 class="flush">{{ blockData.title }}</h3>
+            </div>
+            <div class="modal-body soft hard-bottom">
+                {{ blockData.copy | safe }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

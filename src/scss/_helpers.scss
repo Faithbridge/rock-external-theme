@@ -57,6 +57,39 @@ $circular-radius: 5000px;
 .overflow-y-auto { overflow-y: auto; }
 .overflow-x-auto { overflow-x: auto; }
 
+.text-constrain-height {
+	overflow: auto;
+	max-height: 280px;
+	margin-bottom: $base-spacing-unit;
+	padding-right: $base-spacing-unit/2;
+
+	background:
+		/* Shadow covers */
+		linear-gradient(white 30%, rgba(255,255,255,0)),
+		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+		
+		/* Shadows */
+		radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+	background:
+		/* Shadow covers */
+		linear-gradient(white 30%, rgba(255,255,255,0)),
+		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+		
+		/* Shadows */
+		radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+	
+	/* Opera doesn't support this in the shorthand */
+	background-attachment: local, local, scroll, scroll;
+
+	p:last-child, ul:last-child, ol:last-child {
+		margin-bottom: 0;
+	}
+}
+
 .display-none { display: none !important; }
 .display-block { display: block; }
 .display-inline-block { display: inline-block; }
@@ -82,7 +115,7 @@ $circular-radius: 5000px;
 .text-gray-dark { color: $gray-dark; }
 .text-gray-darker { color: $gray-darker; }
 
-.text-white, .text-white a, .text-white a:hover { color: $white; }
+.text-white, .text-white a:not(.btn), .text-white a:not(.btn):hover { color: $white; }
 
 .text-kidspring-primary { color: $kidspring-primary; }
 .text-kidspring-secondary { color: $kidspring-secondary; }

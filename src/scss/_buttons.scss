@@ -8,11 +8,17 @@
 
 .btn-secondary { @include button-variant($white, $brand-secondary, $brand-secondary); }
 .btn-tertiary { @include button-variant($white, $brand-tertiary, $brand-tertiary); }
+.btn-gray-lighter { @include button-variant($gray-darker, $gray-lighter, $gray-lighter); }
+.btn-gray-light { @include button-variant($gray-darker, $gray-light, $gray-light); }
 .btn-gray-dark { @include button-variant($white, $gray-dark, $gray-dark); }
 .btn-gray-darker { @include button-variant($white, $gray-darker, $gray-darker); }
 
 	// Fixes alignment of large icons within buttons
 .btn {
+	i {
+		margin-left: 5px;
+	}
+
 	.fa-xs {
 		position: relative;
 		top: -1px;
