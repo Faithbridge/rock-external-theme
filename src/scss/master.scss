@@ -141,17 +141,3 @@ mark, .mark {
 .hero {
 	padding: $base-spacing-unit*3 $base-spacing-unit;
 }
-
-.shape-brand {
-	position: relative;
-    display: block;
-    border-top-left-radius: $circular-radius; 
-    border-top-right-radius: $circular-radius;
-    border-bottom-left-radius: $circular-radius;
-
-	&:before{
-        content: "";
-        display: block;
-        padding-top: 100%;
-    }
-}

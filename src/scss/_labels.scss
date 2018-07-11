@@ -6,4 +6,8 @@ label {
 
 .label {
 	text-decoration: none;
+
+	&.sans-serif {
+		padding: .3em + .05 .6em .3em - .05;
+	}
 }

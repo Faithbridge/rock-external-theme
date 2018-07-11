@@ -5,6 +5,7 @@
     brandHex: '',
     type: '',
     typeIcon: '',
+    label: '',
     titleSize:'',
     title: "",
     copy: "",
@@ -67,9 +68,13 @@
     <div class="row {% if blockData.imageAlignment == 'left' %}text-right{% else %}text-left{% endif %} flush"><!-- Section Padding and Alignement Classes -->
         <div class="col-xs-12 col-sm-12 col-md-6 text-left hard"><!-- Text Alignment Classes -->
             <div class="soft-double soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
-
+                
+                {% if blockData.label %}
+                    <p><small class="label label-default sans-serif">Current Series</small></p>
+                {% endif %}
+                
                 {% if blockData.title %}
-                    <h2 class="{{ blockData.titleSize }} {% if blockData.id and blockData.brandHex or pageForegroundColor %}text-brand-{{ blockData.id  }}{% endif %}">
+                    <h2 class=" {% if blockData.id and blockData.brandHex or pageForegroundColor %}text-brand-{{ blockData.id  }}{% endif %}">
                         {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
                             {{ blockData.title }}
                         {% if blockData.linkUrl %}</a>{% endif %}
@@ -79,8 +84,7 @@
                 <div>
                 <span class="link-brand-{{ blockData.id }}">
                     {% set length = blockData.copy | length %}
-
-                    {{ blockData.copy | safe | truncate(350) }}{% if length > 300 %} <a href="#" data-toggle="modal" data-target="#readMoreModal">Read More</a>{% endif %}
+                    {{ blockData.copy | safe | truncate(350) }}{% if length > 350 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
                 </span>
                 </div>
 
@@ -96,8 +100,8 @@
     </div>
 </section>
 
-{% if length > 300 %}
-<div class="modal fade" id="readMoreModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+{% if length > 350 %}
+<div class="modal fade" id="{{ blockData.id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

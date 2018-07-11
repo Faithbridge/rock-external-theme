@@ -6,6 +6,7 @@
 .text-constrained { max-width: 700px; }
 .page-constrained { max-width: 1280px; }
 .mx-auto { margin-left: auto; margin-right: auto; }
+.letter-spacing-condensed { letter-spacing: -.5px; }
 
 .no-border { border: none; }
 
@@ -56,39 +57,6 @@ $circular-radius: 5000px;
 .overflow-hidden { overflow: hidden; }
 .overflow-y-auto { overflow-y: auto; }
 .overflow-x-auto { overflow-x: auto; }
-
-.text-constrain-height {
-	overflow: auto;
-	max-height: 280px;
-	margin-bottom: $base-spacing-unit;
-	padding-right: $base-spacing-unit/2;
-
-	background:
-		/* Shadow covers */
-		linear-gradient(white 30%, rgba(255,255,255,0)),
-		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
-		
-		/* Shadows */
-		radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
-		radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
-	background:
-		/* Shadow covers */
-		linear-gradient(white 30%, rgba(255,255,255,0)),
-		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
-		
-		/* Shadows */
-		radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
-		radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
-	background-repeat: no-repeat;
-	background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-	
-	/* Opera doesn't support this in the shorthand */
-	background-attachment: local, local, scroll, scroll;
-
-	p:last-child, ul:last-child, ol:last-child {
-		margin-bottom: 0;
-	}
-}
 
 .display-none { display: none !important; }
 .display-block { display: block; }
