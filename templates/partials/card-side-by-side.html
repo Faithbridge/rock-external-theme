@@ -8,6 +8,7 @@
     label: '',
     titleSize:'',
     title: "",
+    subtitle: "",
     copy: "",
     tags: '',
     imageUrl: '',
@@ -70,22 +71,34 @@
             <div class="soft-double soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
                 
                 {% if blockData.label %}
-                    <p><small class="label label-default sans-serif">Current Series</small></p>
+                    <p><small class="label label-default sans-serif">{{ blockData.label }}</small></p>
                 {% endif %}
                 
                 {% if blockData.title %}
-                    <h2 class=" {% if blockData.id and blockData.brandHex or pageForegroundColor %}text-brand-{{ blockData.id  }}{% endif %}">
+                    <h2 class="{% if blockData.id and blockData.brandHex or pageForegroundColor %}text-brand-{{ blockData.id  }}{% endif %} push-half-bottom">
                         {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
                             {{ blockData.title }}
                         {% if blockData.linkUrl %}</a>{% endif %}
                     </h2>
                 {% endif %}
+
+                {% if blockData.subtitle %}
+                    <p class="sans-serif strong push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
+                {% endif %}
+
+                {% if blockData.tags %}
+                    <p><small>
+                        {% for id, title in blockData.tags %}
+                            <a href="#" class="label label-secondary">{{ title }}</a>
+                        {% endfor %}
+                    </small></p>
+                {% endif %}
                 
                 <div>
-                <span class="link-brand-{{ blockData.id }}">
-                    {% set length = blockData.copy | length %}
-                    {{ blockData.copy | safe | truncate(350) }}{% if length > 350 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
-                </span>
+                    <span class="link-brand-{{ blockData.id }}">
+                        {% set length = blockData.copy | length %}
+                        {{ blockData.copy | safe | truncate(250) }}{% if length > 250 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
+                    </span>
                 </div>
 
                 {% if blockData.linkUrl or blockData.type %}
@@ -100,7 +113,7 @@
     </div>
 </section>
 
-{% if length > 350 %}
+{% if length > 250 %}
 <div class="modal fade" id="{{ blockData.id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

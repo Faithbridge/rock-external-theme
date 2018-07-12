@@ -1,5 +1,5 @@
 {% set pageTitle = "Sermons" %}
-{% set pageBackgroundColor = "858585" %}
+{% set pageBackgroundColor = "303030" %}
 {% set pageForegroundColor = "" %}
 
 {% extends "full-width.html" %}
@@ -12,25 +12,25 @@
         </div>
     </section>
 
-
-
 {% set blockData = { 
     id: '',
     brandHex: '',
     type: '',
     typeIcon: '',
-    label: 'Current Series',
+    label: 'Featured Series',
     titleSize:'h1',
     title: "Slaying Giants",
-    copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Lorem ipsum minim consequat est occaecat laborum reprehenderit irure aliqua velit amet nulla qui sint aliquip eiusmod nulla in sit ut cupidatat esse aliqua ex anim culpa elit magna dolor.</p><p>In consequat incididunt dolore consectetur in deserunt labore ut ut pariatur sed pariatur aliquip labore do officia proident enim consequat.</p><p>Do mollit et sed labore sed in esse in ea occaecat officia excepteur occaecat dolor ut velit velit ullamco do sunt id proident ullamco velit laborum sunt incididunt consectetur voluptate ut reprehenderit ad minim ullamco.</p><p>Est sed enim minim consectetur proident ex nostrud enim dolor labore in occaecat sit consectetur pariatur ut ad sed velit cupidatat ullamco.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
-    tags: '',
+    copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
+    tags: {
+      '': ''
+    },
     imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_fuse/1x1slayinggiants_1700_1701_c1.png',
     imageAlignment: 'left',
-    linkUrl: '#',
-    linkText: 'Watch Series'
+    linkUrl: '/series.html',
+    linkText: 'View Sermons'
 } %}{% include "partials/card-side-by-side.html" %}
 
-    <section class="bg-gray rounded shadowed soft-ends hard-sides hidden" style="background-color: #481673;">
+    <section class="bg-gray-dark rounded shadowed soft-ends hard-sides hidden" style="background-color: #481673;">
 		<div class="soft-sides xs-soft-top">
 			<h3 class="text-white flush-bottom"><a href="#">Slaying Giants</a></h3>
 		</div>
@@ -128,50 +128,64 @@
 		</div>
     </section>
 
-    <section class="bg-gray-darker rounded shadowed soft-ends hard-sides">
+    <section class="bg-white rounded shadowed hard-sides">
 		<div class="soft-sides xs-soft-top">
-			<h3 class="text-white push-half-bottom"><a href="#">Recent Series</a></h3>
+			<h2 class="push-half-bottom text-center">Latest Sermon Series</h2>
 		</div>
 
-        <div class="slider-wrapper" data-slider="300">
-        	
-		    <div class="slider">
+        <div class="slider-wrapper" data-slider="250">
+        	<div class="slider">
 		        <div class="slider-item">
-		        	<div class="flippable">
-			        	<div class="front bg-gray-dark rounded overflow-hidden">
-			        		<div class="ratio-portrait background-center background-cover" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/fuse/hearnoevil.commassets.1x2.jpg');">
-			        			<h3 class="text-white flush">Front</h3>
-			        		</div>
-			        	</div>
-			        	<div class="back rounded overflow-hidden" style="background-clip: content-box;">
-			        		<div class="ratio-portrait bg-gray-dark">
-			        			<div class="full-screen soft-ends soft-half-sides overflow-y-auto text-white">
-			        				<h5>Hear No Evil</h5>
-			        				<p><small>Id velit duis sed veniam mollit non eu cillum pariatur aute irure excepteur incididunt laboris aliquip ut laboris eiusmod laboris cillum ut dolore aute velit in ut aute aliquip labore id dolore occaecat sint ut.</small></p>
-			        				<p><a href="#" class="btn btn-sm btn-primary">Watch Now <i class="fas fa-play-circle"></i></a></p>
-			        			</div>
-			        		</div>
-		        		
-			        	</div>
-			        </div>
-		        </div><div class="slider-item">
-		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/HS1x2.jpg');"></div></a>
-		        </div><div class="slider-item">
-		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/4325.sundays.cen.web.easter18.story1.jpg');"></div></a>
-		        </div><div class="slider-item">
-		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x2TightenKnot.jpg');"></div></a>
-		        </div><div class="slider-item">
-		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/3490.sundays.cen.different.1x2.jpg');"></div></a>
-		        </div><div class="slider-item">
-		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/series.dyswis.1x2.jpg');"></div></a>
-		        </div><div class="slider-item">
-		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x2_promothankfull.marketing.png');"></div></a>
-		        </div><div class="slider-item">
-		        	<a href="#"><div class="ratio-portrait background-center background-cover rounded shadowed" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/1x2slayinggiants.png');"></div></a>
+					<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/fuse/hearnoevil.commassets.1.jpg');"></div></a>
+					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
+		        </div><div class="slider-item rounded overflow-hidden">
+		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/HS1x1.jpg');"></div></a>
+					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
+		        </div><div class="slider-item rounded overflow-hidden">
+		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/4325.sundays.cen.web.easter18.story1.jpg');"></div></a>
+					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
+		        </div><div class="slider-item rounded overflow-hidden">
+		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1TightenKnot.jpg');"></div></a>
+					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
+		        </div><div class="slider-item rounded overflow-hidden">
+		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/3490.sundays.cen.different.1x1.jpg');"></div></a>
+					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
+		        </div><div class="slider-item rounded overflow-hidden">
+		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/series.dyswis.1x1.jpg');"></div></a>
+					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
+		        </div><div class="slider-item rounded overflow-hidden">
+		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1_promothankfull.marketing.png');"></div></a>
+					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
+		        </div><div class="slider-item rounded overflow-hidden">
+		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/1x1slayinggiants.png');"></div></a>
+					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
 		        </div>
 		    </div>
 		</div>
+
+		<p class="text-center push-half-ends"><a href="#" class="btn btn-primary">Browse All Series</a></p>
     </section>
+
+    {% set blockData = { 
+	    id: '',
+	    brandHex: '',
+	    type: '',
+	    typeIcon: '',
+	    label: 'Featured Sermon',
+	    titleSize:'h1',
+	    title: "The Nature of the Shepherd",
+	    subtitle: "<a href='/series.html'>Shepherd</a> • June 17, 2018 • Brad Cooper",
+	    copy: "<p>Every person who tries to live life on their terms will soon discover they're just like sheep — spiritually defenseless, directionless, and dumb. Jesus promises He is present, personal and active in our lives if we hear His voice and let him lead us.</p>",
+	    tags: {
+	      '1': 'followingjesus',
+	      '2': 'provision',
+	      '3': 'fatherhood'
+	    },
+	    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_newspring/5475.sundays.cen.web.shepherd.1x1_1700_1700_90_c1.jpg',
+	    imageAlignment: 'left',
+	    linkUrl: '/series.html',
+	    linkText: 'Watch Sermon'
+	} %}{% include "partials/card-side-by-side.html" %}
 
     {% include "partials/footer.html" %}
 

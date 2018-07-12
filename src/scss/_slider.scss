@@ -7,6 +7,12 @@
 .slider {
 	padding: 15px 0;
 
+	&.slider-borderless {
+		.slider-item:first-child {
+			margin-left: 0;
+		}
+	}
+
 	.slider-item {
 		display: inline-block;
 		width: 300px;

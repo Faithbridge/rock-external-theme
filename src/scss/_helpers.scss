@@ -48,7 +48,16 @@ $circular-radius: 5000px;
 .width-half { width: 50%; }
 .width-full { width: 100%; }
 
-.full-screen { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+.parent-hover-visible {
+	opacity: 0;
+	transition: opacity .1s ease-in-out;
+}
+
+*:hover > .parent-hover-visible {
+	opacity: 1;
+}
+
+.full-screen { position: absolute; top: -1px; right: -1px; bottom: -1px; left: -1px; }
 .background-cover { background-size: cover; }
 .background-center { background-position: center; }
 .background-left { background-position: left; }
