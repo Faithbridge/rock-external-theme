@@ -20,39 +20,9 @@
 
 <style>
     {% if blockData.foregroundColorHex %}
-        .hero a,
-        .hero a:hover {
-            color: #{{ blockData.foregroundColorHex }};
-        }
-
-        .hero .btn, 
-        .hero .btn:hover, 
-        .hero .btn:focus {
-            background-color: #{{ blockData.foregroundColorHex }};
-        }
-
-        .hero .btn:not(.btn-play), 
-        .hero .btn:not(.btn-play):hover, 
-        .hero .btn:not(.btn-play):focus {
-            border-color: #{{ blockData.foregroundColorHex }};
-        }
+        
     {% elif pageForegroundColor %}
-        .hero a:not(.btn),
-        .hero a:not(.btn):hover {
-            color: #{{ pageForegroundColor }};
-        }
-
-        .hero .btn, 
-        .hero .btn:hover, 
-        .hero .btn:focus {
-            background-color: #{{ pageForegroundColor }};
-        }
-
-        .hero .btn:not(.btn-play), 
-        .hero .btn:not(.btn-play):hover, 
-        .hero .btn:not(.btn-play):focus {
-            border-color: #{{ pageForegroundColor }};
-        }
+        
     {% endif %}
 </style>
 
@@ -66,12 +36,8 @@ shadowed
 text-white 
 push-bottom
 xs-push-half-bottom
-" style="
-{% if blockData.backgroundColorHex %}
-    background-color: #{{ blockData.backgroundColorHex }};
-{% elif pageBackgroundColor %}
-    background-color: #{{ pageBackgroundColor }};
-{% endif %} z-index: 1;">
+bring-forward
+">
 
 	{% if blockData.backgroundVideoUrl %}
 

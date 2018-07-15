@@ -1,5 +1,5 @@
 {% set pageTitle = "Sermons" %}
-{% set pageBackgroundColor = "303030" %}
+{% set pageBackgroundColor = "858585" %}
 {% set pageForegroundColor = "" %}
 
 {% extends "full-width.html" %}
@@ -13,10 +13,27 @@
     </section>
 
 {% set blockData = { 
-    id: '',
-    brandHex: '',
-    type: '',
-    typeIcon: '',
+	    id: '1',
+	    foregroundColorHex: '92C6C1',
+	    label: 'Featured Sermon',
+	    titleSize:'h1',
+	    title: "The Nature of the Shepherd",
+	    subtitle: "<a href='/series.html'>Shepherd</a> • June 17, 2018 • Brad Cooper",
+	    copy: "<p>Every person who tries to live life on their terms will soon discover they're just like sheep — spiritually defenseless, directionless, and dumb. Jesus promises He is present, personal and active in our lives if we hear His voice and let him lead us.</p>",
+	    tags: {
+	      '1': 'followingjesus',
+	      '2': 'provision',
+	      '3': 'fatherhood'
+	    },
+	    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_newspring/5475.sundays.cen.web.shepherd.1x1_1700_1700_90_c1.jpg',
+	    imageAlignment: 'left',
+	    linkUrl: '/series.html',
+	    linkText: 'Watch Sermon'
+	} %}{% include "partials/card-side-by-side.html" %}
+
+{% set blockData = { 
+    id: '2',
+    foregroundColorHex: '5e1c98',
     label: 'Featured Series',
     titleSize:'h1',
     title: "Slaying Giants",
@@ -25,108 +42,10 @@
       '': ''
     },
     imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_fuse/1x1slayinggiants_1700_1701_c1.png',
-    imageAlignment: 'left',
+    imageAlignment: 'right',
     linkUrl: '/series.html',
     linkText: 'View Sermons'
 } %}{% include "partials/card-side-by-side.html" %}
-
-    <section class="bg-gray-dark rounded shadowed soft-ends hard-sides hidden" style="background-color: #481673;">
-		<div class="soft-sides xs-soft-top">
-			<h3 class="text-white flush-bottom"><a href="#">Slaying Giants</a></h3>
-		</div>
-
-        <div class="slider-wrapper" data-slider="320">
-        	
-		    <div class="slider">
-		        <div class="slider-item">
-
-					{% set blockData = { 
-						count: '1',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h5',
-		                title: 'Fear vs. Faith', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: 'https://embedwistia-a.akamaihd.net/deliveries/697fb79c42347b0bd3d776ab24cfa0839e0c6c18.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'E00C10',
-    					backgroundColorHex:'000000',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-
-		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '2',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h5',
-		                title: 'Generosity vs. Greed', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: 'https://embedwistia-a.akamaihd.net/deliveries/d2bf8ffbfe3a4ce5e6ef01e2c9a7333e8039428b.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'2C337C',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-
-		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '3',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h5',
-		                title: 'Unforgiveness vs. Freedom', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: '//embedwistia-a.akamaihd.net/deliveries/5a05ac328635e0a82dae01ed6a751c6f7005f7f7.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'F4C0A5',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-					
-		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '4',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h5',
-		                title: 'Comparison vs. Contentment', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: 'https://embedwistia-a.akamaihd.net/deliveries/4ecfc3c0f166996f3a037413ff2d057f2fa5859f.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'F4C0A5',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-					
-		        </div><div class="slider-item">
-
-					{% set blockData = { 
-						count: '5',
-		                type: '',
-		                typeIcon: '',
-		                titleSize: 'h5',
-		                title: 'Anxiety vs. Gratitude', 
-		                copy: "", 
-		                tags: '',
-		                imageUrl: '//embedwistia-a.akamaihd.net/deliveries/997ae8d91c21d2ecc0ebcb8eb6e33c8efbc31f1f.jpg?image_crop_resized=640x360',
-		                foregroundColorHex:'fff',
-    					backgroundColorHex:'F4C0A5',
-		                linkUrl: '#',
-		                linkText: 'Watch Now'
-		            } %}{% include "partials/card.html" %}
-					
-		        </div>
-		    </div>
-		</div>
-    </section>
 
     <section class="bg-white rounded shadowed hard-sides">
 		<div class="soft-sides xs-soft-top">
@@ -166,26 +85,64 @@
 		<p class="text-center push-half-ends"><a href="#" class="btn btn-primary">Browse All Series</a></p>
     </section>
 
-    {% set blockData = { 
-	    id: '',
-	    brandHex: '',
-	    type: '',
-	    typeIcon: '',
-	    label: 'Featured Sermon',
-	    titleSize:'h1',
-	    title: "The Nature of the Shepherd",
-	    subtitle: "<a href='/series.html'>Shepherd</a> • June 17, 2018 • Brad Cooper",
-	    copy: "<p>Every person who tries to live life on their terms will soon discover they're just like sheep — spiritually defenseless, directionless, and dumb. Jesus promises He is present, personal and active in our lives if we hear His voice and let him lead us.</p>",
-	    tags: {
-	      '1': 'followingjesus',
-	      '2': 'provision',
-	      '3': 'fatherhood'
-	    },
-	    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_newspring/5475.sundays.cen.web.shepherd.1x1_1700_1700_90_c1.jpg',
-	    imageAlignment: 'left',
-	    linkUrl: '/series.html',
-	    linkText: 'Watch Sermon'
-	} %}{% include "partials/card-side-by-side.html" %}
+    <section class="bg-white rounded shadowed hard-sides soft-half-bottom">
+		<div class="soft-sides xs-soft-top">
+			<h2 class="push-half-bottom text-center">Featured Sermons</h2>
+		</div>
+
+        <div class="slider-wrapper" data-slider="400">
+        	<div class="slider">
+		        <div class="slider-item">
+					{% set blockData = { 
+					    count: '',
+					    titleSize: 'h3',
+					    title: 'The Three Voices In Your Head', 
+					    copy: "<p>God’s voice in our lives is often drowned out by the voice of our flesh and the voice of satan. Discover the four ways you can turn down the noise and hear God more clearly every day.</p>", 
+					    tags: {
+					      '1': 'satan',
+					      '2': 'truth',
+					      '3': 'community'
+					    },
+					    imageUrl: '//ns.images.s3.amazonaws.com/all/heroes/fuse/hearnoevil.commassets.2x1.jpg',
+					    foregroundColorHex:'',
+					    backgroundColorHex:'',
+					    linkUrl: '#',
+					    linkText: 'Watch Now'
+					} %}{% include "partials/card.html" %}
+		        </div><div class="slider-item">
+					{% set blockData = { 
+					    count: '',
+					    titleSize: 'h3',
+					    title: 'The Three Voices In Your Head', 
+					    copy: "<p>God’s voice in our lives is often drowned out by the voice of our flesh and the voice of satan. Discover the four ways you can turn down the noise and hear God more clearly every day.</p>", 
+					    tags: {
+					      '': ''
+					    },
+					    imageUrl: '//ns.images.s3.amazonaws.com/all/heroes/fuse/hearnoevil.commassets.2x1.jpg',
+					    foregroundColorHex:'',
+					    backgroundColorHex:'',
+					    linkUrl: '#',
+					    linkText: 'Watch Now'
+					} %}{% include "partials/card.html" %}
+		        </div><div class="slider-item">
+					{% set blockData = { 
+					    count: '',
+					    titleSize: 'h3',
+					    title: 'The Three Voices In Your Head', 
+					    copy: "<p>God’s voice in our lives is often drowned out by the voice of our flesh and the voice of satan. Discover the four ways you can turn down the noise and hear God more clearly every day.</p>", 
+					    tags: {
+					      '': ''
+					    },
+					    imageUrl: '//ns.images.s3.amazonaws.com/all/heroes/fuse/hearnoevil.commassets.2x1.jpg',
+					    foregroundColorHex:'',
+					    backgroundColorHex:'',
+					    linkUrl: '#',
+					    linkText: 'Watch Now'
+					} %}{% include "partials/card.html" %}
+		        </div>
+		    </div>
+		</div>
+    </section>
 
     {% include "partials/footer.html" %}
 

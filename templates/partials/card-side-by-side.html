@@ -2,7 +2,8 @@
 
 {% set blockData = { 
     id: '',
-    brandHex: '',
+    foregroundColorHex:'',
+    backgroundColorHex:'',
     type: '',
     typeIcon: '',
     label: '',
@@ -10,7 +11,9 @@
     title: "",
     subtitle: "",
     copy: "",
-    tags: '',
+    tags: {
+      '': ''
+    },
     imageUrl: '',
     imageAlignment: '',
     linkUrl: '',
@@ -18,40 +21,6 @@
 } %}{% include "partials/card-side-by-side.html" %}
 
 #}
-
-{% if blockData.id and blockData.brandHex %}
-    <style>
-        .text-brand-{{ blockData.id }}, .text-brand-{{ blockData.id }}:hover * {
-            color: #{{ blockData.brandHex }} !important;
-        }
-
-        .link-brand-{{ blockData.id }} a,
-        .link-brand-{{ blockData.id }} a:hover {
-            color: #{{ blockData.brandHex }} !important;
-        }
-
-        .bg-brand-{{ blockData.id }}, .bg-brand-{{ blockData.id }}:hover * {
-            background-color: #{{ blockData.brandHex }} !important;
-            border-color: #{{ blockData.brandHex }} !important;
-        }
-    </style>
-{% elif blockData.id and pageForegroundColor %}
-    <style>
-        .text-brand-{{ blockData.id }}, .text-brand-{{ blockData.id }}:hover * {
-            color: #{{ pageForegroundColor }} !important;
-        }
-
-        .link-brand-{{ blockData.id }} a,
-        .link-brand-{{ blockData.id }} a:hover {
-            color: #{{ pageForegroundColor }} !important;
-        }
-
-        .bg-brand-{{ blockData.id }}, .bg-brand-{{ blockData.id }}:hover * {
-            background-color: #{{ pageForegroundColor }} !important;
-            border-color: #{{ pageForegroundColor }} !important;
-        }
-    </style>
-{% endif %}
 
 <!-- EVERYTHING goes in a row! -->
 <section class="hard position-relative overflow-hidden bg-white rounded shadowed"><!-- Section Color Classes -->
@@ -75,7 +44,7 @@
                 {% endif %}
                 
                 {% if blockData.title %}
-                    <h2 class="{% if blockData.id and blockData.brandHex or pageForegroundColor %}text-brand-{{ blockData.id  }}{% endif %} push-half-bottom">
+                    <h2 class="push-half-bottom">
                         {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
                             {{ blockData.title }}
                         {% if blockData.linkUrl %}</a>{% endif %}
@@ -86,24 +55,23 @@
                     <p class="sans-serif strong push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
                 {% endif %}
 
-                {% if blockData.tags %}
+                {% set tagCount = blockData.tags | length %}
+                {% if tagCount != 0 %}
                     <p><small>
                         {% for id, title in blockData.tags %}
-                            <a href="#" class="label label-secondary">{{ title }}</a>
+                            <a href="#" class="label label-primary">{{ title }}</a>
                         {% endfor %}
                     </small></p>
                 {% endif %}
                 
                 <div>
-                    <span class="link-brand-{{ blockData.id }}">
-                        {% set length = blockData.copy | length %}
-                        {{ blockData.copy | safe | truncate(250) }}{% if length > 250 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
-                    </span>
+                    {% set length = blockData.copy | length %}
+                    {{ blockData.copy | safe | truncate(250) }}{% if length > 250 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
                 </div>
 
                 {% if blockData.linkUrl or blockData.type %}
                     <p>
-                        <a href="{{ blockData.linkUrl }}" class="btn btn-primary {% if blockData.id and blockData.brandHex or pageForegroundColor %}bg-brand-{{ blockData.id  }}{% endif %}" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a> {% if blockData.type and blockData.typeIcon %}<span class="btn btn-size sans-serif strong pull-right">
+                        <a href="{{ blockData.linkUrl }}" class="btn btn-primary" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a> {% if blockData.type and blockData.typeIcon %}<span class="btn btn-size sans-serif strong pull-right">
                         {% if blockData.typeIcon %}<i class="{{ blockData.typeIcon }}"></i> {% endif %}{{ blockData.type }}</span>{% endif %}
                     </p>
                 {% endif %}

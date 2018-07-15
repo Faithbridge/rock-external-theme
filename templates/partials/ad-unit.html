@@ -13,7 +13,7 @@
 
 #}
 
-<section class="relative rounded xs-soft-half-sides xs-push-half-bottom" style="{% if blockData.backgroundColorHex %}background-color: #{{ blockData.backgroundColorHex }};{% endif %}">
+<section class="bg-white relative rounded shadowed xs-soft-half-sides xs-push-half-bottom">
 	
 	{% if blockData.imageUrl %}
     	<span class="full-screen background-cover background-center" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
@@ -21,14 +21,11 @@
 
     <div class="bring-forward center-block text-constrained text-center soft xs-soft-top xs-soft-half-sides xs-soft-bottom">
 		
-		{% if blockData.textColorClass %}<span class="{{ blockData.textColorClass }}">{% endif %}
-			{% if blockData.title %}
-	        	<h2>{{ blockData.title }}</h2>
-	        {% endif %}
+		{% if blockData.title %}
+        	<h2>{{ blockData.title }}</h2>
+        {% endif %}
 
-			{{ blockData.copy | safe }}
-		{% if blockData.textColorClass %}</span>{% endif %}
-		
+		{{ blockData.copy | safe }}
 
 		{% if blockData.linkUrl %}
 	        <p>

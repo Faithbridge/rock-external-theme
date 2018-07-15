@@ -1,13 +1,14 @@
 {#
 
 {% set blockData = { 
+    id: '',
     count: '',
-    type: '',
-    typeIcon: '',
     titleSize: '',
     title: '', 
     copy: "", 
-    tags: '',
+    tags: {
+      '': ''
+    },
     imageUrl: '',
     foregroundColorHex:'',
     backgroundColorHex:'',
@@ -38,26 +39,45 @@
             </h2>
         {% endif %}
 
+        {% if blockData.subtitle %}
+            <p class="sans-serif strong push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
+        {% endif %}
+
         <p><small>
             {% for id, title in blockData.tags %}
-                <a href="#" class="label label-secondary">{{ title }}</a>
+                <a href="#" class="label label-primary">{{ title }}</a>
             {% endfor %}
         </small></p>
-
-        {{ blockData.copy | safe }}
-
-        <!-- {% if blockData.type %}
-            <p class="pull-right"><small class="sans-serif strong">
-                {% if blockData.typeIcon %}<i class="{{ blockData.typeIcon }}"></i> {% endif %}{{ blockData.type }}</small>
-            </p>
-        {% endif %} -->
+        
+        {% set length = blockData.copy | length %}
+        {{ blockData.copy | safe | truncate(200) }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
 
         {% if blockData.linkUrl or blockData.type %}
             <p>
                 <a href="{{ blockData.linkUrl }}" class="btn btn-sm btn-primary" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a> <span class="btn btn-sm btn-size sans-serif strong pull-right">
-                {% if blockData.typeIcon %}<i class="{{ blockData.typeIcon }}"></i> {% endif %}{{ blockData.type }}</span>
             </p>
         {% endif %}
 
     </div>
 </div>
+
+{% if length > 200 %}
+<div class="modal fade" id="{{ blockData.id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="text-gray-darker pull-right" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-lg fa-times"></i>
+                </a>
+                <h3 class="flush">{{ blockData.title }}</h3>
+            </div>
+            <div class="modal-body soft hard-bottom">
+                {{ blockData.copy | safe }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

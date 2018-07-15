@@ -140,10 +140,8 @@ shadowed
 text-white 
 push-bottom
 xs-push-half-bottom
-" style="
-
-    background-color: #303030;
- z-index: 1;">
+bring-forward
+">
 
 	
 
@@ -184,24 +182,6 @@ xs-push-half-bottom
 
     
 
-
-    <style>
-        .text-brand-5, .text-brand-5:hover * {
-            color: #1AB262 !important;
-        }
-
-        .link-brand-5 a,
-        .link-brand-5 a:hover {
-            color: #1AB262 !important;
-        }
-
-        .bg-brand-5, .bg-brand-5:hover * {
-            background-color: #1AB262 !important;
-            border-color: #1AB262 !important;
-        }
-    </style>
-
-
 <!-- EVERYTHING goes in a row! -->
 <section class="hard position-relative overflow-hidden bg-white rounded shadowed"><!-- Section Color Classes -->
 
@@ -222,7 +202,7 @@ xs-push-half-bottom
                 
                 
                 
-                    <h2 class="text-brand-5 push-half-bottom">
+                    <h2 class="push-half-bottom">
                         <a href="http://gauntlet.cc">
                             See You at Gauntlet
                         </a>
@@ -233,16 +213,15 @@ xs-push-half-bottom
 
                 
                 
+                
                 <div>
-                    <span class="link-brand-5">
-                        
-                        <p>Here's how you can get involved!</p><p><b>Go.</b> If you're in middle or high school, sign up today and invite your friends.</p><p><b>Give.</b> Help students go to Gauntlet by giving to the Gauntlet Fund.</p><p><b>Serve.</b> Invest in the next... <a href="#" data-toggle="modal" data-target="#5-modal">Read More</a>
-                    </span>
+                    
+                    <p>Here's how you can get involved!</p><p><b>Go.</b> If you're in middle or high school, sign up today and invite your friends.</p><p><b>Give.</b> Help students go to Gauntlet by giving to the Gauntlet Fund.</p><p><b>Serve.</b> Invest in the next... <a href="#" data-toggle="modal" data-target="#5-modal">Read More</a>
                 </div>
 
                 
                     <p>
-                        <a href="http://gauntlet.cc" class="btn btn-primary bg-brand-5" role="button">Learn More</a> 
+                        <a href="http://gauntlet.cc" class="btn btn-primary" role="button">Learn More</a> 
                     </p>
                 
 
@@ -274,24 +253,6 @@ xs-push-half-bottom
 
     
 
-
-    <style>
-        .text-brand-3, .text-brand-3:hover * {
-            color: #E4A821 !important;
-        }
-
-        .link-brand-3 a,
-        .link-brand-3 a:hover {
-            color: #E4A821 !important;
-        }
-
-        .bg-brand-3, .bg-brand-3:hover * {
-            background-color: #E4A821 !important;
-            border-color: #E4A821 !important;
-        }
-    </style>
-
-
 <!-- EVERYTHING goes in a row! -->
 <section class="hard position-relative overflow-hidden bg-white rounded shadowed"><!-- Section Color Classes -->
 
@@ -312,7 +273,7 @@ xs-push-half-bottom
                 
                 
                 
-                    <h2 class="text-brand-3 push-half-bottom">
+                    <h2 class="push-half-bottom">
                         <a href="/israel.html">
                             Israel Trip 2018
                         </a>
@@ -323,16 +284,15 @@ xs-push-half-bottom
 
                 
                 
+                
                 <div>
-                    <span class="link-brand-3">
-                        
-                        <p>Reading about Jesus’ life and ministry changes us. Seeing where Jesus lived and did ministry changes how we see Him.</p><p>During this trip, we’ll visit Bethlehem, travel the Sea of Galilee, and spend time in Capernaum, the home base for Jesus’... <a href="#" data-toggle="modal" data-target="#3-modal">Read More</a>
-                    </span>
+                    
+                    <p>Reading about Jesus’ life and ministry changes us. Seeing where Jesus lived and did ministry changes how we see Him.</p><p>During this trip, we’ll visit Bethlehem, travel the Sea of Galilee, and spend time in Capernaum, the home base for Jesus’... <a href="#" data-toggle="modal" data-target="#3-modal">Read More</a>
                 </div>
 
                 
                     <p>
-                        <a href="/israel.html" class="btn btn-primary bg-brand-3" role="button">Learn More</a> 
+                        <a href="/israel.html" class="btn btn-primary" role="button">Learn More</a> 
                     </p>
                 
 
@@ -575,32 +535,15 @@ xs-push-half-bottom
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-        <!-- jQuery -->
+        <!-- Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-        <!-- Bootstrap JS -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
-        <script src="/dest/js/jquery.flip.min.js"></script>
-
         <!-- Core JS -->    
         <script src="/dest/js/main.js"></script>
 
         <script>
             // $('#search-modal').modal('show');
-
-            // Popovers
-            $('[data-toggle="popover"]').popover({ placement: 'auto' });  
-            
-            $('body').on('click', function (e) {
-                $('[data-toggle="popover"]').each(function () {
-                    //the 'is' for buttons that trigger popups
-                    //the 'has' for icons within a button that triggers a popup
-                    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
-                        $(this).popover('hide');
-                    }
-                });
-            });
 
             // Custom Navigation Loading
             function coinFlip() {
