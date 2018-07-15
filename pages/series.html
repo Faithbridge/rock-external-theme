@@ -1,0 +1,65 @@
+{% set pageTitle = "Slaying Giants | Sermons" %}
+{% set pageBackgroundColor = "5e1c98" %}
+{% set pageForegroundColor = "" %}
+
+{% extends "full-width.html" %}
+
+{% block content %}
+
+	{% set sermons %}{% include 'data/sermons.json' %}{% endset %}
+
+	{{ sermons }}
+
+
+	<section class="soft-half xs-hard">
+	    <div class="container-fluid hard-sides">
+	        <h1 class="h2 text-white push-half-top flush-bottom">Slaying Giants</h1>            
+	    </div>
+	</section>
+
+	{% set blockData = { 
+	    id: '1',
+	    foregroundColorHex: '7839af',
+	    label: '',
+	    titleSize:'h1',
+	    title: "",
+	    copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
+	    tags: {},
+	    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_fuse/1x1slayinggiants_1700_1701_c1.png',
+	    imageAlignment: 'left',
+	    linkUrl: '#sermons',
+	    linkText: 'View Sermons'
+	} %}{% include "partials/card-side-by-side.html" %}
+
+
+
+    <section class="bg-gray-darker rounded shadowed hard-sides soft-half-bottom">
+		<div class="soft-sides xs-soft-top">
+			<h2 class="text-white push-half-bottom text-center">From This Series</h2>
+		</div>
+
+        <div class="slider-wrapper" data-slider="350">
+        	<div class="slider">
+        		{% for sermon in sermons %}<div class="slider-item">
+					{% set blockData = { 
+						id: sermon.id,
+					    count: '',
+					    titleSize: 'h3',
+					    title: sermon.title,
+					    subtitle: sermon.subtitle,
+					    copy: sermon.copy, 
+					    tags: sermon.tags,
+					    imageUrl: '',
+					    foregroundColorHex:'',
+					    backgroundColorHex:'',
+					    linkUrl: '#',
+					    linkText: 'Watch Now'
+					} %}{% include "partials/card.html" %}
+		        </div>{% endfor %}
+		    </div>
+		</div>
+    </section>
+
+    {% include "partials/footer.html" %}
+
+{% endblock %}
