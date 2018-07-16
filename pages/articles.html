@@ -1,10 +1,125 @@
 {% set pageTitle = "Articles" %}
 
-{% set pageHeaderColorHex = "303030" %}
+{% set pageHeaderColorHex = "1C683E" %}
 
 {% extends "full-width.html" %}
 
 {% block content %}
+
+    {% set articles = [
+        {
+            "id": "1",
+            "backgroundColorHex": '',
+            "linkColorHex": '',
+            "grayscale": '',
+            "titleSize": '',
+            "title": "What is stopping you from sharing your faith?",
+            "subtitle": "",
+            "copy": "<p>Recently, my husband was discussing why he believes the Bible with his sister. She is not a Christian and asked many hard questions.</p>",
+            "tags": {
+              "1": "evangelism",
+              "2": "spiritual gifts",
+              "3": "holy spirit"
+            },
+            "imageUrl": '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/2x1.faith.gospel.evangelism_1700_850_90_c1.jpg',
+            "imageOpacity": '',
+            "linkUrl": '',
+            "linkText": ''
+        },
+        {
+            "id": "2",
+            "backgroundColorHex": '',
+            "linkColorHex": '',
+            "grayscale": '',
+            "titleSize": '',
+            "title": "How to help kids understand why modesty matters",
+            "subtitle": "",
+            "copy": "<p>I recently attended a concert where a young woman was sitting on the stage in a very short skirt. When I mentioned to my teenage daughter that the dress wasn’t appropriate to wear while sitting three feet higher than the audience, my daughter indignantly said people shouldn’t be looking there. </p>",
+            "tags": {
+              "1": "humility",
+              "2": "culture",
+              "3": "parenting"
+            },
+            "imageUrl": '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring-articles-modesty-how-to-help-kids-understand-why-modesty-matters_1700_850_90_c1.jpg',
+            "imageOpacity": '',
+            "linkUrl": '',
+            "linkText": ''
+        },
+        {
+            "id": "3",
+            "backgroundColorHex": '',
+            "linkColorHex": '',
+            "grayscale": '',
+            "titleSize": '',
+            "title": "How to give good advice",
+            "subtitle": "",
+            "copy": "<p>When a fellow believer is struggling with their in-laws, navigating a difficult work situation, or when I encounter a differing political view on social media, I arrogantly want to jump in and deliver clarity and truth.</p>",
+            "tags": {
+              "1": "bible",
+              "2": "friendship",
+              "3": "relationships",
+              "4": "prayer",
+              "5": "community"
+            },
+            "imageUrl": '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring-articles-how-to-give-good-advice_1700_850_90_c1.jpg',
+            "imageOpacity": '',
+            "linkUrl": '',
+            "linkText": ''
+        },
+        {
+            "id": "4",
+            "backgroundColorHex": '',
+            "linkColorHex": '',
+            "grayscale": '',
+            "titleSize": '',
+            "title": "Why it's important to care for your body, not idolize it",
+            "subtitle": "",
+            "copy": "<p>Ever since I was a teenager, I can remember worrying about my body. I don’t mean I worried about how my body functioned. I mean I was concerned with how my body looked.</p>",
+            "tags": {
+              "1": "body image",
+              "2": "eternity",
+              "3": "identity"
+            },
+            "imageUrl": '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring-articles-why-its-important-to-care-for-your-body-not-idolize-it_2000_1000_90_c1.jpg',
+            "imageOpacity": '',
+            "linkUrl": '',
+            "linkText": ''
+        },
+        {
+            "id": "5",
+            "backgroundColorHex": '',
+            "linkColorHex": '',
+            "grayscale": '',
+            "titleSize": '',
+            "title": "What it means to really be free",
+            "subtitle": "",
+            "copy": "<p>Long after our Fourth of July celebrations wind down, it will still be there. When conversations around the grill and picnic table end, we’ll still need it. The cheers of crowds under a firework-lit night sky will draw to a close, but <a href='#'>freedom</a> will remain part of our lives.</p>",
+            "tags": {
+              "1": "freedom"
+            },
+            "imageUrl": '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring.blog.hero.fireworksjulyfourth_1700_850_90_c1.jpg',
+            "imageOpacity": '',
+            "linkUrl": '',
+            "linkText": ''
+        },
+        {
+            "id": "6",
+            "backgroundColorHex": '',
+            "linkColorHex": '',
+            "grayscale": '',
+            "titleSize": '',
+            "title": "How and why should I repent",
+            "subtitle": "",
+            "copy": "<p>Seven-year-old Jimmy snatches a toy car from 5-year-old Joey. Joey pinches him. Mom demands apologies and separates them. Jimmy and Joey both mutter, “Sorry,” and grumble as they stomp to their rooms. The next day, the same scenario plays out with blocks. Instinctively, we know neither Jimmy nor Joey is genuinely sorry. Neither their hearts nor their behavior has changed.</p>",
+            "tags": {
+              "1": "repentance"
+            },
+            "imageUrl": '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring-blog-hero-repentance-how-and-why-should-we-repent_1700_850_90_c1.jpg',
+            "imageOpacity": '',
+            "linkUrl": '',
+            "linkText": ''
+        }
+    ] %}
 
     <section class="soft-half xs-hard">
         <div class="container-fluid hard-sides">
@@ -14,134 +129,22 @@
     <section class="soft-half hard-top xs-hard">
         <div class="container-fluid hard">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4">
-
+                {% for article in articles %}<div class="col-xs-12 col-sm-6 col-md-4">
                     {% set blockData = {
-                        id: '315',
-                        backgroundColorHex: '',
-                        linkColorHex: '',
-                        grayscale: '',
-                        titleSize:'h4',
-                        title: 'What is stopping you from sharing your faith?', 
-                        copy: "<p>Recently, my husband was discussing why he believes the Bible with his sister. She is not a Christian and asked many hard questions.</p>", 
-                        tags: {
-                          '123': 'evangelism',
-                          '512': 'spiritual gifts',
-                          '34': 'holy spirit'
-                        },
-                        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/2x1.faith.gospel.evangelism_1700_850_90_c1.jpg',
-                        imageOpacity: '1',
-                        linkUrl: '/article-entry.html',
-                        linkText: 'Read More'
-                    } %}{% include "partials/card.html" %}
-
-                </div><div class="col-xs-12 col-sm-6 col-md-4">
-
-                    {% set blockData = { 
-                        id: '313',
-                        backgroundColorHex: '',
-                        linkColorHex: '',
-                        grayscale: '',
-                        titleSize:'h4',
-                        title: 'Three things you need to know about speaking in tongues', 
-                        copy: "<p>The spiritual gift of speaking in tongues is largely-debated among believers. Some wonder whether speaking in tongues is an archaic gift — one that existed when Jesus walked the earth and died out shortly thereafter.</p>", 
-                        tags: {
-                          '123': 'spiritual gifts',
-                          '#': 'tongues'
-                        },
-                        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring-articles-three-things-you-need-to-know-about-speaking-in-tongues_1700_850_90_c1.jpg',
-                        linkUrl: '/article-entry.html',
-                        linkText: 'Read More'
-                    } %}{% include "partials/card.html" %}
-
-                </div><div class="col-xs-12 col-sm-6 col-md-4">
-                    
-                    {% set blockData = { 
+                        id: article.id,
+                        backgroundColorHex: article.backgroundColorHex,
+                        linkColorHex: article.linkColorHex,
+                        grayscale: article.grayscale,
                         titleSize: 'h4',
-                        title: 'Four questions to ask when you want to make the right decision', 
-                        copy: "<p>We’ve all heard of buyer’s remorse — that feeling you get when you purchase something and later regret it. Most of us have experienced it at some point, perhaps after the purchase of a new shirt, a TV, or even a car.</p>", 
-                        tags: '',
-                        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring.blog.hero.forkinwoods_1700_850_90_c1.jpg',
+                        title: article.title, 
+                        copy: article.copy, 
+                        tags: article.tags,
+                        imageUrl: article.imageUrl,
+                        imageOpacity: article.imageOpacity,
                         linkUrl: '/article-entry.html',
                         linkText: 'Read More'
                     } %}{% include "partials/card.html" %}
-
-                </div><div class="col-xs-12 col-sm-6 col-md-4">
-
-                    {% set blockData = { 
-                        titleSize: 'h4',
-                        title: 'What are spiritual gifts?', 
-                        copy: "<p>What do you have to offer? I love the story of the little boy who shared his five loaves and two fish with Jesus. John 6 tells us Jesus took the boy’s meal and fed thousands of people with it.</p>", 
-                        tags: '',
-                        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring.blog.hero.sun.field_2000_1000_90_c1.jpg',
-                        linkUrl: '/article-entry.html',
-                        linkText: 'Read More'
-                    } %}{% include "partials/card.html" %}
-
-                </div><div class="col-xs-12 col-sm-6 col-md-4">
-
-                    {% set blockData = { 
-                        titleSize: 'h4',
-                        title: 'What to remember when you open a college rejection letter', 
-                        copy: "<p>Recently, my husband was discussing why he believes the Bible with his sister. She is not a Christian and asked many hard questions.</p>", 
-                        tags: {
-                          '123': 'college',
-                          '512': "spiritual disciplines"
-                        },
-                        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/newspring.blog.hero.mailboxes.png',
-                        linkUrl: '/article-entry.html',
-                        linkText: 'Read More'
-                    } %}{% include "partials/card.html" %}
-
-                </div><div class="col-xs-12 col-sm-6 col-md-4">
-
-                    {% set blockData = { 
-                        titleSize: 'h4',
-                        title: 'How listening to the Holy Spirit helps you navigate life’s obstacles', 
-                        copy: "<p>High above the stadium, someone watches cars zip around the racetrack. Each NASCAR team has a spotter, who acts as the</p>", 
-                        tags: '',
-                        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/race-81859_2000_1000_90_c1.jpg',
-                        linkUrl: '/article-entry.html',
-                        linkText: 'Read More'
-                    } %}{% include "partials/card.html" %}
-
-                </div><div class="col-xs-12 col-sm-6 col-md-4">
-
-                    {% set blockData = { 
-                        titleSize: 'h4',
-                        title: 'What happens when Christians stop living scared', 
-                        copy: "<p>We’ve all heard of buyer’s remorse — that feeling you get when you purchase something and later regret it. Most of us have experienced it at some point, perhaps after the purchase of a new shirt, a TV, or even a car.</p>", 
-                        tags: '',
-                        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/2x1.faith.gospel.evangelism_1700_850_90_c1.jpg',
-                        linkUrl: '/article-entry.html',
-                        linkText: 'Read More'
-                    } %}{% include "partials/card.html" %}
-
-                </div><div class="col-xs-12 col-sm-6 col-md-4">
-
-                    {% set blockData = { 
-                        titleSize: 'h4',
-                        title: 'Divorced? 4 promises God wants you to embrace', 
-                        copy: "<p>There was a season when I couldn’t walk in to a room without feeling like every eye was on me. I was the Christian...</p>", 
-                        tags: '',
-                        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring-articles-three-things-you-need-to-know-about-speaking-in-tongues_1700_850_90_c1.jpg',
-                        linkUrl: '/article-entry.html',
-                        linkText: 'Read More'
-                    } %}{% include "partials/card.html" %}
-
-                </div><div class="col-xs-12 col-sm-6 col-md-4">
-
-                    {% set blockData = { 
-                        titleSize: 'h4',
-                        title: 'What are spiritual gifts?', 
-                        copy: "<p>What do you have to offer? I love the story of the little boy who shared his five loaves and two fish with Jesus. John 6 tells us Jesus took the boy’s meal and fed thousands of people with it.</p>", 
-                        tags: '',
-                        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring.blog.hero.sun.field_2000_1000_90_c1.jpg',
-                        linkUrl: '/article-entry.html',
-                        linkText: 'Read More'
-                    } %}{% include "partials/card.html" %}
-
-                </div>
+                </div>{% endfor %}
             </div>
 
             {% include "partials/pagination.html" %}
@@ -150,7 +153,7 @@
     </section>
 
     {% set blockData = { 
-        title: "Get Notifications", 
+        title: "Subscribe", 
         copy: "<p>Subscribe to the articles feed to be notified of new posts.</p>",
         imageUrl: '',
         imageOpacity: '',
