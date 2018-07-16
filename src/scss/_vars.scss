@@ -17,6 +17,11 @@ $gray-lighter:			#f0f0f0 !default; // #dddddd
 $white:					#fff !default;
 $black:					#000 !default;
 
+$facebook:				#3b5998 !default;
+$twitter:				#1874D3 !default;
+$google:				#CE3330 !default;
+$pinterest:				#A40015 !default;
+
 $brand-primary:         #6bac43 !default;
 $brand-success:         #6bac43 !default;
 $brand-info:            #198FC8 !default; // #00a5d6
@@ -115,9 +120,9 @@ $padding-xs-horizontal:     5px !default;
 $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5 !default;
 
-$border-radius-base:        4px !default;
-$border-radius-large:       6px !default;
-$border-radius-small:       3px !default;
+$border-radius-base:        6px !default;
+$border-radius-large:       8px !default;
+$border-radius-small:       4px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color:    #fff !default;

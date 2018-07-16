@@ -1,20 +1,17 @@
 {% set pageTitle = "Sermons" %}
-{% set pageBackgroundColor = "858585" %}
-{% set pageForegroundColor = "" %}
 
 {% extends "full-width.html" %}
 
 {% block content %}
 
-    <section class="soft-half xs-hard">
-        <div class="container-fluid hard-sides">
-            <h1 class="h2 text-white push-half-top flush-bottom">Sermons</h1>            
-        </div>
-    </section>
+	<section class="soft-half xs-hard-sides">
+	    <div class="container-fluid hard-sides">
+	        <h1 class="h2 text-white push-half-top flush-bottom">Sermons</h1>            
+	    </div>
+	</section>
 
 {% set blockData = { 
 	    id: '1',
-	    foregroundColorHex: '92C6C1',
 	    label: 'Featured Sermon',
 	    titleSize:'h1',
 	    title: "The Nature of the Shepherd",
@@ -33,7 +30,6 @@
 
 {% set blockData = { 
     id: '2',
-    foregroundColorHex: '5e1c98',
     label: 'Featured Series',
     titleSize:'h1',
     title: "Slaying Giants",
@@ -104,8 +100,6 @@
 					      '3': 'community'
 					    },
 					    imageUrl: '//ns.images.s3.amazonaws.com/all/heroes/fuse/hearnoevil.commassets.2x1.jpg',
-					    foregroundColorHex:'',
-					    backgroundColorHex:'',
 					    linkUrl: '#',
 					    linkText: 'Watch Now'
 					} %}{% include "partials/card.html" %}
@@ -119,8 +113,6 @@
 					      '': ''
 					    },
 					    imageUrl: '//ns.images.s3.amazonaws.com/all/heroes/fuse/hearnoevil.commassets.2x1.jpg',
-					    foregroundColorHex:'',
-					    backgroundColorHex:'',
 					    linkUrl: '#',
 					    linkText: 'Watch Now'
 					} %}{% include "partials/card.html" %}
@@ -134,8 +126,6 @@
 					      '': ''
 					    },
 					    imageUrl: '//ns.images.s3.amazonaws.com/all/heroes/fuse/hearnoevil.commassets.2x1.jpg',
-					    foregroundColorHex:'',
-					    backgroundColorHex:'',
 					    linkUrl: '#',
 					    linkText: 'Watch Now'
 					} %}{% include "partials/card.html" %}

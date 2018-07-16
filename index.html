@@ -73,17 +73,6 @@
         
         
 
-        <style>
-
-            
-
-            
-                .bg-page-background { background-color: #6bac43; }
-                .text-page-background { color: #6bac43; }
-            
-
-        </style>
-
         <div id="sidebar" class="sidebar">
             <ul class="nav-primary sans-serif strong text-decoration-none hard flush">
 	<li>
@@ -116,22 +105,18 @@
         <div id="content" class="content">
             
 
-
-	<div class="page-brand-bar" style="background-color: #6bac43; opacity: .9;"></div>
-
+<div class="page-brand-bar bg-primary" style="background-color: #; opacity: .9;" data-0="top:0px;" data-300="top:-650px;"></div>
 
 <div class="page-constrained mx-auto">
-<div class="soft xs-soft-half hard-bottom">
-    
+	<div class="soft xs-soft-half hard-bottom">
+	    
 
 	
 
-<style>
-    
-</style>
+
 
 <!-- Hero -->
-<section class="
+<section  class="
 hero
 bg-gray-dark
 position-relative 
@@ -141,7 +126,8 @@ text-white
 push-bottom
 xs-push-half-bottom
 bring-forward
-">
+
+ overflow-hidden">
 
 	
 
@@ -155,7 +141,9 @@ bring-forward
 	
 	<!-- Background Image -->
 	
-    	<span class="full-screen background-cover background-center rounded hidden-md hidden-lg " style="background-image: url('//dg0ddngxdz549.cloudfront.net/newspring/homepage/hero_1x1.gif'); opacity: .7;"></span>
+    	<span class=" full-screen background-cover background-center rounded hidden-md hidden-lg " style="background-image: url('//dg0ddngxdz549.cloudfront.net/newspring/homepage/hero_1x1.gif'); opacity: .7;"></span>
+    
+
     
 
     <div class="bring-forward center-block text-constrained text-center soft-double-top">
@@ -403,7 +391,7 @@ bring-forward
 </footer>
     
 
-</div>
+	</div>
 </div>
 
 
@@ -540,9 +528,12 @@ bring-forward
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <!-- Core JS -->    
+        <script type="text/javascript" src="/dest/js/skrollr.min.js"></script>
         <script src="/dest/js/main.js"></script>
 
         <script>
+            var s = skrollr.init();
+
             // $('#search-modal').modal('show');
 
             // Custom Navigation Loading

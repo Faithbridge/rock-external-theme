@@ -14,6 +14,7 @@ $nav-width: 80px;
 @import '_panels';
 @import '_grids';
 @import '_dropdowns';
+@import '_floating';
 @import '_breadcrumbs';
 @import '_pagination';
 @import '_labels';
@@ -129,7 +130,7 @@ mark, .mark {
 
 .tag-list {
 	font-size: floor(($font-size-base * .9));
-	line-height: ceil(($line-height-computed * .9));
+	line-height: ceil(($line-height-computed * .95));
 
 	@media (min-width: $screen-sm-min) {
 		font-size: floor(($font-size-base));
@@ -138,5 +139,5 @@ mark, .mark {
 }
 
 .hero {
-	padding: $base-spacing-unit*3 $base-spacing-unit;
+	padding: $base-spacing-unit*4 $base-spacing-unit;
 }

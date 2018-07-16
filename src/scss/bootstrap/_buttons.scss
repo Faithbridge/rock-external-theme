@@ -105,6 +105,22 @@ a.btn {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
 
+.btn-facebook {
+  @include button-variant($white, $facebook, $facebook);
+}
+
+.btn-twitter {
+  @include button-variant($white, $twitter, $twitter);
+}
+
+.btn-google {
+  @include button-variant($white, $google, $google);
+}
+
+.btn-pinterest {
+  @include button-variant($white, $pinterest, $pinterest);
+}
+
 
 // Link buttons
 // -------------------------

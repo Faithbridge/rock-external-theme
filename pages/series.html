@@ -1,6 +1,4 @@
 {% set pageTitle = "Slaying Giants | Sermons" %}
-{% set pageBackgroundColor = "5e1c98" %}
-{% set pageForegroundColor = "" %}
 
 {% extends "full-width.html" %}
 
@@ -65,44 +63,40 @@
 		}
 	] %}
 
-
-	<section class="hidden soft-half xs-hard-sides">
-	    <div class="container-fluid hard-sides">
-	        <h1 class="h2 text-white push-half-top flush-bottom xs-text-center">Slaying Giants</h1>            
-	    </div>
-	</section>
-
-	{#
+	{% set blockData = { 
+		id: '1',
+	    title: "",
+	    copy: "",
+	    grayscale: '',
+	    fixed:'',
+	    imageUrl: '',
+	    mobileImageUrl: '',
+	    imageOverlayUrl: '//dg0ddngxdz549.cloudfront.net/newspring/fpo/fpo.slaying-giants-fg-2x1.jpg',
+	    backgroundVideoUrl: '',
+	    backgroundOpacity: '',
+	    linkUrl: '',
+	    linkText: '',
+	    linkClasses: '',
+	    videoId: ''
+	} %}{% include "partials/hero.html" %}
 
 	{% set blockData = { 
-	    id: '1',
-	    foregroundColorHex: '7839af',
+	    id: '',
+	    type: '',
+	    typeIcon: '',
 	    label: '',
-	    titleSize:'h1',
+	    titleSize:'',
 	    title: "Slaying Giants",
+	    subtitle: "Oct 1 &mdash; Oct 29, 2017",
 	    copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
-	    tags: {},
-	    imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/2x1slayinggiants.png',
+	    tags: {
+	      '': ''
+	    },
+	    imageUrl: '//ns.images.s3.amazonaws.com/newspring/fpo/fpo.MusicWide.jpg',
 	    imageAlignment: 'left',
 	    linkUrl: '#sermons',
 	    linkText: 'View Sermons'
 	} %}{% include "partials/card-side-by-side.html" %}
-
-	#}
-
-	<section class="ratio-thin bg-white rounded shadowed background-cover background-center hard" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/2x1slayinggiants.png');">
-	</section>
-
-	{% set blockData = { 
-	    title: "Slaying Giants", 
-	    copy: "<p class='lead'><b>We all want more out of life.</b> But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
-	    textColorClass: '',
-	    backgroundColorHex: '',
-	    imageUrl: '',
-	    imageOpacity: '',
-	    linkUrl: '#sermons',
-	    linkText: 'Watch Sermons'
-	} %}{% include "partials/ad-unit.html" %}
 
 	<span id="sermons">
 
@@ -123,8 +117,6 @@
 						    copy: sermon.copy, 
 						    tags: sermon.tags,
 						    imageUrl: '',
-						    foregroundColorHex:'',
-						    backgroundColorHex:'',
 						    linkUrl: '#',
 						    linkText: 'Watch Now'
 						} %}{% include "partials/card.html" %}
@@ -143,13 +135,27 @@
 			    copy: sermon.copy, 
 			    tags: sermon.tags,
 			    imageUrl: '',
-			    foregroundColorHex:'',
-			    backgroundColorHex:'',
 			    linkUrl: '#',
 			    linkText: 'Watch Now'
 			} %}{% include "partials/card.html" %}
 		{% endfor %}
+
 	</span>
+
+	<section class="bg-white soft-double xs-soft rounded shadowed">
+		<h3 class="text-center">Share This</h3>
+		<div class="row-condensed">
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<a href="#" class="btn btn-block btn-facebook sm-push-half-bottom xs-push-half-bottom"><i class="fab fa-fw fa-facebook-f"></i> Facebook</a>
+			</div><div class="col-md-3 col-sm-6 col-xs-12">
+				<a href="#" class="btn btn-block btn-twitter sm-push-half-bottom xs-push-half-bottom"><i class="fab fa-fw fa-twitter"></i> Twitter</a>
+			</div><div class="col-md-3 col-sm-6 col-xs-12">
+				<a href="#" class="btn btn-block btn-google xs-push-half-bottom"><i class="fab fa-fw fa-google-plus-g"></i> Google Plus</a>
+			</div><div class="col-md-3 col-sm-6 col-xs-12">
+				<a href="#" class="btn btn-block btn-pinterest"><i class="fab fa-fw fa-pinterest-p"></i> Pinterest</a>
+			</div>
+		</div>
+	</section>
 
     {% include "partials/footer.html" %}
 

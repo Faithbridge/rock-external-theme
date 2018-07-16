@@ -73,21 +73,6 @@
         {% set userEmail = "test@testuser.com" %}
         {% set userPhone = "(555) 555-5555" %}
 
-        <style>
-
-            {% if pageForegroundColor %}
-                .bg-page-foreground { background-color: #{{ pageForegroundColor }}; }
-                .text-page-foreground { color: #{{ pageForegroundColor }}; }
-                .btn-play, .btn-play:hover { background-color: #{{ pageForegroundColor }}; }
-            {% endif %}
-
-            {% if pageBackgroundColor %}
-                .bg-page-background { background-color: #{{ pageBackgroundColor }}; }
-                .text-page-background { color: #{{ pageBackgroundColor }}; }
-            {% endif %}
-
-        </style>
-
         <div id="sidebar" class="sidebar">
             {% include "partials/navigation.html" %}
         </div>
@@ -105,9 +90,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <!-- Core JS -->    
+        <script type="text/javascript" src="/dest/js/skrollr.min.js"></script>
         <script src="/dest/js/main.js"></script>
 
         <script>
+            var s = skrollr.init();
+
             // $('#search-modal').modal('show');
 
             // Custom Navigation Loading

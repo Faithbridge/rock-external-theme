@@ -1,10 +1,9 @@
 {#
 
 {% set blockData = { 
-    title: "", 
+    id: '',
+    title: '', 
     copy: "",
-    textColorClass: '',
-    backgroundColorHex: '',
     imageUrl: '',
     imageOpacity: '',
     linkUrl: '',
@@ -13,7 +12,7 @@
 
 #}
 
-<section class="bg-white relative rounded shadowed xs-soft-half-sides xs-push-half-bottom">
+<section {% if blockData.id %}id="{{ blockData.id }}"{% endif %} class="bg-white relative rounded shadowed xs-soft-half-sides xs-soft-top xs-hard-bottom xs-push-half-bottom">
 	
 	{% if blockData.imageUrl %}
     	<span class="full-screen background-cover background-center" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
