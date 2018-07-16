@@ -1,0 +1,48 @@
+@mixin floating($vertical, $horizontal, $child: 'floated') {
+
+    text-align: $horizontal;
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: $vertical;
+        margin-right: -0.25em;
+    }
+
+    .#{$child}{
+        display: inline-block;
+        vertical-align: $vertical;
+    }
+
+}
+
+.floating {
+        @include floating(middle, center, floating-item);
+
+        &.floating-left {
+            text-align: left;
+        }
+
+        &.floating-right {
+            text-align: right;
+        }
+
+        &.floating-top {
+            &:before {
+                vertical-align: top;
+            }
+            .floating-item {
+                vertical-align: top;
+            }
+        }
+
+        &.floating-bottom {
+            &:before {
+                vertical-align: bottom;
+            }
+            .floating-item {
+                vertical-align: bottom;
+            }
+        }
+
+    }
