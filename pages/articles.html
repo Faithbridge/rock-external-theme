@@ -1,5 +1,7 @@
 {% set pageTitle = "Articles" %}
 
+{% set pageHeaderColorHex = "303030" %}
+
 {% extends "full-width.html" %}
 
 {% block content %}
@@ -14,7 +16,11 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4">
 
-                    {% set blockData = { 
+                    {% set blockData = {
+                        id: '315',
+                        backgroundColorHex: '',
+                        linkColorHex: '',
+                        grayscale: '',
                         titleSize:'h4',
                         title: 'What is stopping you from sharing your faith?', 
                         copy: "<p>Recently, my husband was discussing why he believes the Bible with his sister. She is not a Christian and asked many hard questions.</p>", 
@@ -24,13 +30,18 @@
                           '34': 'holy spirit'
                         },
                         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/2x1.faith.gospel.evangelism_1700_850_90_c1.jpg',
+                        imageOpacity: '1',
                         linkUrl: '/article-entry.html',
-                        linkText: ''
+                        linkText: 'Read More'
                     } %}{% include "partials/card.html" %}
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4">
 
                     {% set blockData = { 
+                        id: '313',
+                        backgroundColorHex: '',
+                        linkColorHex: '',
+                        grayscale: '',
                         titleSize:'h4',
                         title: 'Three things you need to know about speaking in tongues', 
                         copy: "<p>The spiritual gift of speaking in tongues is largely-debated among believers. Some wonder whether speaking in tongues is an archaic gift — one that existed when Jesus walked the earth and died out shortly thereafter.</p>", 
@@ -40,7 +51,7 @@
                         },
                         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring-articles-three-things-you-need-to-know-about-speaking-in-tongues_1700_850_90_c1.jpg',
                         linkUrl: '/article-entry.html',
-                        linkText: ''
+                        linkText: 'Read More'
                     } %}{% include "partials/card.html" %}
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4">
@@ -52,7 +63,7 @@
                         tags: '',
                         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring.blog.hero.forkinwoods_1700_850_90_c1.jpg',
                         linkUrl: '/article-entry.html',
-                        linkText: ''
+                        linkText: 'Read More'
                     } %}{% include "partials/card.html" %}
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4">
@@ -64,7 +75,7 @@
                         tags: '',
                         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring.blog.hero.sun.field_2000_1000_90_c1.jpg',
                         linkUrl: '/article-entry.html',
-                        linkText: ''
+                        linkText: 'Read More'
                     } %}{% include "partials/card.html" %}
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4">
@@ -79,7 +90,7 @@
                         },
                         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/newspring.blog.hero.mailboxes.png',
                         linkUrl: '/article-entry.html',
-                        linkText: ''
+                        linkText: 'Read More'
                     } %}{% include "partials/card.html" %}
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4">
@@ -91,7 +102,7 @@
                         tags: '',
                         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/race-81859_2000_1000_90_c1.jpg',
                         linkUrl: '/article-entry.html',
-                        linkText: ''
+                        linkText: 'Read More'
                     } %}{% include "partials/card.html" %}
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4">
@@ -103,7 +114,7 @@
                         tags: '',
                         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/2x1.faith.gospel.evangelism_1700_850_90_c1.jpg',
                         linkUrl: '/article-entry.html',
-                        linkText: ''
+                        linkText: 'Read More'
                     } %}{% include "partials/card.html" %}
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4">
@@ -115,7 +126,7 @@
                         tags: '',
                         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring-articles-three-things-you-need-to-know-about-speaking-in-tongues_1700_850_90_c1.jpg',
                         linkUrl: '/article-entry.html',
-                        linkText: ''
+                        linkText: 'Read More'
                     } %}{% include "partials/card.html" %}
 
                 </div><div class="col-xs-12 col-sm-6 col-md-4">
@@ -127,7 +138,7 @@
                         tags: '',
                         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/newspring.blog.hero.sun.field_2000_1000_90_c1.jpg',
                         linkUrl: '/article-entry.html',
-                        linkText: ''
+                        linkText: 'Read More'
                     } %}{% include "partials/card.html" %}
 
                 </div>

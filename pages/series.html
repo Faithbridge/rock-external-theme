@@ -1,5 +1,7 @@
 {% set pageTitle = "Slaying Giants | Sermons" %}
 
+{% set pageHeaderColorHex = "5C1998" %}
+
 {% extends "full-width.html" %}
 
 {% block content %}
@@ -64,24 +66,10 @@
 	] %}
 
 	{% set blockData = { 
-		id: '1',
-	    title: "",
-	    copy: "",
+	    id: '125',
+	    linkColorHex: '5C1998',
+	    backgroundColorHex: '',
 	    grayscale: '',
-	    fixed:'',
-	    imageUrl: '',
-	    mobileImageUrl: '',
-	    imageOverlayUrl: '//dg0ddngxdz549.cloudfront.net/newspring/fpo/fpo.slaying-giants-fg-2x1.jpg',
-	    backgroundVideoUrl: '',
-	    backgroundOpacity: '',
-	    linkUrl: '',
-	    linkText: '',
-	    linkClasses: '',
-	    videoId: ''
-	} %}{% include "partials/hero.html" %}
-
-	{% set blockData = { 
-	    id: '',
 	    type: '',
 	    typeIcon: '',
 	    label: '',
@@ -92,11 +80,12 @@
 	    tags: {
 	      '': ''
 	    },
-	    imageUrl: '//ns.images.s3.amazonaws.com/newspring/fpo/fpo.MusicWide.jpg',
+	    imageUrl: '//ns.images.s3.amazonaws.com/newspring/collection/series_fuse/1x1slayinggiants.png',
 	    imageAlignment: 'left',
+	    imageOpacity: '',
 	    linkUrl: '#sermons',
 	    linkText: 'View Sermons'
-	} %}{% include "partials/card-side-by-side.html" %}
+	} %}{% include "partials/side-by-side.html" %}
 
 	<span id="sermons">
 
@@ -128,6 +117,9 @@
 	    {% for sermon in sermons %}
 			{% set blockData = { 
 			    id: sermon.id,
+			    backgroundColorHex: '',
+			    linkColorHex: '',
+				grayscale: '',
 			    count: '',
 			    titleSize: 'h3',
 			    title: sermon.title, 

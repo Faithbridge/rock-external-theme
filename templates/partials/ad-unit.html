@@ -2,6 +2,9 @@
 
 {% set blockData = { 
     id: '',
+    backgroundColorHex: '',
+    linkColorHex: '',
+    grayscale: '',
     title: '', 
     copy: "",
     imageUrl: '',
@@ -12,10 +15,39 @@
 
 #}
 
-<section {% if blockData.id %}id="{{ blockData.id }}"{% endif %} class="bg-white relative rounded shadowed xs-soft-half-sides xs-soft-top xs-hard-bottom xs-push-half-bottom">
+{% if blockData.id %}
+    <style>
+        #block-{{ blockData.id }} {
+            background-color: #{{ blockData.backgroundColorHex }};
+        }
+
+        #block-{{ blockData.id }} a:not(.btn):not(.label) {
+            color: #{{ blockData.linkColorHex }};
+        }
+
+        #block-{{ blockData.id }} .btn {
+            background-color: #{{ blockData.linkColorHex }};
+            border-color: #{{ blockData.linkColorHex }};
+        }
+
+        {% if blockData.backgroundColorHex %}
+            #block-{{ blockData.id }}, #block-{{ blockData.id }} a:not(.btn):not(.label) {
+                color: #fff;
+            }
+
+            #block-{{ blockData.id }} .btn, #block-{{ blockData.id }} .label {
+                background-color: #303030;
+                border-color: #303030;
+            }
+        {% endif %}
+
+    </style>
+{% endif %}
+
+<section {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="bg-white position-relative rounded shadowed overflow-hidden xs-soft-half-sides xs-soft-top xs-hard-bottom xs-push-half-bottom">
 	
 	{% if blockData.imageUrl %}
-    	<span class="full-screen background-cover background-center" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
+    	<span class="full-screen background-cover background-center {% if blockData.grayscale %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
     {% endif %}
 
     <div class="bring-forward center-block text-constrained text-center soft xs-soft-top xs-soft-half-sides xs-soft-bottom">

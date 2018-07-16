@@ -1,5 +1,7 @@
 {% set pageTitle = "KidSpring" %}
 
+{% set pageHeaderColorHex = "6bac43" %}
+
 {% extends "full-width.html" %}
 
 {% block content %}
@@ -20,7 +22,7 @@
         imageOverlayUrl: '',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/kidspring/UpdatedWeb_FirstTimer-13.jpg',
         backgroundVideoUrl: '//s3.amazonaws.com/ns.video/fuse/promotions/fuse2israel/76337_CEN_WEB_Fuse2IsraelWebHeader-ProRes-Web_Hero_2_000kbps',
-        backgroundOpacity: '.2',
+        imageOpacity: '.2',
         linkUrl: '',
         linkText: '',
         linkClasses: '',
@@ -87,7 +89,7 @@
         imageAlignment: 'left',
         linkUrl: '#',
         linkText: 'Register Now'
-    } %}{% include "partials/card-side-by-side.html" %}
+    } %}{% include "partials/side-by-side.html" %}
 
     {% include "partials/footer.html" %}
 

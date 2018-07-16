@@ -1,5 +1,7 @@
 {% set pageTitle = "Fuse" %}
 
+{% set pageHeaderColorHex = "5A11CF" %}
+
 {% extends "full-width.html" %}
 
 {% block content %}
@@ -20,7 +22,7 @@
         imageOverlayUrl: '//dg0ddngxdz549.cloudfront.net/fuse/icons/fuse.logo.white.png',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/fuse/about/fuse_groups_stock_web-26.jpg',
         backgroundVideoUrl: '//ns.video.s3.amazonaws.com/fuse/promotions/Fuse_Generic_hero_video_v3_copy',
-        backgroundOpacity: '.3',
+        imageOpacity: '.3',
         linkUrl: '',
         linkText: '',
         linkClasses: '',
@@ -44,7 +46,7 @@
         imageAlignment: 'left',
         linkUrl: 'http://gauntlet.cc',
         linkText: ''
-    } %}{% include "partials/card-side-by-side.html" %}
+    } %}{% include "partials/side-by-side.html" %}
 
     {% set blockData = { 
         id: '2',
@@ -56,7 +58,7 @@
         imageAlignment: 'right',
         linkUrl: 'http://gauntlet.cc',
         linkText: 'Browse Sermons'
-    } %}{% include "partials/card-side-by-side.html" %}
+    } %}{% include "partials/side-by-side.html" %}
 
     <section class="bg-page-background rounded shadowed">
         <div class="center-block text-constrained">

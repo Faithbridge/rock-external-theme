@@ -1,5 +1,7 @@
 {% set pageTitle = "Help" %}
 
+{% set pageHeaderColorHex = "6bac43" %}
+
 {% extends "full-width.html" %}
 
 {% block content %}
@@ -10,7 +12,7 @@
         grayscale: 'y',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/2x1.computer_(2)_1700_850_90_c1.jpg',
         backgroundVideoUrl: '',
-        backgroundOpacity: '.15',
+        imageOpacity: '.15',
         linkUrl: '/help.html',
         linkText: 'Request Help',
         linkClasses: ''
@@ -26,7 +28,7 @@
         imageAlignment: 'right',
         linkUrl: '#',
         linkText: ''
-    } %}{% include "partials/card-side-by-side.html" %}
+    } %}{% include "partials/side-by-side.html" %}
 
     {% set blockData = { 
         id: '2',
@@ -38,7 +40,7 @@
         imageAlignment: 'left',
         linkUrl: 'https://rock.newspring.cc/workflows/152?Topic=Stewardship',
         linkText: 'Contact Us'
-    } %}{% include "partials/card-side-by-side.html" %}
+    } %}{% include "partials/side-by-side.html" %}
 
     {% include "partials/footer.html" %}
 

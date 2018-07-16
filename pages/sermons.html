@@ -1,5 +1,8 @@
 {% set pageTitle = "Sermons" %}
 
+{% set pageHeaderColorHex = "303030" %}
+{% set pageColorHex = "" %}
+
 {% extends "full-width.html" %}
 
 {% block content %}
@@ -26,7 +29,7 @@
 	    imageAlignment: 'left',
 	    linkUrl: '/series.html',
 	    linkText: 'Watch Sermon'
-	} %}{% include "partials/card-side-by-side.html" %}
+	} %}{% include "partials/side-by-side.html" %}
 
 {% set blockData = { 
     id: '2',
@@ -41,7 +44,7 @@
     imageAlignment: 'right',
     linkUrl: '/series.html',
     linkText: 'View Sermons'
-} %}{% include "partials/card-side-by-side.html" %}
+} %}{% include "partials/side-by-side.html" %}
 
     <section class="bg-white rounded shadowed hard-sides">
 		<div class="soft-sides xs-soft-top">

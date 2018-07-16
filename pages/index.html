@@ -1,5 +1,7 @@
 {% extends "full-width.html" %}
 
+{% set pageHeaderColorHex = "6bac43" %}
+
 {% block content %}
 
 	{% set blockData = { 
@@ -8,7 +10,7 @@
         grayscale: '',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/homepage/hero_1x1.gif',
         backgroundVideoUrl: '//s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps',
-        backgroundOpacity: '.7',
+        imageOpacity: '.6',
         linkUrl: '',
         linkText: '',
         linkClasses: ''
@@ -24,7 +26,7 @@
         imageAlignment: 'left',
         linkUrl: 'http://gauntlet.cc',
         linkText: ''
-    } %}{% include "partials/card-side-by-side.html" %}
+    } %}{% include "partials/side-by-side.html" %}
 
     {% set blockData = { 
         id: '3',
@@ -36,7 +38,7 @@
         imageAlignment: 'right',
         linkUrl: '/israel.html',
         linkText: ''
-    } %}{% include "partials/card-side-by-side.html" %}
+    } %}{% include "partials/side-by-side.html" %}
 
 
     {% include "partials/footer.html" %}

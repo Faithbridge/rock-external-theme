@@ -1,5 +1,7 @@
 {% set pageTitle = "KidSpring" %}
 
+{% set pageHeaderColorHex = "6bac43" %}
+
 {% extends "full-width.html" %}
 
 {% block content %}
@@ -20,7 +22,7 @@
         imageOverlayUrl: '//dg0ddngxdz549.cloudfront.net/kidspring/app/KS.app.logo.500.png',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/kidspring/UpdatedWeb_FirstTimer-13.jpg',
         backgroundVideoUrl: '//s3.amazonaws.com/ns.video/newspring/promotions/Kidspring/KidspringWebAssets_V2',
-        backgroundOpacity: '.2',
+        imageOpacity: '.2',
         linkUrl: '',
         linkText: '',
         linkClasses: '',
@@ -59,7 +61,7 @@
         imageAlignment: 'left',
         linkUrl: 'https://newspring.cc/kidspring/app',
         linkText: 'Get the App'
-    } %}{% include "partials/card-side-by-side.html" %}
+    } %}{% include "partials/side-by-side.html" %}
 
     <section class="bg-white rounded shadowed">
         <div class="text-constrained center-block text-center">
@@ -112,7 +114,7 @@
         imageAlignment: 'left',
         linkUrl: 'https://newspring.cc/music/time-to-dance',
         linkText: 'Purchase Now'
-    } %}{% include "partials/card-side-by-side.html" %}
+    } %}{% include "partials/side-by-side.html" %}
 
     <section class="bg-white rounded shadowed">
         <div class="text-constrained center-block text-center">

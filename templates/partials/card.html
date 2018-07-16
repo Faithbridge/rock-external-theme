@@ -2,6 +2,9 @@
 
 {% set blockData = { 
     id: '',
+    backgroundColorHex: '',
+    linkColorHex: '',
+    grayscale: '',
     count: '',
     titleSize: '',
     title: '', 
@@ -11,20 +14,50 @@
       '': ''
     },
     imageUrl: '',
+    imageOpacity: '',
     linkUrl: '',
     linkText: ''
 } %}{% include "partials/card.html" %}
 
 #}
 
-<div class="panel panel-default">
+{% if blockData.id %}
+    <style>
+        #block-{{ blockData.id }} {
+            background-color: #{{ blockData.backgroundColorHex }};
+        }
+
+        #block-{{ blockData.id }} a:not(.btn):not(.label) {
+            color: #{{ blockData.linkColorHex }};
+        }
+
+        #block-{{ blockData.id }} .btn {
+            background-color: #{{ blockData.linkColorHex }};
+            border-color: #{{ blockData.linkColorHex }};
+        }
+
+        {% if blockData.backgroundColorHex %}
+            #block-{{ blockData.id }}, #block-{{ blockData.id }} a:not(.btn):not(.label) {
+                color: #fff;
+            }
+
+            #block-{{ blockData.id }} .btn, #block-{{ blockData.id }} .label {
+                background-color: #303030;
+                border-color: #303030;
+            }
+        {% endif %}
+
+    </style>
+{% endif %}
+
+<div {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="panel panel-default">
 
     {% if blockData.imageUrl %}
         {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}" class="panel-image">{% endif %}
             {% if blockData.count %}
                 <span class="card-count sans-serif strong rounded bg-gray-dark text-white text-center">{{ blockData.count }}</span>
             {% endif %}
-            <img src="{{ blockData.imageUrl }}" alt="">
+            <img src="{{ blockData.imageUrl }}" alt="" class="{% if blockData.grayscale %}grayscale{% endif %}" style="{% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}">
         {% if blockData.linkUrl %}</a>{% endif %}
     {% endif %}
 
@@ -56,7 +89,7 @@
 
         {% if blockData.linkUrl %}
             <p>
-                <a href="{{ blockData.linkUrl }}" class="btn btn-sm btn-primary xs-btn-block" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a>
+                <a href="{{ blockData.linkUrl }}" class="btn btn btn-primary" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a>
             </p>
         {% endif %}
 

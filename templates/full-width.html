@@ -2,7 +2,9 @@
 
 {% block globalContent %}
 
-<div class="page-brand-bar bg-primary" style="background-color: #{{ pagePrimaryColor }}; opacity: .9;" data-0="top:0px;" data-300="top:-650px;"></div>
+{% if pageHeaderColorHex %}
+<div class="page-brand-bar" style="background-color: #{{ pageHeaderColorHex }}; opacity: .9;"></div>
+{% endif %}
 
 <div class="page-constrained mx-auto">
 	<div class="soft xs-soft-half hard-bottom">

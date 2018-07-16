@@ -105,15 +105,15 @@
         <div id="content" class="content">
             
 
-<div class="page-brand-bar bg-primary" style="background-color: #; opacity: .9;" data-0="top:0px;" data-300="top:-650px;"></div>
+
+<div class="page-brand-bar" style="background-color: #6bac43; opacity: .9;"></div>
+
 
 <div class="page-constrained mx-auto">
 	<div class="soft xs-soft-half hard-bottom">
 	    
 
 	
-
-
 
 <!-- Hero -->
 <section  class="
@@ -126,13 +126,12 @@ text-white
 push-bottom
 xs-push-half-bottom
 bring-forward
-
- overflow-hidden">
+">
 
 	
 
         <!-- Background Video -->
-		<video class="video rounded hidden-xs hidden-sm " style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: .7;" width="1280" height="720" loop="" autoplay="">
+		<video class="video rounded hidden-xs hidden-sm " style="display: block; position: absolute; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: .6;" width="1280" height="720" loop="" autoplay="">
 			<source src="//s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps.mp4" type="video/mp4">
 			<source src="//s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps.webm" type="video/webm">
 		</video>
@@ -141,7 +140,7 @@ bring-forward
 	
 	<!-- Background Image -->
 	
-    	<span class=" full-screen background-cover background-center rounded hidden-md hidden-lg " style="background-image: url('//dg0ddngxdz549.cloudfront.net/newspring/homepage/hero_1x1.gif'); opacity: .7;"></span>
+    	<span class=" full-screen background-cover background-center rounded hidden-md hidden-lg " style="background-image: url('//dg0ddngxdz549.cloudfront.net/newspring/homepage/hero_1x1.gif'); opacity: .6;"></span>
     
 
     
@@ -170,13 +169,30 @@ bring-forward
 
     
 
-<!-- EVERYTHING goes in a row! -->
-<section class="hard position-relative overflow-hidden bg-white rounded shadowed"><!-- Section Color Classes -->
+
+    <style>
+        #block-5 {
+            background-color: #;
+        }
+
+        #block-5 a:not(.btn):not(.label) {
+            color: #;
+        }
+
+        #block-5 .btn {
+            background-color: #;
+            border-color: #;
+        }
+
+    </style>
+
+
+<section id="block-5" class="hard position-relative overflow-hidden bg-white rounded shadowed">
 
     
         <a href="http://gauntlet.cc">
 
-            <div class="split split-left background-center background-cover sm-push-bottom xs-push-bottom" style=" background-image: url('//dg0ddngxdz549.cloudfront.net/images/remote/http_images.newspring.cc/section/worship/app1024x10240000.gauntlet18.png');"
+            <div class="split split-left background-center background-cover sm-push-bottom xs-push-bottom " style=" background-image: url('//dg0ddngxdz549.cloudfront.net/images/remote/http_images.newspring.cc/section/worship/app1024x10240000.gauntlet18.png'); "
         ></div>
 
         </a>
@@ -185,12 +201,12 @@ bring-forward
 
     <div class="row text-right flush"><!-- Section Padding and Alignement Classes -->
         <div class="col-xs-12 col-sm-12 col-md-6 text-left hard"><!-- Text Alignment Classes -->
-            <div class="soft-double soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
+            <div class="bg-white soft-double soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
                 
                 
                 
                 
-                    <h2 class="push-half-bottom">
+                    <h2 class="block-title push-half-bottom">
                         <a href="http://gauntlet.cc">
                             See You at Gauntlet
                         </a>
@@ -241,13 +257,30 @@ bring-forward
 
     
 
-<!-- EVERYTHING goes in a row! -->
-<section class="hard position-relative overflow-hidden bg-white rounded shadowed"><!-- Section Color Classes -->
+
+    <style>
+        #block-3 {
+            background-color: #;
+        }
+
+        #block-3 a:not(.btn):not(.label) {
+            color: #;
+        }
+
+        #block-3 .btn {
+            background-color: #;
+            border-color: #;
+        }
+
+    </style>
+
+
+<section id="block-3" class="hard position-relative overflow-hidden bg-white rounded shadowed">
 
     
         <a href="/israel.html">
 
-            <div class="split split-right background-center background-cover sm-push-bottom xs-push-bottom" style=" background-image: url('//dg0ddngxdz549.cloudfront.net/newspring/Israel/jerusalem.2x1.jpg');"
+            <div class="split split-right background-center background-cover sm-push-bottom xs-push-bottom " style=" background-image: url('//dg0ddngxdz549.cloudfront.net/newspring/Israel/jerusalem.2x1.jpg'); "
         ></div>
 
         </a>
@@ -256,12 +289,12 @@ bring-forward
 
     <div class="row text-left flush"><!-- Section Padding and Alignement Classes -->
         <div class="col-xs-12 col-sm-12 col-md-6 text-left hard"><!-- Text Alignment Classes -->
-            <div class="soft-double soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
+            <div class="bg-white soft-double soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
                 
                 
                 
                 
-                    <h2 class="push-half-bottom">
+                    <h2 class="block-title push-half-bottom">
                         <a href="/israel.html">
                             Israel Trip 2018
                         </a>
@@ -528,12 +561,9 @@ bring-forward
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <!-- Core JS -->    
-        <script type="text/javascript" src="/dest/js/skrollr.min.js"></script>
         <script src="/dest/js/main.js"></script>
 
         <script>
-            var s = skrollr.init();
-
             // $('#search-modal').modal('show');
 
             // Custom Navigation Loading

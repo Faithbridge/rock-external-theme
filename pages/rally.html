@@ -1,5 +1,7 @@
 {% set pageTitle = "Rally" %}
 
+{% set pageHeaderColorHex = "D45F18" %}
+
 {% extends "full-width.html" %}
 
 {% block content %}
@@ -20,7 +22,7 @@
         imageOverlayUrl: '//dg0ddngxdz549.cloudfront.net/newspring/Rally/rally.logo.white.png',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/Rally/Rally5_2x1_.jpg',
         backgroundVideoUrl: '//ns.video.s3.amazonaws.com/newspring/promotions/Rally/3645_CEN_RAL_RALLYHeroVid_ForExport_h264_v4',
-        backgroundOpacity: '.3',
+        imageOpacity: '.3',
         linkUrl: '',
         linkText: '',
         linkClasses: '',
@@ -38,7 +40,7 @@
         imageAlignment: 'left',
         linkUrl: '#',
         linkText: 'Get Directions'
-    } %}{% include "partials/card-side-by-side.html" %}
+    } %}{% include "partials/side-by-side.html" %}
 
     {% set blockData = { 
         id: '2',
@@ -51,7 +53,7 @@
         imageAlignment: 'right',
         linkUrl: '#',
         linkText: ''
-    } %}{% include "partials/card-side-by-side.html" %}
+    } %}{% include "partials/side-by-side.html" %}
 
     {% include "partials/footer.html" %}
 
