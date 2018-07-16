@@ -57,11 +57,11 @@
 
                 {% set tagCount = blockData.tags | length %}
                 {% if tagCount != 0 %}
-                    <p><small>
+                    <p class="tag-list sans-serif">
                         {% for id, title in blockData.tags %}
-                            <a href="#" class="label label-primary">{{ title }}</a>
+                            <a href="#" class="label label-default">{{ title }}</a>
                         {% endfor %}
-                    </small></p>
+                    </p>
                 {% endif %}
                 
                 <div>
@@ -69,10 +69,9 @@
                     {{ blockData.copy | safe | truncate(250) }}{% if length > 250 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
                 </div>
 
-                {% if blockData.linkUrl or blockData.type %}
+                {% if blockData.linkUrl %}
                     <p>
-                        <a href="{{ blockData.linkUrl }}" class="btn btn-primary" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a> {% if blockData.type and blockData.typeIcon %}<span class="btn btn-size sans-serif strong pull-right">
-                        {% if blockData.typeIcon %}<i class="{{ blockData.typeIcon }}"></i> {% endif %}{{ blockData.type }}</span>{% endif %}
+                        <a href="{{ blockData.linkUrl }}" class="btn btn-primary" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a>
                     </p>
                 {% endif %}
 

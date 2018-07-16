@@ -45,10 +45,10 @@
 	transition: background-color .1s;
 
 	@media (min-width: $screen-sm-min) {
-		width: $base-spacing-unit*2.5;
-		height: $base-spacing-unit*2.5;
+		width: $base-spacing-unit*3.5;
+		height: $base-spacing-unit*3.5;
 		line-height: $base-spacing-unit*2.35;
-		margin-left: -$base-spacing-unit*1.25;
+		margin-left: -$base-spacing-unit*1.75;
 		bottom: -$base-spacing-unit*1.75;
 	}
 
@@ -63,10 +63,12 @@
 
 		.wistia_click_to_play {
 			position: absolute !important;
-			top: 0;
+			top: 50%;
 			right: 0;
 			bottom: 0;
-			left: 0;
+			left: 50%;
+			margin-top: -26px;
+			margin-left: -26px;
 			border-radius: 1000px;
 		}
 	}
@@ -78,6 +80,6 @@
 
 	i {
 		position: relative;
-		left: 2px;
+		// left: 2px;
 	}
 }

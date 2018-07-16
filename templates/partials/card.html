@@ -5,6 +5,7 @@
     count: '',
     titleSize: '',
     title: '', 
+    subtitle: "",
     copy: "", 
     tags: {
       '': ''
@@ -32,7 +33,7 @@
     <div class="panel-body hard-bottom">
         
         {% if blockData.title %}
-            <h2 class="{{ blockData.titleSize }}">
+            <h2 class="{{ blockData.titleSize }} push-half-bottom">
                 {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
                     {{ blockData.title }}
                 {% if blockData.linkUrl %}</a>{% endif %}
@@ -43,18 +44,21 @@
             <p class="sans-serif strong push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
         {% endif %}
 
-        <p><small>
-            {% for id, title in blockData.tags %}
-                <a href="#" class="label label-primary">{{ title }}</a>
-            {% endfor %}
-        </small></p>
+        {% set tagCount = blockData.tags | length %}
+        {% if tagCount >= 1 %}
+            <p class="tag-list sans-serif push-half-bottom">
+                {% for id, title in blockData.tags %}
+                    <a href="#" class="label label-default">{{ title }}</a>
+                {% endfor %}
+            </p>
+        {% endif %}
         
         {% set length = blockData.copy | length %}
         {{ blockData.copy | safe | truncate(200) }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
 
-        {% if blockData.linkUrl or blockData.type %}
+        {% if blockData.linkUrl %}
             <p>
-                <a href="{{ blockData.linkUrl }}" class="btn btn-sm btn-primary" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a> <span class="btn btn-sm btn-size sans-serif strong pull-right">
+                <a href="{{ blockData.linkUrl }}" class="btn btn-sm btn-primary xs-btn-block" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a>
             </p>
         {% endif %}
 

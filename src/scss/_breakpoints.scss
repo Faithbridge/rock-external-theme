@@ -1,5 +1,10 @@
 // SM Breakpoint
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+	.sm-btn-block {
+		display: inline-block;
+		width: 100%;
+	}
+
 	.sm-text-center { text-align: center; }
 	.sm-text-left { text-align: left; }
 	.sm-text-right { text-align: right; }
@@ -121,6 +126,11 @@
 	      margin-left: 0; // no need for this gap between nav items
 	    }
 	  }
+	}
+
+	.xs-btn-block {
+		display: inline-block;
+		width: 100%;
 	}
 
 	// Positioning

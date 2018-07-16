@@ -1,6 +1,8 @@
 // Helper Classes
 
 .strong { font-weight: 500; }
+.stronger { font-weight: 700; }
+.strongest { font-weight: 900; }
 .serif { font-family: $font-family-serif; }
 .sans-serif { font-family: $font-family-sans-serif; }
 .text-constrained { max-width: 700px; }
@@ -63,7 +65,13 @@ $circular-radius: 5000px;
 .background-left { background-position: left; }
 .background-right { background-position: right; }
 .bring-forward { position: relative; z-index: 1; }
-.overflow-hidden { overflow: hidden; }
+.overflow-hidden { 
+	overflow: hidden; 
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+ }
 .overflow-y-auto { overflow-y: auto; }
 .overflow-x-auto { overflow-x: auto; }
 
