@@ -1,0 +1,18 @@
+{#
+
+{% set blockData = { 
+    id: '',
+    backgroundColorHex: '',
+    grayscale: '',
+    imageUrl: '',
+    imageOpacity: '',
+    linkUrl: ''
+} %}{% include "partials/image.html" %}
+
+#}
+
+{% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
+    <div class="rounded shadowed overflow-hidden push-bottom xs-push-half-bottom" style="{% if blockData.backgroundColorHex %}background-color: #{{ blockData.backgroundColorHex }};{% endif %}">
+        <img src="{{ blockData.imageUrl }}" alt="" class="{% if blockData.grayscale %}grayscale{% endif %}" style="{% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}">
+    </div>
+{% if blockData.linkUrl %}</a>{% endif %}
