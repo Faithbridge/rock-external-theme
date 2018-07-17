@@ -5,8 +5,6 @@
     linkColorHex: '',
     backgroundColorHex: '',
     grayscale: '',
-    type: '',
-    typeIcon: '',
     label: '',
     titleSize:'',
     title: "",
@@ -20,11 +18,11 @@
     imageAlignment: '',
     linkUrl: '',
     linkText: ''
-} %}{% include "partials/card-side-by-side.html" %}
+} %}{% include "partials/side-by-side.html" %}
 
 #}
 
-{% if blockData.id %}
+{% if blockData.id and blockData.backgroundColorHex %}
     <style>
         #block-{{ blockData.id }} {
             background-color: #{{ blockData.backgroundColorHex }};
@@ -71,7 +69,7 @@
                 {% endif %}
 
                 {% if blockData.subtitle %}
-                    <p class="sans-serif strong push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
+                    <p class="sans-serif stronger letter-spacing-condensed text-uppercase text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
                 {% endif %}
 
                 {% set tagCount = blockData.tags | length %}

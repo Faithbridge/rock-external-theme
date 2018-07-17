@@ -4,150 +4,118 @@
 
 {% extends "full-width.html" %}
 
+{% set sermons = [
+	{
+		"id": "1",
+		"title": "Fear vs. Faith",
+		"subtitle": "Oct 1, 2017 • Dan Lian",
+		"copy": "<p>When God’s people reached the Promised Land, it was full of abundance. It was also full of giants. The same is true for us. God has called us into abundance, but there are giants standing in our way. Don't allow these giants to steal one ounce of joy or hope from you. Know who they are and get ready to attack.</p>",
+		"tags": {
+	      "1": "bitterness",
+	      "2": "greed",
+	      "3": "promises",
+	      "4": "anxiety"
+	    }
+	},
+	{
+		"id": "2",
+		"title": "Generosity vs. Greed",
+		"subtitle": "Oct 8, 2017 • Clayton King",
+		"copy": "<p>We all know greed is a problem — we just think it’s a problem for other people. Greed is sneaky like that. Don't let greed grab a hold of you. Learn to see greed for what it is, slay its hold on your life, and stay free from greed for good.</p>",
+		"tags": {
+	      "1": "greed",
+	      "2": "generosity",
+	      "3": "money"
+	    }
+	},
+	{
+		"id": "3",
+		"title": "Unforgiveness vs. Freedom",
+		"subtitle": "Oct 15, 2017 • Brad Cooper",
+		"copy": "<p>When someone hurts you, do you pretend it never happened or silently plot your revenge? Maybe you hold a grudge 'to teach 'em a lesson.'</p>",
+		"tags": {
+	      "1": "jealousy",
+	      "2": "bitterness",
+	      "3": "forgiveness"
+	    }
+	},
+	{
+		"id": "4",
+		"title": "Comparison vs. Contentment",
+		"subtitle": "Oct 22, 2017 • Stacey Tarrant",
+		"copy": "<p>Ever felt like someone else was living the life you were meant to have? That’s what comparison does. It convinces us that God plus something else — a spouse, a child, a house, a promotion — will be enough. Don't let comparison stop you from enjoying the life God has for you.</p>",
+		"tags": {
+	      "1": "comparison",
+	      "2": "jealousy",
+	      "3": "identity"
+	    }
+	},
+	{
+		"id": "5",
+		"title": "Anxiety vs. Gratitude",
+		"subtitle": "Oct 29, 2017 • Lee McDerment",
+		"copy": "<p>Anxiety attacks everyone. When we go through difficult or stressful situations, our bodies remember and fear alerts us when danger presents itself again. Anxiety doesn’t mean we’re bad people or that we’re crazy. But it will tear us apart if we don’t face its cause.</p>",
+		"tags": {
+	      "1": "peace",
+	      "2": "freedom",
+	      "3": "anxiety"
+	    }
+	}
+] %}
+
 {% block content %}
 
-	{% set sermons = [
-		{
-			"id": "1",
-			"title": "Fear vs. Faith",
-			"subtitle": "Oct 1, 2017 • Dan Lian",
-			"copy": "<p>When God’s people reached the Promised Land, it was full of abundance. It was also full of giants. The same is true for us. God has called us into abundance, but there are giants standing in our way. Don't allow these giants to steal one ounce of joy or hope from you. Know who they are and get ready to attack.</p>",
-			"tags": {
-		      "1": "bitterness",
-		      "2": "greed",
-		      "3": "promises",
-		      "4": "anxiety"
-		    }
-		},
-		{
-			"id": "2",
-			"title": "Generosity vs. Greed",
-			"subtitle": "Oct 8, 2017 • Clayton King",
-			"copy": "<p>We all know greed is a problem — we just think it’s a problem for other people. Greed is sneaky like that. Don't let greed grab a hold of you. Learn to see greed for what it is, slay its hold on your life, and stay free from greed for good.</p>",
-			"tags": {
-		      "1": "greed",
-		      "2": "generosity",
-		      "3": "money"
-		    }
-		},
-		{
-			"id": "3",
-			"title": "Unforgiveness vs. Freedom",
-			"subtitle": "Oct 15, 2017 • Brad Cooper",
-			"copy": "<p>When someone hurts you, do you pretend it never happened or silently plot your revenge? Maybe you hold a grudge 'to teach 'em a lesson.'</p>",
-			"tags": {
-		      "1": "jealousy",
-		      "2": "bitterness",
-		      "3": "forgiveness"
-		    }
-		},
-		{
-			"id": "4",
-			"title": "Comparison vs. Contentment",
-			"subtitle": "Oct 22, 2017 • Stacey Tarrant",
-			"copy": "<p>Ever felt like someone else was living the life you were meant to have? That’s what comparison does. It convinces us that God plus something else — a spouse, a child, a house, a promotion — will be enough. Don't let comparison stop you from enjoying the life God has for you.</p>",
-			"tags": {
-		      "1": "comparison",
-		      "2": "jealousy",
-		      "3": "identity"
-		    }
-		},
-		{
-			"id": "5",
-			"title": "Anxiety vs. Gratitude",
-			"subtitle": "Oct 29, 2017 • Lee McDerment",
-			"copy": "<p>Anxiety attacks everyone. When we go through difficult or stressful situations, our bodies remember and fear alerts us when danger presents itself again. Anxiety doesn’t mean we’re bad people or that we’re crazy. But it will tear us apart if we don’t face its cause.</p>",
-			"tags": {
-		      "1": "peace",
-		      "2": "freedom",
-		      "3": "anxiety"
-		    }
-		}
-	] %}
-
 	{% set blockData = { 
-	    id: '125',
-	    linkColorHex: '5C1998',
-	    backgroundColorHex: '',
-	    grayscale: '',
-	    type: '',
-	    typeIcon: '',
-	    label: '',
-	    titleSize:'',
-	    title: "Slaying Giants",
-	    subtitle: "Oct 1 &mdash; Oct 29, 2017",
-	    copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
-	    tags: {
-	      '': ''
-	    },
-	    imageUrl: '//ns.images.s3.amazonaws.com/newspring/collection/series_fuse/1x1slayinggiants.png',
-	    imageAlignment: 'left',
-	    imageOpacity: '',
-	    linkUrl: '#sermons',
-	    linkText: 'View Sermons'
-	} %}{% include "partials/side-by-side.html" %}
+	    id: '1',
+	    preTitle: '',
+	    titleSize: '',
+	    title: 'Slaying Giants',
+	    tags: ''
+	} %}{% include "partials/page-header.html" %}
 
-	<span id="sermons">
+	<div class="row">
+		<div class="col-md-4 col-sm-5 col-xs-12">
 
-	    <section class="hidden bg-gray-darker rounded shadowed hard-sides soft-half-bottom xs-soft-top xs-hard-bottom">
-			<div class="soft-sides xs-soft-top">
-				<h2 class="text-white push-half-bottom text-center">From This Series</h2>
-			</div>
-
-	        <div class="slider-wrapper" data-slider="300">
-	        	<div class="slider">
-	        		{% for sermon in sermons %}<div class="slider-item">
-						{% set blockData = { 
-							id: sermon.id,
-						    count: '',
-						    titleSize: 'h3',
-						    title: sermon.title,
-						    subtitle: sermon.subtitle,
-						    copy: sermon.copy, 
-						    tags: sermon.tags,
-						    imageUrl: '',
-						    linkUrl: '#',
-						    linkText: 'Watch Now'
-						} %}{% include "partials/card.html" %}
-			        </div>{% endfor %}
-			    </div>
-			</div>
-	    </section>
-
-	    {% for sermon in sermons %}
 			{% set blockData = { 
-			    id: sermon.id,
+			    id: '2',
 			    backgroundColorHex: '',
 			    linkColorHex: '',
-				grayscale: '',
+			    grayscale: '',
 			    count: '',
-			    titleSize: 'h3',
-			    title: sermon.title, 
-			    subtitle: sermon.subtitle,
-			    copy: sermon.copy, 
-			    tags: sermon.tags,
-			    imageUrl: '',
-			    linkUrl: '#',
-			    linkText: 'Watch Now'
+			    titleSize: '',
+			    title: '', 
+			    subtitle: "",
+			    copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>", 
+			    tags: '',
+			    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_fuse/1x1slayinggiants_1700_1701_c1.png',
+			    imageOpacity: '',
+			    linkUrl: '',
+			    linkText: ''
 			} %}{% include "partials/card.html" %}
-		{% endfor %}
 
-	</span>
+		</div><div class="col-md-8 col-sm-7 col-xs-12">
 
-	<section class="bg-white soft-double xs-soft rounded shadowed">
-		<h3 class="text-center">Share This</h3>
-		<div class="row-condensed">
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<a href="#" class="btn btn-block btn-facebook sm-push-half-bottom xs-push-half-bottom"><i class="fab fa-fw fa-facebook-f"></i> Facebook</a>
-			</div><div class="col-md-3 col-sm-6 col-xs-12">
-				<a href="#" class="btn btn-block btn-twitter sm-push-half-bottom xs-push-half-bottom"><i class="fab fa-fw fa-twitter"></i> Twitter</a>
-			</div><div class="col-md-3 col-sm-6 col-xs-12">
-				<a href="#" class="btn btn-block btn-google xs-push-half-bottom"><i class="fab fa-fw fa-google-plus-g"></i> Google Plus</a>
-			</div><div class="col-md-3 col-sm-6 col-xs-12">
-				<a href="#" class="btn btn-block btn-pinterest"><i class="fab fa-fw fa-pinterest-p"></i> Pinterest</a>
-			</div>
+			{% for sermon in sermons %}
+				{% set blockData = { 
+				    id: sermon.id,
+				    backgroundColorHex: '',
+				    linkColorHex: '',
+				    grayscale: '',
+				    count: sermon.id,
+				    titleSize: 'h4',
+				    title: sermon.title, 
+				    subtitle: sermon.subtitle,
+				    copy: sermon.copy, 
+				    tags: sermon.tags,
+				    imageUrl: '',
+				    imageOpacity: '',
+				    linkUrl: '/sermon-entry.html',
+				    linkText: 'Watch Now'
+				} %}{% include "partials/card.html" %}
+			{% endfor %}
+
 		</div>
-	</section>
+	</div>
 
     {% include "partials/footer.html" %}
 

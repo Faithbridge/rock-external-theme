@@ -18,17 +18,18 @@
 	i {
 		margin-left: 5px;
 	}
-
-	.fa-xs {
-		position: relative;
-		top: -1px;
-	}
-
-	.fa-lg {
-		position: relative;
-		top: 1px;
-	}
 }
+
+.btn .fa-xs, .fa-xs {
+	position: relative;
+	top: -1px;
+}
+
+.btn .fa-lg, .fa-lg {
+	position: relative;
+	top: 1px;
+}
+
 
 .btn-play {
 	position: absolute !important;

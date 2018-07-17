@@ -121,11 +121,14 @@
         }
     ] %}
 
-    <section class="soft-half xs-hard">
-        <div class="container-fluid hard-sides">
-            <h1 class="h2 push-half-top text-white flush-bottom">Articles</h1>            
-        </div>
-    </section>
+    {% set blockData = { 
+        id: '1',
+        preTitle: '',
+        titleSize: '',
+        title: 'Articles',
+        tags: ''
+    } %}{% include "partials/page-header.html" %}
+
     <section class="soft-half hard-top xs-hard">
         <div class="container-fluid hard">
             <div class="row">

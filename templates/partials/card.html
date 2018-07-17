@@ -72,12 +72,12 @@
         {% endif %}
 
         {% if blockData.subtitle %}
-            <p class="sans-serif strong push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
+            <p class="sans-serif stronger letter-spacing-condensed text-uppercase text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
         {% endif %}
 
         {% set tagCount = blockData.tags | length %}
         {% if tagCount >= 1 %}
-            <p class="tag-list sans-serif push-half-bottom">
+            <p class="tag-list sans-serif">
                 {% for id, title in blockData.tags %}
                     <a href="#" class="label label-default">{{ title }}</a>
                 {% endfor %}

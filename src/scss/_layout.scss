@@ -51,12 +51,6 @@
 	}
 }
 
-.topbar .content {
-
-}
-
-
-
 .split {
 	position: absolute;
 	top: 0;
@@ -93,12 +87,12 @@
 .page-brand-bar {
 	position: fixed;
 	z-index: -1;
-	height: $base-spacing-unit*2;
+	height: $base-spacing-unit*3;
 	width: 100%;
-	transform: scale(7, 7) rotate(-6deg);
+	transform: scale(7, 7) rotate(-4deg);
 
 	@media (min-width: $screen-sm-max) {
-		height: $base-spacing-unit*2.5;
+		height: $base-spacing-unit*3.5;
 	}
 }
 

@@ -1,5 +1,6 @@
 // SM Breakpoint
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+
 	.sm-btn-block {
 		display: inline-block;
 		width: 100%;
@@ -80,11 +81,15 @@
 	// Font Size Adjustments
 	body {
 		// font-size: ceil(($font-size-base * 1.15));
+
 		.card {
 			font-size: ceil(($font-size-base * .9));
 		}
 		.panel {
-			font-size: ceil(($font-size-base * .9));
+			font-size: ceil(($font-size-base * 1.05));
+		}
+		.label {
+			font-size: ceil(($font-size-base * .75));
 		}
 	}
 

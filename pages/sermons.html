@@ -1,20 +1,69 @@
 {% set pageTitle = "Sermons" %}
 
-{% set pageHeaderColorHex = "1c1c1c" %}
 {% set pageColorHex = "" %}
+{% set pageHeaderColorHex = "6bac43" %}
 
 {% extends "full-width.html" %}
 
+{% set seriesItems = [
+	{
+		"id": "1",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/fuse/hearnoevil.commassets.1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "2",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/HS1x1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "3",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/4325.sundays.cen.web.easter18.story1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "4",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1TightenKnot.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "5",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/3490.sundays.cen.different.1x1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "6",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/series.dyswis.1x1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "7",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1_promothankfull.marketing.png",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "8",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/1x1slayinggiants.png",
+		"linkUrl": "/series.html"
+	}
+] %}
+
+
 {% block content %}
 
-	<section class="soft-half xs-hard-sides">
-	    <div class="container-fluid hard-sides">
-	        <h1 class="h2 text-white push-half-top flush-bottom">Sermons</h1>            
-	    </div>
-	</section>
+{% set blockData = { 
+    id: '1',
+    preTitle: '',
+    titleSize: '',
+    title: 'Sermons',
+    tags: ''
+} %}{% include "partials/page-header.html" %}
 
 {% set blockData = { 
-	    id: '1',
+	    id: '2',
+	    linkColorHex: '',
+	    backgroundColorHex: '',
+	    grayscale: '',
 	    label: 'Featured Sermon',
 	    titleSize:'h1',
 	    title: "The Nature of the Shepherd",
@@ -32,14 +81,15 @@
 	} %}{% include "partials/side-by-side.html" %}
 
 {% set blockData = { 
-    id: '2',
+    id: '3',
+    linkColorHex: '',
+    backgroundColorHex: '',
+    grayscale: '',
     label: 'Featured Series',
     titleSize:'h1',
     title: "Slaying Giants",
     copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
-    tags: {
-      '': ''
-    },
+    tags: '',
     imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_fuse/1x1slayinggiants_1700_1701_c1.png',
     imageAlignment: 'right',
     linkUrl: '/series.html',
@@ -53,88 +103,15 @@
 
         <div class="slider-wrapper" data-slider="250">
         	<div class="slider">
-		        <div class="slider-item">
-					<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/fuse/hearnoevil.commassets.1.jpg');"></div></a>
-					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
-		        </div><div class="slider-item rounded overflow-hidden">
-		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/HS1x1.jpg');"></div></a>
-					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
-		        </div><div class="slider-item rounded overflow-hidden">
-		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/4325.sundays.cen.web.easter18.story1.jpg');"></div></a>
-					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
-		        </div><div class="slider-item rounded overflow-hidden">
-		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1TightenKnot.jpg');"></div></a>
-					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
-		        </div><div class="slider-item rounded overflow-hidden">
-		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/3490.sundays.cen.different.1x1.jpg');"></div></a>
-					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
-		        </div><div class="slider-item rounded overflow-hidden">
-		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/series.dyswis.1x1.jpg');"></div></a>
-					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
-		        </div><div class="slider-item rounded overflow-hidden">
-		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1_promothankfull.marketing.png');"></div></a>
-					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
-		        </div><div class="slider-item rounded overflow-hidden">
-		        	<a href="/series.html"><div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/1x1slayinggiants.png');"></div></a>
-					<!-- <a href="/series.html" class="btn btn-primary btn-block">Watch Now</a> -->
-		        </div>
+		        {% for series in seriesItems %}<div class="slider-item">
+					{% if series.linkUrl %}<a href="{{ series.linkUrl }}">{% endif %}
+						<div class="ratio-square shadowed background-center background-cover rounded overflow-hidden push-half-bottom" style="background-image:url('{{ series.imageUrl }}');"></div>
+					{% if series.linkUrl %}</a>{% endif %}
+		        </div>{% endfor %}
 		    </div>
 		</div>
 
 		<p class="text-center push-half-ends"><a href="#" class="btn btn-primary">Browse All Series</a></p>
-    </section>
-
-    <section class="bg-white rounded shadowed hard-sides soft-half-bottom">
-		<div class="soft-sides xs-soft-top">
-			<h2 class="push-half-bottom text-center">Featured Sermons</h2>
-		</div>
-
-        <div class="slider-wrapper" data-slider="400">
-        	<div class="slider">
-		        <div class="slider-item">
-					{% set blockData = { 
-					    count: '',
-					    titleSize: 'h3',
-					    title: 'The Three Voices In Your Head', 
-					    copy: "<p>God’s voice in our lives is often drowned out by the voice of our flesh and the voice of satan. Discover the four ways you can turn down the noise and hear God more clearly every day.</p>", 
-					    tags: {
-					      '1': 'satan',
-					      '2': 'truth',
-					      '3': 'community'
-					    },
-					    imageUrl: '//ns.images.s3.amazonaws.com/all/heroes/fuse/hearnoevil.commassets.2x1.jpg',
-					    linkUrl: '#',
-					    linkText: 'Watch Now'
-					} %}{% include "partials/card.html" %}
-		        </div><div class="slider-item">
-					{% set blockData = { 
-					    count: '',
-					    titleSize: 'h3',
-					    title: 'The Three Voices In Your Head', 
-					    copy: "<p>God’s voice in our lives is often drowned out by the voice of our flesh and the voice of satan. Discover the four ways you can turn down the noise and hear God more clearly every day.</p>", 
-					    tags: {
-					      '': ''
-					    },
-					    imageUrl: '//ns.images.s3.amazonaws.com/all/heroes/fuse/hearnoevil.commassets.2x1.jpg',
-					    linkUrl: '#',
-					    linkText: 'Watch Now'
-					} %}{% include "partials/card.html" %}
-		        </div><div class="slider-item">
-					{% set blockData = { 
-					    count: '',
-					    titleSize: 'h3',
-					    title: 'The Three Voices In Your Head', 
-					    copy: "<p>God’s voice in our lives is often drowned out by the voice of our flesh and the voice of satan. Discover the four ways you can turn down the noise and hear God more clearly every day.</p>", 
-					    tags: {
-					      '': ''
-					    },
-					    imageUrl: '//ns.images.s3.amazonaws.com/all/heroes/fuse/hearnoevil.commassets.2x1.jpg',
-					    linkUrl: '#',
-					    linkText: 'Watch Now'
-					} %}{% include "partials/card.html" %}
-		        </div>
-		    </div>
-		</div>
     </section>
 
     {% include "partials/footer.html" %}

@@ -1,5 +1,11 @@
 // Grid
-.row-reverse { direction:rtl; }
+.row-reverse { 
+	direction:rtl; 
+	
+	* {
+		direction: ltr;
+	}
+}
 
 .row {
 	margin-left: -$base-spacing-unit/2;

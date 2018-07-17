@@ -4,6 +4,8 @@
     id: '',
     title: "",
     copy: "",
+    linkColorHex: '',
+    backgroundColorHex: '',
     grayscale: '',
     fixed: '',
     imageUrl: '',
@@ -31,7 +33,7 @@ xs-push-half-bottom
 bring-forward
 {% if blockData.fixed %}
     ratio-landscape xs-ratio-square hard
-{% endif %}">
+{% endif %}" style="{% if blockData.backgroundColorHex %}background-color: #{{ blockData.backgroundColorHex }};{% endif %}">
 
 	{% if blockData.backgroundVideoUrl %}
 
@@ -55,7 +57,7 @@ bring-forward
     <div class="bring-forward center-block text-constrained text-center soft-double-top">
 
         {% if blockData.imageOverlayUrl %}
-            <img src="{{ blockData.imageOverlayUrl }}" alt="" class="position-relative push-bottom" style="width: 70%; max-width: 600px;">
+            <img src="{{ blockData.imageOverlayUrl }}" alt="" class="position-relative push-bottom" style="width: 70%; max-width: 250px;">
         {% endif %}
 
 		<span class="{% if blockData.textColorClass %}{{ blockData.textColorClass }}{% else %}text-white{% endif %}">

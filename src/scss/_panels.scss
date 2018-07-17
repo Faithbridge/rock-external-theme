@@ -24,6 +24,8 @@
 	display: inline-block;
 	-webkit-mask-image: -webkit-radial-gradient(white, black);
 	border-bottom: 1px solid rgba(0,0,0,.1);
+	border-top-left-radius: $border-radius-base;
+	border-top-right-radius: $border-radius-base;
 
 	img {
 		display: block;
