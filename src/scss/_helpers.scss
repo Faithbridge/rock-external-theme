@@ -37,10 +37,53 @@ $circular-radius: 5000px;
 .position-absolute { position: absolute !important; }
 .position-relative { position: relative !important; }
 
+.position-left-boundry { top: 50%; bottom: auto; left: 0; right: auto; }
+.position-right-boundry { top: 50%; bottom: auto; left: auto; right: 0; }
+.position-top-boundry { top: 0; bottom: auto; left: 50%; right: auto; }
+.position-bottom-boundry { top: auto; bottom: 0; left: 50%; right: auto; }
+
+.margin-top-double { margin-top: $base-spacing-unit*2; }
+.margin-top-double-negative { margin-top: -$base-spacing-unit*2; }
+.margin-top { margin-top: $base-spacing-unit; }
+.margin-top-negative { margin-top: -$base-spacing-unit; }
+.margin-top-half { margin-top: $base-spacing-unit/2; }
+.margin-top-half-negative { margin-top: -$base-spacing-unit/2; }
+
+.margin-right-double { margin-right: $base-spacing-unit*2; }
+.margin-right-double-negative { margin-right: -$base-spacing-unit*2; }
+.margin-right { margin-right: $base-spacing-unit; }
+.margin-right-negative { margin-right: -$base-spacing-unit; }
+.margin-right-half { margin-right: $base-spacing-unit/2; }
+.margin-right-half-negative { margin-right: -$base-spacing-unit/2; }
+
+.margin-bottom-double { margin-bottom: $base-spacing-unit*2; }
+.margin-bottom-double-negative { margin-bottom: -$base-spacing-unit*2; }
+.margin-bottom { margin-bottom: $base-spacing-unit; }
+.margin-bottom-negative { margin-bottom: -$base-spacing-unit; }
+.margin-bottom-half { margin-bottom: $base-spacing-unit/2; }
+.margin-bottom-half-negative { margin-bottom: -$base-spacing-unit/2; }
+
+.margin-left-double { margin-left: $base-spacing-unit*2; }
+.margin-left-double-negative { margin-left: -$base-spacing-unit*2; }
+.margin-left { margin-left: $base-spacing-unit; }
+.margin-left-negative { margin-left: -$base-spacing-unit; }
+.margin-left-half { margin-left: $base-spacing-unit/2; }
+.margin-left-half-negative { margin-left: -$base-spacing-unit/2; }
+
+.margin-top-auto { margin-top: auto; }
+.margin-right-auto { margin-right: auto; }
+.margin-bottom-auto { margin-bottom: auto; }
+.margin-left-auto { margin-left: auto; }
+
 .top-zero { top: 0; }
 .right-zero { right: 0; }
 .bottom-zero { bottom: 0; }
 .left-zero { left: 0; }
+
+.top-half { top: 50%; }
+.right-half { right: 50%; }
+.bottom-half { bottom: 50%; }
+.left-half { left: 50%; }
 
 .top-auto { top: auto; }
 .right-auto { right: auto; }
@@ -59,12 +102,22 @@ $circular-radius: 5000px;
 	opacity: 1;
 }
 
-.full-screen { position: absolute; top: -1px; right: -1px; bottom: -1px; left: -1px; }
+.full-screen { 
+	position: absolute; 
+	top: 0px; 
+	right: 0px; 
+	bottom: 0px; 
+	left: 0px;
+}
+
 .background-cover { background-size: cover; }
 .background-center { background-position: center; }
+
 .background-left { background-position: left; }
 .background-right { background-position: right; }
+
 .bring-forward { position: relative; z-index: 1; }
+
 .overflow-hidden { 
 	overflow: hidden; 
 	-webkit-backface-visibility: hidden;
@@ -72,6 +125,7 @@ $circular-radius: 5000px;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
  }
+
 .overflow-y-auto { overflow-y: auto; }
 .overflow-x-auto { overflow-x: auto; }
 

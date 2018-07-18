@@ -15,7 +15,8 @@
 	      "2": "greed",
 	      "3": "promises",
 	      "4": "anxiety"
-	    }
+	    },
+	    "imageUrl": "https://embed-ssl.wistia.com/deliveries/5d938a14905bf032634c444b89d86b87d7665a6e.jpg"
 	},
 	{
 		"id": "2",
@@ -26,7 +27,8 @@
 	      "1": "greed",
 	      "2": "generosity",
 	      "3": "money"
-	    }
+	    },
+	    "imageUrl": "https://embed-ssl.wistia.com/deliveries/fd7216326faea1bf5fbc605b40306a11c83f164a.jpg"
 	},
 	{
 		"id": "3",
@@ -37,7 +39,8 @@
 	      "1": "jealousy",
 	      "2": "bitterness",
 	      "3": "forgiveness"
-	    }
+	    },
+	    "imageUrl": "https://embed-ssl.wistia.com/deliveries/2e84b8c54087be3c16fa4b2fed86cb0572caa252.jpg"
 	},
 	{
 		"id": "4",
@@ -48,7 +51,8 @@
 	      "1": "comparison",
 	      "2": "jealousy",
 	      "3": "identity"
-	    }
+	    },
+	    "imageUrl": "https://embed-ssl.wistia.com/deliveries/c7d91261002ed6681d47c5d4af24c1991591ea0d.jpg"
 	},
 	{
 		"id": "5",
@@ -59,7 +63,8 @@
 	      "1": "peace",
 	      "2": "freedom",
 	      "3": "anxiety"
-	    }
+	    },
+	    "imageUrl": "https://embed-ssl.wistia.com/deliveries/cb7f225234cacdb8fc8106ab3c85759d7d4c3d14.jpg"
 	}
 ] %}
 
@@ -73,7 +78,7 @@
 	    tags: ''
 	} %}{% include "partials/page-header.html" %}
 
-	<div class="row">
+	<div class="row hidden">
 		<div class="col-md-4 col-sm-5 col-xs-12">
 
 			{% set blockData = { 
@@ -116,6 +121,74 @@
 
 		</div>
 	</div>
+
+	{% set blockData = { 
+	    id: '',
+	    linkColorHex: '',
+	    backgroundColorHex: '',
+	    grayscale: '',
+	    label: '',
+	    titleSize:'',
+	    title: "Slaying Giants",
+	    subtitle: "Oct 1 - 29, 2017",
+	    copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
+	    trimCopy: '',
+	    tags: '',
+	    videoId:'f06xc3jebq',
+	    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_fuse/1x1slayinggiants_1700_1701_c1.png',
+	    imageOpacity: '',
+	    imageAlignment: 'left',
+	    linkUrl: '#sermons',
+	    linkText: 'Watch Sermons'
+	} %}{% include "partials/side-by-side.html" %}
+
+	<section id="sermons" class="hard hidden">
+        <div class="slider-wrapper" data-slider="330">
+            <div class="slider slider-borderless">
+                {% for sermon in sermons %}<div class="slider-item">
+                    {% set blockData = { 
+                        id: sermon.id,
+                        count: sermon.id,
+                        label: '',
+                        titleSize: 'h4',
+                        title: sermon.title, 
+                        copy: '',
+                        trimCopy: 'y',
+                        tags: sermon.tags,
+                        imageUrl: sermon.imageUrl,
+                        linkUrl: '/sermon-entry.html',
+                        linkText: 'Watch Now'
+                    } %}{% include "partials/card.html" %}
+                </div>{% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% for sermon in sermons %}
+    	<section class="bg-white rounded shadowed soft hard-bottom clearfix">
+    		<div class="row">
+    			<div class="col-md-6 col-sm-12 col-xs-12">
+    				
+    				<p class="push-half-bottom"><small class="label label-gray-light sans-serif">Week {{ sermon.id }}</small></p>
+		    		
+		    		<h2 class="h4 push-half-bottom">{{ sermon.title }}</h2>
+
+    				{% set tagCount = sermon.tags | length %}
+                    {% if tagCount != 0 %}
+                        <p class="tag-list sans-serif">
+                            {% for id, title in sermon.tags %}
+                                <a href="#" class="label label-primary">{{ title }}</a>
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+
+                    <p><a href="/sermon-entry.html" class="btn btn-primary">Watch Now</a></p>
+    			</div><div class="col-md-6 col-sm-12 col-xs-12">
+    				{{ sermon.copy | safe }}
+    			</div>
+    		</div>
+    	</section>
+    {% endfor %}
 
     {% include "partials/footer.html" %}
 

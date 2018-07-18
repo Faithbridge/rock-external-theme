@@ -6,10 +6,12 @@
     linkColorHex: '',
     grayscale: '',
     count: '',
+    label: '',
     titleSize: '',
     title: '', 
     subtitle: "",
-    copy: "", 
+    copy: "",
+    trimCopy: '',
     tags: {
       '': ''
     },
@@ -55,13 +57,17 @@
     {% if blockData.imageUrl %}
         {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}" class="panel-image">{% endif %}
             {% if blockData.count %}
-                <span class="card-count sans-serif strong rounded bg-gray-dark text-white text-center">{{ blockData.count }}</span>
+                <span class="card-count sans-serif strong rounded bg-gray-lighter text-gray-darker text-center">{{ blockData.count }}</span>
             {% endif %}
             <img src="{{ blockData.imageUrl }}" alt="" class="{% if blockData.grayscale %}grayscale{% endif %}" style="{% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}">
         {% if blockData.linkUrl %}</a>{% endif %}
     {% endif %}
 
-    <div class="panel-body hard-bottom">
+    <div class="panel-body hard-bottom sm-text-center xs-text-center">
+
+        {% if blockData.label %}
+            <p><small class="label label-gray-light sans-serif">{{ blockData.label }}</small></p>
+        {% endif %}
         
         {% if blockData.title %}
             <h2 class="{{ blockData.titleSize }} push-half-bottom">
@@ -84,8 +90,12 @@
             </p>
         {% endif %}
         
-        {% set length = blockData.copy | length %}
-        {{ blockData.copy | safe | truncate(200) }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
+        {% if blockData.trimCopy %}
+            {% set length = blockData.copy | length %}
+            {{ blockData.copy | safe | truncate(200) }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
+        {% else %}
+            {{ blockData.copy | safe }}
+        {% endif %}
 
         {% if blockData.linkUrl %}
             <p>
@@ -96,23 +106,25 @@
     </div>
 </div>
 
-{% if length > 200 %}
-<div class="modal fade" id="{{ blockData.id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <a href="#" class="text-gray-darker pull-right" data-dismiss="modal" aria-label="Close">
-                    <i class="fa fa-lg fa-times"></i>
-                </a>
-                <h3 class="flush">{{ blockData.title }}</h3>
-            </div>
-            <div class="modal-body soft hard-bottom">
-                {{ blockData.copy | safe }}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+{% if blockData.trimCopy %}
+    {% if length > 200 %}
+    <div class="modal fade" id="{{ blockData.id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="text-gray-darker pull-right" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-lg fa-times"></i>
+                    </a>
+                    <h3 class="flush">{{ blockData.title }}</h3>
+                </div>
+                <div class="modal-body soft hard-bottom">
+                    {{ blockData.copy | safe }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    {% endif %}
 {% endif %}

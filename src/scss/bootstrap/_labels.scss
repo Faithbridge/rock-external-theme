@@ -72,3 +72,24 @@ a.label {
 .label-danger {
   @include label-variant($label-danger-bg);
 }
+
+
+.label-gray-lighter {
+  @include label-variant($gray-lighter);
+}
+
+.label-gray-light {
+  @include label-variant($gray-light);
+}
+
+.label-gray {
+  @include label-variant($gray);
+}
+
+.label-gray-dark {
+  @include label-variant($gray-dark);
+}
+
+.label-gray-darker {
+  @include label-variant($gray-darker);
+}

@@ -32,25 +32,19 @@
 
 
 .btn-play {
-	position: absolute !important;
-	top: auto;
-	bottom: -$base-spacing-unit*1.35;
-	left: 50%;
-	margin-left: -$base-spacing-unit*1.25;
-	height: $base-spacing-unit*2.5;
-	width: $base-spacing-unit*2.5;
-	line-height: $base-spacing-unit*2.4;
-	border-radius: 1000px;
+	width: $base-spacing-unit*2;
+	height: $base-spacing-unit*2;
+	line-height: $base-spacing-unit*2;
 	background-color: $brand-primary;
-	border: 4px solid $white;
+	border-radius: 1000px;
+	border: 3px solid $white;
 	transition: background-color .1s;
+	font-size: $font-size-base*.6;
+	transform: scale(1.65);
 
-	@media (min-width: $screen-sm-min) {
-		width: $base-spacing-unit*3.5;
-		height: $base-spacing-unit*3.5;
-		line-height: $base-spacing-unit*2.35;
-		margin-left: -$base-spacing-unit*1.75;
-		bottom: -$base-spacing-unit*1.75;
+	&:hover {
+		color: $white;
+		background-color: $brand-secondary;
 	}
 
 	.wistia_embed {
@@ -64,23 +58,23 @@
 
 		.wistia_click_to_play {
 			position: absolute !important;
-			top: 50%;
-			right: 0;
-			bottom: 0;
-			left: 50%;
-			margin-top: -26px;
-			margin-left: -26px;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 			border-radius: 1000px;
 		}
 	}
 
-	&:hover, &:focus {
-		color: $white;
-		background-color: $brand-secondary;
-	}
-
 	i {
-		position: relative;
-		// left: 2px;
+		position: absolute !important;
+		top: 50% !important;
+		left: 50%;
+		height: 20px;
+		width: 20px;
+		line-height: 20px;
+		text-align: center;
+		margin-top: -10px;
+		margin-left: -9px;
 	}
 }
