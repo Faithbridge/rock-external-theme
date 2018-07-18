@@ -165,28 +165,33 @@
     </section>
 
     {% for sermon in sermons %}
-    	<section class="bg-white rounded shadowed soft hard-bottom clearfix">
+    	<section class="bg-white rounded shadowed soft hard-bottom sm-text-center xs-text-center clearfix">
     		<div class="row">
-    			<div class="col-md-6 col-sm-12 col-xs-12">
+    			<div class="col-md-5 col-sm-12 col-xs-12">
+    				<p class=""><span class="label label-gray sans-serif">Week {{ sermon.id }}</span></p>
+
+    				<h2 class="h3 push-half-bottom">{{ sermon.title }}</h2>
+
     				
-    				<p class="push-half-bottom"><small class="label label-gray-light sans-serif">Week {{ sermon.id }}</small></p>
-		    		
-		    		<h2 class="h4 push-half-bottom">{{ sermon.title }}</h2>
 
-    				{% set tagCount = sermon.tags | length %}
-                    {% if tagCount != 0 %}
-                        <p class="tag-list sans-serif">
-                            {% for id, title in sermon.tags %}
-                                <a href="#" class="label label-primary">{{ title }}</a>
-                            {% endfor %}
-                        </p>
-                    {% endif %}
+                    <p class="sans-serif stronger letter-spacing-condensed text-uppercase text-gray-light push-half-bottom"><small>{{ sermon.subtitle | safe }}</small></p>
 
-                    <p><a href="/sermon-entry.html" class="btn btn-primary">Watch Now</a></p>
-    			</div><div class="col-md-6 col-sm-12 col-xs-12">
+    			</div><div class="col-md-7 col-sm-12 col-xs-12">
+
+    				<p class="tag-list sans-serif push-half-bottom xs-push-bottom">
+						{% set tagCount = sermon.tags | length %}
+                        {% if tagCount != 0 %}
+                        {% for id, title in sermon.tags %}
+                            <a href="#" class="label label-primary">{{ title }}</a>
+                        {% endfor %}
+                        {% endif %}
+                    </p>
+
     				{{ sermon.copy | safe }}
+    				
     			</div>
     		</div>
+    		<p><a href="/sermon-entry.html" class="btn btn-primary">Watch Now</a></p>
     	</section>
     {% endfor %}
 
