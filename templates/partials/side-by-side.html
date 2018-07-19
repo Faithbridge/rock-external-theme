@@ -24,7 +24,7 @@
 
 #}
 
-{% if blockData.id and blockData.backgroundColorHex %}
+{% if blockData.id %}
     <style>
         #block-{{ blockData.id }} {
             background-color: #{{ blockData.backgroundColorHex }};
@@ -69,16 +69,16 @@
 
     <div class="row {% if blockData.imageAlignment == 'left' %}text-right{% else %}text-left{% endif %} flush"><!-- Section Padding and Alignement Classes -->
         <div class="col-xs-12 col-sm-12 col-md-6 text-left hard"><!-- Text Alignment Classes -->
-            <div class="bg-white soft-double soft-bottom sm-soft xs-soft sm-text-center xs-text-center">
+            <div class="bg-white soft-double soft-bottom sm-soft xs-soft-ends xs-soft-double-sides sm-text-center xs-text-center">
 
                 {% if blockData.videoId %}<div class="{% if blockData.imageAlignment == 'left' %}soft-left{% else %}soft-right{% endif %} sm-hard-sides sm-soft-top xs-hard-sides xs-soft-top">{% endif %}
                     
                     {% if blockData.label %}
-                        <p><small class="label label-gray-light sans-serif">{{ blockData.label }}</small></p>
+                        <p><small class="label label-default sans-serif">{{ blockData.label }}</small></p>
                     {% endif %}
                     
                     {% if blockData.title %}
-                        <h2 class="block-title push-half-bottom">
+                        <h2 class="block-title">
                             {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
                                 {{ blockData.title }}
                             {% if blockData.linkUrl %}</a>{% endif %}
@@ -86,15 +86,15 @@
                     {% endif %}
 
                     {% if blockData.subtitle %}
-                        <p class="sans-serif stronger letter-spacing-condensed text-uppercase text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
+                        <p class="sans-serif stronger letter-spacing-condensed text-gray-light"><small>{{ blockData.subtitle | safe }}</small></p>
                     {% endif %}
 
                     {% set tagCount = blockData.tags | length %}
                     {% if tagCount != 0 %}
-                        <p class="tag-list sans-serif">
-                            {% for id, title in blockData.tags %}
-                                <a href="#" class="label label-primary">{{ title }}</a>
-                            {% endfor %}
+                        <p class="tag-list sans-serif text-gray-darker">
+                            <small>{% for id, title in blockData.tags %}
+                                <a href="#" class="stronger text-decoration-none letter-spacing-condensed no-breaks"><i class="fas fa-sm fa-tag"></i> {{ title }}</a>
+                            {% endfor %}</small>
                         </p>
                     {% endif %}
                     

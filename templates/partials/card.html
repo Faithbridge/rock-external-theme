@@ -44,8 +44,9 @@
             }
 
             #block-{{ blockData.id }} .btn, #block-{{ blockData.id }} .label {
-                background-color: #303030;
-                border-color: #303030;
+                background-color: #fff;
+                border-color: #fff;
+                color: #1c1c1c;
             }
         {% endif %}
 
@@ -63,7 +64,7 @@
         {% if blockData.linkUrl %}</a>{% endif %}
     {% endif %}
 
-    <div class="panel-body hard-bottom sm-text-center xs-text-center">
+    <div class="panel-body sm-text-center xs-text-center">
 
         {% if blockData.label %}
             <p><small class="label label-gray-light sans-serif">{{ blockData.label }}</small></p>
@@ -82,11 +83,11 @@
         {% endif %}
 
         {% set tagCount = blockData.tags | length %}
-        {% if tagCount >= 1 %}
-            <p class="tag-list sans-serif">
-                {% for id, title in blockData.tags %}
-                    <a href="#" class="label label-default">{{ title }}</a>
-                {% endfor %}
+        {% if tagCount != 0 %}
+            <p class="tag-list sans-serif push-half-bottom">
+                <small>{% for id, title in blockData.tags %}
+                    <a href="#" class="stronger text-decoration-none letter-spacing-condensed no-breaks"><i class="fas fa-sm fa-tag"></i> {{ title }}</a>
+                {% endfor %}</small>
             </p>
         {% endif %}
         

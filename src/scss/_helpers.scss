@@ -5,6 +5,8 @@
 .strongest { font-weight: 900; }
 .serif { font-family: $font-family-serif; }
 .sans-serif { font-family: $font-family-sans-serif; }
+.italic { font-style: italic; }
+.no-breaks { white-space: nowrap; }
 .text-constrained { max-width: 700px; }
 .page-constrained { max-width: 1280px; }
 .mx-auto { margin-left: auto; margin-right: auto; }

@@ -79,8 +79,14 @@
 		&:before{
 	        content: "";
 	        display: block;
-	        padding-top: 100%;
+	        padding-top: 60%;
 	    }
+	}
+
+	@media (max-width: $screen-sm-min) {
+		&:before {
+			padding-top: 80%;
+		}
 	}
 }
 

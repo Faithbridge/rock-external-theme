@@ -130,11 +130,20 @@ mark, .mark {
 
 .tag-list {
 	font-size: floor(($font-size-base * .9));
-	line-height: ceil(($line-height-computed * 1.2));
+	line-height: ceil(($line-height-computed * .9));
 
-	@media (min-width: $screen-sm-min) {
-		font-size: floor(($font-size-base));
-		line-height: ceil(($line-height-computed * 1.05));
+	@media (max-width: $screen-sm-max) {
+		font-size: floor(($font-size-base * .9));
+		line-height: ceil(($line-height-computed * .85));
+	}
+
+	@media (max-width: $screen-xs-max) {
+		font-size: floor(($font-size-base * .9));
+		line-height: ceil(($line-height-computed * .95));
+	}
+
+	a {
+		margin-right: $base-spacing-unit/4;
 	}
 }
 
