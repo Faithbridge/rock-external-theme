@@ -130,7 +130,7 @@ mark, .mark {
 
 .tag-list {
 	font-size: floor(($font-size-base * .9));
-	line-height: ceil(($line-height-computed * .9));
+	line-height: ceil(($line-height-computed * .75));
 
 	@media (max-width: $screen-sm-max) {
 		font-size: floor(($font-size-base * .9));
@@ -143,7 +143,7 @@ mark, .mark {
 	}
 
 	a {
-		margin-right: $base-spacing-unit/4;
+		margin-right: $base-spacing-unit/6;
 	}
 }
 

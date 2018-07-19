@@ -93,12 +93,17 @@
 .page-brand-bar {
 	position: fixed;
 	z-index: -1;
-	height: $base-spacing-unit*3;
+	top: -$base-spacing-unit*2;
+	left: -$base-spacing-unit;
+	height: $base-spacing-unit*15;
 	width: 100%;
-	transform: scale(7, 7) rotate(-4deg);
+	transform: scale(1.1) rotate(-4deg);
+	backface-visibility: hidden;
+	outline: 1px solid transparent;
 
-	@media (min-width: $screen-sm-max) {
-		height: $base-spacing-unit*3.5;
+	@media (max-width: $screen-sm-min) {
+		top: -$base-spacing-unit*3;
+		left: 0;
 	}
 }
 
