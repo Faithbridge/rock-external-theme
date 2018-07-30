@@ -112,7 +112,7 @@ $circular-radius: 5000px;
 	left: 0px;
 }
 
-.background-cover { background-size: cover; }
+.background-cover { background-size: cover; will-change: transform; }
 .background-center { background-position: center; }
 
 .background-left { background-position: left; }
