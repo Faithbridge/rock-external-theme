@@ -1,4 +1,8 @@
 var gulp = require('gulp'),
+	concat = require('gulp-concat'),
+	rename = require('gulp-rename'),
+	uglify = require('gulp-uglify'),
+	jsImport = require('gulp-js-import'),
 	sass = require('gulp-sass'),
 	sassGlob = require('gulp-sass-glob'),
 	sourcemaps = require('gulp-sourcemaps'),
@@ -7,10 +11,31 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	nunjucksRender = require('gulp-nunjucks-render');
 
-var stylesSrc = 'src/scss/**/[^_]*.scss'
-var stylesDest = 'dest/css/'
+var stylesSrc = 'src/scss/**/[^_]*.scss',
+	stylesDest = 'dest/css/',
+	scriptsSrc = 'src/js/**/*.js',
+    scriptsDest = 'dest/js';
 
-gulp.task('default', ['styles', 'nunjucks', 'webserver']);
+gulp.task('default', ['jsImport', 'scripts', 'styles', 'nunjucks', 'webserver']);
+
+// JS Import
+gulp.task('jsImport', function() {
+  return gulp.src('src/js/main.js')
+        .pipe(jsImport({hideConsole: true}))
+        .pipe(gulp.dest(scriptsDest));
+});
+
+// Scripts Task
+gulp.task('scripts', function() {
+    return gulp.src('dest/js/main.js')
+        .pipe(concat('scripts.js'))
+        .pipe(rename('scripts.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(scriptsDest))
+		.pipe(browserSync.reload({
+			stream: true
+	    }));
+});
 
 // Styles Task
 gulp.task('styles', function () {
@@ -28,7 +53,8 @@ gulp.task('styles', function () {
 
 // Watch Styles Task
 gulp.task('watch', function(){
-	gulp.watch('src/scss/**/*.scss', ['styles']);
+	gulp.watch(scriptsSrc, ['jsImport', 'scripts'])
+	gulp.watch(stylesSrc, ['styles']);
 	gulp.watch('pages/**/*.html', ['nunjucks']);
 	gulp.watch('templates/**/*.html', ['nunjucks']);
 });

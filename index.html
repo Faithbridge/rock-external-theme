@@ -547,29 +547,7 @@ bring-forward
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <!-- Core JS -->    
-        <script src="/dest/js/main.js"></script>
-
-        <script>
-            // $('#search-modal').modal('show');
-
-            // Custom Navigation Loading
-            function coinFlip() {
-                return (Math.floor(Math.random() * 2) == 0) ? 'side' : 'side';
-            }
-
-            var urlParams = new URLSearchParams(window.location.search);
-            var navStyle = urlParams.get('nav');
-            var body = $('body');
-
-            if(navStyle) {} else {
-                navStyle = coinFlip();
-            }
-
-            if (navStyle != 'side') {
-                body.addClass('topbar');
-            }
-
-        </script>
+        <script src="/dest/js/scripts.min.js"></script>
 
 	</body>
 </html>
