@@ -98,6 +98,7 @@ hr {
 
 blockquote {
 	border-left: 5px solid $brand-primary;
+	border: none;
 	font-size: floor(($font-size-base * 1.4));
 	font-weight: 700;
 	font-style: italic;
@@ -107,6 +108,7 @@ blockquote {
 	letter-spacing: -.2px;
 
 	footer {
+		padding: 0;
 		font-family: $font-family-serif;
 		font-weight: 500;
 		letter-spacing: 0;
@@ -131,7 +133,7 @@ mark, .mark {
 
 .tag-list {
 	font-size: floor(($font-size-base * .9));
-	line-height: ceil(($line-height-computed * .75));
+	line-height: ceil(($line-height-computed * .85));
 
 	@media (max-width: $screen-sm-max) {
 		font-size: floor(($font-size-base * .9));
@@ -144,7 +146,11 @@ mark, .mark {
 	}
 
 	a {
-		margin-right: $base-spacing-unit/6;
+		margin-right: $base-spacing-unit/3;
+
+		i {
+			margin-right: 2px;
+		}
 	}
 }
 

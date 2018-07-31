@@ -78,50 +78,6 @@
 	    tags: ''
 	} %}{% include "partials/page-header.html" %}
 
-	<div class="row hidden">
-		<div class="col-md-4 col-sm-5 col-xs-12">
-
-			{% set blockData = { 
-			    id: '2',
-			    backgroundColorHex: '',
-			    linkColorHex: '',
-			    grayscale: '',
-			    count: '',
-			    titleSize: '',
-			    title: '', 
-			    subtitle: "",
-			    copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>", 
-			    tags: '',
-			    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_fuse/1x1slayinggiants_1700_1701_c1.png',
-			    imageOpacity: '',
-			    linkUrl: '',
-			    linkText: ''
-			} %}{% include "partials/card.html" %}
-
-		</div><div class="col-md-8 col-sm-7 col-xs-12">
-
-			{% for sermon in sermons %}
-				{% set blockData = { 
-				    id: sermon.id,
-				    backgroundColorHex: '',
-				    linkColorHex: '',
-				    grayscale: '',
-				    count: sermon.id,
-				    titleSize: 'h4',
-				    title: sermon.title, 
-				    subtitle: sermon.subtitle,
-				    copy: sermon.copy, 
-				    tags: sermon.tags,
-				    imageUrl: '',
-				    imageOpacity: '',
-				    linkUrl: '/sermon-entry.html',
-				    linkText: 'Watch Now'
-				} %}{% include "partials/card.html" %}
-			{% endfor %}
-
-		</div>
-	</div>
-
 	{% set blockData = { 
 	    id: '',
 	    linkColorHex: '',
@@ -164,36 +120,28 @@
         </div>
     </section>
 
-    {% for sermon in sermons %}
-    	<section class="bg-white rounded shadowed soft hard-bottom sm-text-center xs-text-center clearfix">
-    		<div class="row">
-    			<div class="col-md-5 col-sm-12 col-xs-12">
-    				<p class=""><span class="label label-gray sans-serif">Week {{ sermon.id }}</span></p>
-
-    				<h2 class="h3 push-half-bottom">{{ sermon.title }}</h2>
-
-    				
-
-                    <p class="sans-serif stronger letter-spacing-condensed text-uppercase text-gray-light push-half-bottom"><small>{{ sermon.subtitle | safe }}</small></p>
-
-    			</div><div class="col-md-7 col-sm-12 col-xs-12">
-
-    				<p class="tag-list sans-serif push-half-bottom xs-push-bottom">
-						{% set tagCount = sermon.tags | length %}
-                        {% if tagCount != 0 %}
-                        {% for id, title in sermon.tags %}
-                            <a href="#" class="label label-primary">{{ title }}</a>
-                        {% endfor %}
-                        {% endif %}
-                    </p>
-
-    				{{ sermon.copy | safe }}
-    				
-    			</div>
-    		</div>
-    		<p><a href="/sermon-entry.html" class="btn btn-primary">Watch Now</a></p>
-    	</section>
-    {% endfor %}
+    <section class="hard">
+    	<div class="row">
+		    {% for sermon in sermons %}<div class="col-md-12">{% set blockData = { 
+			    id: '',
+			    backgroundColorHex: '',
+			    linkColorHex: '',
+			    grayscale: '',
+			    count: '',
+			    label: 'Week ' + sermon.id,
+			    titleSize: 'h3',
+			    title: sermon.title, 
+			    subtitle: sermon.subtitle,
+			    copy: sermon.copy,
+			    trimCopy: '',
+			    tags: sermon.tags,
+			    imageUrl: '',
+			    imageOpacity: '',
+			    linkUrl: '/sermon-entry.html',
+			    linkText: 'Watch Sermon'
+			} %}{% include "partials/card.html" %}</div>{% endfor %}
+		</div>
+	</section>
 
     {% include "partials/footer.html" %}
 

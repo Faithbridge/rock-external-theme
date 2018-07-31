@@ -1,23 +1,14 @@
-{% set pageTitle = "KidSpring" %}
+{% set pageTitle = "Israel Fall 2018" %}
 
-{% set pageHeaderColorHex = "EDA41C" %}
+{% set pageHeaderColorHex = "335cb9" %}
 
 {% extends "full-width.html" %}
 
 {% block content %}
-    
-    {% set blockData = {
-        pages: {
-          '/kidspring.html': 'About KidSpring',
-          '/special-needs.html': 'Special Needs',
-          '/kidspring-watch-and-read.html': 'Watch & Read',
-          '/kidspring-mobile-app.html': 'Mobile App'
-        }
-    } %}{% include "partials/navigation-section.html" %}
 
     {% set blockData = { 
         title: 'Israel Fall 2018',
-        copy: "<p>Reading about Jesus’ life and ministry changes us. Seeing where Jesus lived and did ministry changes how we see Him.</p>",
+        copy: "<p class='lead'>Walk where Jesus walked, and see the Bible come to life.</p>",
         grayscale: '',
         linkColorHex: '',
         backgroundColorHex: '',
@@ -32,13 +23,57 @@
     } %}{% include "partials/hero.html" %}
 
     <section class="bg-white rounded shadowed">
-
         <div class="text-constrained center-block text-center">
             <p class="lead">Reading about Jesus’ life and ministry changes us. Seeing where Jesus lived and did ministry changes how we see Him.</p>
-            <p>During this trip, we’ll visit Bethlehem, travel the Sea of Galilee, and spend time in Capernaum, the home base for Jesus’ ministry. We’ll also explore Jerusalem and take communion at the empty tomb. <b>Space is limited, so register for your spot today!</b></p>
+            <p>On both trips, you’ll visit Bethlehem, the Sea of Galilee, Capernaum, and Jerusalem. You’ll see places you’ve read about for years and take communion at the empty tomb.</p>
+            <p><b>Find the trip that’s right for you, and sign up today.</b></p>
             <p><a href="#" class="btn btn-primary">Register Now</a></p>
         </div>
     </section>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            {% set blockData = { 
+                id: '',
+                backgroundColorHex: '',
+                linkColorHex: '',
+                grayscale: '',
+                count: '',
+                label: '',
+                textAlignment: 'center',
+                titleSize: 'h3',
+                title: 'Fuse and Rally To Israel', 
+                subtitle: "June 10-17, 2019",
+                copy: "<p>If you’re in high school or college, this trip is for you. Traveling with your Rally and Fuse fam is an adventure you won’t forget. You’ll come back with a better understanding of the Bible and deeper relationships with one another.</p>",
+                trimCopy: '',
+                tags: '',
+                imageUrl: '',
+                imageOpacity: '',
+                linkUrl: '#',
+                linkText: 'Learn More'
+            } %}{% include "partials/card.html" %}
+        </div><div class="col-md-6 col-sm-12 col-xs-12">
+            {% set blockData = { 
+                id: '',
+                backgroundColorHex: '',
+                linkColorHex: '',
+                grayscale: '',
+                count: '',
+                label: '',
+                textAlignment: 'center',
+                titleSize: 'h3',
+                title: 'NewSpring to Israel', 
+                subtitle: "October 10-18, 2018",
+                copy: "<p>What’s better than seeing where Jesus lived and taught? Seeing it with your church family. With NewSpring staff teaching and leading worship, this is no ordinary expedition.</p>",
+                trimCopy: '',
+                tags: '',
+                imageUrl: '',
+                imageOpacity: '',
+                linkUrl: '#',
+                linkText: 'Learn More'
+            } %}{% include "partials/card.html" %}
+        </div>
+    </div>
 
     <section class="bg-white rounded shadowed">
         <div class="text-constrained center-block text-center">
@@ -62,24 +97,13 @@
 
             </div>
 
-        </div>
-    </section>
-
-    <section class="bg-white rounded shadowed">
-        <div class="text-constrained center-block">
-            <h2 class="text-center">What to Expect</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h4>Deserunt minim occaecat aliqua exercitation</h4>
-                    <p>Ullamco mollit amet minim deserunt minim in occaecat quis. Officia velit eu consequat dolor in veniam ad quis pariatur ex exercitation enim sunt et culpa dolore aliquip.</p>
-                </div><div class="col-md-6">
-                    <h4>Minim amet Labore velit Ea magna</h4>
-                    <p>Deserunt ut consequat dolore cillum nostrud eu et esse velit eiusmod dolor reprehenderit officia qui ut officia laboris. In in deserunt anim eiusmod mollit magna aliquip dolor.</p>
-                </div>
-            </div>
+            <p><b>Have more questions?</b> We'd love to answer them and serve you in any way we can.</p>
+            <p><a href="#" class="btn btn-primary">Contact Us</a></p>
 
         </div>
     </section>
+
+    {#
 
     {% set blockData = { 
         id: '5',
@@ -92,6 +116,8 @@
         linkUrl: '#',
         linkText: 'Register Now'
     } %}{% include "partials/side-by-side.html" %}
+
+    #}
 
     {% include "partials/footer.html" %}
 

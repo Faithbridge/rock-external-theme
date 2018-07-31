@@ -17,7 +17,9 @@
         "title": "Anderson",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am, 11:15am & 5pm</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "lat": '34.595434',
+        "lon": '-82.6244131'
     },
     {
         "id": "3",
@@ -173,10 +175,11 @@
                 <br>
             </div>
 
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel-group" id="accordion-1" role="tablist" aria-multiselectable="true">
                 {% for question in questions %}
 
                     {% set blockData = { 
+                        parentIndex: '1',
                         index: question.id,
                         title: question.title, 
                         copy: question.copy

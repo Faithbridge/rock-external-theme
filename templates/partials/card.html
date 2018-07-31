@@ -7,6 +7,7 @@
     grayscale: '',
     count: '',
     label: '',
+    textAlignment: '',
     titleSize: '',
     title: '', 
     subtitle: "",
@@ -53,7 +54,7 @@
     </style>
 {% endif %}
 
-<div {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="panel panel-default">
+<div {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="panel panel-default {% if blockData.textAlignment %}text-{{ blockData.textAlignment }}{% endif %}">
 
     {% if blockData.imageUrl %}
         {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}" class="panel-image">{% endif %}

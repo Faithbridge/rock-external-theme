@@ -39,6 +39,10 @@
             border-color: #{{ blockData.linkColorHex }};
         }
 
+        #block-{{ blockData.id }} .btn-play {
+            border-color: #fff;
+        }
+
     </style>
 {% endif %}
 
@@ -78,7 +82,7 @@
                     {% endif %}
                     
                     {% if blockData.title %}
-                        <h2 class="block-title">
+                        <h2 class="{{ blockData.titleSize }} block-title">
                             {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
                                 {{ blockData.title }}
                             {% if blockData.linkUrl %}</a>{% endif %}
@@ -101,7 +105,7 @@
                     <div>
                         {% if blockData.trimCopy %}
                             {% set length = blockData.copy | length %}
-                            {{ blockData.copy | safe | truncate(250) }}{% if length > 250 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
+                            {{ blockData.copy | safe | truncate(200) }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
                         {% else %}
                             {{ blockData.copy | safe }}
                         {% endif %}
@@ -120,7 +124,7 @@
 </section>
 
 {% if blockData.trimCopy %}
-    {% if length > 250 %}
+    {% if length > 200 %}
     <div class="modal fade" id="{{ blockData.id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
