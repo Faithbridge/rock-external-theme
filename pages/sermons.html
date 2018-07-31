@@ -99,7 +99,8 @@
     linkText: 'View Sermons'
 } %}{% include "partials/side-by-side.html" %}
 
-    <!-- <section class="bg-white rounded shadowed hard-sides">
+    <section class="bg-white rounded shadowed hard-sides">
+    	
 		<div class="soft-sides xs-soft-top">
 			<h2 class="push-half-bottom text-center">Latest Sermon Series</h2>
 		</div>
@@ -113,23 +114,6 @@
 		        </div>{% endfor %}
 		    </div>
 		</div>
-
-		<p class="text-center push-half-ends"><a href="#" class="btn btn-primary">Browse All Series</a></p>
-    </section> -->
-
-    <section class="bg-white rounded shadowed">
-		
-		<h2 class="text-center push-bottom">Latest Sermon Series</h2>
-	    
-	    <div class="row">
-	    	{% for series in seriesItems %}<div class="col-md-3 col-sm-6 col-xs-12">
-				{% if series.linkUrl %}<a href="{{ series.linkUrl }}">{% endif %}
-					<div class="ratio-square shadowed background-center background-cover rounded push-bottom" style="background-image:url('{{ series.imageUrl }}');"></div>
-				{% if series.linkUrl %}</a>{% endif %}
-	        </div>{% endfor %}
-	    </div>
-
-	    {% include "partials/pagination.html" %}
 
     </section>
 

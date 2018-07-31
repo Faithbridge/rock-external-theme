@@ -79,20 +79,14 @@
 
 	{% set blockData = { 
 	    id: '1',
-	    preTitle: '<a href="/series.html">Slaying Giants</a> · Week ' + sermon.id,
+	    preTitle: 'Week ' + sermon.id + ' &middot; <a href="/series.html">Slaying Giants</a>',
 	    titleSize: '',
 	    title: sermon.title,
-	    tags: sermon.tags
+	    tags: ''
 	} %}{% include "partials/page-header.html" %}
 
 	<div class="row">
 		<div class="col-md-8 col-sm-7 col-xs-12">
-
-			<!-- <div class="ratio-landscape background-cover background-center rounded shadowed push-bottom xs-push-half-bottom" style="background-image:url('{{ sermon.imageUrl }}');">
-				<div class="btn btn-play position-absolute top-half left-half btn-play-pull-half-left btn-play-pull-half-top text-white shadowed"><span class="wistia_embed wistia_async_{{ sermon.videoId }} popover=true popoverContent=link" style="display:inline;position:relative"><i class="fas fa-fw fa-lg fa-play"></i></span></div>
-                <script src="https://fast.wistia.com/embed/medias/{{ sermon.videoId }}.jsonp" async></script>
-                <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-			</div> -->
 
 			{% set blockData = { 
 				id: '2',
