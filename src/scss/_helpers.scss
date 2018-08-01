@@ -148,58 +148,6 @@ $circular-radius: 5000px;
 	}
 }
 
-.text-secondary { color: $brand-secondary; }
-.text-tertiary { color: $brand-tertiary; }
-.text-gray-lighter { color: darken($gray-lighter, 10);}
-.text-gray-light { color: $gray-light; }
-.text-gray { color: $gray; }
-.text-gray-dark { color: $gray-dark; }
-.text-gray-darker { color: $gray-darker; }
-
-.text-white, .text-white a:not(.btn), .text-white a:not(.btn):hover { color: $white; }
-
-.text-kidspring-primary { color: $kidspring-primary; }
-.text-kidspring-secondary { color: $kidspring-secondary; }
-.text-kidspring-tertiary { color: $kidspring-tertiary; }
-
-.bg-white { background-color: $white; }
-.bg-secondary { background-color: $brand-secondary; }
-.bg-tertiary { background-color: $brand-tertiary; }
-.bg-success { background-color: $brand-success; }
-.bg-info { background-color: $brand-info; }
-.bg-warning { background-color: $brand-warning; }
-.bg-danger { background-color: $brand-danger; }
-.bg-kidspring-primary { background-color: $kidspring-primary; }
-.bg-kidspring-secondary { background-color: $kidspring-secondary; }
-.bg-kidspring-tertiary { background-color: $kidspring-tertiary; }
-
-.bg-gray-lighter { background-color: $gray-lighter; }
-.bg-gray-light { background-color: $gray-light; }
-.bg-gray { background-color: $gray; }
-.bg-gray-dark { background-color: $gray-dark; }
-.bg-gray-darker { background-color: $gray-darker; }
-.bg-black { background-color: $black; }
-.bg-white { background-color: $white; }
-
-.bg-primary a:hover,
-.bg-secondary a:hover,
-.bg-tertiary a:hover,
-.bg-success a:hover,
-.bg-info a:hover,
-.bg-warning a:hover,
-.bg-danger a:hover,
-.bg-gray a:hover,
-.bg-gray-dark a:hover,
-.bg-gray-darker a:hover,
-.bg-kidspring-primary a:hover,
-.bg-kidspring-secondary a:hover,
-.bg-kidspring-tertiary a:hover {
-	*:not(.panel-body) {
-		color: $white;
-	}
-}
-
-
 .soft-double { padding: $base-spacing-unit * 2 !important; }
 .soft-double-top { padding-top: $base-spacing-unit * 2 !important; }
 .soft-double-bottom { padding-bottom: $base-spacing-unit * 2 !important; }
