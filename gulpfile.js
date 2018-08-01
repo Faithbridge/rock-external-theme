@@ -28,6 +28,7 @@ gulp.task('jsImport', function() {
 // Scripts Task
 gulp.task('scripts', function() {
     return gulp.src('dest/js/main.js')
+    	.pipe(plumber())
         .pipe(concat('scripts.js'))
         .pipe(rename('scripts.min.js'))
         .pipe(uglify())

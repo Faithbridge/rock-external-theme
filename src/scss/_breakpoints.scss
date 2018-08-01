@@ -118,13 +118,13 @@
 
 	// Font Size Adjustments
 	body {
-		font-size: ceil(($font-size-base * 1.1));
+		font-size: ceil(($font-size-base));
 
 		.card {
 			font-size: ceil(($font-size-base * .9));
 		}
 		.panel {
-			font-size: ceil(($font-size-base * 1.1));
+			font-size: ceil(($font-size-base * .9));
 		}
 		.label {
 			font-size: ceil(($font-size-base * .75));
