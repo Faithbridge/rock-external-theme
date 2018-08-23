@@ -34,6 +34,10 @@
             color: #{{ blockData.linkColorHex }};
         }
 
+        #block-{{ blockData.id }} h2 a:not(.btn):not(.label) {
+            color: #303030;
+        }
+
         #block-{{ blockData.id }} .btn {
             background-color: #{{ blockData.linkColorHex }};
             border-color: #{{ blockData.linkColorHex }};
@@ -51,7 +55,11 @@
     {% if blockData.imageUrl %}
         {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
 
-            <div class="split {% if blockData.imageAlignment == 'left' %}split-left{% else %}split-right{% endif %} background-center background-cover sm-push-bottom xs-push-bottom {% if blockData.grayscale %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %} z-index: 1;">
+            <div class="split {% if blockData.imageAlignment == 'left' %}split-left{% else %}split-right{% endif %} background-center background-cover sm-push-bottom xs-push-bottom" style="z-index: 1;">
+
+                {% if blockData.imageUrl %}
+                    <div class="full-screen background-cover background-center {% if blockData.grayscale %}grayscale{% endif %}" style="background-image:url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></div>
+                {% endif %}
 
                 {% if blockData.videoId %}
                     <div class="btn btn-play position-absolute 
@@ -90,12 +98,12 @@
                     {% endif %}
 
                     {% if blockData.subtitle %}
-                        <p class="sans-serif stronger letter-spacing-condensed text-gray-light"><small>{{ blockData.subtitle | safe }}</small></p>
+                        <p class="sans-serif stronger letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
                     {% endif %}
 
                     {% set tagCount = blockData.tags | length %}
                     {% if tagCount != 0 %}
-                        <p class="tag-list sans-serif text-gray-darker">
+                        <p class="tag-list sans-serif text-gray-darker push-half-bottom">
                             <small>{% for id, title in blockData.tags %}
                                 <a href="#" class="stronger text-decoration-none letter-spacing-condensed no-breaks"><i class="fas fa-sm fa-tag"></i> {{ title }}</a>
                             {% endfor %}</small>
@@ -138,7 +146,7 @@
                     {{ blockData.copy | safe }}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

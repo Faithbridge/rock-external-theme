@@ -1,0 +1,52 @@
+{% set pageTitle = "" %}
+
+{% set pageHeaderColorHex = "2a4930" %}
+
+{% extends "full-width.html" %}
+
+{% set teachingTeam = [
+    {
+		"firstName": "Clayton",
+		"lastName": "King",
+		"title": "Teaching Pastor",
+		"imageUrl": "https://rock.newspring.cc/GetImage.ashx?id=564388",
+		"email": "clayton.king@newspring.cc"
+	},
+	{
+		"firstName": "Brad",
+		"lastName": "Cooper",
+		"title": "Pastor of Culture & Direction",
+		"imageUrl": "https://rock.newspring.cc/GetImage.ashx?id=564182",
+		"email": "brad.cooper@newspring.cc"
+	},
+	{
+		"firstName": "Dan",
+		"lastName": "Lian",
+		"title": "Associate Pastor",
+		"imageUrl": "https://rock.newspring.cc/GetImage.ashx?id=564401",
+		"email": "dan.lian@newspring.cc"
+	}
+] %}
+
+{% block content %}
+
+	{% include "partials/staff-navigation.html" %}
+
+	{% set blockData = { 
+	    id: '1',
+	    preTitle: '',
+	    titleSize: '',
+	    title: 'Teaching Team',
+	    tags: ''
+	} %}{% include "partials/page-header.html" %}
+
+	{% set blockData = { 
+	    id: '3',
+	    title: '',
+	    personObject: teachingTeam,
+	    sliderItemWidth: '300'
+	} %}{% include "partials/person-slider.html" %}
+
+	{% include "partials/footer.html" %}
+
+{% endblock %}

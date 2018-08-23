@@ -1,48 +1,55 @@
 {% set pageTitle = "Sermons" %}
 
-{% set pageColorHex = "" %}
-{% set pageHeaderColorHex = "6bac43" %}
+{% set pageHeaderColorHex = "" %}
 
 {% extends "full-width.html" %}
 
 {% set seriesItems = [
 	{
 		"id": "1",
+		"title": "Hear No Evil",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/fuse/hearnoevil.commassets.1.jpg",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "2",
+		"title": "Holy Spirit",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/HS1x1.jpg",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "3",
-		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/4325.sundays.cen.web.easter18.story1.jpg",
+		"title": "Easter at NewSpring",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/4325.sundays.cen.web.easter18.social1.jpg",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "4",
+		"title": "Tighten The Knot",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1TightenKnot.jpg",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "5",
+		"title": "Different",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/3490.sundays.cen.different.1x1.jpg",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "6",
+		"title": "Do You See What I See?",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/series.dyswis.1x1.jpg",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "7",
+		"title": "ThankFULL",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1_promothankfull.marketing.png",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "8",
+		"title": "Slaying Giants",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/1x1slayinggiants.png",
 		"linkUrl": "/series.html"
 	}
@@ -75,11 +82,13 @@
 	      '2': 'husbands',
 	      '3': 'marriages'
 	    },
-	    imageUrl: 'https://embed-ssl.wistia.com/deliveries/e70c2992fde4c4e7171cd5b35c0bbeeb8fe046ab.jpg',
+	    imageUrl: 'https://embed-ssl.wistia.com/deliveries/a26e7962527a2dfa9afc3df85ea49387f9099e03.jpg',
 	    imageAlignment: 'left',
 	    linkUrl: '/sermon-entry.html',
 	    linkText: 'Watch Sermon'
 	} %}{% include "partials/side-by-side.html" %}
+
+{#
 
 {% set blockData = { 
     id: '3',
@@ -88,16 +97,18 @@
     grayscale: '',
     label: 'Featured Series',
     titleSize:'h1',
-    title: "Slaying Giants",
+    title: "Tighten The Knot",
     copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
     trimCopy: 'y',
     tags: '',
     videoId:'f06xc3jebq',
-    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_fuse/1x1slayinggiants_1700_1701_c1.png',
+    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/all/heroes/newspring/1x1TightenKnot_1700_1700_90_c1.jpg',
     imageAlignment: 'right',
     linkUrl: '/series.html',
     linkText: 'View Sermons'
 } %}{% include "partials/side-by-side.html" %}
+
+#}
 
     <section class="bg-white rounded shadowed hard-sides">
     	
@@ -105,14 +116,21 @@
 			<h2 class="push-half-bottom text-center">Latest Sermon Series</h2>
 		</div>
 
-        <div class="slider-wrapper" data-slider="250">
+        <div class="slider-wrapper" data-slider="230">
         	<div class="slider">
-		        {% for series in seriesItems %}<div class="slider-item">
-					{% if series.linkUrl %}<a href="{{ series.linkUrl }}">{% endif %}
-						<div class="ratio-square shadowed background-center background-cover rounded push-half-bottom" style="background-image:url('{{ series.imageUrl }}');"></div>
-					{% if series.linkUrl %}</a>{% endif %}
-		        </div>{% endfor %}
+        		{% for series in seriesItems %}<div class="slider-item">{% set blockData = { 
+				    id: '',
+				    backgroundColorHex: '',
+				    grayscale: '',
+				    imageUrl: series.imageUrl,
+				    imageOpacity: '',
+				    linkUrl: series.linkUrl
+				} %}{% include "partials/image.html" %}</div>{% endfor %}
 		    </div>
+		</div>
+		
+		<div class="soft-sides text-center">
+			<p class="xs-push-half-bottom"><a href="/sermons-browse-all.html" class="btn btn-primary">Browse All Series</a></p>
 		</div>
 
     </section>

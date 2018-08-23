@@ -54,8 +54,8 @@ gulp.task('styles', function () {
 
 // Watch Styles Task
 gulp.task('watch', function(){
-	gulp.watch(scriptsSrc, ['jsImport', 'scripts'])
-	gulp.watch(stylesSrc, ['styles']);
+	gulp.watch('src/scss/**/*.scss', ['styles']);
+	gulp.watch(scriptsSrc, ['jsImport', 'scripts']);
 	gulp.watch('pages/**/*.html', ['nunjucks']);
 	gulp.watch('templates/**/*.html', ['nunjucks']);
 });
