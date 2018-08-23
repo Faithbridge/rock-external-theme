@@ -7,7 +7,8 @@
     title: '',
     tags: {
 		'': ''
-	}
+	},
+    copy: ''
 } %}{% include "partials/page-header.html" %}
 
 #}
@@ -21,7 +22,7 @@
     	{% endif %}
 
 		{% if blockData.title %}
-        	<h1 class="{% if blockData.titleSize %}{{ blockData.titleSize }}{% else %}h2{% endif %} {% if tagCount >= 1 %}push-half-bottom xs-push-bottom{% else %}flush{% endif %}">{{ blockData.title }}</h1>
+        	<h1 class="{% if blockData.titleSize %}{{ blockData.titleSize }}{% else %}h2{% endif %} {% if tagCount >= 1 or blockData.copy %}push-half-bottom xs-push-bottom{% else %}flush{% endif %}">{{ blockData.title }}</h1>
         {% endif %}
 		
         {% if tagCount != 0 %}
@@ -31,6 +32,12 @@
                 {% endfor %}</small>
             </p>
         {% endif %}
-
+        
+        {% if blockData.copy %}
+            <div class="text-constrained">
+                {{ blockData.copy | safe }}
+            </div>
+        {% endif %}
+        
     </div>
 </section>

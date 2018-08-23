@@ -1,0 +1,144 @@
+{% set pageTitle = "Sermons By Series" %}
+
+{% set pageHeaderColorHex = "" %}
+
+{% extends "full-width.html" %}
+
+{% set seriesItems = [
+	{
+		"id": "1",
+		"title": "Hear No Evil",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/fuse/hearnoevil.commassets.1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "2",
+		"title": "Holy Spirit",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/HS1x1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "3",
+		"title": "Easter at NewSpring 2018",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/4325.sundays.cen.web.easter18.social1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "4",
+		"title": "Tighten The Knot",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1TightenKnot.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "5",
+		"title": "Different",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/3490.sundays.cen.different.1x1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "6",
+		"title": "Do You See What I See?",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/series.dyswis.1x1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "7",
+		"title": "ThankFULL",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1_promothankfull.marketing.png",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "8",
+		"title": "Slaying Giants",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/1x1slayinggiants.png",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "9",
+		"title": "Promised Land",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_newspring/PL1X1_1700_1701_90_c1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "10",
+		"title": "The Parable of the Acorn",
+		"imageUrl": "//ns.images.s3.amazonaws.com/newspring/collection/series_newspring/ns-logo.sermon-placeholder.1x1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "11",
+		"title": "Give Me Five",
+		"imageUrl": "//ns.images.s3.amazonaws.com/newspring/collection/series_newspring/ns-logo.sermon-placeholder.1x1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "12",
+		"title": "Gauntlet 2017",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_fuse/GauntletSunday1x1-100_1700_1701_90_c1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "13",
+		"title": "If",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_newspring/1x1if_1700_1701_c1.png",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "14",
+		"title": "No Ordinary Family",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_newspring/familyseries.1x1_1700_1700_90_c1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "15",
+		"title": "Mother's Day at NewSpring",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_fuse/1x1mothersday_1700_1701_c1.png",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "16",
+		"title": "Clarity",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_newspring/1x1clarity_1700_1701_90_c1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "17",
+		"title": "Easter at NewSpring 2017",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_newspring/300111.sundays.easter1x1_1700_1701_90_c1.jpg",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "18",
+		"title": "Built to Last",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_newspring/BTL1x1_1700_1701_90_c1.jpg",
+		"linkUrl": "/series.html"
+	}
+] %}
+
+
+
+{% block content %}
+
+	{% set blockData = { 
+	    id: '1',
+	    preTitle: '',
+	    titleSize: '',
+	    title: pageTitle,
+	    tags: ''
+	} %}{% include "partials/page-header.html" %}
+
+	<div class="row row-condensed">
+		{% for series in seriesItems %}<div class="col-md-2 col-sm-4 col-xs-6">
+
+		<a href="{{ series.linkUrl }}" title="{{ series.title }}">
+			<div class="ratio-square background-cover background-center rounded shadowed push-half-bottom" style="background-image:url('{{ series.imageUrl }}');"></div>
+		</a>
+
+		</div>{% endfor %}
+	</div>
+
+	{% include "partials/pagination.html" %}
+
+    {% include "partials/footer.html" %}
+
+{% endblock %}
