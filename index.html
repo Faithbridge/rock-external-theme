@@ -125,6 +125,8 @@ bg-gray-dark
 position-relative 
 text-white 
 bring-forward
+hard-bottom
+floating
 " style="">
 
 	
@@ -139,12 +141,12 @@ bring-forward
 	
 	<!-- Background Image -->
 	
-    	<span class=" full-screen background-cover background-center rounded hidden-md hidden-lg " style="background-image: url('//dg0ddngxdz549.cloudfront.net/newspring/homepage/hero_1x1.gif'); opacity: 1;"></span>
+    	<span class=" full-screen background-cover background-center rounded hidden-md hidden-lg " style="background-image: url('//dg0ddngxdz549.cloudfront.net/newspring/homepage/hero_1x1.gif'); opacity: 1; background-attachment: fixed;"></span>
     
 
     
 
-    <div class="bring-forward center-block text-constrained text-center soft-double-top">
+    <div class="floating-item bring-forward center-block text-constrained text-center" data-0="top:0px;opacity:1;" data-300="top:120px;opacity:0;">
 
         
 
@@ -160,9 +162,15 @@ bring-forward
 
         
 
+        
+
     </div>
 
-    
+    <div class="arrow hidden">
+        <!-- <i class="fa fa-chevron-down" aria-hidden="true"></i> -->
+        <!-- <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> -->
+        <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+    </div>
 
 </section>
 
@@ -488,6 +496,10 @@ bring-forward
         
         <!-- Core JS -->    
         <script src="/dest/js/scripts.min.js"></script>
+
+        <script type="text/javascript">
+            var s = skrollr.init();
+        </script>
 
 	</body>
 </html>

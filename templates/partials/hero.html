@@ -27,6 +27,8 @@ bg-gray-dark
 position-relative 
 text-white 
 bring-forward
+hard-bottom
+floating
 {% if blockData.fixed %}
     ratio-landscape xs-ratio-square hard
 {% endif %}" style="{% if blockData.backgroundColorHex %}background-color: #{{ blockData.backgroundColorHex }};{% endif %}">
@@ -43,14 +45,14 @@ bring-forward
 	
 	<!-- Background Image -->
 	{% if blockData.imageUrl %}
-    	<span class="{% if blockData.mobileImageUrl %}hidden-sm hidden-xs{% endif %} full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
+    	<span class="{% if blockData.mobileImageUrl %}hidden-sm hidden-xs{% endif %} full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %} background-attachment: fixed;"></span>
     {% endif %}
 
     {% if blockData.mobileImageUrl %}
         <span class="hidden-md hidden-lg full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.mobileImageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
     {% endif %}
 
-    <div class="bring-forward center-block text-constrained text-center soft-double-top">
+    <div class="floating-item bring-forward center-block text-constrained text-center" data-0="top:0px;opacity:1;" data-300="top:120px;opacity:0;">
 
         {% if blockData.imageOverlayUrl %}
             <img src="{{ blockData.imageOverlayUrl }}" alt="" class="position-relative push-bottom" style="width: 70%; max-width: 250px;">
@@ -74,13 +76,19 @@ bring-forward
 	        </p>
         {% endif %}
 
+        {% if blockData.videoId %}
+            <div class="btn btn-play push-bottom text-white shadowed push-top"><span class="wistia_embed wistia_async_{{ blockData.videoId }} popover=true popoverContent=link" style="display:inline;position:relative"><i class="fas fa-fw fa-lg fa-play"></i></span></div>
+
+            <script src="https://fast.wistia.com/embed/medias/{{ blockData.videoId }}.jsonp" async></script>
+            <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+        {% endif %}
+
     </div>
 
-    {% if blockData.videoId %}
-        <div class="btn btn-play position-absolute position-bottom-boundry margin-bottom-negative margin-left-negative text-white shadowed"><span class="wistia_embed wistia_async_{{ blockData.videoId }} popover=true popoverContent=link" style="display:inline;position:relative"><i class="fas fa-fw fa-lg fa-play"></i></span></div>
-
-        <script src="https://fast.wistia.com/embed/medias/{{ blockData.videoId }}.jsonp" async></script>
-        <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-    {% endif %}
+    <div class="arrow hidden">
+        <!-- <i class="fa fa-chevron-down" aria-hidden="true"></i> -->
+        <!-- <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> -->
+        <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+    </div>
 
 </section>
