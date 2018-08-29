@@ -6,8 +6,19 @@
 <div class="page-brand-bar" style="background-color: #{{ pageHeaderColorHex }}; opacity: .9;" data-0="top: -48px;" data-200="top: -450px;"></div>
 {% endif %}
 
-<div class="page-constrained mx-auto">
-	<div class="soft xs-soft-half hard-bottom">
+{% if pageTitle %}
+	{% set blockData = { 
+	    id: '',
+	    preTitle: '',
+	    titleSize: '',
+	    title: pageTitle,
+	    tags: '',
+	    copy: ''
+	} %}{% include "partials/page-header.html" %}
+{% endif %}
+
+<div class="">
+	<div class="">
 	    {% block content %}
 	    {% endblock %}
 	</div>

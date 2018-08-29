@@ -1,5 +1,5 @@
-{% set pageTitle = "Israel Fall 2018" %}
-
+{% set browserTitle = "Israel Fall 2018" %}
+{% set pageTitle = "" %}
 {% set pageHeaderColorHex = "335cb9" %}
 
 {% extends "full-width.html" %}
@@ -15,7 +15,7 @@
         imageOverlayUrl: '',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/kidspring/UpdatedWeb_FirstTimer-13.jpg',
         backgroundVideoUrl: '//s3.amazonaws.com/ns.video/fuse/promotions/fuse2israel/76337_CEN_WEB_Fuse2IsraelWebHeader-ProRes-Web_Hero_2_000kbps',
-        imageOpacity: '.7',
+        imageOpacity: '1',
         linkUrl: '',
         linkText: '',
         linkClasses: '',
@@ -75,7 +75,7 @@
         </div>
     </div>
 
-    <section class="bg-white rounded shadowed">
+    <section class="bg-white">
         <div class="text-constrained center-block text-center">
 
             <h2 class="text-center">Frequently Asked Questions</h2>
@@ -118,7 +118,5 @@
     } %}{% include "partials/side-by-side.html" %}
 
     #}
-
-    {% include "partials/footer.html" %}
 
 {% endblock %}

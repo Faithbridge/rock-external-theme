@@ -1,5 +1,5 @@
+{% set browserTitle = "Articles" %}
 {% set pageTitle = "Articles" %}
-
 {% set pageHeaderColorHex = "1C683E" %}
 
 {% extends "full-width.html" %}
@@ -121,14 +121,6 @@
         }
     ] %}
 
-    {% set blockData = { 
-        id: '1',
-        preTitle: '',
-        titleSize: '',
-        title: 'Articles',
-        tags: ''
-    } %}{% include "partials/page-header.html" %}
-
     <section class="soft-half hard-top xs-hard">
         <div class="container-fluid hard">
             <div class="row">
@@ -164,7 +156,5 @@
         linkUrl: '#',
         linkText: 'Subscribe Now'
     } %}{% include "partials/ad-unit.html" %}
-
-    {% include "partials/footer.html" %}
 
 {% endblock %}

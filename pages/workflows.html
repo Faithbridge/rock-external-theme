@@ -1,3 +1,6 @@
+{% set browserTitle = "Workflows" %}
+{% set pageTitle = "" %}
+
 {% extends "split.html" %}
 
 {% block hero %}
@@ -340,8 +343,4 @@
         <a href="javascript:__doPostBack('ctl00$main$ctl23$ctl02$ctl06','Continue')" onclick="if ( Page_ClientValidate('WorkflowEntry_1111') ) { $(this).button('loading'); return true; } else { return false; }" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Continue" class="btn btn-primary">Continue</a> 
     </div>
 
-{% endblock %}
-
-{% block related %}
-    
 {% endblock %}

@@ -17,7 +17,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-        <title>{% if pageTitle %}{{ pageTitle }} {% else %}Home {% endif %}| NewSpring Church</title>
+        <title>{% if browserTitle %}{{ browserTitle }} {% else %}Home {% endif %}| NewSpring Church</title>
         
         <!-- Typekit -->
         <script>
@@ -73,12 +73,19 @@
         {% set userEmail = "test@testuser.com" %}
         {% set userPhone = "(555) 555-5555" %}
 
-        <div id="sidebar" class="sidebar">
+        <div id="navigation">
             {% include "partials/navigation.html" %}
         </div>
-        <div id="content" class="content">
+
+        <div id="content">
+            {% if navPages %}
+                {% include "partials/navigation-secondary.html" %}
+            {% endif %}
+
             {% block globalContent %}
             {% endblock %}
+
+            {% include "partials/footer.html" %}
         </div>
 
         {% include "partials/navigation-modal.html" %}

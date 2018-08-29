@@ -1,19 +1,18 @@
-{% set pageTitle = "Rally" %}
-
+{% set browserTitle = "Rally" %}
+{% set pageTitle = "" %}
 {% set pageHeaderColorHex = "D45F18" %}
+
+{% set navPages = {
+    pages: {
+      'About Rally': '/rally.html',
+      'Locations': '/locations.html',
+      'Rally Groups': '/rally-groups.html'
+    }
+} %}
 
 {% extends "full-width.html" %}
 
 {% block content %}
-    
-    {# {% set blockData = {
-        pages: {
-          '/kidspring.html': 'About Fuse',
-          '/locations.html': 'Locations',
-          '/fuse-groups.html': 'Fuse Groups',
-          '/watch-and-read.html': 'Watch & Read'
-        }
-    } %}{% include "partials/navigation-section.html" #}
 
     {% set blockData = { 
         title: '',
@@ -22,7 +21,7 @@
         imageOverlayUrl: '//dg0ddngxdz549.cloudfront.net/newspring/Rally/rally.logo.white.png',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/Rally/Rally5_2x1_.jpg',
         backgroundVideoUrl: '//ns.video.s3.amazonaws.com/newspring/promotions/Rally/3645_CEN_RAL_RALLYHeroVid_ForExport_h264_v4',
-        imageOpacity: '.3',
+        imageOpacity: '.6',
         linkUrl: '',
         linkText: '',
         linkClasses: '',
@@ -54,7 +53,5 @@
         linkUrl: '#',
         linkText: ''
     } %}{% include "partials/side-by-side.html" %}
-
-    {% include "partials/footer.html" %}
 
 {% endblock %}

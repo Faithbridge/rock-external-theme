@@ -41,6 +41,7 @@
 	transition: background-color .1s;
 	font-size: $font-size-base*.6;
 	transform: scale(1.65);
+	z-index: 1;
 
 	&:hover {
 		color: $white;

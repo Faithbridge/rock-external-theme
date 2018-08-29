@@ -24,23 +24,12 @@ $nav-width: 80px;
 @import '_helpers';
 @import '_breakpoints';
 
-html { 
-	-webkit-font-smoothing: antialiased; 
-	overflow: hidden; 
-}
-
-body { 
-	font-family: $font-family-serif;
-	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-	overflow: hidden;
-}
-
 section, footer {
-	margin-bottom: $base-spacing-unit/2;
+	// margin-bottom: $base-spacing-unit/2;
 	padding: $base-spacing-unit*2 $base-spacing-unit $base-spacing-unit;
 
 	@media (min-width: $screen-sm-min) {
-		margin-bottom: $base-spacing-unit;
+		// margin-bottom: $base-spacing-unit;
 		padding: $base-spacing-unit*3 $base-spacing-unit $base-spacing-unit*2;
 	}
 }
@@ -156,7 +145,27 @@ mark, .mark {
 }
 
 .hero {
-	padding: $base-spacing-unit*4 $base-spacing-unit;
+	padding: $base-spacing-unit*5 $base-spacing-unit;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: linear-gradient(
+			rgba(0,0,0,0) 10%,
+			rgba(0,0,0,.1) 15%,
+			rgba(0,0,0,.2) 20%,
+			rgba(0,0,0,.4) 25%,
+			rgba(0,0,0,.6) 35%,
+			rgba(0,0,0,.7) 45%,
+			rgba(0,0,0,.8) 60%,
+			rgba(0,0,0,.9) 70%,
+			rgba(0,0,0,1) 75%);
+		opacity: .75;
+	}
 }
 
 .modal {

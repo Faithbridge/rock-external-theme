@@ -1,5 +1,5 @@
-{% set pageTitle = "Locations" %}
-
+{% set browserTitle = "Locations" %}
+{% set pageTitle = "" %}
 {% set pageHeaderColorHex = "6bac43" %}
 
 {% extends "full-width.html" %}
@@ -108,13 +108,13 @@
         grayscale: '',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/fpo.Parking_1700_850_90_c1.jpg',
         backgroundVideoUrl: '//s3.amazonaws.com/ns.video/newspring/promotions/locations/locations.bgvideo',
-        imageOpacity: '.3',
+        imageOpacity: '1',
         linkUrl: '',
         linkText: '',
         linkClasses: ''
     } %}{% include "partials/hero.html" %}
     
-    <section id="slider" class="bg-gray-dark rounded shadowed soft-bottom hard-sides">
+    <section id="slider" class="bg-gray-dark soft-bottom hard-sides">
 
         <div class="text-center">
             <h2 class="text-white xs-soft-sides">Find a Campus Near You</h2>
@@ -167,7 +167,7 @@
     }
 ] %}
 
-    <section class="bg-tertiary rounded shadowed xs-soft-half-sides">
+    <section class="bg-tertiary xs-soft-half-sides">
         <div class="center-block text-constrained">
             <div class="text-white text-center">
                 <h2>Plan a Visit</h2>
@@ -191,7 +191,5 @@
 
         </div>
     </section>
-
-    {% include "partials/footer.html" %}
 
 {% endblock %}

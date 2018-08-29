@@ -1,19 +1,19 @@
-{% set pageTitle = "KidSpring" %}
-
+{% set browserTitle = "KidSpring" %}
+{% set pageTitle = "" %}
 {% set pageHeaderColorHex = "198AD3" %}
+
+{% set navPages = {
+    pages: {
+      'About KidSpring': '/kidspring.html',
+      'Special Needs': '/special-needs.html',
+      'Watch & Read': '/kidspring-watch-and-read.html',
+      'Mobile App': '/kidspring-mobile-app.html'
+    }
+} %}
 
 {% extends "full-width.html" %}
 
 {% block content %}
-    
-    {% set blockData = {
-        pages: {
-          'About KidSpring': '/kidspring.html',
-          'Special Needs': '/special-needs.html',
-          'Watch & Read': '/kidspring-watch-and-read.html',
-          'Mobile App': '/kidspring-mobile-app.html'
-        }
-    } %}{% include "partials/navigation-section.html" %}
 
     {% set blockData = { 
         title: '',
@@ -24,7 +24,7 @@
         imageOverlayUrl: '//dg0ddngxdz549.cloudfront.net/kidspring/app/KS.app.logo.500.png',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/kidspring/UpdatedWeb_FirstTimer-13.jpg',
         backgroundVideoUrl: '//s3.amazonaws.com/ns.video/newspring/promotions/Kidspring/KidspringWebAssets_V2',
-        imageOpacity: '.15',
+        imageOpacity: '.25',
         linkUrl: '',
         linkText: '',
         linkClasses: '',
@@ -169,7 +169,5 @@
 
         </div>
     </section>
-
-    {% include "partials/footer.html" %}
 
 {% endblock %}

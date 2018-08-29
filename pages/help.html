@@ -1,5 +1,5 @@
-{% set pageTitle = "Help" %}
-
+{% set browserTitle = "Help" %}
+{% set pageTitle = "" %}
 {% set pageHeaderColorHex = "6bac43" %}
 
 {% extends "full-width.html" %}
@@ -12,7 +12,7 @@
         grayscale: '',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/2x1.computer_(2)_1700_850_90_c1.jpg',
         backgroundVideoUrl: '',
-        imageOpacity: '.5',
+        imageOpacity: '1',
         linkUrl: '/help.html',
         linkText: 'Request Help',
         linkClasses: ''
@@ -41,7 +41,5 @@
         linkUrl: 'https://rock.newspring.cc/workflows/152?Topic=Stewardship',
         linkText: 'Contact Us'
     } %}{% include "partials/side-by-side.html" %}
-
-    {% include "partials/footer.html" %}
 
 {% endblock %}

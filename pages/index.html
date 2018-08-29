@@ -1,6 +1,8 @@
-{% extends "full-width.html" %}
-
+{% set browserTitle = "" %}
+{% set pageTitle = "" %}
 {% set pageHeaderColorHex = "6bac43" %}
+
+{% extends "full-width.html" %}
 
 {% block content %}
 
@@ -10,7 +12,7 @@
         grayscale: '',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/homepage/hero_1x1.gif',
         backgroundVideoUrl: '//s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps',
-        imageOpacity: '.5',
+        imageOpacity: '1',
         linkUrl: '',
         linkText: '',
         linkClasses: ''
@@ -39,8 +41,5 @@
         linkUrl: '/israel.html',
         linkText: ''
     } %}{% include "partials/side-by-side.html" %}
-
-
-    {% include "partials/footer.html" %}
     
 {% endblock %}

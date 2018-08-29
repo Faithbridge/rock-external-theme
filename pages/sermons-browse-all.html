@@ -1,5 +1,5 @@
+{% set browserTitle = "Sermons By Series" %}
 {% set pageTitle = "Sermons By Series" %}
-
 {% set pageHeaderColorHex = "" %}
 
 {% extends "full-width.html" %}
@@ -119,14 +119,6 @@
 
 {% block content %}
 
-	{% set blockData = { 
-	    id: '1',
-	    preTitle: '',
-	    titleSize: '',
-	    title: pageTitle,
-	    tags: ''
-	} %}{% include "partials/page-header.html" %}
-
 	<div class="row row-condensed">
 		{% for series in seriesItems %}<div class="col-md-2 col-sm-4 col-xs-6">
 
@@ -138,7 +130,5 @@
 	</div>
 
 	{% include "partials/pagination.html" %}
-
-    {% include "partials/footer.html" %}
 
 {% endblock %}

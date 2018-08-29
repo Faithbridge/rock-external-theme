@@ -1,19 +1,19 @@
 {#
 
-{% set blockData = { 
+{% set navPages = { 
     id: '',
     pages: {
       '': ''
     },
-} %}{% include "partials/navigation-section.html" %}
+} %}{% include "partials/navigation-secondary.html" %}
 
 #}
 
 <!-- Desktop Section Nav -->
-<section class="nav-wrapper bg-white rounded shadowed soft-half hidden-xs hidden-sm">
+<section class="nav-wrapper bg-white soft-half hidden-xs hidden-sm">
     <ul class="nav xs-nav-stacked nav-pills">
         
-        {% for title, url in blockData.pages %}
+        {% for title, url in navPages.pages %}
             <li role="presentation" class="{% if loop.index == 1 %}active{% endif %}"><a href="{{ url }}">{{ title }}</a></li>
         {% endfor %}
 
@@ -24,7 +24,7 @@
 <section class="nav-wrapper bg-white rounded shadowed soft-half hidden-md hidden-lg push-bottom xs-push-half-bottom">
     <div class="btn-group width-full">
 
-        {% for title, url in blockData.pages %}{% if loop.index == 1 %}
+        {% for title, url in navPages.pages %}{% if loop.index == 1 %}
             <button type="button" class="btn btn-primary dropdown-toggle width-full" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ title }} <span class="caret"></span>
             </button>
@@ -32,7 +32,7 @@
 
         <ul class="dropdown-menu width-full">
 
-            {% for title, url in blockData.pages %}
+            {% for title, url in navPages.pages %}
                 <li role="presentation"><a href="{{ url }}">{{ title }}</a></li>
             {% endfor %}
 

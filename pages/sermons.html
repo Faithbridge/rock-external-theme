@@ -1,5 +1,5 @@
+{% set browserTitle = "Sermons" %}
 {% set pageTitle = "Sermons" %}
-
 {% set pageHeaderColorHex = "" %}
 
 {% extends "full-width.html" %}
@@ -57,14 +57,6 @@
 
 
 {% block content %}
-
-{% set blockData = { 
-    id: '1',
-    preTitle: '',
-    titleSize: '',
-    title: 'Sermons',
-    tags: ''
-} %}{% include "partials/page-header.html" %}
 
 {% set blockData = { 
 	    id: '2',
@@ -134,7 +126,5 @@
 		</div>
 
     </section>
-
-    {% include "partials/footer.html" %}
 
 {% endblock %}

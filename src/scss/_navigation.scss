@@ -10,20 +10,34 @@
 	}
 }
 
+.nav-logo {
+	span {
+		position: absolute;
+		top: 25px;
+		left: 70px;
+		font-size: $font-size-base*.95;
+		line-height: 1.05;
+		font-weight: 900;
+		text-transform: uppercase;
+		text-align: left;
+	}
+}
+
 .nav-primary {
 	position: relative;
 	z-index: 1;
 	box-shadow: 0 0 6px rgba(0,0,0,.2);
-	background-color: $gray-darker;
+	// background-color: rgba(255,255,255,.98);
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+49,ffffff+100&1+49,0.9+100 */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 49%, rgba(255,255,255,0.9) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 49%,rgba(255,255,255,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 49%,rgba(255,255,255,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6ffffff',GradientType=0 ); /* IE6-9 */
 
 	.nav-icon {
 		position: relative;
 		z-index: 1;
 		width: $nav-width / 3;
-	}
-
-	.nav-logo-light {
-		display: none;
 	}
 
 	li {
@@ -39,13 +53,8 @@
 		height: $nav-width;
 		line-height: $nav-width;
 		text-align: center;
-		color: $white;
-		border-right: 1px solid rgba(0,0,0,.1);
+		color: $gray-darker;
 		outline: none;
-
-		span {
-			display: none;
-		}
 
 		i {
 			font-size: 1.1em;
@@ -69,74 +78,17 @@
     }
 
 	@media (min-width: $screen-sm-min) {
-
 		.nav-icon {
 			width: $nav-width / 2.5;
 		}
 
-		li {
-			width: 100%;
-		}
-
 		a {
 			width: $nav-width;
-			border-bottom: 1px solid rgba(255,255,255,.08);
-			border-right: 0;
-
-			span {
-				display: none;
-				position: absolute;
-				top: 0;
-				left: 0;
-				padding-left: $nav-width;
-				padding-right: 30px;
-				background-color: $brand-primary;
-				color: $white;
-				border-top-right-radius: 5px;
-				border-bottom-right-radius: 5px;
-				box-shadow: 0 0 3px rgba(0,0,0,.4);
-			}
 
 			i {
 				position: relative;
 				z-index: 2;
 				font-size: 1.25em;
-			}
-
-			&:hover {
-				span {
-					display: inline-block;
-				}
-			}
-		}
-
-		.nav-logo:hover {
-			.nav-logo-regular {
-				display: none;
-			}
-
-			.nav-logo-light {
-				display: inline-block;
-			}
-		}
-
-		.topbar & {
-			display: inline-block;
-			width: 100%;
-
-			li {
-				display: inline-block;
-				width: $nav-width;
-
-				a {
-					span {
-						display: none;
-					}
-
-					&:hover {
-						background-color: $brand-primary;
-					}
-				}
 			}
 		}
 	}

@@ -1,19 +1,19 @@
+{% set browserTitle = "My Account" %}
 {% set pageTitle = "My Account" %}
-
 {% set pageHeaderColorHex = "1C683E" %}
+
+{% set navPages = {
+    pages: {
+      'My Account': '/my-account.html',
+      'My Groups': '/my-groups.html',
+      'My Training': '/my-training.html',
+      'My Giving': '/my-giving.html'
+    }
+} %}
 
 {% extends "full-width.html" %}
 
 {% block content %}
-    
-    {% set blockData = {
-        pages: {
-          'My Account': '/my-account.html',
-          'My Groups': '/my-groups.html',
-          'My Training': '/my-training.html',
-          'My Giving': '/my-giving.html'
-        }
-    } %}{% include "partials/navigation-section.html" %}
     
     <section class="bg-white rounded shadowed">
         
@@ -50,7 +50,5 @@
         </div>
 
     </section>
-
-    {% include "partials/footer.html" %}
 
 {% endblock %}

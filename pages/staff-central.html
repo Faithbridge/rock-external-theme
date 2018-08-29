@@ -1,5 +1,5 @@
+{% set browserTitle = "Creative Team" %}
 {% set pageTitle = "" %}
-
 {% set pageHeaderColorHex = "2a4930" %}
 
 {% extends "full-width.html" %}
@@ -253,21 +253,10 @@
 	</div>
 
 	{% set blockData = { 
-	    id: '1',
-	    preTitle: '',
-	    titleSize: '',
-	    title: 'Creative Team',
-	    copy: '',
-	    tags: ''
-	} %}{% include "partials/page-header.html" %}
-
-	{% set blockData = { 
 	    id: '4',
 	    title: '',
 	    personObject: creativeTeam,
 	    sliderItemWidth: '300'
 	} %}{% include "partials/person-slider.html" %}
-
-	{% include "partials/footer.html" %}
 
 {% endblock %}
