@@ -27,8 +27,10 @@ bg-gray-dark
 position-relative 
 text-white 
 bring-forward
-hard-bottom
-floating
+rounded
+shadowed
+push-bottom
+overflow-hidden
 {% if blockData.fixed %}
     ratio-landscape xs-ratio-square hard
 {% endif %}" style="{% if blockData.backgroundColorHex %}background-color: #{{ blockData.backgroundColorHex }};{% endif %}">
@@ -52,7 +54,7 @@ floating
         <span class="hidden-md hidden-lg full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.mobileImageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
     {% endif %}
 
-    <div class="floating-item bring-forward center-block text-constrained text-center" data-0="top:0px;opacity:1;" data-300="top:120px;opacity:0;">
+    <div class="bring-forward center-block text-constrained text-center push-double-top">
 
         {% if blockData.imageOverlayUrl %}
             <img src="{{ blockData.imageOverlayUrl }}" alt="" class="position-relative push-bottom" style="width: 70%; max-width: 250px;">

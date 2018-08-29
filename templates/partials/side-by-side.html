@@ -50,7 +50,7 @@
     </style>
 {% endif %}
 
-<section {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="hard position-relative overflow-hidden bg-white">
+<section {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="hard position-relative rounded shadowed overflow-hidden bg-white push-bottom xs-push-half-bottom">
 
     {% if blockData.imageUrl %}
         {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}

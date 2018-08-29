@@ -49,7 +49,7 @@
     </style>
 {% endif %}
 
-<section {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="bg-white position-relative overflow-hidden xs-soft-half-sides xs-soft-top xs-hard-bottom xs-push-half-bottom">
+<section {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="bg-white position-relative overflow-hidden xs-soft-half-sides xs-soft-top xs-hard-bottom xs-push-half-bottom rounded shadowed">
 	
 	{% if blockData.imageUrl %}
     	<span class="full-screen background-cover background-center {% if blockData.grayscale %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
