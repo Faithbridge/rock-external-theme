@@ -6,6 +6,28 @@
 	vertical-align: bottom;
 }
 
+.btn-link:hover {
+	text-decoration: none;
+}
+
+.btn-share {
+	position: relative;
+	display: inline-block;
+
+	ul {
+		position: absolute;
+		top: $base-spacing-unit;
+		left: 50%;
+		width: 200px;
+		margin-left: -100px;
+	}
+
+	li {
+		display: inline-block;
+		width: 50px;
+	}
+}
+
 .btn-secondary { @include button-variant($white, $brand-secondary, $brand-secondary); }
 .btn-tertiary { @include button-variant($white, $brand-tertiary, $brand-tertiary); }
 .btn-gray-lighter { @include button-variant($gray-darker, $gray-lighter, $gray-lighter); }
@@ -13,7 +35,7 @@
 .btn-gray-dark { @include button-variant($white, $gray-dark, $gray-dark); }
 .btn-gray-darker { @include button-variant($white, $gray-darker, $gray-darker); }
 
-	// Fixes alignment of large icons within buttons
+// Fixes alignment of large icons within buttons
 .btn {
 	i {
 		margin-left: 5px;

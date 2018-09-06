@@ -39,9 +39,6 @@
 
 // Carousel
 .carousel {
-	margin-left: -$base-spacing-unit;
-	margin-right: -$base-spacing-unit;
-	
 	@media (min-width: $screen-sm-min) {
 		margin-left: 0;
 		margin-right: 0;

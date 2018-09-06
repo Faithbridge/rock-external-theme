@@ -13,7 +13,7 @@
 .nav-logo {
 	span {
 		position: absolute;
-		top: 25px;
+		top: 23px;
 		left: 70px;
 		font-size: $font-size-base*.95;
 		line-height: 1.05;
@@ -71,12 +71,12 @@
 	}
 
 	// Raise navigation icon position for iPhone X
-	@media only screen and (device-width : 375px) and (device-height : 812px) 
-    and (-webkit-device-pixel-ratio : 3) { 
-		a {
-			line-height: $nav-width - 10;
-		}
-    }
+	// @media only screen and (device-width : 375px) and (device-height : 812px) 
+ //    and (-webkit-device-pixel-ratio : 3) { 
+	// 	a {
+	// 		line-height: $nav-width - 10;
+	// 	}
+ //    }
 
 	@media (min-width: $screen-sm-min) {
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+49,ffffff+100&1+49,0.9+100 */

@@ -7,7 +7,7 @@
     linkColorHex: '',
     backgroundColorHex: '',
     grayscale: '',
-    fixed: '',
+    ratio: '',
     imageUrl: '',
     imageOverlayUrl: '',
     backgroundVideoUrl: '',
@@ -25,72 +25,66 @@
 hero
 bg-gray-dark
 position-relative 
+rounded 
+shadowed 
 text-white 
-bring-forward
-rounded
-shadowed
 push-bottom
-overflow-hidden
-{% if blockData.fixed %}
-    ratio-landscape xs-ratio-square hard
+xs-push-half-bottom
+bring-forward
+{% if blockData.ratio %}
+    ratio-{{ blockData.ratio }} hard
 {% endif %}" style="{% if blockData.backgroundColorHex %}background-color: #{{ blockData.backgroundColorHex }};{% endif %}">
 
-	{% if blockData.backgroundVideoUrl %}
+    {% if blockData.backgroundVideoUrl %}
 
         <!-- Background Video -->
-		<video class="video display-block full-screen width-full rounded hidden-xs hidden-sm {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="object-fit: cover; min-width: 100%; min-height: 100%; height: 100%; opacity: {{ blockData.imageOpacity }};" width="1280" height="720" loop="" autoplay="">
-			<source src="{{ blockData.backgroundVideoUrl }}.mp4" type="video/mp4">
-			<source src="{{ blockData.backgroundVideoUrl }}.webm" type="video/webm">
-		</video>
+        <video class="video display-block full-screen width-full rounded hidden-xs hidden-sm {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="object-fit: cover; min-width: 100%; min-height: 100%; height: 100%; opacity: {{ blockData.imageOpacity }};" width="1280" height="720" loop="" autoplay="">
+            <source src="{{ blockData.backgroundVideoUrl }}.mp4" type="video/mp4">
+            <source src="{{ blockData.backgroundVideoUrl }}.webm" type="video/webm">
+        </video>
 
     {% endif %}
-	
-	<!-- Background Image -->
-	{% if blockData.imageUrl %}
-    	<span class="{% if blockData.mobileImageUrl %}hidden-sm hidden-xs{% endif %} full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %} background-attachment: fixed;"></span>
+    
+    <!-- Background Image -->
+    {% if blockData.imageUrl %}
+        <span class="{% if blockData.mobileImageUrl %}hidden-sm hidden-xs{% endif %} full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
     {% endif %}
 
     {% if blockData.mobileImageUrl %}
         <span class="hidden-md hidden-lg full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.mobileImageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
     {% endif %}
 
-    <div class="bring-forward center-block text-constrained text-center push-double-top">
+    <div class="bring-forward center-block text-constrained text-center soft-double-top">
 
         {% if blockData.imageOverlayUrl %}
             <img src="{{ blockData.imageOverlayUrl }}" alt="" class="position-relative push-bottom" style="width: 70%; max-width: 250px;">
         {% endif %}
 
-		<span class="{% if blockData.textColorClass %}{{ blockData.textColorClass }}{% else %}text-white{% endif %}">
+        <span class="{% if blockData.textColorClass %}{{ blockData.textColorClass }}{% else %}text-white{% endif %}">
 
-			{% if blockData.title %}
-        		<h1>{{ blockData.title }}</h1>
-        	{% endif %}
+            {% if blockData.title %}
+                <h1>{{ blockData.title }}</h1>
+            {% endif %}
 
-        	{{ blockData.copy | safe }}
+            {{ blockData.copy | safe }}
 
         </span>
 
         {% if blockData.linkUrl %}
-	        <p>
-	        	<a href="{{ blockData.linkUrl }}" class="{% if blockData.linkClasses %}{{ blockData.linkClasses }}{% else %}btn btn-primary{% endif %}">
-	        		{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}
-	        	</a>
-	        </p>
-        {% endif %}
-
-        {% if blockData.videoId %}
-            <div class="btn btn-play push-bottom text-white shadowed push-top"><span class="wistia_embed wistia_async_{{ blockData.videoId }} popover=true popoverContent=link" style="display:inline;position:relative"><i class="fas fa-fw fa-lg fa-play"></i></span></div>
-
-            <script src="https://fast.wistia.com/embed/medias/{{ blockData.videoId }}.jsonp" async></script>
-            <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+            <p>
+                <a href="{{ blockData.linkUrl }}" class="{% if blockData.linkClasses %}{{ blockData.linkClasses }}{% else %}btn btn-primary{% endif %}">
+                    {% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}
+                </a>
+            </p>
         {% endif %}
 
     </div>
 
-    <div class="arrow hidden">
-        <!-- <i class="fa fa-chevron-down" aria-hidden="true"></i> -->
-        <!-- <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> -->
-        <i class="fa fa-angle-double-down" aria-hidden="true"></i>
-    </div>
+    {% if blockData.videoId %}
+        <div class="btn btn-play position-absolute position-bottom-boundry margin-bottom-negative margin-left-negative text-white shadowed"><span class="wistia_embed wistia_async_{{ blockData.videoId }} popover=true popoverContent=link" style="display:inline;position:relative"><i class="fas fa-fw fa-lg fa-play"></i></span></div>
+
+        <script src="https://fast.wistia.com/embed/medias/{{ blockData.videoId }}.jsonp" async></script>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    {% endif %}
 
 </section>

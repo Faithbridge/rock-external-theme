@@ -1,6 +1,6 @@
 {% set browserTitle = "Sermons" %}
 {% set pageTitle = "Sermons" %}
-{% set pageHeaderColorHex = "" %}
+{% set pageHeaderColorHex = "858585" %}
 
 {% extends "full-width.html" %}
 
@@ -8,49 +8,65 @@
 	{
 		"id": "1",
 		"title": "Hear No Evil",
+		"copy": "<p>We have a heavenly Father that tells us the Truth because He loves us and a father that tells us lies because he hates and wants to destroy us.</p>",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/fuse/hearnoevil.commassets.1.jpg",
-		"linkUrl": "/series.html"
+		"linkUrl": "/series.html",
+		"likes": "0"
 	},
 	{
 		"id": "2",
 		"title": "Holy Spirit",
+		"copy": "<p>The tomb is empty, and Jesus is alive. But it's common for many to forget the Holy Spirit is Jesus in us and with us.</p><p>Who is Holy Spirit? What does He do? What are His gifts, and how do we experience Him? In this series, we remove the mystery that surrounds the third person of the Trinity. We are meant to know God the Holy Spirit as fully as we do God the Father and God the Son.</p>",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/HS1x1.jpg",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "3",
 		"title": "Easter at NewSpring",
+		"copy": "<p>How does the death of a man thousands of years ago give us hope today? Jesus was no ordinary man. When he died, a debt was paid and God's love was displayed. See why we celebrate Easter and how you, too, can find hope in an empty tomb.</p>",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/4325.sundays.cen.web.easter18.social1.jpg",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "4",
 		"title": "Tighten The Knot",
+		"copy": "<p>No matter how happy a couple is, everyone can think of something they want to be different.</p><p>Maybe you wish he would come home at 5 or she would spend less time on the phone. Maybe, your differences run so deep they seem irreconcilable.</p><p>But for all the reasons to break the knot, there's always a reason to tighten it.</p>",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1TightenKnot.jpg",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "5",
 		"title": "Different",
+		"copy": "<p>We want to help you think different so that you can be different so that you can make a difference.</p>",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/3490.sundays.cen.different.1x1.jpg",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "6",
 		"title": "Do You See What I See?",
+		"copy": "<p>Where are you, God? Don’t you see what’s happening in my life?</p><p>“Merry Christmas” isn’t a holiday greeting. It’s an answer to your deepest questions. Every Sunday in December, join us on a journey through the Christmas story that will change your perspective.</p><p>The wise men, the shepherds — even Jesus’ family — were everyday people with the same questions. Just like you. And the birth of Jesus was the way God revealed everything good He had in mind. For them. For you. For the world.</p><p>Hear about God’s plan for your life this Christmas season at NewSpring.</p>",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_newspring/series.dyswis.1x1.jpg",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "7",
 		"title": "ThankFULL",
+		"copy": "<p>Fullness isn’t found in more appointments or bigger account balances, but in gratitude.</p><p>When we begin to see God’s goodness in the people, obstacles, and opportunities all around us, we discover what it means to be ThankFULL.</p>",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/all/heroes/newspring/1x1_promothankfull.marketing.png",
 		"linkUrl": "/series.html"
 	},
 	{
 		"id": "8",
 		"title": "Slaying Giants",
+		"copy": "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
 		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/1x1slayinggiants.png",
+		"linkUrl": "/series.html"
+	},
+	{
+		"id": "9",
+		"title": "Promised Land",
+		"copy": "<p>You've heard it your whole life:</p><p>Go to church.<br>Read the Bible.<br>Say your prayers.</p><p>These are all good things. But Jesus didn’t come to give us a to-do list. Jesus came so we could experience a full, abundant life.</p><p>In Jesus, every promise God makes to His people becomes true for us, too. Discover the promises that await us in “Promised Land.”</p>",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_newspring/PL2x1_2000_1001_90_c1.jpg",
 		"linkUrl": "/series.html"
 	}
 ] %}
@@ -58,29 +74,63 @@
 
 {% block content %}
 
-{% set blockData = { 
-	    id: '2',
-	    linkColorHex: '',
-	    backgroundColorHex: '',
-	    grayscale: '',
-	    label: 'Featured Sermon',
-	    titleSize:'h1',
-	    title: "God’s Perfect Plan for Marriage",
-	    subtitle: "<a href='/series.html'>Tighten The Knot</a> • Feb 25, 2018 • Jimmy Evans",
-	    copy: "<p>Marriage is failing in America because we’ve stopped following God’s plan. When we do marriage God’s way, our chance of success goes from 50-50 to 100.</p><p>Except for Jesus, marriage is the greatest gift God ever gave to us. Discover how God designed marriage to meet our deepest needs and help us overcome sin.</p>",
-	    trimCopy: 'y',
-	    tags: {
-	      '1': 'wives',
-	      '2': 'husbands',
-	      '3': 'marriages'
-	    },
-	    imageUrl: 'https://embed-ssl.wistia.com/deliveries/a26e7962527a2dfa9afc3df85ea49387f9099e03.jpg',
-	    imageAlignment: 'left',
-	    linkUrl: '/sermon-entry.html',
-	    linkText: 'Watch Sermon'
-	} %}{% include "partials/side-by-side.html" %}
+<section class="soft-half hard-top xs-hard">
+    <div class="container-fluid hard">
+        <div class="row">
+			{% for series in seriesItems %}<div class="col-md-4 col-sm-6 col-xs-12">{% set blockData = { 
+			    id: '',
+			    backgroundColorHex: '',
+			    linkColorHex: '',
+			    grayscale: '',
+			    count: '',
+			    label: '',
+			    textAlignment: '',
+			    titleSize: 'h4',
+			    title: series.title, 
+			    subtitle: "",
+			    copy: series.copy,
+			    trimCopy: 'y',
+			    tags: series.tags,
+			    imageShape: 'landscape',
+			    imageUrl: series.imageUrl,
+			    imageOpacity: '',
+			    linkUrl: '/series.html',
+			    linkText: 'Watch Series',
+			    share: 'y',
+                likes: 'y'
+			} %}{% include "partials/card.html" %}</div>{% endfor %}
+		</div>
+
+        {% include "partials/pagination.html" %}
+
+    </div>
+</section>
 
 {#
+
+{% set blockData = { 
+    id: '2',
+    linkColorHex: '',
+    backgroundColorHex: '',
+    grayscale: '',
+    label: 'Featured Sermon',
+    titleSize:'h1',
+    title: "God’s Perfect Plan for Marriage",
+    subtitle: "<a href='/series.html'>Tighten The Knot</a> • Feb 25, 2018 • Jimmy Evans",
+    copy: "<p>Marriage is failing in America because we’ve stopped following God’s plan. When we do marriage God’s way, our chance of success goes from 50-50 to 100.</p><p>Except for Jesus, marriage is the greatest gift God ever gave to us. Discover how God designed marriage to meet our deepest needs and help us overcome sin.</p>",
+    trimCopy: 'y',
+    tags: {
+      '1': 'wives',
+      '2': 'husbands',
+      '3': 'marriages'
+    },
+    imageUrl: 'https://embed-ssl.wistia.com/deliveries/a26e7962527a2dfa9afc3df85ea49387f9099e03.jpg',
+    imageAlignment: 'left',
+    linkUrl: '/sermon-entry.html',
+    linkText: 'Watch Sermon'
+} %}{% include "partials/side-by-side.html" %}
+
+
 
 {% set blockData = { 
     id: '3',
@@ -99,8 +149,6 @@
     linkUrl: '/series.html',
     linkText: 'View Sermons'
 } %}{% include "partials/side-by-side.html" %}
-
-#}
 
     <section class="bg-white rounded shadowed hard-sides">
     	
@@ -126,5 +174,7 @@
 		</div>
 
     </section>
+
+#}
 
 {% endblock %}

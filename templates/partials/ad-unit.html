@@ -2,8 +2,8 @@
 
 {% set blockData = { 
     id: '',
-    backgroundColorHex: '',
     linkColorHex: '',
+    backgroundColorHex: '',
     grayscale: '',
     titleSize:'',
     title: '', 
@@ -39,11 +39,6 @@
             #block-{{ blockData.id }}, #block-{{ blockData.id }} a:not(.btn):not(.label) {
                 color: #fff;
             }
-
-            #block-{{ blockData.id }} .btn, #block-{{ blockData.id }} .label {
-                background-color: #303030;
-                border-color: #303030;
-            }
         {% endif %}
 
     </style>
@@ -65,9 +60,13 @@
 
 		{% if blockData.linkUrl %}
 	        <p>
-	        	<a href="{{ blockData.linkUrl }}" class="btn btn-primary">
-	        		{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}
-	        	</a>
+                {% set buttonData = { 
+                    buttonSize: '',
+                    buttonColor: 'btn-primary',
+                    buttonIcon: 'fa-search',
+                    linkUrl: blockData.linkUrl,
+                    linkText: blockData.linkText
+                } %}{% include "partials/button.html" %}
 	        </p>
         {% endif %}
 

@@ -20,12 +20,13 @@
     imageUrl: '',
     imageOpacity: '',
     linkUrl: '',
-    linkText: ''
+    linkText: '',
+    likes: ''
 } %}{% include "partials/card.html" %}
 
 #}
 
-{% if blockData.id %}
+{% if blockData.id and blockData.backgroundColorHex and blockData.linkColorHex %}
     <style>
         #block-{{ blockData.id }} {
             background-color: #{{ blockData.backgroundColorHex }};
@@ -72,7 +73,7 @@
         {% if blockData.linkUrl %}</a>{% endif %}
     {% endif %}
 
-    <div class="panel-body sm-text-center xs-text-center">
+    <div class="panel-body">
 
         {% if blockData.label %}
             <p><small class="label label-gray-light sans-serif">{{ blockData.label }}</small></p>
@@ -87,7 +88,7 @@
         {% endif %}
 
         {% if blockData.subtitle %}
-            <p class="sans-serif stronger letter-spacing-condensed text-uppercase text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
+            <p class="sans-serif stronger letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
         {% endif %}
 
         {% set tagCount = blockData.tags | length %}
@@ -106,12 +107,41 @@
             {{ blockData.copy | safe }}
         {% endif %}
 
-        {% if blockData.linkUrl %}
+        <!-- {% if blockData.linkUrl %}
             <p>
-                <a href="{{ blockData.linkUrl }}" class="btn btn btn-primary" role="button">{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a>
+                {% set buttonData = { 
+                    buttonSize: 'btn-sm',
+                    buttonColor: 'btn-primary',
+                    buttonIcon: '',
+                    linkUrl: blockData.linkUrl,
+                    linkText: blockData.linkText
+                } %}{% include "partials/button.html" %}
             </p>
-        {% endif %}
+        {% endif %} -->
 
+    </div>
+    <div class="panel-footer">
+        <div class="panel-actions">
+
+            {% set buttonData = { 
+                buttonSize: 'btn-sm',
+                buttonColor: 'btn-primary',
+                buttonIcon: '',
+                linkUrl: blockData.linkUrl,
+                linkText: blockData.linkText
+            } %}{% include "partials/button.html" %}
+
+            <div class="pull-right">
+                {% if blockData.share %}
+                    <a href="#" class="btn btn-sm btn-default text-gray-dark text-decoration-none" data-share>Share <i class="fas fa-share flush"></i></a>
+                {% endif %}
+
+                {% if blockData.likes %}
+                    <a href="#" class="btn btn-sm btn-default text-gray-dark text-decoration-none" data-like><i class="far fa-heart flush"></i> {{ [14,8,311,42,5,4,73,19,2] | random }}</a>
+                {% endif %}
+
+            </div>
+        </div>
     </div>
 </div>
 

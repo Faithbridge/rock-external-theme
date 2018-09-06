@@ -1,5 +1,5 @@
 {% set browserTitle = "Slaying Giants | Sermons" %}
-{% set pageTitle = "" %}
+{% set pageTitle = 'Generosity vs. Greed' %}
 {% set pageHeaderColorHex = "5C1998" %}
 
 {% extends "full-width.html" %}
@@ -8,7 +8,7 @@
 	{
 		"id": "1",
 		"title": "Fear vs. Faith",
-		"subtitle": "Oct 1, 2017 • Dan Lian",
+		"subtitle": "Dan Lian • Oct 1, 2017",
 		"copy": "<p>When God’s people reached the Promised Land, it was full of abundance. It was also full of giants. The same is true for us. God has called us into abundance, but there are giants standing in our way. Don't allow these giants to steal one ounce of joy or hope from you. Know who they are and get ready to attack.</p>",
 		"tags": {
 	      "1": "bitterness",
@@ -22,7 +22,7 @@
 	{
 		"id": "2",
 		"title": "Generosity vs. Greed",
-		"subtitle": "Oct 8, 2017 • Clayton King",
+		"subtitle": "Clayton King • Oct 8, 2017",
 		"copy": "<p>We all know greed is a problem — we just think it’s a problem for other people. Greed is sneaky like that. Don't let greed grab a hold of you. Learn to see greed for what it is, slay its hold on your life, and stay free from greed for good.</p>",
 		"tags": {
 	      "1": "greed",
@@ -35,7 +35,7 @@
 	{
 		"id": "3",
 		"title": "Unforgiveness vs. Freedom",
-		"subtitle": "Oct 15, 2017 • Brad Cooper",
+		"subtitle": "Brad Cooper • Oct 15, 2017",
 		"copy": "<p>When someone hurts you, do you pretend it never happened or silently plot your revenge? Maybe you hold a grudge 'to teach 'em a lesson.'</p>",
 		"tags": {
 	      "1": "jealousy",
@@ -48,7 +48,7 @@
 	{
 		"id": "4",
 		"title": "Comparison vs. Contentment",
-		"subtitle": "Oct 22, 2017 • Stacey Tarrant",
+		"subtitle": "Stacey Tarrant • Oct 22, 2017",
 		"copy": "<p>Ever felt like someone else was living the life you were meant to have? That’s what comparison does. It convinces us that God plus something else — a spouse, a child, a house, a promotion — will be enough. Don't let comparison stop you from enjoying the life God has for you.</p>",
 		"tags": {
 	      "1": "comparison",
@@ -61,7 +61,7 @@
 	{
 		"id": "5",
 		"title": "Anxiety vs. Gratitude",
-		"subtitle": "Oct 29, 2017 • Lee McDerment",
+		"subtitle": "Lee McDerment • Oct 29, 2017",
 		"copy": "<p>Anxiety attacks everyone. When we go through difficult or stressful situations, our bodies remember and fear alerts us when danger presents itself again. Anxiety doesn’t mean we’re bad people or that we’re crazy. But it will tear us apart if we don’t face its cause.</p>",
 		"tags": {
 	      "1": "peace",
@@ -77,14 +77,6 @@
 
 {% for sermon in sermons %}{% if loop.index == 2 %}
 
-	{% set blockData = { 
-	    id: '1',
-	    preTitle: 'Week ' + sermon.id + ' &middot; <a href="/series.html">Slaying Giants</a> &middot; ' + sermon.subtitle,
-	    titleSize: '',
-	    title: sermon.title,
-	    tags: ''
-	} %}{% include "partials/page-header.html" %}
-
 	<div class="row">
 		<div class="col-md-8 col-sm-7 col-xs-12">
 
@@ -94,41 +86,31 @@
 			    linkColorHex: '5C1998'
 			} %}{% include "partials/video-embed.html" %}
 
-			{% set blockData = { 
-			    id: '',
-			    backgroundColorHex: '',
-			    linkColorHex: '',
-			    grayscale: '',
-			    count: '',
-			    label: '',
-			    textAlignment: '',
-			    titleSize: '',
-			    title: '', 
-			    subtitle: "",
-			    copy: sermon.copy,
-			    trimCopy: '',
-			    tags: '',
-			    imageUrl: '',
-			    imageOpacity: '',
-			    linkUrl: '',
-			    linkText: ''
-			} %}{% include "partials/card.html" %}
-
 		</div><div class="col-md-4 col-sm-5 col-xs-12">
-			<div class="bg-white rounded shadowed soft hard-bottom sm-text-center xs-text-center xs-soft-double-top xs-soft-bottom clearfix push-half-bottom">
+			
+			<div class="soft hard-bottom clearfix bg-white rounded shadowed push-bottom xs-push-half-bottom">
 
-				<h3 class="text-center">Share This</h3>
+				<h4 class="push-half-bottom">Week {{ sermon.id }} &middot; <a href="/series.html">Slaying Giants</a></h4>
+
+				<p class="sans-serif text-uppercase text-gray-light"><b>{{ sermon.subtitle }}</b></p>
+
+				{{ sermon.copy | safe }}
+
+			</div>
+
+			<div class="soft hard-bottom clearfix bg-white rounded shadowed push-bottom xs-push-half-bottom">
+				<h4 class="text-center">Share This</h4>
 
 				{% set blockData = { 
 				    id: '',
-				    orientation: 'vertical',
+				    orientation: '',
 					copy: '',
 				    linkUrl: ''
 				} %}{% include "partials/share-buttons.html" %}
-				
 			</div>
 		</div>
 	</div>
+
 
 	<section class="bg-white rounded shadowed hard-sides">
     	
@@ -138,12 +120,37 @@
 
         <div class="slider-wrapper" data-slider="360">
         	<div class="slider">
-		        {% for sermon in sermons %}<div class="slider-item">
+		        <!-- {% for sermon in sermons %}<div class="slider-item">
 					{% if sermon.linkUrl %}<a href="{{ sermon.linkUrl }}">{% endif %}
 
 						<div class="ratio-landscape shadowed background-center background-cover rounded push-half-bottom" style="background-image:url('{{ sermon.imageUrl }}');"></div>
 
 					{% if sermon.linkUrl %}</a>{% endif %}
+		        </div>{% endfor %} -->
+
+		        {% for sermon in sermons %}<div class="slider-item">
+		        	
+		        	{% set blockData = { 
+					    id: '',
+					    backgroundColorHex: '',
+					    linkColorHex: '',
+					    grayscale: '',
+					    count: '',
+					    label: '',
+					    textAlignment: '',
+					    titleSize: 'h4',
+					    title: sermon.title, 
+					    subtitle: "",
+					    copy: sermon.copy,
+					    trimCopy: 'y',
+					    tags: sermon.tags,
+					    imageShape: '',
+					    imageUrl: sermon.imageUrl,
+					    imageOpacity: '',
+					    linkUrl: '/sermon-entry.html',
+					    linkText: 'Watch Sermon'
+					} %}{% include "partials/card.html" %}
+
 		        </div>{% endfor %}
 		    </div>
 		</div>

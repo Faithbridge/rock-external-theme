@@ -77,12 +77,11 @@
             {% include "partials/navigation.html" %}
         </div>
 
-        <div id="content" class="soft">
-            {#
+        <div id="content" class="soft xs-soft-half" style="{% if contentBackgroundHex %}background-color: #{{ contentBackgroundHex }};{% endif %}">
+
             {% if navPages %}
                 {% include "partials/navigation-secondary.html" %}
             {% endif %}
-            #}
 
             {% block globalContent %}
             {% endblock %}
@@ -100,10 +99,6 @@
         
         <!-- Core JS -->    
         <script src="/dest/js/scripts.min.js"></script>
-
-        <script type="text/javascript">
-            var s = skrollr.init();
-        </script>
 
 	</body>
 </html>

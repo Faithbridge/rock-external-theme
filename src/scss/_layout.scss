@@ -1,13 +1,15 @@
 // Layout
 
 html { 
-	-webkit-font-smoothing: antialiased; 
+	-webkit-font-smoothing: antialiased;
+	overflow: hidden;
 }
 
 body { 
 	font-family: $font-family-serif;
-	// padding-top: $nav-width;
 	background-color: $gray-darker;
+	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+	overflow: hidden;
 }
 
 #navigation {
@@ -23,7 +25,20 @@ body {
 }
 
 #content {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	background-color: $gray-lighter;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	padding-bottom: $nav-width - 1 !important;
+
+	@media (min-width: $screen-sm-min) {
+		padding-bottom: 0 !important;
+		padding-top: $nav-width + $base-spacing-unit !important;
+	}
 }
 
 .split {
@@ -47,7 +62,6 @@ body {
 		bottom: auto;
 		left: auto;
 		width: 100%;
-
     	display: block;
     	border-bottom: 1px solid rgba(0,0,0,.1);
 
@@ -60,27 +74,28 @@ body {
 
 	@media (max-width: $screen-sm-min) {
 		&:before {
-			padding-top: 80%;
+			padding-top: 100%;
 		}
 	}
 }
 
-// .page-brand-bar {
-// 	position: fixed;
-// 	z-index: -1;
-// 	top: -$base-spacing-unit*2;
-// 	left: -$base-spacing-unit;
-// 	height: $base-spacing-unit*15;
-// 	width: 100%;
-// 	transform: scale(1.1) rotate(-4deg);
-// 	backface-visibility: hidden;
-// 	outline: 1px solid transparent;
+.page-brand-bar {
+	position: fixed;
+	z-index: -1;
+	top: -$base-spacing-unit*2;
+	left: -$base-spacing-unit;
+	height: $base-spacing-unit*15;
+	width: 100%;
+	-ms-transform: scale(1.1) rotate(-5deg);
+	-webkit-transform: scale(1.1) rotate(-5deg);
+	transform: scale(1.1) rotate(-5deg);
+	outline: 1px solid transparent;
 
-// 	@media (max-width: $screen-sm-min) {
-// 		top: -$base-spacing-unit*3;
-// 		left: 0;
-// 	}
-// }
+	@media (max-width: $screen-sm-min) {
+		top: -$base-spacing-unit*3;
+		left: 0;
+	}
+}
 
 // $brand-bar-size: 6000px;
 
