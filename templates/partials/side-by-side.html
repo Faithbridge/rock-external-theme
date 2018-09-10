@@ -53,7 +53,7 @@
 <section {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="hard position-relative rounded shadowed overflow-hidden bg-white push-bottom xs-push-half-bottom">
 
     {% if blockData.imageUrl %}
-        {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
+        {% if blockData.linkUrl and blockData.videoId == '' %}<a href="{{ blockData.linkUrl }}">{% endif %}
 
             <div class="split {% if blockData.imageAlignment == 'left' %}split-left{% else %}split-right{% endif %} background-center background-cover sm-push-bottom xs-push-bottom" style="z-index: 1;">
 
@@ -98,7 +98,7 @@
                     {% endif %}
 
                     {% if blockData.subtitle %}
-                        <p class="sans-serif stronger letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
+                        <p class="sans-serif stronger text-uppercase letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
                     {% endif %}
 
                     {% set tagCount = blockData.tags | length %}

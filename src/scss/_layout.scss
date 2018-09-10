@@ -2,14 +2,19 @@
 
 html { 
 	-webkit-font-smoothing: antialiased;
-	overflow: hidden;
 }
 
 body { 
 	font-family: $font-family-serif;
-	background-color: $gray-darker;
+	background-color: $gray-lighter;
 	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-	overflow: hidden;
+
+	padding-bottom: $nav-width - 1 !important;
+
+	@media (min-width: $screen-sm-min) {
+		padding-bottom: 0 !important;
+		padding-top: $nav-width !important;
+	}
 }
 
 #navigation {
@@ -21,23 +26,6 @@ body {
 	@media (min-width: $screen-sm-min) {
 		bottom: auto;
 		top: 0;
-	}
-}
-
-#content {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: $gray-lighter;
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
-	padding-bottom: $nav-width - 1 !important;
-
-	@media (min-width: $screen-sm-min) {
-		padding-bottom: 0 !important;
-		padding-top: $nav-width + $base-spacing-unit !important;
 	}
 }
 
@@ -92,26 +80,7 @@ body {
 	outline: 1px solid transparent;
 
 	@media (max-width: $screen-sm-min) {
-		top: -$base-spacing-unit*3;
+		top: -$base-spacing-unit*5;
 		left: 0;
 	}
 }
-
-// $brand-bar-size: 6000px;
-
-// .page-brand-bar {
-// 	display: inline-block;
-// 	position: fixed;
-// 	z-index: -1;
-// 	width: $brand-bar-size;
-// 	height: $brand-bar-size;
-
-// 	right: -$brand-bar-size/2;
-// 	top: -$brand-bar-size*.92;
-// 	border-radius: 25000px;
-
-
-// 	@media (min-width: $screen-sm-max) {
-// 		// height: $base-spacing-unit*2.5;
-// 	}
-// }

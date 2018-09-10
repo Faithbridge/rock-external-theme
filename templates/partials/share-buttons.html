@@ -9,14 +9,7 @@
 
 #}
 
-<div class="row row-condensed push-bottom">
-	<div class="{% if blockData.orientation == 'vertical' %}col-md-12 col-sm-12 col-xs-12{% else %}col-md-3 col-sm-6 col-xs-12{% endif %}">
-		<a href="#" class="btn btn-block btn-facebook shadowed {% if blockData.orientation == 'vertical' %}push-half-bottom{% else %}sm-push-half-bottom xs-push-half-bottom{% endif %}" title="Share on Facebook"><i class="fab fa-fw fa-lg fa-facebook-f"></i></a>
-	</div><div class="{% if blockData.orientation == 'vertical' %}col-md-12 col-sm-12 col-xs-12{% else %}col-md-3 col-sm-6 col-xs-12{% endif %}">
-		<a href="#" class="btn btn-block btn-twitter shadowed {% if blockData.orientation == 'vertical' %}push-half-bottom{% else %}sm-push-half-bottom xs-push-half-bottom{% endif %}" title="Share on Twitter"><i class="fab fa-fw fa-lg fa-twitter"></i></a>
-	</div><div class="{% if blockData.orientation == 'vertical' %}col-md-12 col-sm-12 col-xs-12{% else %}col-md-3 col-sm-6 col-xs-12{% endif %}">
-		<a href="#" class="btn btn-block btn-pinterest shadowed {% if blockData.orientation == 'vertical' %}push-half-bottom{% else %}xs-push-half-bottom{% endif %}" title="Share on Pinterest"><i class="fab fa-fw fa-lg fa-pinterest-p"></i></a>
-	</div><div class="{% if blockData.orientation == 'vertical' %}col-md-12 col-sm-12 col-xs-12{% else %}col-md-3 col-sm-6 col-xs-12{% endif %}">
-		<a href="#" class="btn btn-block btn-google shadowed" title="Share on Google+"><i class="fab fa-fw fa-lg fa-google-plus-g"></i></a>
-	</div>
-</div>
+<ul class="list-style-none hard" data-sticky>
+    <li class="push-half-bottom"><a href="#" class="btn btn-block btn-default text-gray-dark text-decoration-none" data-like><i class="far fa-fw fa-heart flush"></i> {{ [14,8,311,42,5,4,73,19,2] | random }}</a></li>
+    <li><a href="#" data-toggle="modal" data-target="#share-modal" class="btn btn-block btn-default text-gray-dark text-decoration-none" data-share><i class="fas fa-fw fa-share flush"></i> {{ [14,8,311,42,5,4,73,19,2] | random }}</a></li>
+</ul>

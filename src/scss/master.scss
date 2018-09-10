@@ -26,10 +26,14 @@ $nav-width: 75px;
 
 section, footer {
 	margin-bottom: $base-spacing-unit/2;
+	margin-left: $base-spacing-unit/2;
+	margin-right: $base-spacing-unit/2;
 	padding: $base-spacing-unit*2 $base-spacing-unit $base-spacing-unit;
 
 	@media (min-width: $screen-sm-min) {
 		margin-bottom: $base-spacing-unit;
+		margin-left: $base-spacing-unit;
+		margin-right: $base-spacing-unit;
 		padding: $base-spacing-unit*3 $base-spacing-unit $base-spacing-unit*2;
 	}
 }
@@ -117,22 +121,29 @@ blockquote {
 	}
 }
 
+small {
+	@media (max-width: $screen-xs-max) {
+		font-size: floor(($font-size-base * .85));
+		line-height: ceil(($line-height-computed * .85));
+	}
+}
+
 mark, .mark {
 	background-color: #ffffa6;
 }
 
 .tag-list {
 	font-size: floor(($font-size-base * .9));
-	line-height: ceil(($line-height-computed * .85));
+	line-height: ceil(($line-height-computed * .8));
 
 	@media (max-width: $screen-sm-max) {
 		font-size: floor(($font-size-base * .9));
-		line-height: ceil(($line-height-computed * .85));
+		line-height: ceil(($line-height-computed * .75));
 	}
 
 	@media (max-width: $screen-xs-max) {
 		font-size: floor(($font-size-base * .9));
-		line-height: ceil(($line-height-computed * .95));
+		line-height: ceil(($line-height-computed * .55));
 	}
 
 	a {

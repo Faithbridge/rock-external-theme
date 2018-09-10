@@ -127,42 +127,77 @@
 
 {% block content %}
 
-    <section class="soft-half hard-top xs-hard">
-        <div class="container-fluid hard">
-            <div class="row">
-                {% for article in articles %}<div class="col-xs-12 col-sm-6 col-md-4">
-                    {% set blockData = {
-                        id: article.id,
-                        backgroundColorHex: article.backgroundColorHex,
-                        linkColorHex: article.linkColorHex,
-                        grayscale: article.grayscale,
-                        titleSize: 'h4',
-                        title: article.title, 
-                        copy: article.copy,
-                        trimCopy: 'y',
-                        tags: article.tags,
-                        imageUrl: article.imageUrl,
-                        imageOpacity: article.imageOpacity,
-                        linkUrl: '/article-entry.html',
-                        linkText: 'Read Article',
-                        share: 'y',
-                        likes: 'y'
-                    } %}{% include "partials/card.html" %}
-                </div>{% endfor %}
-            </div>
+<div class="soft-sides xs-soft-half-sides">
+    <div class="row">
+        {% for article in articles %}<div class="col-md-4 col-sm-6 col-xs-12">
+            {% set blockData = { 
+                id: '',
+                backgroundColorHex: '',
+                linkColorHex: '',
+                grayscale: '',
+                count: '',
+                label: '',
+                textAlignment: '',
+                titleSize: 'h4',
+                title: article.title, 
+                subtitle: "",
+                copy: article.copy,
+                trimCopy: 'y',
+                tags: article.tags,
+                imageShape: 'landscape',
+                imageUrl: article.imageUrl,
+                imageOpacity: '',
+                linkUrl: '/article-entry.html',
+                linkText: 'Read Article',
+                share: 'y',
+                likes: 'y'
+            } %}{% include "partials/card.html" %}
+        </div>{% endfor %}
+    </div>
+</div>
 
-            {% include "partials/pagination.html" %}
+<div class="soft xs-soft-half hard-bottom clearfix">
+    {% include "partials/pagination.html" %}
+</div>
 
+{#
+
+<section class="hard">
+    <div class="slider-wrapper" data-slider="340">
+        <div class="slider slider-borderless">
+            {% for article in articles %}<div class="slider-item">
+                {% set blockData = {
+                    id: article.id,
+                    backgroundColorHex: article.backgroundColorHex,
+                    linkColorHex: article.linkColorHex,
+                    grayscale: article.grayscale,
+                    titleSize: 'h5',
+                    title: article.title, 
+                    copy: article.copy,
+                    trimCopy: 'y',
+                    tags: article.tags,
+                    imageShape: '',
+                    imageUrl: article.imageUrl,
+                    imageOpacity: article.imageOpacity,
+                    linkUrl: '/article-entry.html',
+                    linkText: 'Read Article',
+                    share: 'y',
+                    likes: 'y'
+                } %}{% include "partials/card.html" %}
+            </div>{% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
-    {% set blockData = { 
-        title: "Subscribe", 
-        copy: "<p>Subscribe to the articles feed to be notified when new content is published.</p>",
-        imageUrl: '',
-        imageOpacity: '',
-        linkUrl: '#',
-        linkText: 'Subscribe Now'
-    } %}{% include "partials/ad-unit.html" %}
+#}
+
+{% set blockData = { 
+    title: "Subscribe", 
+    copy: "<p>Subscribe to the articles feed to be notified when new content is published.</p>",
+    imageUrl: '',
+    imageOpacity: '',
+    linkUrl: '#',
+    linkText: 'Subscribe Now'
+} %}{% include "partials/ad-unit.html" %}
 
 {% endblock %}

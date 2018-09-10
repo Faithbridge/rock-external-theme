@@ -15,7 +15,7 @@
 
 {% set tagCount = blockData.tags | length %}
 
-<section class="soft-ends xs-hard-sides xs-text-center">
+<section class="soft-double-top soft-bottom soft-double-sides xs-hard-sides clearfix xs-text-center flush">
     <div class="container-fluid hard-sides {% if pageHeaderColorHex %}text-white{% endif %}">
     	{% if blockData.preTitle %}
     		<p class="sans-serif stronger letter-spacing-condensed push-half-bottom xs-push-bottom">{{ blockData.preTitle | safe }}</p>
@@ -23,6 +23,10 @@
 
 		{% if blockData.title %}
         	<h1 class="{% if blockData.titleSize %}{{ blockData.titleSize }}{% else %}h2{% endif %} {% if tagCount >= 1 or blockData.copy %}push-half-bottom xs-push-bottom{% else %}flush{% endif %}">{{ blockData.title }}</h1>
+        {% endif %}
+
+        {% if blockData.subtitle %}
+            <p class="sans-serif stronger letter-spacing-condensed push-half-top flush-bottom {% if pageHeaderColorHex %}{% else %}text-gray-dark{% endif %}"><small>{{ blockData.subtitle | safe }}</small></p>
         {% endif %}
 		
         {% if tagCount != 0 %}

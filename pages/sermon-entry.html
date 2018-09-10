@@ -1,5 +1,6 @@
 {% set browserTitle = "Slaying Giants | Sermons" %}
-{% set pageTitle = 'Generosity vs. Greed' %}
+{% set pageTitle = 'Anxiety vs. Gratitude' %}
+{% set pageSubtitle = 'Week 5 &middot; <a href="/series.html">Slaying Giants</a>' %}
 {% set pageHeaderColorHex = "5C1998" %}
 
 {% extends "full-width.html" %}
@@ -75,88 +76,116 @@
 
 {% block content %}
 
-{% for sermon in sermons %}{% if loop.index == 2 %}
-
-	<div class="row">
-		<div class="col-md-8 col-sm-7 col-xs-12">
-
-			{% set blockData = { 
-				id: '2',
-			    videoId: sermon.videoId,
-			    linkColorHex: '5C1998'
-			} %}{% include "partials/video-embed.html" %}
-
-		</div><div class="col-md-4 col-sm-5 col-xs-12">
-			
-			<div class="soft hard-bottom clearfix bg-white rounded shadowed push-bottom xs-push-half-bottom">
-
-				<h4 class="push-half-bottom">Week {{ sermon.id }} &middot; <a href="/series.html">Slaying Giants</a></h4>
-
-				<p class="sans-serif text-uppercase text-gray-light"><b>{{ sermon.subtitle }}</b></p>
-
-				{{ sermon.copy | safe }}
-
-			</div>
-
-			<div class="soft hard-bottom clearfix bg-white rounded shadowed push-bottom xs-push-half-bottom">
-				<h4 class="text-center">Share This</h4>
+{% for sermon in sermons %}{% if loop.index == 5 %}
+	<section class="hard">
+		<div class="row">
+			<div class="col-md-8 col-sm-7 col-xs-12">
 
 				{% set blockData = { 
-				    id: '',
-				    orientation: '',
-					copy: '',
-				    linkUrl: ''
-				} %}{% include "partials/share-buttons.html" %}
+					id: '2',
+				    videoId: sermon.videoId,
+				    linkColorHex: '5C1998'
+				} %}{% include "partials/video-embed.html" %}
+
+			</div><div class="col-md-4 col-sm-5 col-xs-12">
+				<div class="soft hard-bottom clearfix bg-white rounded shadowed push-bottom xs-push-half-bottom xs-text-center">
+
+					<p class="sans-serif stronger text-uppercase letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ sermon.subtitle }}</small></p>
+
+					{{ sermon.copy | safe }}
+
+					{% set blockData = { 
+					    id: '',
+					    orientation: '',
+						copy: '',
+					    linkUrl: ''
+					} %}{% include "partials/share-buttons.html" %}
+
+				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
-
-	<section class="bg-white rounded shadowed hard-sides">
-    	
-		<div class="soft-sides xs-soft-top">
-			<h2 class="push-half-bottom text-center">Related Sermons</h2>
-		</div>
-
-        <div class="slider-wrapper" data-slider="360">
-        	<div class="slider">
-		        <!-- {% for sermon in sermons %}<div class="slider-item">
-					{% if sermon.linkUrl %}<a href="{{ sermon.linkUrl }}">{% endif %}
-
-						<div class="ratio-landscape shadowed background-center background-cover rounded push-half-bottom" style="background-image:url('{{ sermon.imageUrl }}');"></div>
-
-					{% if sermon.linkUrl %}</a>{% endif %}
-		        </div>{% endfor %} -->
-
-		        {% for sermon in sermons %}<div class="slider-item">
-		        	
-		        	{% set blockData = { 
-					    id: '',
-					    backgroundColorHex: '',
-					    linkColorHex: '',
-					    grayscale: '',
-					    count: '',
-					    label: '',
-					    textAlignment: '',
-					    titleSize: 'h4',
-					    title: sermon.title, 
-					    subtitle: "",
-					    copy: sermon.copy,
-					    trimCopy: 'y',
-					    tags: sermon.tags,
-					    imageShape: '',
-					    imageUrl: sermon.imageUrl,
-					    imageOpacity: '',
-					    linkUrl: '/sermon-entry.html',
-					    linkText: 'Watch Sermon'
-					} %}{% include "partials/card.html" %}
-
-		        </div>{% endfor %}
-		    </div>
-		</div>
-
-    </section>
+	{% set blockData = { 
+	    id: '',
+	    linkColorHex: '',
+	    backgroundColorHex: '',
+	    grayscale: '',
+	    label: '',
+	    titleSize:'',
+	    title: "Slaying Giants",
+	    subtitle: "October 1 - 29, 2017",
+	    copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
+	    trimCopy: 'y',
+	    tags: '',
+	    videoId:'f06xc3jebq',
+	    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/series_fuse/1x1slayinggiants_1700_1701_c1.png',
+	    imageOpacity: '',
+	    imageAlignment: 'left',
+	    linkUrl: '/series.html',
+	    linkText: 'Watch Sermons'
+	} %}{% include "partials/side-by-side.html" %}
 
 {% endif %}{% endfor %}
+
+<section class="bg-white rounded shadowed hard-sides xs-soft-top">
+    	
+	<div class="soft-sides xs-soft-top">
+		<h2 class="push-half-bottom text-center">Related Sermons</h2>
+	</div>
+
+    <div class="slider-wrapper" data-slider="320">
+    	<div class="slider">
+	        {% for sermon in sermons %}<div class="slider-item">{% set blockData = { 
+			    id: '',
+			    backgroundColorHex: '',
+			    linkColorHex: '',
+			    grayscale: '',
+			    count: '',
+			    label: '',
+			    textAlignment: '',
+			    titleSize: 'h4',
+			    title: sermon.title, 
+			    subtitle: "",
+			    copy: '',
+			    trimCopy: 'y',
+			    tags: sermon.tags,
+			    imageShape: '',
+			    imageUrl: sermon.imageUrl,
+			    imageOpacity: '',
+			    linkUrl: '/sermon-entry.html',
+			    linkText: 'Watch Sermon',
+			    share: 'y',
+			    likes: 'y'
+			} %}{% include "partials/card.html" %}</div>{% endfor %}
+	    </div>
+	</div>
+
+</section>
+
+{#
+{% set blockData = { 
+    id: '',
+    backgroundColorHex: '',
+    linkColorHex: '',
+    grayscale: '',
+    count: '',
+    label: '',
+    textAlignment: '',
+    titleSize: 'h4',
+    title: sermon.title, 
+    subtitle: "",
+    copy: sermon.copy,
+    trimCopy: 'y',
+    tags: sermon.tags,
+    imageShape: '',
+    imageUrl: sermon.imageUrl,
+    imageOpacity: '',
+    linkUrl: '/sermon-entry.html',
+    linkText: 'Watch Sermon',
+    share: 'y',
+    likes: 'y'
+} %}{% include "partials/card.html" %}
+#}
 
 {% endblock %}

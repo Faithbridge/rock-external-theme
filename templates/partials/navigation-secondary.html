@@ -10,7 +10,7 @@
 #}
 
 <!-- Desktop Section Nav -->
-<section class="nav-wrapper bg-white soft-half rounded shadowed hidden-xs hidden-sm">
+<section class="nav-wrapper bg-white soft-half rounded shadowed hidden-xs hidden-sm flush">
     <ul class="nav xs-nav-stacked nav-pills">
         
         {% for title, url in navPages.pages %}
@@ -21,7 +21,7 @@
 </section>
 
 <!-- Mobile Section Nav -->
-<section class="nav-wrapper bg-white rounded shadowed soft-half hidden-md hidden-lg push-bottom xs-push-half-bottom">
+<section class="nav-wrapper bg-white rounded shadowed soft-half hidden-md hidden-lg flush">
     <div class="btn-group width-full">
 
         {% for title, url in navPages.pages %}{% if loop.index == 1 %}

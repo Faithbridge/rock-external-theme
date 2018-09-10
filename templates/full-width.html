@@ -3,7 +3,7 @@
 {% block globalContent %}
 
 {% if pageHeaderColorHex %}
-<div class="page-brand-bar" style="background-color: #{{ pageHeaderColorHex }}; opacity: .9;" data-0="top: -48px;" data-200="top: -450px;"></div>
+<div class="page-brand-bar" style="background-color: #{{ pageHeaderColorHex }}; opacity: .9;"></div>
 {% endif %}
 
 {% if pageTitle %}
@@ -12,16 +12,18 @@
 	    preTitle: '',
 	    titleSize: '',
 	    title: pageTitle,
+	    subtitle: pageSubtitle,
 	    tags: '',
 	    copy: ''
 	} %}{% include "partials/page-header.html" %}
 {% endif %}
 
-<div class="">
-	<div class="">
-	    {% block content %}
-	    {% endblock %}
-	</div>
+<div class="soft-top xs-soft-half-top" style="{% if contentBackgroundHex %}background-color: #{{ contentBackgroundHex }};{% endif %}">
+    {% block content %}
+    {% endblock %}
 </div>
+
+{% block extendedContent %}
+{% endblock %}
 
 {% endblock %}

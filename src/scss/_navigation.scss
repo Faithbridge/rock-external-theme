@@ -28,7 +28,7 @@
 	position: relative;
 	z-index: 1;
 	box-shadow: 0 0 6px rgba(0,0,0,.2);
-	background-color: $white;
+	background-color: $gray-darker;
 
 	.nav-icon {
 		position: relative;
@@ -49,7 +49,7 @@
 		height: $nav-width;
 		line-height: $nav-width;
 		text-align: center;
-		color: $gray-darker;
+		color: $white;
 		outline: none;
 		border-left: 1px solid rgba(0,0,0,.05);
 
@@ -71,19 +71,19 @@
 	}
 
 	// Raise navigation icon position for iPhone X
-	// @media only screen and (device-width : 375px) and (device-height : 812px) 
- //    and (-webkit-device-pixel-ratio : 3) { 
-	// 	a {
-	// 		line-height: $nav-width - 10;
-	// 	}
- //    }
+	@media only screen and (device-width : 375px) and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+		a {
+			line-height: $nav-width - 10;
+		}
+    }
 
 	@media (min-width: $screen-sm-min) {
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+49,ffffff+100&1+49,0.9+100 */
-		background: -moz-linear-gradient(top, rgba(255,255,255,1) 49%, rgba(255,255,255,0.9) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top, rgba(255,255,255,1) 49%,rgba(255,255,255,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom, rgba(255,255,255,1) 49%,rgba(255,255,255,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6ffffff',GradientType=0 ); /* IE6-9 */
+		background: -moz-linear-gradient(top, rgba(0,0,0,1) 49%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(0,0,0,1) 49%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(0,0,0,1) 49%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#e6000000',GradientType=0 ); /* IE6-9 */
 
 		.nav-logo {
 			span {

@@ -4,6 +4,8 @@ CARD SLIDERS
 
 */
 
+var baseSpacingUnit = 24;
+
 // Get all sliders on page
 var sliders = document.querySelectorAll('[data-slider]');
 
@@ -28,14 +30,14 @@ sliders.forEach(function(element) {
 
     // Loop through child elements array and set widths
     for (i = 0; i < sliderChildren.length; ++i) {
-        sliderChildren[i].style.width = cardWidth - 20 + "px";
+        sliderChildren[i].style.width = cardWidth - baseSpacingUnit + "px";
     }
 
     // Calculate slider width
     if($(slider).hasClass('slider-borderless')) {
-        var sliderWrapperWidth = sliderItemCount * cardWidth - 20;
+        var sliderWrapperWidth = sliderItemCount * cardWidth + baseSpacingUnit;
     } else {
-        var sliderWrapperWidth = sliderItemCount * cardWidth + 20;
+        var sliderWrapperWidth = sliderItemCount * cardWidth + baseSpacingUnit;
     }
 
     // Adjust slider width

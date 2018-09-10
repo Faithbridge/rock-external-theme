@@ -1,19 +1,24 @@
-<nav aria-label="Page navigation" class="text-center">
+{#
+
+{% include "partials/pagination.html" %}
+
+#}
+<nav aria-label="Page navigation" class="text-center push-bottom xs-push-half-bottom">
     <ul class="pagination sans-serif strong shadowed">
         <li>
-            <a href="/articles.html" aria-label="Previous">
+            <a href="#" aria-label="Previous">
                 <span aria-hidden="true">
                     <i class="fas fa-angle-left"></i>
                 </span>
             </a>
         </li>
-        <li><a href="/articles.html">1</a></li>
-        <li><a href="/articles.html">2</a></li>
-        <li class="active"><a href="/articles.html">3</a></li>
-        <li><a href="/articles.html">4</a></li>
-        <li><a href="/articles.html">5</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li class="active"><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
         <li>
-            <a href="/articles.html" aria-label="Next">
+            <a href="#" aria-label="Next">
                 <span aria-hidden="true">
                     <i class="fas fa-angle-right"></i>
                 </span>

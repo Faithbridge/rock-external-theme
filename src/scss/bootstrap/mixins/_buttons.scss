@@ -10,14 +10,17 @@
 
   &:focus,
   &.focus {
-    // color: $color;
-    // background-color: darken($background, 10%);
-    //     border-color: darken($border, 25%);
+    color: $color;
+    background-color: $background;
+        border-color: $border;
+  }
+
+  &:hover {
+    color: $color;
   }
 
   @media (min-width: $screen-xs-max) {
     &:hover {
-      color: $color;
       background-color: darken($background, 10%);
           border-color: darken($border, 12%);
     }

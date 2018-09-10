@@ -1,6 +1,6 @@
 {% set browserTitle = "Slaying Giants | Sermons" %}
 {% set pageTitle = "" %}
-{% set pageHeaderColorHex = "471573" %}
+{% set pageHeaderColorHex = "5C1998" %}
 
 {% extends "full-width.html" %}
 
@@ -90,26 +90,30 @@
 	    linkText: 'Watch Sermons'
 	} %}{% include "partials/side-by-side.html" %}
 
-    <div id="sermons" class="row">
-    	{% for sermon in sermons %}<div class="col-md-12">{% set blockData = { 
-		    id: '',
-		    backgroundColorHex: '',
-		    linkColorHex: '',
-		    grayscale: '',
-		    count: '',
-		    label: 'Week ' + sermon.id,
-		    titleSize: 'h4',
-		    title: sermon.title, 
-		    subtitle: sermon.subtitle,
-		    copy: sermon.copy,
-		    trimCopy: '',
-		    tags: sermon.tags,
-		    imageUrl: '',
-		    imageOpacity: '',
-		    linkUrl: '/sermon-entry.html',
-		    linkText: 'Watch Sermon'
-		} %}{% include "partials/card.html" %}</div>{% endfor %}
-    </div>
+    <section id="sermons" class="hard flush-bottom">
+    	<div class="row">
+	    	{% for sermon in sermons %}<div class="col-md-12">{% set blockData = { 
+			    id: '',
+			    backgroundColorHex: '',
+			    linkColorHex: '',
+			    grayscale: '',
+			    count: '',
+			    label: 'Week ' + sermon.id,
+			    titleSize: 'h4',
+			    title: sermon.title, 
+			    subtitle: sermon.subtitle,
+			    copy: sermon.copy,
+			    trimCopy: 'y',
+			    tags: sermon.tags,
+			    imageUrl: '',
+			    imageOpacity: '',
+			    linkUrl: '/sermon-entry.html',
+			    linkText: 'Watch Sermon',
+			    share:'y',
+			    likes:'y'
+			} %}{% include "partials/card.html" %}</div>{% endfor %}
+		</div>
+    </section>
 
     {% set blockData = { 
 	    id: '5',

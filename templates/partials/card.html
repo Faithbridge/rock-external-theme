@@ -73,7 +73,7 @@
         {% if blockData.linkUrl %}</a>{% endif %}
     {% endif %}
 
-    <div class="panel-body">
+    <div class="panel-body xs-soft xs-hard-bottom">
 
         {% if blockData.label %}
             <p><small class="label label-gray-light sans-serif">{{ blockData.label }}</small></p>
@@ -88,7 +88,7 @@
         {% endif %}
 
         {% if blockData.subtitle %}
-            <p class="sans-serif stronger letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
+            <p class="sans-serif stronger letter-spacing-condensed text-uppercase text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
         {% endif %}
 
         {% set tagCount = blockData.tags | length %}
@@ -107,18 +107,6 @@
             {{ blockData.copy | safe }}
         {% endif %}
 
-        <!-- {% if blockData.linkUrl %}
-            <p>
-                {% set buttonData = { 
-                    buttonSize: 'btn-sm',
-                    buttonColor: 'btn-primary',
-                    buttonIcon: '',
-                    linkUrl: blockData.linkUrl,
-                    linkText: blockData.linkText
-                } %}{% include "partials/button.html" %}
-            </p>
-        {% endif %} -->
-
     </div>
     <div class="panel-footer">
         <div class="panel-actions">
@@ -133,11 +121,11 @@
 
             <div class="pull-right">
                 {% if blockData.share %}
-                    <a href="#" class="btn btn-sm btn-default text-gray-dark text-decoration-none" data-share>Share <i class="fas fa-share flush"></i></a>
+                    <a href="#" data-toggle="modal" data-target="#share-modal" class="btn btn-sm btn-default text-gray-dark text-decoration-none" data-share><i class="fas fa-share flush"></i> {{ [14,8,2,42,5,4,73,19,2] | random }}</a>
                 {% endif %}
 
                 {% if blockData.likes %}
-                    <a href="#" class="btn btn-sm btn-default text-gray-dark text-decoration-none" data-like><i class="far fa-heart flush"></i> {{ [14,8,311,42,5,4,73,19,2] | random }}</a>
+                    <a href="#" class="btn btn-sm btn-default text-gray-dark text-decoration-none" data-like><i class="far fa-heart flush"></i> {{ [14,8,6,42,5,4,73,19,2] | random }}</a>
                 {% endif %}
 
             </div>

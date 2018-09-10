@@ -6,9 +6,17 @@
 }
 
 .slider {
-	padding: 15px 0;
+	padding: $base-spacing-unit 0;
 
 	&.slider-borderless {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: $base-spacing-unit/2;
+
+		@media (min-width: $screen-sm-min) {
+			padding-left: $base-spacing-unit;
+		}
+
 		.slider-item:first-child {
 			margin-left: 0;
 		}
@@ -17,8 +25,8 @@
 	.slider-item {
 		display: inline-block;
 		width: 300px;
-		margin-right: 10px;
-		margin-left: 10px;
+		margin-right: $base-spacing-unit/2;
+		margin-left: $base-spacing-unit/2;
 		vertical-align: middle;
 
 		.panel {
@@ -26,7 +34,7 @@
 		}
 
 		&:first-child {
-			margin-left: 20px;
+			margin-left: $base-spacing-unit;
 		}
 
 		&:last-child {
