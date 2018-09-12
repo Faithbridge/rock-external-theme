@@ -28,7 +28,7 @@
 	position: relative;
 	z-index: 1;
 	box-shadow: 0 0 6px rgba(0,0,0,.2);
-	background-color: $gray-darker;
+	background-color: $white;
 
 	.nav-icon {
 		position: relative;
@@ -49,7 +49,7 @@
 		height: $nav-width;
 		line-height: $nav-width;
 		text-align: center;
-		color: $white;
+		color: $gray-darker;
 		outline: none;
 		border-left: 1px solid rgba(0,0,0,.05);
 
@@ -80,9 +80,9 @@
 
 	@media (min-width: $screen-sm-min) {
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+49,ffffff+100&1+49,0.9+100 */
-		background: -moz-linear-gradient(top, rgba(0,0,0,1) 49%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top, rgba(0,0,0,1) 49%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom, rgba(0,0,0,1) 49%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		background: -moz-linear-gradient(top, rgba(255,255,255,.99) 40%, rgba(255,255,255,0.9) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,.99) 40%,rgba(255,255,255,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(255,255,255,.99) 40%,rgba(255,255,255,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#e6000000',GradientType=0 ); /* IE6-9 */
 
 		.nav-logo {

@@ -1,6 +1,6 @@
-{% set browserTitle = "Slaying Giants | Sermons" %}
-{% set pageTitle = 'Anxiety vs. Gratitude' %}
-{% set pageSubtitle = 'Week 5 &middot; <a href="/series.html">Slaying Giants</a>' %}
+{% set browserTitle = "Anxiety vs. Gratitude | Slaying Giants | Sermons" %}
+{% set pageTitle = '' %}
+{% set pageSubtitle = '' %}
 {% set pageHeaderColorHex = "5C1998" %}
 
 {% extends "full-width.html" %}
@@ -88,9 +88,38 @@
 				} %}{% include "partials/video-embed.html" %}
 
 			</div><div class="col-md-4 col-sm-5 col-xs-12">
-				<div class="soft hard-bottom clearfix bg-white rounded shadowed push-bottom xs-push-half-bottom xs-text-center">
 
-					<p class="sans-serif stronger text-uppercase letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ sermon.subtitle }}</small></p>
+
+				{% set blockData = { 
+				    id: '',
+				    backgroundColorHex: '',
+				    linkColorHex: '',
+				    grayscale: '',
+				    count: '',
+				    label: 'WEEK ' + sermon.id,
+				    textAlignment: '',
+				    titleSize: 'h3',
+				    title: sermon.title, 
+				    subtitle: sermon.subtitle,
+				    copy: sermon.copy,
+				    trimCopy: '',
+				    tags: sermon.tags,
+				    imageShape: '',
+				    imageUrl: '',
+				    imageOpacity: '',
+				    linkUrl: '',
+				    linkText: '',
+				    share: 'y',
+				    likes: 'y'
+				} %}{% include "partials/card.html" %}
+
+
+				<div class="soft hard-bottom clearfix bg-white rounded shadowed push-bottom xs-push-half-bottom xs-text-center hidden">
+
+					<p class="sans-serif stronger text-decoration-none push-half-bottom"><a href="/series.html">Slaying Giants</a></p>
+					<h1 class="h3 push-half-bottom">{{ sermon.title }}</h1>
+
+					<p class="sans-serif stronger text-uppercase letter-spacing-condensed text-gray-light push-half-bottom"><small>WEEK {{ sermon.id }} &middot; {{ sermon.subtitle }}</small></p>
 
 					{{ sermon.copy | safe }}
 
@@ -102,6 +131,9 @@
 					} %}{% include "partials/share-buttons.html" %}
 
 				</div>
+
+
+
 			</div>
 		</div>
 	</section>
@@ -147,7 +179,7 @@
 			    titleSize: 'h4',
 			    title: sermon.title, 
 			    subtitle: "",
-			    copy: '',
+			    copy: sermon.copy,
 			    trimCopy: 'y',
 			    tags: sermon.tags,
 			    imageShape: '',

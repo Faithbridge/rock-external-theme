@@ -42,3 +42,13 @@
 		}
 	}
 }
+
+.slider-wrapper::-webkit-scrollbar {
+	height: .65em;
+	background-color: rgba(0,0,0,.1);
+}
+
+.slider-wrapper::-webkit-scrollbar-thumb {
+	background-color: $gray-light;
+	border-radius: 30px;
+}

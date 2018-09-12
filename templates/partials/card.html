@@ -109,15 +109,17 @@
 
     </div>
     <div class="panel-footer">
-        <div class="panel-actions">
-
-            {% set buttonData = { 
-                buttonSize: 'btn-sm',
-                buttonColor: 'btn-primary',
-                buttonIcon: '',
-                linkUrl: blockData.linkUrl,
-                linkText: blockData.linkText
-            } %}{% include "partials/button.html" %}
+        <div class="panel-actions clearfix">
+            
+            {% if blockData.linkUrl %}
+                {% set buttonData = { 
+                    buttonSize: 'btn-sm',
+                    buttonColor: 'btn-primary',
+                    buttonIcon: '',
+                    linkUrl: blockData.linkUrl,
+                    linkText: blockData.linkText
+                } %}{% include "partials/button.html" %}
+            {% endif %}
 
             <div class="pull-right">
                 {% if blockData.share %}
