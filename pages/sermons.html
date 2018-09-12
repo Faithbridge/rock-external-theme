@@ -1,6 +1,6 @@
 {% set browserTitle = "Sermons" %}
 {% set pageTitle = "Sermons" %}
-{% set pageHeaderColorHex = "1C683E" %}
+{% set pageHeaderColorHex = "2a4930" %}
 
 {% extends "full-width.html" %}
 
@@ -105,7 +105,7 @@
 			    imageOpacity: '',
 			    linkUrl: '/series.html',
 			    linkText: 'Watch Series',
-			    share: 'y',
+			    shares: 'y',
 	            likes: 'y'
 			} %}{% include "partials/card.html" %}
 		</div>{% endfor %}
@@ -130,7 +130,7 @@
 				    imageOpacity: '',
 				    linkText: 'Watch Series',
 				    linkUrl: series.linkUrl,
-				    share: 'y',
+				    shares: 'y',
 				    likes: 'y'
 				} %}{% include "partials/image.html" %}
 			</div>{% endfor %}

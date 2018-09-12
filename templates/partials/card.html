@@ -21,6 +21,7 @@
     imageOpacity: '',
     linkUrl: '',
     linkText: '',
+    shares: '',
     likes: ''
 } %}{% include "partials/card.html" %}
 
@@ -122,7 +123,7 @@
             {% endif %}
 
             <div class="pull-right">
-                {% if blockData.share %}
+                {% if blockData.shares %}
                     <a href="#" data-toggle="modal" data-target="#share-modal" class="btn btn-sm btn-default text-gray-dark text-decoration-none" data-share><i class="fas fa-share flush"></i> {{ [14,8,2,42,5,4,73,19,2] | random }}</a>
                 {% endif %}
 

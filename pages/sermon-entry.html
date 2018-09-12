@@ -1,6 +1,6 @@
 {% set browserTitle = "Anxiety vs. Gratitude | Slaying Giants | Sermons" %}
-{% set pageTitle = '' %}
-{% set pageSubtitle = '' %}
+{% set pageTitle = 'Slaying Giants' %}
+{% set pageSubtitle = 'WEEK 5' %}
 {% set pageHeaderColorHex = "5C1998" %}
 
 {% extends "full-width.html" %}
@@ -96,7 +96,7 @@
 				    linkColorHex: '',
 				    grayscale: '',
 				    count: '',
-				    label: 'WEEK ' + sermon.id,
+				    label: '',
 				    textAlignment: '',
 				    titleSize: 'h3',
 				    title: sermon.title, 
@@ -109,7 +109,7 @@
 				    imageOpacity: '',
 				    linkUrl: '',
 				    linkText: '',
-				    share: 'y',
+				    shares: 'y',
 				    likes: 'y'
 				} %}{% include "partials/card.html" %}
 
@@ -187,7 +187,7 @@
 			    imageOpacity: '',
 			    linkUrl: '/sermon-entry.html',
 			    linkText: 'Watch Sermon',
-			    share: 'y',
+			    shares: 'y',
 			    likes: 'y'
 			} %}{% include "partials/card.html" %}</div>{% endfor %}
 	    </div>
@@ -215,7 +215,7 @@
     imageOpacity: '',
     linkUrl: '/sermon-entry.html',
     linkText: 'Watch Sermon',
-    share: 'y',
+    shares: 'y',
     likes: 'y'
 } %}{% include "partials/card.html" %}
 #}

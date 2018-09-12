@@ -1,6 +1,6 @@
 {% set browserTitle = "Articles" %}
 {% set pageTitle = "Articles" %}
-{% set pageHeaderColorHex = "1C683E" %}
+{% set pageHeaderColorHex = "2a4930" %}
 
 {% set articles = [
     {
@@ -149,7 +149,7 @@
                 imageOpacity: '',
                 linkUrl: '/article-entry.html',
                 linkText: 'Read Article',
-                share: 'y',
+                shares: 'y',
                 likes: 'y'
             } %}{% include "partials/card.html" %}
         </div>{% endfor %}
@@ -181,7 +181,7 @@
                     imageOpacity: article.imageOpacity,
                     linkUrl: '/article-entry.html',
                     linkText: 'Read Article',
-                    share: 'y',
+                    shares: 'y',
                     likes: 'y'
                 } %}{% include "partials/card.html" %}
             </div>{% endfor %}

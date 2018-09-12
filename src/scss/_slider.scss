@@ -28,6 +28,7 @@
 		margin-right: $base-spacing-unit/2;
 		margin-left: $base-spacing-unit/2;
 		vertical-align: middle;
+		-webkit-backface-visibility: hidden;
 
 		.panel {
 			margin-bottom: 0;
