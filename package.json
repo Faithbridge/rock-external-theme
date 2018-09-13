@@ -4,12 +4,12 @@
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
+    "gulp": "^3.9.1",
     "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^4.0.1",
     "gulp-sass-glob": "^1.0.9",
     "gulp-server-livereload": "^1.9.2",
-    "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp": "^3.9.1"
+    "gulp-sourcemaps": "^2.6.4"
   },
   "devDependencies": {
     "browser-sync": "^2.24.4",
