@@ -6,13 +6,19 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	sassGlob = require('gulp-sass-glob'),
 	sourcemaps = require('gulp-sourcemaps'),
+
+	less = require('gulp-less'),
+	path = require('path'),
+
 	plumber = require('gulp-plumber'),
 	server = require('gulp-server-livereload'),
 	browserSync = require('browser-sync'),
 	nunjucksRender = require('gulp-nunjucks-render');
 
-var stylesSrc = 'src/scss/**/[^_]*.scss',
-	stylesDest = 'dest/css/',
+var sassSrc = 'src/scss/**/[^_]*.scss',
+	sassDest = 'dest/css/',
+	lessSrc = 'src/less/**/[^_]*.less',
+	lessDest = 'dest/css/',
 	scriptsSrc = 'src/js/**/*.js',
     scriptsDest = 'dest/js';
 
@@ -38,19 +44,28 @@ gulp.task('scripts', function() {
 	    }));
 });
 
-// Styles Task
+// SASS Task
 gulp.task('styles', function () {
-	gulp.src(stylesSrc)
+	gulp.src(sassSrc)
 		.pipe(plumber())
 		.pipe(sassGlob())
 	    .pipe(sass({outputStyle: 'compressed'}))
 	    .pipe(sourcemaps.write())
-	    .pipe(gulp.dest(stylesDest))
+	    .pipe(gulp.dest(sassDest))
 	    .pipe(browserSync.reload({
       		stream: true
     	}));
 });
 
+// LESS Task
+gulp.task('less', function () {
+	gulp.src(lessSrc)
+    	.pipe(plumber())
+    	.pipe(less({
+    		paths: [ path.join(__dirname, 'less', 'includes') ]
+    	}))
+    	.pipe(gulp.dest(lessDest));
+});
 
 // Watch Styles Task
 gulp.task('watch', function(){
