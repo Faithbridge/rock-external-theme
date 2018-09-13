@@ -22,7 +22,7 @@ var sassSrc = 'src/scss/**/[^_]*.scss',
 	scriptsSrc = 'src/js/**/*.js',
     scriptsDest = 'dest/js';
 
-gulp.task('default', ['jsImport', 'scripts', 'styles', 'nunjucks', 'webserver']);
+gulp.task('default', ['jsImport', 'scripts', 'sass', 'less', 'nunjucks', 'webserver']);
 
 // JS Import
 gulp.task('jsImport', function() {
@@ -45,7 +45,7 @@ gulp.task('scripts', function() {
 });
 
 // SASS Task
-gulp.task('styles', function () {
+gulp.task('sass', function () {
 	gulp.src(sassSrc)
 		.pipe(plumber())
 		.pipe(sassGlob())
@@ -64,12 +64,16 @@ gulp.task('less', function () {
     	.pipe(less({
     		paths: [ path.join(__dirname, 'less', 'includes') ]
     	}))
-    	.pipe(gulp.dest(lessDest));
+    	.pipe(gulp.dest(lessDest))
+    	.pipe(browserSync.reload({
+      		stream: true
+    	}));
 });
 
 // Watch Styles Task
 gulp.task('watch', function(){
-	gulp.watch('src/scss/**/*.scss', ['styles']);
+	gulp.watch('src/scss/**/*.scss', ['sass']);
+	gulp.watch('src/less/**/*.less', ['less']);
 	gulp.watch(scriptsSrc, ['jsImport', 'scripts']);
 	gulp.watch('pages/**/*.html', ['nunjucks']);
 	gulp.watch('templates/**/*.html', ['nunjucks']);
