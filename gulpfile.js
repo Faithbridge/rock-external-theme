@@ -74,7 +74,7 @@ gulp.task('nunjucks', ['browserSync'], function() {
     }))
 
 	// output files in app folder
-	.pipe(gulp.dest('./'))
+	.pipe(gulp.dest('./dest/'))
 
 	// reload browser
 	.pipe(browserSync.reload({
@@ -86,14 +86,14 @@ gulp.task('nunjucks', ['browserSync'], function() {
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-    	baseDir: './'
+    	baseDir: './dest/'
     },
   })
 })
  
 // Web Server Task
 gulp.task('webserver', ['watch'], function() {
-  gulp.src('./')
+  gulp.src('./dest/')
     .pipe(server({
     	defaultFile: 'index.html',
     	livereload: true,
