@@ -10,6 +10,8 @@ var gulp = require('gulp'),
 	less = require('gulp-less'),
 	path = require('path'),
 
+	cleanCSS = require('gulp-clean-css'),
+
 	plumber = require('gulp-plumber'),
 	server = require('gulp-server-livereload'),
 	browserSync = require('browser-sync'),
@@ -17,12 +19,12 @@ var gulp = require('gulp'),
 
 var sassSrc = 'src/scss/**/[^_]*.scss',
 	sassDest = 'dest/css/',
-	lessSrc = 'src/less/**/[^_]*.less',
+	lessSrc = 'src/less/[^_]*.less',
 	lessDest = 'dest/css/',
 	scriptsSrc = 'src/js/**/*.js',
     scriptsDest = 'dest/js';
 
-gulp.task('default', ['jsImport', 'scripts', 'sass', 'less', 'nunjucks', 'webserver']);
+gulp.task('default', ['jsImport', 'scripts', 'sass', 'less', 'minify-css', 'nunjucks', 'webserver']);
 
 // JS Import
 gulp.task('jsImport', function() {
@@ -61,19 +63,28 @@ gulp.task('sass', function () {
 gulp.task('less', function () {
 	gulp.src(lessSrc)
     	.pipe(plumber())
+    	.pipe(sourcemaps.init())
     	.pipe(less({
     		paths: [ path.join(__dirname, 'less', 'includes') ]
     	}))
+    	.pipe(sourcemaps.write())
     	.pipe(gulp.dest(lessDest))
     	.pipe(browserSync.reload({
       		stream: true
     	}));
 });
 
+// Minify CSS
+gulp.task('minify-css', () => {
+  return gulp.src('./dest/css/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('./dest/css/'));
+});
+
 // Watch Styles Task
 gulp.task('watch', function(){
-	gulp.watch('src/scss/**/*.scss', ['sass']);
-	gulp.watch('src/less/**/*.less', ['less']);
+	gulp.watch('src/scss/**/*.scss', ['sass','minify-css']);
+	gulp.watch('src/less/**/*.less', ['less','minify-css']);
 	gulp.watch(scriptsSrc, ['jsImport', 'scripts']);
 	gulp.watch('pages/**/*.html', ['nunjucks']);
 	gulp.watch('templates/**/*.html', ['nunjucks']);
