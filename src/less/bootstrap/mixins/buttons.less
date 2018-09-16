@@ -11,14 +11,20 @@
   &:focus,
   &.focus {
     color: @color;
-    background-color: darken(@background, 10%);
-        border-color: darken(@border, 25%);
+    background-color: @background;
+        border-color: @border;
   }
   &:hover {
     color: @color;
-    background-color: darken(@background, 10%);
-        border-color: darken(@border, 12%);
   }
+  
+  @media (min-width: @screen-xs-max) {
+    &:hover {
+      background-color: darken(@background, 10%);
+      border-color: darken(@border, 12%);
+    }
+  }
+
   &:active,
   &.active,
   .open > .dropdown-toggle& {
@@ -61,5 +67,5 @@
   padding: @padding-vertical @padding-horizontal;
   font-size: @font-size;
   line-height: @line-height;
-  border-radius: @border-radius;
+  border-radius: @border-radius-small;
 }
