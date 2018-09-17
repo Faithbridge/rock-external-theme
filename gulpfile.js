@@ -3,20 +3,21 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	uglify = require('gulp-uglify'),
 	jsImport = require('gulp-js-import'),
-	sass = require('gulp-sass'),
-	sassGlob = require('gulp-sass-glob'),
 	sourcemaps = require('gulp-sourcemaps'),
+	less = require('gulp-less'),
+	path = require('path'),
+	cleanCSS = require('gulp-clean-css'),
 	plumber = require('gulp-plumber'),
 	server = require('gulp-server-livereload'),
 	browserSync = require('browser-sync'),
 	nunjucksRender = require('gulp-nunjucks-render');
 
-var stylesSrc = 'src/scss/**/[^_]*.scss',
-	stylesDest = 'dest/css/',
+var lessSrc = 'src/less/[^_]*.less',
+	lessDest = 'dest/css/',
 	scriptsSrc = 'src/js/**/*.js',
-    scriptsDest = 'dest/js';
+  scriptsDest = 'dest/js';
 
-gulp.task('default', ['jsImport', 'scripts', 'styles', 'nunjucks', 'webserver']);
+gulp.task('default', ['jsImport', 'scripts', 'less', 'minify-css', 'nunjucks', 'webserver']);
 
 // JS Import
 gulp.task('jsImport', function() {
@@ -38,23 +39,31 @@ gulp.task('scripts', function() {
 	    }));
 });
 
-// Styles Task
-gulp.task('styles', function () {
-	gulp.src(stylesSrc)
-		.pipe(plumber())
-		.pipe(sassGlob())
-	    .pipe(sass({outputStyle: 'compressed'}))
-	    .pipe(sourcemaps.write())
-	    .pipe(gulp.dest(stylesDest))
-	    .pipe(browserSync.reload({
+// LESS Task
+gulp.task('less', function () {
+	gulp.src(lessSrc)
+    	.pipe(plumber())
+    	.pipe(sourcemaps.init())
+    	.pipe(less({
+    		paths: [ path.join(__dirname, 'less', 'includes') ]
+    	}))
+    	.pipe(sourcemaps.write())
+    	.pipe(gulp.dest(lessDest))
+    	.pipe(browserSync.reload({
       		stream: true
     	}));
 });
 
+// Minify CSS
+gulp.task('minify-css', () => {
+  return gulp.src('./dest/css/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('./dest/css/'));
+});
 
 // Watch Styles Task
 gulp.task('watch', function(){
-	gulp.watch('src/scss/**/*.scss', ['styles']);
+	gulp.watch('src/less/**/*.less', ['less','minify-css']);
 	gulp.watch(scriptsSrc, ['jsImport', 'scripts']);
 	gulp.watch('pages/**/*.html', ['nunjucks']);
 	gulp.watch('templates/**/*.html', ['nunjucks']);
