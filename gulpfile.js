@@ -3,28 +3,21 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	uglify = require('gulp-uglify'),
 	jsImport = require('gulp-js-import'),
-	sass = require('gulp-sass'),
-	sassGlob = require('gulp-sass-glob'),
 	sourcemaps = require('gulp-sourcemaps'),
-
 	less = require('gulp-less'),
 	path = require('path'),
-
 	cleanCSS = require('gulp-clean-css'),
-
 	plumber = require('gulp-plumber'),
 	server = require('gulp-server-livereload'),
 	browserSync = require('browser-sync'),
 	nunjucksRender = require('gulp-nunjucks-render');
 
-var sassSrc = 'src/scss/**/[^_]*.scss',
-	sassDest = 'dest/css/',
-	lessSrc = 'src/less/[^_]*.less',
+var lessSrc = 'src/less/[^_]*.less',
 	lessDest = 'dest/css/',
 	scriptsSrc = 'src/js/**/*.js',
-    scriptsDest = 'dest/js';
+  scriptsDest = 'dest/js';
 
-gulp.task('default', ['jsImport', 'scripts', 'sass', 'less', 'minify-css', 'nunjucks', 'webserver']);
+gulp.task('default', ['jsImport', 'scripts', 'less', 'minify-css', 'nunjucks', 'webserver']);
 
 // JS Import
 gulp.task('jsImport', function() {
@@ -44,19 +37,6 @@ gulp.task('scripts', function() {
 		.pipe(browserSync.reload({
 			stream: true
 	    }));
-});
-
-// SASS Task
-gulp.task('sass', function () {
-	gulp.src(sassSrc)
-		.pipe(plumber())
-		.pipe(sassGlob())
-	    .pipe(sass({outputStyle: 'compressed'}))
-	    .pipe(sourcemaps.write())
-	    .pipe(gulp.dest(sassDest))
-	    .pipe(browserSync.reload({
-      		stream: true
-    	}));
 });
 
 // LESS Task
@@ -83,7 +63,6 @@ gulp.task('minify-css', () => {
 
 // Watch Styles Task
 gulp.task('watch', function(){
-	gulp.watch('src/scss/**/*.scss', ['sass','minify-css']);
 	gulp.watch('src/less/**/*.less', ['less','minify-css']);
 	gulp.watch(scriptsSrc, ['jsImport', 'scripts']);
 	gulp.watch('pages/**/*.html', ['nunjucks']);
