@@ -12,97 +12,88 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	nunjucksRender = require('gulp-nunjucks-render');
 
-var lessSrc = 'src/less/[^_]*.less',
-	lessDest = 'dest/css/',
-	scriptsSrc = 'src/js/**/*.js',
-  scriptsDest = 'dest/js';
+var lessSrc = './Styles/[^_]*.less',
+    lessDest = './Styles/',
+    scriptsSrc = './Assets/Scripts/[^_]*.js',
+    scriptsDest = './Assets/Scripts/compiled/';
 
-gulp.task('default', ['jsImport', 'scripts', 'less', 'minify-css', 'nunjucks', 'webserver']);
-
-// JS Import
-gulp.task('jsImport', function() {
-  return gulp.src('src/js/main.js')
-        .pipe(jsImport({hideConsole: true}))
-        .pipe(gulp.dest(scriptsDest));
-});
+gulp.task('default', ['scripts', 'styles', 'nunjucks', 'watch']);
 
 // Scripts Task
 gulp.task('scripts', function() {
-    return gulp.src('dest/js/main.js')
-    	.pipe(plumber())
-        .pipe(concat('scripts.js'))
-        .pipe(rename('scripts.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(scriptsDest))
-		.pipe(browserSync.reload({
-			stream: true
-	    }));
+  return gulp.src(scriptsSrc)
+    .pipe(plumber())
+    // Import Plugin Files
+    .pipe(jsImport({hideConsole: true}))
+    // Combine
+    .pipe(concat('scripts.js'))
+    // Minify
+    .pipe(uglify())
+    // Rename
+    .pipe(rename('scripts.min.js'))
+    // Export
+    .pipe(gulp.dest(scriptsDest))
+    .pipe(gulp.dest('./templates/compiled/'))
+    // Reload Browser
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
-// LESS Task
-gulp.task('less', function () {
+// Styles Task
+gulp.task('styles', function () {
 	gulp.src(lessSrc)
-    	.pipe(plumber())
-    	.pipe(sourcemaps.init())
-    	.pipe(less({
-    		paths: [ path.join(__dirname, 'less', 'includes') ]
-    	}))
-    	.pipe(sourcemaps.write())
-    	.pipe(gulp.dest(lessDest))
-    	.pipe(browserSync.reload({
-      		stream: true
-    	}));
-});
-
-// Minify CSS
-gulp.task('minify-css', () => {
-  return gulp.src('./dest/css/*.css')
+  	.pipe(plumber())
+  	.pipe(sourcemaps.init())
+  	.pipe(less({
+  		paths: [ path.join(__dirname, 'less', 'includes') ]
+  	}))
+  	.pipe(sourcemaps.write())
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('./dest/css/'));
+  	.pipe(gulp.dest(lessDest))
+    .pipe(gulp.dest('./templates/compiled/'))
+  	.pipe(browserSync.reload({
+    		stream: true
+  	}));
 });
-
-// Watch Styles Task
-gulp.task('watch', function(){
-	gulp.watch('src/less/**/*.less', ['less','minify-css']);
-	gulp.watch(scriptsSrc, ['jsImport', 'scripts']);
-	gulp.watch('pages/**/*.html', ['nunjucks']);
-	gulp.watch('templates/**/*.html', ['nunjucks']);
-});
-
 
 // Compile Nunjucks Task
 gulp.task('nunjucks', ['browserSync'], function() {
 
   // Gets .html and .nunjucks files in pages
-  gulp.src('pages/**/*.+(html|nunjucks)')
+  gulp.src('./templates/pages/**/*.+(html|nunjucks)')
   	.pipe(plumber())
 
   	// Renders template with nunjucks
 	.pipe(nunjucksRender({
 		path: ['templates']
-    }))
+  }))
 
 	// output files in app folder
-	.pipe(gulp.dest('./dest/'))
+	.pipe(gulp.dest('./templates/compiled/'))
 
-	// reload browser
-	.pipe(browserSync.reload({
-		stream: true
-    }));
 });
 
 // Browser Sync
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-    	baseDir: './dest/'
+    	baseDir: './templates/compiled/'
     },
   })
 })
+
+// Watch Styles Task
+gulp.task('watch', function(){
+  gulp.watch('./Styles/*.less', ['styles']);
+  gulp.watch('./Assets/Scripts/*.js', ['scripts']);
+  gulp.watch('./templates/pages/*.html', ['nunjucks']);
+  gulp.watch('./templates/partials/*.html', ['nunjucks']);
+});
  
 // Web Server Task
 gulp.task('webserver', ['watch'], function() {
-  gulp.src('./dest/')
+  gulp.src('./templates/compiled/')
     .pipe(server({
     	defaultFile: 'index.html',
     	livereload: true,
