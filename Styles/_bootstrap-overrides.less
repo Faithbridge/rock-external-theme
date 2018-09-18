@@ -1,0 +1,25 @@
+// Buttons
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical + 1 @padding-horizontal @padding-vertical - 1;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+.button-variant(@color; @background; @border) {
+  &:focus,
+  &.focus {
+    background-color: @background;
+        border-color: @border;
+  }
+}
+
+// Pagination
+.pagination {
+	> li {
+		> a,
+		> span {
+			padding: @padding-base-vertical * 1.5 + 1 @padding-base-horizontal * 1.25 @padding-base-vertical * 1.5 - 1;
+		}
+	}
+}

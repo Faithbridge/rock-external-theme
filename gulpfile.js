@@ -87,8 +87,7 @@ gulp.task('browserSync', function() {
 gulp.task('watch', function(){
   gulp.watch('./Styles/*.less', ['styles']);
   gulp.watch('./Assets/Scripts/*.js', ['scripts']);
-  gulp.watch('./templates/pages/*.html', ['nunjucks']);
-  gulp.watch('./templates/partials/*.html', ['nunjucks']);
+  gulp.watch('./templates/*.html', ['nunjucks']);
 });
  
 // Web Server Task
