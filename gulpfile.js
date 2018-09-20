@@ -72,6 +72,10 @@ gulp.task('nunjucks', ['browserSync'], function() {
 	// output files in app folder
 	.pipe(gulp.dest('./templates/compiled/'))
 
+  .pipe(browserSync.reload({
+    stream: true
+  }));
+
 });
 
 // Browser Sync
@@ -88,6 +92,8 @@ gulp.task('watch', function(){
   gulp.watch('./Styles/*.less', ['styles']);
   gulp.watch('./Assets/Scripts/*.js', ['scripts']);
   gulp.watch('./templates/*.html', ['nunjucks']);
+  gulp.watch('./templates/pages/*.html', ['nunjucks']);
+  gulp.watch('./templates/partials/*.html', ['nunjucks']);
 });
  
 // Web Server Task

@@ -1,9 +1,13 @@
+@import "../../Rock/RockWeb/Styles/Bootstrap/mixins.less";
+
 // Buttons
-.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
-  padding: @padding-vertical + 1 @padding-horizontal @padding-vertical - 1;
-  font-size: @font-size;
-  line-height: @line-height;
-  border-radius: @border-radius;
+.btn-sm {
+  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
+  padding-bottom: @padding-small-vertical - 2;
+}
+
+.btn-xs {
+  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
 }
 
 .button-variant(@color; @background; @border) {

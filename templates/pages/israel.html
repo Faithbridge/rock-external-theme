@@ -31,53 +31,44 @@
         </div>
     </section>
 
-    <section>
-        <div class="text-center">
-            <h2>Some Section Heading</h2>
+    <section class="soft-sides hard-ends flush">
+    <div class="row text-center">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            {% set blockData = { 
+                id: '',
+                linkColorHex: '',
+                backgroundColorHex: '',
+                grayscale: '',
+                label: '',
+                titleSize:'h3',
+                title: 'Fuse and Rally To Israel',
+                subtitle: 'June 10-17, 2019',
+                copy: "<p>If you’re in high school or college, this trip is for you. Traveling with your Rally and Fuse fam is an adventure you won’t forget. You’ll come back with a better understanding of the Bible and deeper relationships with one another.</p>",
+                trimCopy: '',
+                imageUrl: '',
+                imageOpacity: '',
+                linkUrl: '#',
+                linkText: 'Learn More'
+            } %}{% include "partials/ad-unit.html" %}
+        </div><div class="col-md-6 col-sm-12 col-xs-12">
+            {% set blockData = { 
+                id: '',
+                linkColorHex: '',
+                backgroundColorHex: '',
+                grayscale: '',
+                label: '',
+                titleSize:'h3',
+                title: 'NewSpring to Israel',
+                subtitle: 'October 10-18, 2018',
+                copy: "<p>What’s better than seeing where Jesus lived and taught? Seeing it with your church family. With NewSpring staff teaching and leading worship, this is no ordinary expedition.</p>",
+                trimCopy: '',
+                imageUrl: '',
+                imageOpacity: '',
+                linkUrl: '#',
+                linkText: 'Learn More'
+            } %}{% include "partials/ad-unit.html" %}
         </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                {% set blockData = { 
-                    id: '',
-                    backgroundColorHex: '',
-                    linkColorHex: '',
-                    grayscale: '',
-                    count: '',
-                    label: '',
-                    textAlignment: '',
-                    titleSize: 'h3',
-                    title: 'Fuse and Rally To Israel', 
-                    subtitle: "June 10-17, 2019",
-                    copy: "<p>If you’re in high school or college, this trip is for you. Traveling with your Rally and Fuse fam is an adventure you won’t forget. You’ll come back with a better understanding of the Bible and deeper relationships with one another.</p>",
-                    trimCopy: '',
-                    tags: '',
-                    imageUrl: '',
-                    imageOpacity: '',
-                    linkUrl: '#',
-                    linkText: 'Learn More'
-                } %}{% include "partials/card.html" %}
-            </div><div class="col-md-6 col-sm-12 col-xs-12">
-                {% set blockData = { 
-                    id: '',
-                    backgroundColorHex: '',
-                    linkColorHex: '',
-                    grayscale: '',
-                    count: '',
-                    label: '',
-                    textAlignment: '',
-                    titleSize: 'h3',
-                    title: 'NewSpring to Israel', 
-                    subtitle: "October 10-18, 2018",
-                    copy: "<p>What’s better than seeing where Jesus lived and taught? Seeing it with your church family. With NewSpring staff teaching and leading worship, this is no ordinary expedition.</p>",
-                    trimCopy: '',
-                    tags: '',
-                    imageUrl: '',
-                    imageOpacity: '',
-                    linkUrl: '#',
-                    linkText: 'Learn More'
-                } %}{% include "partials/card.html" %}
-            </div>
-        </div>
+    </div>
     </section>
 
     <section class="bg-white rounded shadowed push-bottom xs-push-half-bottom">

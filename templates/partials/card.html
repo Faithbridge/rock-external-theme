@@ -108,7 +108,23 @@
             {{ blockData.copy | safe }}
         {% endif %}
 
+        {% if blockData.shares or blockData.likes %}{% else %}
+            {% if blockData.linkUrl %}
+                <p>
+                    {% set buttonData = { 
+                        buttonSize: 'btn-sm',
+                        buttonColor: 'btn-primary',
+                        buttonIcon: '',
+                        linkUrl: blockData.linkUrl,
+                        linkText: blockData.linkText
+                    } %}{% include "partials/button.html" %}
+                </p>
+            {% endif %}
+        {% endif %}
+
     </div>
+
+    {% if blockData.shares or blockData.likes %}
     <div class="panel-footer">
         <div class="panel-actions clearfix">
             
@@ -134,6 +150,8 @@
             </div>
         </div>
     </div>
+    {% endif %}
+
 </div>
 
 {% if blockData.trimCopy %}
