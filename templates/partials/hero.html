@@ -15,6 +15,7 @@
     linkUrl: '',
     linkText: '',
     linkClasses: '',
+    buttonIcon: '',
     videoId: ''
 } %}{% include "partials/hero.html" %}
 
@@ -72,9 +73,13 @@ bring-forward
 
         {% if blockData.linkUrl %}
             <p>
-                <a href="{{ blockData.linkUrl }}" class="{% if blockData.linkClasses %}{{ blockData.linkClasses }}{% else %}btn btn-primary{% endif %}">
-                    {% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}
-                </a>
+                {% set buttonData = { 
+                    buttonSize: '',
+                    buttonColor: 'btn-primary',
+                    buttonIcon: blockData.buttonIcon,
+                    linkUrl: blockData.linkUrl,
+                    linkText: blockData.linkText
+                } %}{% include "partials/button.html" %}
             </p>
         {% endif %}
 
