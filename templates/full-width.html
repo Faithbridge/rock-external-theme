@@ -6,18 +6,6 @@
 <div class="page-brand-bar" style="background-color: #{{ pageHeaderColorHex }}; opacity: .9;"></div>
 {% endif %}
 
-{% if pageTitle %}
-	{% set blockData = { 
-	    id: '',
-	    preTitle: '',
-	    titleSize: '',
-	    title: pageTitle,
-	    subtitle: pageSubtitle,
-	    tags: '',
-	    copy: ''
-	} %}{% include "partials/page-header.html" %}
-{% endif %}
-
 <div class="soft-top xs-soft-half-top" style="{% if contentBackgroundHex %}background-color: #{{ contentBackgroundHex }};{% endif %}">
     {% block content %}
     {% endblock %}

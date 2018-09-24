@@ -65,26 +65,53 @@
         </script>
 
 	</head>
-	<body>
-        {% set signedIn = "y" %}
-        {% set userCampus = "Anderson" %}
-        {% set userImage = "https://rock.newspring.cc/GetImage.ashx?id=571481" %}
-        {% set userFirstName = "Grant" %}
-        {% set userLastName = "Shugart" %}
-        {% set userEmail = "test@testuser.com" %}
-        {% set userPhone = "(555) 555-5555" %}
+
+    {% set isLive = "y" %}
+    {% set signedIn = "y" %}
+    {% set userCampus = "Anderson" %}
+    {% set userImage = "https://rock.newspring.cc/GetImage.ashx?id=571481" %}
+    {% set userFirstName = "Grant" %}
+    {% set userLastName = "Shugart" %}
+    {% set userEmail = "test@testuser.com" %}
+    {% set userPhone = "(555) 555-5555" %}
+
+	<body class="{% if isLive == 'y' %}is-live{% endif %}">
 
         <div id="navigation">
             {% include "partials/navigation.html" %}
+
+            {% if isLive == 'y' %}
+                <a href="#" class="display-block soft-half bg-primary shadowed text-decoration-none text-center">
+                    <small class="sans-serif stronger letter-spacing-condensed text-white pulse-opacity flush">NewSpring Church is Live. Watch Now.</small>
+                </a>
+            {% endif %}
+
         </div>
 
         <div id="content">
             
-            {% if navPages %}
+            {% if pageTitle or navPages %}
             <div class="soft xs-soft-half hard-bottom xs-hard-bottom clearfix">
-                {% include "partials/navigation-secondary.html" %}
+
+                {% if pageTitle %}
+                    {% set blockData = { 
+                        id: '',
+                        preTitle: '',
+                        titleSize: '',
+                        title: pageTitle,
+                        subtitle: pageSubtitle,
+                        tags: '',
+                        copy: ''
+                    } %}{% include "partials/page-header.html" %}
+                {% endif %}
+                
+                {% if navPages %}
+                    {% include "partials/navigation-secondary.html" %}
+                {% endif %}
+
             </div>
             {% endif %}
+            
 
             {% block globalContent %}
             {% endblock %}
