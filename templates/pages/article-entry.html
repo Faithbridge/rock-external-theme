@@ -1,6 +1,6 @@
 {% set browserTitle = "One practical way to unify your marriage today | Articles" %}
-{% set pageTitle = "Article" %}
-{% set pageHeaderColorHex = "2a4930" %}
+{% set pageTitle = "" %}
+{% set pageHeaderColorHex = "" %}
 {% set contentBackgroundHex = 'fff' %}
 
 {% set articles = [
@@ -122,7 +122,7 @@
 
 {% block content %}
 
-<div class="soft-double-top xs-soft-top soft-sides text-constrained mx-auto">
+<div class="position-relative soft-double-top xs-soft-top soft-sides soft-bottom text-constrained mx-auto">
 
     <h1>One practical way to unify your marriage today</h1>
 
@@ -140,11 +140,10 @@
     <span class="wistia_embed wistia_async_aqhhtr97tw popover=true popoverContent=link clickable" style="display:inline;position:relative">
         <div class="hero ratio-thin xs-ratio-landscape floating background-cover background-center rounded shadowed push-bottom xs-push-half-bottom hard" style="background-image:url('//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/editorial/articles/marriage_couple_1700_1129_90_c1.jpg');">
 
-            <div class="floating-item btn btn-play text-white shadowed"><i class="fas fa-fw fa-lg fa-play"></i></div>
+            <div class="floating-item bring-forward btn btn-play text-white shadowed"><i class="fas fa-fw fa-lg fa-play"></i></div>
 
             <script src="https://fast.wistia.com/embed/medias/aqhhtr97tw.jsonp" async></script>
             <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-
         </div>
     </span>
     
@@ -194,7 +193,7 @@
 
         <p>God uses every circumstance, every conflict, every joy, and every pain to make us more holy. “Becoming holy” isn’t something we can check off a list at the end of a productive day. It’s a process that only happens when we’re in a relationship with God, and it changes our perspective on our to-do lists.</p>
 
-        {% include "partials/carousel.html" %}
+        {# {% include "partials/carousel.html" %} #}
 
         <p>We <a href="https://newspring.cc/articles/10-reasons-to-read-the-bible" target="_blank">read the Bible</a> to learn about the God who loves and pursues us. We <a href="https://newspring.cc/articles/why-we-need-prayer" target="_blank">pray</a> because we want to talk to God about our circumstances and emotions, and we want to receive the Holy Spirit’s guidance. We go to church to be a <a href="https://newspring.cc/articles/4-reasons-christians-need-the-church" target="_blank">part of God’s community</a>, to use our spiritual gifts to <a href="https://newspring.cc/articles/8-blessings-we-get-from-serving" target="_blank">serve others</a>, to speak and receive <a href="https://newspring.cc/articles/what-happens-when-you-encourage-someone-else" target="_blank">words that build each other up</a>.</p>
 
@@ -210,7 +209,14 @@
 
         <p>When we follow Jesus into a relationship, we throw all to-do lists out the window and jump into a relationship that brings God glory, brings us joy, and does the world good.</p>
 
-        {% include "partials/share-buttons.html" %}
+        <div id="sticky" class="position-absolute hidden-sm hidden-xs" style="top: 0; margin-left: -200px; max-width: 200px; padding-top: 30px;">
+            {% set blockData = { 
+                id: '',
+                orientation: 'vertical',
+                copy: '',
+                linkUrl: ''
+            } %}{% include "partials/share-buttons.html" %}
+        </div>
 
     </div>
 
@@ -219,12 +225,11 @@
 {% endblock %}
 
 {% block extendedContent %}
-<div class="soft xs-soft-half hard-bottom clearfix bg-gray-lighter">
-
-    <div class="row text-center">
-        {% for article in articles %}{% if loop.index < 3 %}<div class="col-md-4 col-sm-6 col-xs-12 text-left">
+<div class="soft-double-top soft-half-sides soft-bottom sm-soft-half-sides xs-soft-half-top xs-hard-sides xs-hard-bottom bg-gray-lighter">
+    <div class="row text-center flush">
+        {% for article in articles %}{% if loop.index < 4 %}<div class="col-md-4 col-sm-6 col-xs-12 text-left">
             {% set blockData = { 
-                id: '',
+                id: article.id,
                 backgroundColorHex: '',
                 linkColorHex: '',
                 grayscale: '',
@@ -247,8 +252,9 @@
             } %}{% include "partials/card.html" %}
         </div>{% endif %}{% endfor %}
     </div>
+</div>
 
-    {% set blockData = { 
+{% set blockData = { 
         id: '5',
         linkColorHex: '',
         backgroundColorHex: '',
@@ -259,6 +265,4 @@
         linkUrl: '#',
         linkText: 'Subscribe Now'
     } %}{% include "partials/ad-unit.html" %}
-
-</div>
 {% endblock %}

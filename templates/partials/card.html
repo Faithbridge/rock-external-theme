@@ -103,7 +103,7 @@
         
         {% if blockData.trimCopy %}
             {% set length = blockData.copy | length %}
-            {{ blockData.copy | safe | truncate(140) }}{% if length > 140 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
+            {{ blockData.copy | safe | truncate(140) }}{% if length > 140 %} <a href="#" data-toggle="modal" data-target="#modal-{{ blockData.id }}">Read More</a>{% endif %}
         {% else %}
             {{ blockData.copy | safe }}
         {% endif %}
@@ -125,19 +125,11 @@
     {% if blockData.shares or blockData.likes %}
     <div class="panel-footer">
         <div class="panel-actions">
-            <div class="row text-center">
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                    <div class="btn btn-block btn-sm btn-link text-gray-dark text-decoration-none"><i class="fas fa-eye flush"></i> {{ [142,361,82,131,225,58] | random }}</div>
-                </div><div class="col-md-4 col-sm-4 col-xs-4">
-                    {% if blockData.shares %}
-                        <a href="#" data-toggle="modal" data-target="#share-modal" class="btn btn-block btn-sm btn-link text-gray-dark text-decoration-none" data-share><i class="fas fa-share flush"></i> {{ [14,8,2,42,5,4,73,19,2] | random }}</a>
-                    {% endif %}
-                </div><div class="col-md-4 col-sm-4 col-xs-4">
-                    {% if blockData.likes %}
-                        <a href="#" class="btn btn-block btn-sm btn-link text-gray-dark text-decoration-none" data-like><i class="far fa-heart flush"></i> {{ [14,8,6,42,5,4,73,19,2] | random }}</a>
-                    {% endif %}
-                </div>
-            </div>
+            {% set blockData = { 
+                orientation: '',
+                copy: '',
+                linkUrl: ''
+            } %}{% include "partials/share-buttons.html" %}
         </div>
     </div>
     {% endif %}
@@ -146,7 +138,7 @@
 
 {% if blockData.trimCopy %}
     {% if length > 140 %}
-    <div class="modal fade" id="{{ blockData.id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="modal-{{ blockData.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

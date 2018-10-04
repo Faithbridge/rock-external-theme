@@ -1,17 +1,23 @@
-var debounce_timer;
- 
-// $("#content").scroll(function() {
-//         if(debounce_timer) {
-//                 window.clearTimeout(debounce_timer);
-//         }
- 
-//         debounce_timer = window.setTimeout(function() {
-        	
-//         	var scrollTop = $('#content').scrollTop();
+var sticky = $("#sticky");
+var stickyOffset = sticky.offset().top;
+var elementHeight = sticky.height();
+var parentHeight = sticky.parent().height();
 
-// 		    console.log(scrollTop);
+var myEfficientFn = function() {
+	
+	var navigationHeight = $('#navigation').height();
+	var scrollDistance = $(window).scrollTop();
 
-// 		    var stickyElements = $('[data-sticky]');
-                
-//         }, 10);
-// });
+	if (scrollDistance > (stickyOffset + parentHeight - elementHeight * 2 - 5)) {
+		sticky.removeClass("position-fixed").addClass("position-absolute");
+		sticky[0].style.top = (parentHeight - elementHeight) + 'px';
+	} else if (scrollDistance > (stickyOffset - navigationHeight - 25)) {
+		sticky.removeClass("position-absolute").addClass("position-fixed");
+		sticky[0].style.top = "100px";
+	} else {
+		sticky.removeClass("position-fixed").addClass("position-absolute");
+		sticky[0].style.top = "0px";
+	}
+};
+
+window.addEventListener('scroll', myEfficientFn);
