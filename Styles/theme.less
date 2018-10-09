@@ -1,4 +1,4 @@
-@base-spacing-unit: 24px;
+@base-spacing-unit: 30px;
 @nav-width: 75px;
 
 // @import '_breakpoint-visual-utility';
@@ -21,7 +21,6 @@
 @import '_images';
 @import '_colors';
 @import '_helpers';
-@import '_breakpoints';
 
 section, footer {
 	margin-bottom: @base-spacing-unit/2;
@@ -66,6 +65,10 @@ h6, .h6 {
 			text-decoration: none;
 		}
 	}
+}
+
+.jumbo {
+	font-size: 52px;
 }
 
 h1, .h1, 
@@ -162,6 +165,10 @@ mark, .mark {
 	}
 }
 
+.lead {
+	font-size: 1.25em;
+}
+
 .hero {
 	padding: @base-spacing-unit*3 @base-spacing-unit;
 
@@ -208,3 +215,5 @@ mark, .mark {
 		overflow: hidden;
 	}
 }
+
+@import '_breakpoints';

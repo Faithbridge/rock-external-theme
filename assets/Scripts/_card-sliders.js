@@ -4,7 +4,7 @@ CARD SLIDERS
 
 */
 
-var baseSpacingUnit = 24;
+var baseSpacingUnit = 30;
 
 // Get all sliders on page
 var sliders = document.querySelectorAll('[data-slider]');

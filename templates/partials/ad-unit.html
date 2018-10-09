@@ -26,9 +26,11 @@
             background-color: #{{ blockData.backgroundColorHex }};
         }
 
-        #block-{{ blockData.id }} blockquote, blockquote footer, blockquote small, blockquote .small {
-            color: #fff;
-        }
+        {% if blockData.backgroundColorHex %}
+            #block-{{ blockData.id }} blockquote, blockquote footer, blockquote small, blockquote .small {
+                color: #fff;
+            }
+        {% endif %}
 
         #block-{{ blockData.id }} a:not(.btn):not(.label) {
             color: #{{ blockData.linkColorHex }};

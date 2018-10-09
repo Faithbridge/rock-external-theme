@@ -39,7 +39,7 @@
     linkText: 'Contact Us'
 } %}{% include "partials/ad-unit.html" %}
 
-
+<section class="hard flush-bottom">
 <div class="row">
 	<div class="col-md-12 col-xs-12">
 		{% set blockData = { 
@@ -52,8 +52,9 @@
 		} %}{% include "partials/image.html" %}
 	</div>
 </div>
+</section>
 
-
+<section class="hard flush-bottom">
 <div class="row">
 	<div class="col-md-6 col-sm-12 col-xs-12">
 		{% set blockData = { 
@@ -64,7 +65,7 @@
 		    count: '',
 		    label: '',
 		    textAlignment: 'center',
-		    titleSize: 'h3',
+		    titleSize: 'h2',
 		    title: 'Serving', 
 		    subtitle: "",
 		    copy: "<p>You get closer to God and others when you serve. On a serving team, you'll get a front row seat to what God is doing, and you'll find family to laugh with, pray with, and do life with.</p>",
@@ -74,7 +75,7 @@
 		    imageOpacity: '',
 		    linkUrl: '#',
 		    linkText: 'Learn More'
-		} %}{% include "partials/card.html" %}
+		} %}{% include "partials/ad-unit.html" %}
 	</div><div class="col-md-6 col-sm-12 col-xs-12">
 		{% set blockData = { 
 		    id: '4',
@@ -84,7 +85,7 @@
 		    count: '',
 		    label: '',
 		    textAlignment: 'center',
-		    titleSize: 'h3',
+		    titleSize: 'h2',
 		    title: 'Need to Know', 
 		    subtitle: "",
 		    copy: "<p>Sign up for our weekly Need To Know email. Stay up to date with what's happening in your no ordinary family, and discover how you can get involved.</p>",
@@ -94,8 +95,9 @@
 		    imageOpacity: '',
 		    linkUrl: '#',
 		    linkText: 'Subscribe Now'
-		} %}{% include "partials/card.html" %}
+		} %}{% include "partials/ad-unit.html" %}
 	</div>
 </div>
+</section>
 
 {% endblock %}

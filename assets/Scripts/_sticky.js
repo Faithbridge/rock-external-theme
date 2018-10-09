@@ -4,6 +4,8 @@ var elementHeight = sticky.height();
 var parentHeight = sticky.parent().height();
 
 var myEfficientFn = function() {
+
+	console.log('trigger');
 	
 	var navigationHeight = $('#navigation').height();
 	var scrollDistance = $(window).scrollTop();
