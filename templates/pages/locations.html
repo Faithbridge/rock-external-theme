@@ -10,7 +10,8 @@
         "title": "Aiken",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/aiken.location.2by1.jpg'
     },
     {
         "id": "2",
@@ -19,84 +20,96 @@
         "copy": "<p>Sunday at 9:15am, 11:15am & 5pm</p><p><a href='#'>Get Directions</a></p>",
         "tags": '',
         "lat": '34.595434',
-        "lon": '-82.6244131'
+        "lon": '-82.6244131',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/Anderson2x1.jpg'
     },
     {
         "id": "3",
         "title": "Charleston",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/campus.charleston.2x1.jpg'
     },
     {
         "id": "4",
         "title": "Clemson",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/clemson/cle_campus_2x1.JPG'
     },
     {
         "id": "5",
         "title": "Columbia",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/columbia/2x1lexcola.png'
     },
     {
         "id": "6",
         "title": "Florence",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/florence/FLO2x1_-100.jpg'
     },
     {
         "id": "7",
         "title": "Greenville",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/Greenville2x1.jpg'
     },
     {
         "id": "8",
         "title": "Greenwood",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/Greenwood2x1.jpg'
     },
     {
         "id": "9",
         "title": "Hilton Head",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/hhi.location2by1.jpg'
     },
     {
         "id": "10",
         "title": "Myrtle Beach",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/locations_myr.2x1.jpg'
     },
     {
         "id": "11",
         "title": "Northeast Columbia",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": ''
     },
     {
         "id": "12",
         "title": "Powdersville",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/powdersville/711103.marketing.cen.web.powcampus_2x1.jpg'
     },
     {
         "id": "13",
         "title": "Rock Hill",
         "subtitle": "",
         "copy": "<p>Sunday at 9:15am & 11:15am</p><p><a href='#'>Get Directions</a></p>",
-        "tags": ''
+        "tags": '',
+        "imageUrl": '//s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/rock_hill/RKH_(2).jpg'
     }
 ] %}
 
@@ -113,33 +126,18 @@
         linkText: '',
         linkClasses: ''
     } %}{% include "partials/hero.html" %}
-    
-    <section id="slider" class="bg-gray-dark soft-bottom hard-sides rounded shadowed push-bottom xs-push-half-bottom">
 
-        <div class="text-center">
-            <h2 class="text-white xs-soft-sides">Find a Campus Near You</h2>
-            <p class="lead text-primary"><i>Swipe to discover more.</i></p>
-        </div>
-
-        <div class="slider-wrapper" data-slider>
-            <div class="slider">
-                {% for location in locations %}<div class="slider-item">
-                    {% set blockData = { 
-                        titleSize: 'h3',
-                        title: location.title, 
-                        copy: location.copy, 
-                        tags: '',
-                        imageUrl: '',
-                        linkUrl: '/location-entry.html',
-                        linkText: 'Learn More',
-                        shares: '',
-                        likes: ''
-                    } %}{% include "partials/card.html" %}
-                </div>{% endfor %}
+    <div class="row soft-sides">
+        {% for location in locations %}<div class="col-md-4 col-sm-12 col-xs-12">
+            <div class="position-relative bg-gray-darker rounded shadowed push-bottom">
+                <div class="full-screen background-cover rounded" style="background-image: url('{{ location.imageUrl }}'); opacity: .4;"></div>
+                <div class="bring-forward text-white soft-sides soft-double-top hard-bottom clearfix">
+                    <h4 class="push-half-bottom">{{ location.title }}, SC</h4>
+                    <p><a href="#" class="btn btn-sm btn-primary">Learn More</a></p>
+                </div>
             </div>
-        </div>
-
-    </section>
+        </div>{% endfor %}
+    </div>     
 
 {% set questions = [
     {
