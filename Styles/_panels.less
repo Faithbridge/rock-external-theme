@@ -20,13 +20,14 @@
 .panel-body {
 	padding:  @base-spacing-unit;
 	padding-bottom: 0;
+	box-shadow: 0 0px 100px rgba(0,0,0,.3);
+	z-index: 0;
+	position: relative;
 }
 
 .panel-image {
 	position: relative;
 	display: block;
-	-webkit-mask-image: -webkit-radial-gradient(white, black);
-	// border-bottom: 1px solid rgba(0,0,0,.1);
 	border-top-left-radius: @border-radius-base;
 	border-top-right-radius: @border-radius-base;
 	margin-left: -1px;
@@ -36,6 +37,14 @@
 	img {
 		display: block;
 		max-width: 100%;
+	}
+
+	.label {
+		margin-bottom: -18px;
+
+		@media (min-width: @screen-sm-min) {
+			margin-bottom: -15px;
+		}
 	}
 }
 

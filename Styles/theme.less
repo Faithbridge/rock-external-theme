@@ -9,6 +9,7 @@
 @import '_navigation';
 @import '_cards';
 @import '_slider';
+@import '_swiper';
 @import '_ratios';
 @import '_panels';
 @import '_grids';
@@ -173,7 +174,7 @@ mark, .mark {
 	padding: @base-spacing-unit*3 @base-spacing-unit;
 
 	@media (min-width: @screen-sm-min) {
-		padding: @base-spacing-unit*5 @base-spacing-unit;
+		padding: @base-spacing-unit*4 @base-spacing-unit;
 	}
 
 	&:after {
@@ -194,12 +195,13 @@ mark, .mark {
 }
 
 .modal {
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 	z-index: -1;
 
 	&.in {
+		display: flex;
 		z-index: @zindex-modal;
 	}
 }

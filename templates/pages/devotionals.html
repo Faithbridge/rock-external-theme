@@ -15,7 +15,7 @@
 	      "2": "peace",
 	      "3": "mercy"
 	    },
-	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/studies/WhatIsGodLike2x1.png"
+	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/studies/WhatIsGodLike2x1.png"
 	},
 	{
 		"id": "2",
@@ -27,7 +27,7 @@
 	      "2": "influence",
 	      "3": "humility"
 	    },
-	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/studies/howtobeabetterleader2x1_2000_1000_90_c1.jpg"
+	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/studies/howtobeabetterleader2x1.jpg"
 	},
 	{
 		"id": "3",
@@ -39,7 +39,7 @@
 	      "2": "church",
 	      "3": "holy spirit"
 	    },
-	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/2x1actsguide_1700_850_c1.png"
+	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/2x1actsguide.png"
 	},
 	{
 		"id": "4",
@@ -51,7 +51,7 @@
 	      "2": "mission",
 	      "3": "holy spirit"
 	    },
-	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/studies/2x1942.2thessalonians_1700_850_c1.png"
+	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/studies/2x1942.2thessalonians.png"
 	},
 	{
 		"id": "5",
@@ -62,7 +62,7 @@
 	      "1": "perseverance",
 	      "2": "mission"
 	    },
-	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/studies/enemyatyourtable2x1_1700_850_90_c1.jpg"
+	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/studies/enemyatyourtable2x1.jpg"
 	},
 	{
 		"id": "6",
@@ -73,62 +73,80 @@
 	      "1": "reading plan",
 	      "2": "devotional"
 	    },
-	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/collection/studies/TwoYrReadingPlan2x1_1700_850_90_c1.jpg"
+	    "imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/studies/TwoYrReadingPlan2x1.jpg"
 	}
 ] %}
 
 {% block content %}
 
 	{% set blockData = { 
-	    id: '0',
+	    id: '',
 	    linkColorHex: '',
 	    backgroundColorHex: '',
-	    grayscale: 'y',
+	    grayscale: '',
 	    label: "Today's Devotional",
 	    titleSize:'',
-	    title: 'God Is Peace',
-	    subtitle: 'What is God like?',
+	    title: "God Is Peace",
+	    subtitle: "What is God Like?",
 	    copy: "<p>In <a href='http://www.bible.com/bible/111/JDG.6.11-24.NIV'>Judges 6:11-24</a> Gideon’s hiding away, head down, working hard. Many of us could say the same about our day to day. How often do we toil away rarely lifting our eyes off our tasks to have an encounter with the Lord?</p>",
 	    trimCopy: 'y',
 	    imageUrl: '',
 	    imageOpacity: '',
 	    linkUrl: '/devotional-entry.html',
-	    linkText: 'Read Now'
+	    linkText: 'Read Now',
+	    buttonIcon: ''
 	} %}{% include "partials/ad-unit.html" %}
 
-	<section id="slider" class="hard flush-sides">
+	<section id="devotionals" class="bg-gray-darker hard-sides soft-bottom rounded shadowed">
+		<div class="text-center">
+			<h2 class="text-white push-half-bottom">Studies</h2>
+			<p class="lead text-primary italic"><span class="hidden-xs hidden-sm">Drag</span><span class="hidden-md">Swipe</span> to Discover More</p>
+		</div>
 
-        <div class="slider-wrapper" data-slider="340">
-            <div class="slider slider-borderless">
-                {% for study in studies %}<div class="slider-item">
-                    {% set blockData = { 
-					    id: study.id,
-					    backgroundColorHex: '',
-					    linkColorHex: '',
-					    grayscale: '',
-					    count: '',
-					    label: '',
-					    textAlignment: '',
-					    titleSize: 'h4',
-					    title: study.title, 
-					    subtitle: study.subtitle,
-					    copy: '',
-					    trimCopy: 'y',
-					    tags: study.tags,
-					    imageShape: '',
-					    imageUrl: study.imageUrl,
-					    imageOpacity: '',
-					    linkUrl: '/study.html',
-					    linkText: 'Begin Study',
-					    shares: 'y',
-					    likes: 'y'
-					} %}{% include "partials/card.html" %}
-                </div>{% endfor %}
-            </div>
-        </div>
+		<!-- Slider main container -->
+		<div class="swiper-container">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				{% for study in studies %}
+					<div class="swiper-slide">
+						{% set blockData = { 
+						    id: study.id,
+						    backgroundColorHex: '',
+						    linkColorHex: '',
+						    grayscale: '',
+						    count: '',
+						    type: 'Study',
+						    label: '',
+						    textAlignment: '',
+						    titleSize: 'h4',
+						    title: study.title, 
+						    subtitle: study.subtitle,
+						    copy: '',
+						    trimCopy: '',
+						    tags: '',
+						    imageShape: '',
+						    imageUrl: study.imageUrl,
+						    imageOpacity: '',
+						    linkUrl: '/study.html',
+						    linkText: 'Read Devotional'
+						} %}{% include "partials/card.html" %}
+					</div>
+				{% endfor %}
+			</div>
 
-    </section>
+			<!-- Add Arrows -->
+			<div class="hidden-sm hidden-xs">
+				<div class="swiper-next"><i class="fas fa-fw fa-2x fa-angle-right"></i></div>
+				<div class="swiper-prev"><i class="fas fa-fw fa-2x fa-angle-left"></i></div>
+			</div>
 
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+
+		</div>
+
+	</section>
 
 	
 	{#
@@ -163,6 +181,7 @@
 	                linkColorHex: '',
 	                grayscale: '',
 	                count: '',
+	                type: 'Study',
 	                label: '',
 	                textAlignment: '',
 	                titleSize: 'h4',

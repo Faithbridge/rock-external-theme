@@ -1,6 +1,6 @@
 {% set browserTitle = "Articles" %}
 {% set pageTitle = "Articles" %}
-{% set pageHeaderColorHex = "2a4930" %}
+{% set pageHeaderColorHex = "303030" %}
 
 {% set articles = [
     {
@@ -136,6 +136,7 @@
                 linkColorHex: '',
                 grayscale: '',
                 count: '',
+                type: 'Article',
                 label: '',
                 textAlignment: '',
                 titleSize: 'h4',
@@ -149,8 +150,9 @@
                 imageOpacity: '',
                 linkUrl: '/article-entry.html',
                 linkText: 'Read Article',
-                shares: 'y',
-                likes: 'y'
+                likes: 'y',
+                authorImageUrl: '//rock.newspring.cc/GetImage.ashx?guid=0e3f253b-4eba-49ee-b65b-721dc51e01a6&width=120',
+                metaData: 'Dan Lian'
             } %}{% include "partials/card.html" %}
         </div>{% endfor %}
     </div>
@@ -181,8 +183,9 @@
                     imageOpacity: article.imageOpacity,
                     linkUrl: '/article-entry.html',
                     linkText: 'Read Article',
-                    shares: 'y',
-                    likes: 'y'
+                    likes: 'y',
+                    authorImageUrl: '//rock.newspring.cc/GetImage.ashx?guid=0e3f253b-4eba-49ee-b65b-721dc51e01a6&width=120',
+                    metaData: 'Dan Lian'
                 } %}{% include "partials/card.html" %}
             </div>{% endfor %}
         </div>

@@ -15,8 +15,9 @@
 
 {% set tagCount = blockData.tags | length %}
 
-<section class="soft-top hard-bottom hard-sides xs-text-center">
+<section class="soft-half-top hard-bottom hard-sides push-half-bottom xs-text-center">
     <div class="container-fluid hard-sides {% if pageHeaderColorHex %}text-white{% endif %}">
+
     	{% if blockData.preTitle %}
     		<p class="sans-serif stronger letter-spacing-condensed push-half-bottom xs-push-bottom">{{ blockData.preTitle | safe }}</p>
     	{% endif %}

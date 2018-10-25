@@ -4,43 +4,71 @@ CARD SLIDERS
 
 */
 
-var baseSpacingUnit = 30;
-
 // Get all sliders on page
 var sliders = document.querySelectorAll('[data-slider]');
 
-// Loop through them and adjust container width
-sliders.forEach(function(element) {
-    var cardWidth = element.getAttribute('data-slider');
+function cardSliderInit(){
 
-    if(!cardWidth) {
-        cardWidth = "300";
-    }
+    // Get window width
+    var windowWidth = window.innerWidth;
 
-    // Set slider element
-    var slider = element.children[0];
+    // Set card margin
+    var cardMargin = Number(15);
 
-    // Calculate count of slider child elements
-    var sliderItemCount = slider.children.length;
+    // Loop through them and adjust container width
+    sliders.forEach(function(element) {
 
-    // Set child elements array
-    var sliderChildren = slider.children
-    
-    var index;
+        // Set slider element
+        var slider = element.children[0];
 
-    // Loop through child elements array and set widths
-    for (i = 0; i < sliderChildren.length; ++i) {
-        sliderChildren[i].style.width = cardWidth - baseSpacingUnit + "px";
-    }
+        // Set slider to 0 scroll
+        slider.parentNode.scrollLeft = 0;
 
-    // Calculate slider width
-    if($(slider).hasClass('slider-borderless')) {
-        var sliderWrapperWidth = sliderItemCount * cardWidth + baseSpacingUnit;
-    } else {
-        var sliderWrapperWidth = sliderItemCount * cardWidth + baseSpacingUnit;
-    }
+        // Get slider width
+        var sliderWrapperWidth = slider.parentNode.offsetWidth;
 
-    // Adjust slider width
-    slider.style.width = sliderWrapperWidth + "px";
+        // Calculate count of slider child elements
+        var sliderItemCount = slider.children.length;
 
+        // Get card width from data attribute
+        var cardWidth = element.getAttribute('data-slider');
+
+        // If no card width is specified in data-slider attribute, use the defaults
+        if(windowWidth <= 667) {
+            cardWidth = sliderWrapperWidth - cardMargin * 4;
+        } else {
+            if(!cardWidth) {
+                cardWidth = Number(300);
+            }
+        }
+
+        // Set child elements array
+        var sliderChildren = slider.children
+        
+        // Set loop index
+        var index;
+
+        // Loop through child elements array
+        for (i = 0; i < sliderChildren.length; ++i) {
+
+            // Set card width
+            sliderChildren[i].style.width = cardWidth + "px";
+        }
+
+        // Calculate slider wrapper width
+        var sliderWidth = Number(sliderItemCount) * (Number(cardWidth) + Number(cardMargin));
+
+        // Set slider width
+        slider.style.width = sliderWidth + "px";
+
+    });
+
+};
+
+// Bind to window resize to recalculate for breakpoints
+window.addEventListener("resize", function(){
+    cardSliderInit();
 });
+
+// Initial card slider init
+cardSliderInit();

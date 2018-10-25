@@ -6,6 +6,7 @@
     linkColorHex: '',
     grayscale: '',
     count: '',
+    type: '',
     label: '',
     textAlignment: '',
     titleSize: '',
@@ -21,8 +22,6 @@
     imageOpacity: '',
     linkUrl: '',
     linkText: '',
-    shares: '',
-    likes: ''
 } %}{% include "partials/card.html" %}
 
 #}
@@ -66,18 +65,22 @@
             {% endif %}
 
             {% if blockData.imageShape %}
-                <div class="{% if blockData.imageShape != 'circle' %}ratio-{{ blockData.imageShape }}{% else %}ratio-square circular push-double-sides push-double-top{% endif %} background-cover background-center" style="background-image:url('{{ blockData.imageUrl }}');"></div>
+                <div class="position-relative {% if blockData.imageShape != 'circle' %}ratio-{{ blockData.imageShape }}{% else %}ratio-square circular push-double-sides push-double-top{% endif %} background-cover background-center" style="background-image:url('{{ blockData.imageUrl }}');"></div>
             {% else %}
                 <img src="{{ blockData.imageUrl }}" alt="" class="{% if blockData.grayscale %}grayscale{% endif %}" style="{% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}">
             {% endif %}
 
+            {% if blockData.type %}
+                <div class="label bg-gray-light text-white position-absolute bottom-zero left-zero push-left bring-forward sans-serif stronger circular" style="border: 3px solid #fff;"><small>{{ blockData.type }}</small></div>
+            {% endif %}
+    
         {% if blockData.linkUrl %}</a>{% endif %}
     {% endif %}
 
     <div class="panel-body xs-soft xs-hard-bottom">
 
         {% if blockData.label %}
-            <p><small class="label bg-gray-light sans-serif">{{ blockData.label }}</small></p>
+            <p><small class="label bg-gray-light sans-serif circular">{{ blockData.label }}</small></p>
         {% endif %}
         
         {% if blockData.title %}
@@ -103,7 +106,7 @@
         
         {% if blockData.trimCopy %}
             {% set length = blockData.copy | length %}
-            {{ blockData.copy | safe | truncate(140) }}{% if length > 140 %} <a href="#" data-toggle="modal" data-target="#modal-{{ blockData.id }}">Read More</a>{% endif %}
+            {{ blockData.copy | safe | truncate(140) }}{% if length > 140 %} <a href="#" data-toggle="modal" data-target="#modal-{{ blockData.id }}">read more</a>{% endif %}
         {% else %}
             {{ blockData.copy | safe }}
         {% endif %}
@@ -121,19 +124,6 @@
         {% endif %}
 
     </div>
-
-    {% if blockData.shares or blockData.likes %}
-    <div class="panel-footer">
-        <div class="panel-actions">
-            {% set blockData = { 
-                orientation: '',
-                copy: '',
-                linkUrl: ''
-            } %}{% include "partials/share-buttons.html" %}
-        </div>
-    </div>
-    {% endif %}
-
 </div>
 
 {% if blockData.trimCopy %}

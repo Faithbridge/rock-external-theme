@@ -90,30 +90,55 @@
 	    linkText: 'Watch Sermons'
 	} %}{% include "partials/side-by-side.html" %}
 
-    <section id="sermons" class="hard flush-bottom">
-    	<div class="row">
-	    	{% for sermon in sermons %}<div class="col-md-12">{% set blockData = { 
-			    id: '',
-			    backgroundColorHex: '',
-			    linkColorHex: '',
-			    grayscale: '',
-			    count: '',
-			    label: 'Week ' + sermon.id,
-			    titleSize: 'h4',
-			    title: sermon.title, 
-			    subtitle: sermon.subtitle,
-			    copy: sermon.copy,
-			    trimCopy: 'y',
-			    tags: sermon.tags,
-			    imageUrl: '',
-			    imageOpacity: '',
-			    linkUrl: '/sermon-entry.html',
-			    linkText: 'Watch Sermon',
-			    shares:'y',
-			    likes:'y'
-			} %}{% include "partials/card.html" %}</div>{% endfor %}
+	<section id="sermons" class="bg-gray-darker hard-sides soft-bottom rounded shadowed">
+		<div class="text-center">
+			<h2 class="text-white push-half-bottom">From This Series</h2>
+			<p class="lead text-primary italic"><span class="hidden-xs hidden-sm">Drag</span><span class="hidden-md">Swipe</span> to Discover More</p>
 		</div>
-    </section>
+
+		<!-- Slider main container -->
+		<div class="swiper-container">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				{% for sermon in sermons %}
+					<div class="swiper-slide">
+						{% set blockData = { 
+						    id: sermon.id,
+						    backgroundColorHex: '',
+						    linkColorHex: '',
+						    grayscale: '',
+						    count: '',
+						    label: 'Week ' + sermon.id,
+						    textAlignment: '',
+						    titleSize: 'h4',
+						    title: sermon.title, 
+						    subtitle: "",
+						    copy: sermon.copy,
+						    trimCopy: 'y',
+						    tags: sermon.tags,
+						    imageShape: '',
+						    imageUrl: '',
+						    imageOpacity: '',
+						    linkUrl: '/sermon-entry.html',
+						    linkText: 'Watch Sermon'
+						} %}{% include "partials/card.html" %}
+					</div>
+				{% endfor %}
+			</div>
+
+			<!-- Add Arrows -->
+			<div class="hidden-sm hidden-xs">
+				<div class="swiper-next"><i class="fas fa-fw fa-2x fa-angle-right"></i></div>
+				<div class="swiper-prev"><i class="fas fa-fw fa-2x fa-angle-left"></i></div>
+			</div>
+
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+
+		</div>
+
+	</section>
 
     {% set blockData = { 
 	    id: '5',
