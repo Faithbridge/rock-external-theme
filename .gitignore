@@ -3,4 +3,5 @@ dest/
 node_modules/**
 /*.html
 templates/compiled/
+Assets/Scripts/compiled/
 /**/*.css

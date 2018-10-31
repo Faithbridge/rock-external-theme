@@ -25,15 +25,11 @@ gulp.task('scripts', function() {
     .pipe(plumber())
     // Import Plugin Files
     .pipe(jsImport({hideConsole: true}))
-    // Combine
-    .pipe(concat('scripts.js'))
     // Minify
     .pipe(uglify())
-    // Rename
-    .pipe(rename('scripts.min.js'))
     // Export
     .pipe(gulp.dest(scriptsDest))
-    .pipe(gulp.dest('./templates/compiled/'))
+    .pipe(gulp.dest('./templates/compiled/scripts'))
     // Reload Browser
     .pipe(browserSync.reload({
       stream: true

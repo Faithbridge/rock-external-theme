@@ -67,7 +67,7 @@
 		"title": "Slaying Giants",
 		"subtitle": "10/1/17 – 10/29/17",
 		"copy": "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
-		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/1x1slayinggiants.png",
+		"imageUrl": "//dg0ddngxdz549.cloudfront.net/newspring/collection/series_fuse/2x1slayinggiants.png",
 		"linkUrl": "/series.html"
 	},
 	{
@@ -116,102 +116,6 @@
 <div class="soft xs-soft-half hard-bottom clearfix">
 	{% include "partials/pagination.html" %}
 </div>
-
-{#
-
-<section class="hard">
-    <div class="slider-wrapper" data-slider="300">
-        <div class="slider slider-borderless">
-			{% for series in seriesItems %}<div class="slider-item">
-				{% set blockData = { 
-				    id: series.id,
-				    backgroundColorHex: 'fafafa',
-				    grayscale: '',
-				    imageUrl: series.imageUrl,
-				    imageOpacity: '',
-				    linkText: 'Watch Series',
-				    linkUrl: series.linkUrl,
-				    shares: 'y',
-				    likes: 'y'
-				} %}{% include "partials/image.html" %}
-			</div>{% endfor %}
-		</div>
-
-    </div>
-</section>
-
-{% set blockData = { 
-    id: '2',
-    linkColorHex: '',
-    backgroundColorHex: '',
-    grayscale: '',
-    label: 'Featured Sermon',
-    titleSize:'h1',
-    title: "God’s Perfect Plan for Marriage",
-    subtitle: "<a href='/series.html'>Tighten The Knot</a> • Feb 25, 2018 • Jimmy Evans",
-    copy: "<p>Marriage is failing in America because we’ve stopped following God’s plan. When we do marriage God’s way, our chance of success goes from 50-50 to 100.</p><p>Except for Jesus, marriage is the greatest gift God ever gave to us. Discover how God designed marriage to meet our deepest needs and help us overcome sin.</p>",
-    trimCopy: 'y',
-    tags: {
-      '1': 'wives',
-      '2': 'husbands',
-      '3': 'marriages'
-    },
-    imageUrl: 'https://embed-ssl.wistia.com/deliveries/a26e7962527a2dfa9afc3df85ea49387f9099e03.jpg',
-    imageAlignment: 'left',
-    linkUrl: '/sermon-entry.html',
-    linkText: 'Watch Sermon'
-} %}{% include "partials/side-by-side.html" %}
-
-#}
-
-
-
-{#
-
-{% set blockData = { 
-    id: '3',
-    linkColorHex: '',
-    backgroundColorHex: '',
-    grayscale: '',
-    label: 'Featured Series',
-    titleSize:'h1',
-    title: "Tighten The Knot",
-    copy: "<p>We all want more out of life.</p><p>But too often, obstacles stand between us and the full life God promises. They loom over us like giants blocking our path.</p><p>Greed, fear, anxiety, bitterness, and comparison — these “giants” are real and they are ready to fight. We can either turn and run, or we can start slaying giants.</p>",
-    trimCopy: 'y',
-    tags: '',
-    videoId:'f06xc3jebq',
-    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/all/heroes/newspring/1x1TightenKnot_1700_1700_90_c1.jpg',
-    imageAlignment: 'right',
-    linkUrl: '/series.html',
-    linkText: 'View Sermons'
-} %}{% include "partials/side-by-side.html" %}
-
-    <section class="bg-white rounded shadowed hard-sides">
-    	
-		<div class="soft-sides xs-soft-top">
-			<h2 class="push-half-bottom text-center">Latest Sermon Series</h2>
-		</div>
-
-        <div class="slider-wrapper" data-slider="230">
-        	<div class="slider">
-        		{% for series in seriesItems %}<div class="slider-item">{% set blockData = { 
-				    id: '',
-				    backgroundColorHex: '',
-				    grayscale: '',
-				    imageUrl: series.imageUrl,
-				    imageOpacity: '',
-				    linkUrl: series.linkUrl
-				} %}{% include "partials/image.html" %}</div>{% endfor %}
-		    </div>
-		</div>
-		
-		<div class="soft-sides text-center">
-			<p class="xs-push-half-bottom"><a href="/sermons-browse-all.html" class="btn btn-primary">Browse All Series</a></p>
-		</div>
-
-    </section>
-
-#}
 
 {% set blockData = { 
     title: "Subscribe", 
