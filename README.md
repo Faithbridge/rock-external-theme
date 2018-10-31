@@ -1,5 +1,5 @@
 # rock-front-end
-This repo contains the prototype front-end framework + examples for the new NewSpring external [Rock](https://www.rockrms.com) theme.
+This repo contains the prototype front-end framework + examples for the new [NewSpring](https://github.com/NewSpring) external [Rock](https://www.rockrms.com) theme.
 
 ## Getting Started
 
