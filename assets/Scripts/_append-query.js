@@ -34,8 +34,3 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 });
-
-// '<a href="https://gauntlet.cc" data-append-query="campaign=gauntlet2019">some link</a>'
-// '<form><input type="text" data-append-query="/locations.html?location="><button type="submit">Submit</button></form>'
-// data-append-query='?campaign=gauntlet2019'
-// data-append-query='/locations.html?location='
