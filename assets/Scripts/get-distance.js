@@ -32,21 +32,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function reorderLocations(origin) {
 
+        // Define geocoder
+        var geocoder = new google.maps.Geocoder();
+        var originLatitude;
+        var originLongitude;
+
         // Find and remove all previous distance indicators
         var distanceIndicators = document.querySelectorAll(".display-miles");
 
+        // If distance indicators are present in cards, remove them
         if (distanceIndicators.length > 0) {
             for (var i = 0; i < distanceIndicators.length; i++) {
                 distanceIndicators[i].parentNode.removeChild(distanceIndicators[i]);
             }
         }
 
-        // Define geocoder
-        var geocoder = new google.maps.Geocoder();
-        var originLatitude;
-        var originLongitude;
-
-        // Get lat/lon of query
+        // Get lat/lon of origin
         geocoder.geocode( { 'address': origin}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 originLatitude = results[0].geometry.location.lat();
@@ -58,8 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Setup Card
                 var locationCard = locations[i];
-
-                locationCard.classList.remove('swiper-slide-active','swiper-slide-next');
 
                 // Get lat/lon values from data attribute
                 var latlon = locationCard.dataset.latlon;
