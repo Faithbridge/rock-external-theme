@@ -86,12 +86,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
             }
 
-
-            var list = distanceSearchLocations;
-
-            var items = list.childNodes;
+            var items = distanceSearchLocations.childNodes;
 
             var itemsArr = [];
+
             for (var i in items) {
                 if (items[i].nodeType == 1) { // get rid of the whitespace text nodes
                     itemsArr.push(items[i]);
@@ -105,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             for (i = 0; i < itemsArr.length; ++i) {
-                list.appendChild(itemsArr[i]);
+                distanceSearchLocations.appendChild(itemsArr[i]);
             }
 
             swiper.update();
@@ -118,6 +116,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // If origin exists as query string, go ahead and reorder locations
     if (origin != null) {
+
+        // Reorder location cards
         reorderLocations(origin);
     }
 
@@ -134,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Get origin location data from form input field
         var origin = distanceSearchForm.querySelector('input').value;
 
+        // Reorder location cards
         reorderLocations(origin);
 
     });
