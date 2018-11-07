@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var origin = getQueryString('location');
 
     // If origin exists as query string, go ahead and reorder locations
-    if (origin != null) {
+    if (origin) {
 
         // Reorder location cards
         reorderLocations(origin);
