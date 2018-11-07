@@ -30,7 +30,7 @@
 		topOnEmptyHash: false,
 
 		// Speed & Easing
-		speed: 500,
+		speed: 250,
 		clip: true,
 		offset: 0,
 		easing: 'easeInOutCubic',
