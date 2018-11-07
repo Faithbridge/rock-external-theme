@@ -19,7 +19,7 @@
     } %}{% include "partials/hero.html" %}
     
     <section class="soft hard-bottom clearfix bg-white rounded shadowed">
-        <p><a href='http://gauntlet.cc' data-append-query="campaign=gauntlet 2019">Go to Gauntlet 2019!</a></p>
+        <p><a href='#sermons'>Go to Gauntlet 2019!</a></p>
     </section>
 
     {% set blockData = { 
@@ -34,7 +34,8 @@
         linkUrl: 'http://gauntlet.cc',
         linkText: ''
     } %}{% include "partials/side-by-side.html" %}
-
+    
+    <div id="sermons">
     {% set blockData = { 
         id: '3',
         title: "Israel Trip 2018",
@@ -47,5 +48,6 @@
         linkUrl: '/israel.html',
         linkText: ''
     } %}{% include "partials/side-by-side.html" %}
+    </div>
     
 {% endblock %}

@@ -32,7 +32,7 @@
 		// Speed & Easing
 		speed: 500,
 		clip: true,
-		offset: 99,
+		offset: 0,
 		easing: 'easeInOutCubic',
 		customEasing: null,
 
@@ -43,6 +43,12 @@
 		// Custom Events
 		emitEvents: true
 	};
+	
+	if (window.innerWidth > 668) {
+		defaults.offset = 99;
+	} else {
+		defaults.offset = 15;
+	}
 
 
 	//

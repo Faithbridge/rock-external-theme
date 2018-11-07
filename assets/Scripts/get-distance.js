@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Create distance indicator element and add it
                 var newElement = document.createElement('p');
-                newElement.classList.add('display-miles','text-info','sans-serif','stronger','push-half-bottom');
+                newElement.classList.add('display-miles', 'display-inline-block', 'label', 'label-info', 'push-half-bottom', 'sans-serif', 'circular');
                 newElement.innerHTML = locationDistance + ' miles away';
                 insertAfter(newElement, locationCardHeading);
 
@@ -108,6 +108,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
             swiper.update();
             swiper.slideTo(0, 50, false);
+
+            // Scroll to locations card slider after sorting
+            var anchor = document.querySelector('#locations');
+
+            // Scroll constructor located in _smooth-scroll.js, compiled into main.js
+            scroll.animateScroll(anchor);
         });
     }
 

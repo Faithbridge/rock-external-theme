@@ -103,7 +103,7 @@
                 {% endfor %}</small>
             </p>
         {% endif %}
-        
+
         {% if blockData.trimCopy %}
             {% set length = blockData.copy | length %}
             {{ blockData.copy | safe | truncate(140) }}{% if length > 140 %} <a href="#" data-toggle="modal" data-target="#modal-{{ blockData.id }}">read more</a>{% endif %}
