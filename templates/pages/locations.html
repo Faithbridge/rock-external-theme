@@ -143,7 +143,7 @@
     
     {% set blockData = { 
         title: 'Find a Location',
-        copy: "<p>NewSpring is one church with 14 campuses across South Carolina. Find the location closest to you and plan a visit.</p><form class='form-inline' data-locations-search><div class='form-group'><input type='text' class='form-control form-control-static sans-serif strong push-half-bottom text-center no-border' placeholder='Enter Your Address'> <button type='submit' class='form-control form-control-static btn btn-primary push-half-bottom'>Find a Location</button></div></form>",
+        copy: "<p>NewSpring is one church with 14 campuses across South Carolina. Find the location closest to you and plan a visit.</p><form class='form-inline' data-locations-search><div class='form-group'><input type='text' class='form-control form-control-static sans-serif strong push-half-bottom text-center no-border' placeholder='Enter Your Location'> <button type='submit' class='form-control form-control-static btn btn-primary push-half-bottom'>Find a Location</button></div></form>",
         grayscale: '',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/fpo.Parking_1700_850_90_c1.jpg',
         backgroundVideoUrl: '//s3.amazonaws.com/ns.video/newspring/promotions/locations/locations.bgvideo',
@@ -153,16 +153,15 @@
         linkClasses: ''
     } %}{% include "partials/hero.html" %}
 
-    <section class="bg-gray-darker hard-sides soft-double-bottom rounded shadowed">
+    <section id="locations" class="bg-gray-darker hard-sides soft-double-top soft-bottom rounded shadowed">
         <div class="text-center">
-            <h2 class="text-white push-half-bottom">Locations</h2>
-            <p class="lead text-primary italic"><span class="hidden-xs hidden-sm">Drag</span><span class="hidden-md">Swipe</span> to Discover More</p>
+            <h2 class="text-white">Locations</h2>
         </div>
 
         <!-- Slider main container -->
         <div class="swiper-container">
             <!-- Additional required wrapper -->
-            <div id="locations" class="swiper-wrapper" data-locations>
+            <div class="swiper-wrapper" data-locations>
                 <!-- Slides -->
                 {% for location in locations|sort(false, false, 'title') %}
                     <div class="swiper-slide" data-latlon="{{ location.latitude }},{{ location.longitude }}">
