@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    console.log(swiper);
+    // Get query string value by key
+    var getQueryString = function ( field, url ) {
+        var href = url ? url : window.location.href;
+        var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+        var string = reg.exec(href);
+        return string ? string[1] : null;
+    };
 
     // Used for inserting distance indicators on location cards
     function insertAfter(el, referenceNode) {
@@ -24,34 +30,24 @@ document.addEventListener("DOMContentLoaded", function() {
         return dist
     }
 
-    // Get distance finder instances
-    var distanceSearchForm = document.querySelector("[data-locations-search]");
-    var distanceSearchLocations = document.querySelector("[data-locations]");
-    var locations = distanceSearchLocations.children;
-    var locationsCount = locations.length;
-
-    // Find a location query search
-    distanceSearchForm.addEventListener("submit", function(e){
-        e.preventDefault();
-
-        // Find and remove all previous distance indicators
-        var distanceIndicators = document.querySelectorAll(".display-miles");
-
-        if (distanceIndicators.length > 0) {
-            for (var i = 0; i < distanceIndicators.length; i++) {
-                distanceIndicators[i].parentNode.removeChild(distanceIndicators[i]);
-            }
-        }
+    function reorderLocations(origin) {
 
         // Define geocoder
         var geocoder = new google.maps.Geocoder();
         var originLatitude;
         var originLongitude;
 
-        // Get origin location data from form input field
-        var origin = distanceSearchForm.querySelector('input').value;
+        // Find and remove all previous distance indicators
+        var distanceIndicators = document.querySelectorAll(".display-miles");
 
-        // Get lat/lon of query
+        // If distance indicators are present in cards, remove them
+        if (distanceIndicators.length > 0) {
+            for (var i = 0; i < distanceIndicators.length; i++) {
+                distanceIndicators[i].parentNode.removeChild(distanceIndicators[i]);
+            }
+        }
+
+        // Get lat/lon of origin
         geocoder.geocode( { 'address': origin}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 originLatitude = results[0].geometry.location.lat();
@@ -63,8 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Setup Card
                 var locationCard = locations[i];
-
-                locationCard.classList.remove('swiper-slide-active','swiper-slide-next');
 
                 // Get lat/lon values from data attribute
                 var latlon = locationCard.dataset.latlon;
@@ -86,18 +80,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Create distance indicator element and add it
                 var newElement = document.createElement('p');
-                newElement.classList.add('display-miles','text-info','sans-serif','stronger','push-half-bottom');
+                newElement.classList.add('display-miles', 'display-inline-block', 'label', 'label-info', 'push-half-bottom', 'sans-serif', 'circular');
                 newElement.innerHTML = locationDistance + ' miles away';
                 insertAfter(newElement, locationCardHeading);
 
             }
 
-
-            var list = distanceSearchLocations;
-
-            var items = list.childNodes;
+            var items = distanceSearchLocations.childNodes;
 
             var itemsArr = [];
+
             for (var i in items) {
                 if (items[i].nodeType == 1) { // get rid of the whitespace text nodes
                     itemsArr.push(items[i]);
@@ -111,12 +103,45 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             for (i = 0; i < itemsArr.length; ++i) {
-                list.appendChild(itemsArr[i]);
+                distanceSearchLocations.appendChild(itemsArr[i]);
             }
 
             swiper.update();
             swiper.slideTo(0, 50, false);
+
+            // Scroll to locations card slider after sorting
+            var anchor = document.querySelector('#locations');
+
+            // Scroll constructor located in _smooth-scroll.js, compiled into main.js
+            scroll.animateScroll(anchor);
         });
-    
+    }
+
+    // Get location query string value
+    var origin = getQueryString('location');
+
+    // If origin exists as query string, go ahead and reorder locations
+    if (origin) {
+
+        // Reorder location cards
+        reorderLocations(origin);
+    }
+
+    // Get distance finder instances
+    var distanceSearchForm = document.querySelector("[data-locations-search]");
+    var distanceSearchLocations = document.querySelector("[data-locations]");
+    var locations = distanceSearchLocations.children;
+    var locationsCount = locations.length;
+
+    // Find a location query search
+    distanceSearchForm.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        // Get origin location data from form input field
+        var origin = distanceSearchForm.querySelector('input').value;
+
+        // Reorder location cards
+        reorderLocations(origin);
+
     });
 });
