@@ -89,35 +89,21 @@
 
 			</div><div class="col-md-4 col-sm-5 col-xs-12">
 
-				{% set blockData = { 
-				    id: '',
-				    backgroundColorHex: '',
-				    linkColorHex: '',
-				    grayscale: '',
-				    count: '',
-				    label: 'WEEK ' + sermon.id,
-				    textAlignment: '',
-				    titleSize: 'h3',
-				    title: sermon.title, 
-				    subtitle: sermon.subtitle,
-				    copy: sermon.copy,
-				    trimCopy: '',
-				    tags: sermon.tags,
-				    imageShape: '',
-				    imageUrl: '',
-				    imageOpacity: '',
-				    linkUrl: '',
-				    linkText: '',
-				    shares: 'y',
-				    likes: 'y'
-				} %}{% include "partials/card.html" %}
-
-				<div class="soft hard-bottom clearfix bg-white rounded shadowed push-bottom xs-push-half-bottom xs-text-center hidden">
-
-					<p class="sans-serif stronger text-decoration-none push-half-bottom"><a href="/series.html">Slaying Giants</a></p>
+				<div class="soft bg-white rounded shadowed push-bottom xs-push-half-bottom xs-text-center">
+					<p class="display-inline-block label label-default sans-serif text-uppercase circular push-half-bottom"><small>WEEK {{ sermon.id }}</small></p>
+					
 					<h1 class="h3 push-half-bottom">{{ sermon.title }}</h1>
 
-					<p class="sans-serif stronger text-uppercase letter-spacing-condensed text-gray-light push-half-bottom"><small>WEEK {{ sermon.id }} &middot; {{ sermon.subtitle }}</small></p>
+					<p class="sans-serif stronger text-uppercase letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ sermon.subtitle }}</small></p>
+
+					{% set tagCount = sermon.tags | length %}
+			        {% if tagCount != 0 %}
+			            <p class="tag-list sans-serif push-half-bottom">
+			                <small>{% for id, title in sermon.tags %}
+			                    <a href="#" class="stronger text-decoration-none letter-spacing-condensed no-breaks"><i class="fas fa-sm fa-tag"></i> {{ title }}</a>
+			                {% endfor %}</small>
+			            </p>
+			        {% endif %}
 
 					{{ sermon.copy | safe }}
 
@@ -129,8 +115,6 @@
 					} %}{% include "partials/share-buttons.html" %}
 
 				</div>
-
-
 
 			</div>
 		</div>
@@ -182,7 +166,7 @@
 						    titleSize: 'h4',
 						    title: sermon.title, 
 						    subtitle: "",
-						    copy: '',
+						    copy: '<p class="sans-serif stronger letter-spacing-condensed"><small>From <a href="/series.html">Slaying Giants</a></small></p>',
 						    trimCopy: '',
 						    tags: '',
 						    imageShape: '',
