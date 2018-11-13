@@ -43,11 +43,31 @@
 		// Custom Events
 		emitEvents: true
 	};
+
+	var navigation = document.querySelector('#navigation');
+	if(navigation != null) {
+		 var navigationHeight = navigation.offsetHeight;
+	}
+
+	var navigationSecondary = document.querySelector('#navigation-secondary');
+	if(navigationSecondary != null) {
+		var navigationSecondaryHeight = navigationSecondary.offsetHeight;
+	}
 	
-	if (window.innerWidth > 668) {
-		defaults.offset = 99;
+	if (window.innerWidth > 667) {
+		// Desktop
+		if(navigationSecondary != null) {
+			defaults.offset = navigationHeight + navigationSecondaryHeight + 30 + "px";
+		} else {
+			defaults.offset = navigationHeight + 30 + "px";
+		}
 	} else {
-		defaults.offset = 15;
+		// Mobile
+		if(navigationSecondary != null) {
+			defaults.offset = navigationSecondaryHeight + 15 + "px";
+		} else {
+			defaults.offset = 15;
+		}
 	}
 
 
@@ -641,4 +661,4 @@
 
 }));
 
-var scroll = new SmoothScroll('a[href*="#"]');
+var scroll = new SmoothScroll('a[href*="#"][data-scroll]');

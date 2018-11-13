@@ -143,7 +143,7 @@
 			font-size: ceil((@font-size-base));
 		}
 		.panel {
-			font-size: ceil((@font-size-base));
+			font-size: ceil((@font-size-base * .9));
 		}
 		.label {
 			font-size: ceil((@font-size-base * .75));
@@ -166,7 +166,7 @@
 	h6, .h6 { font-size: @font-size-base; }
 
 	small {
-		font-size: 100%;
+		font-size: 90%;
 	}
 
 	blockquote {
@@ -180,6 +180,15 @@
 	.panel-body {
 		padding:  @base-spacing-unit*1.5;
 		padding-bottom: @base-spacing-unit/3*2;
+	}
+
+	// Buttons
+	.btn-xs {
+		padding: 2px 5px 1px;
+	}
+
+	.btn-sm {
+		padding: 6px 10px 4px;
 	}
 
 	// Grid
@@ -213,6 +222,11 @@
 
 	.xs-absolute { position: absolute; }
 	.xs-relative { position: relative; }
+
+	.xs-display-none { display: none; }
+	.xs-display-block { display: block; }
+	.xs-display-inline { display: inline; }
+	.xs-display-inline-block { display: inline-block; }
 
 	.xs-position-left-boundry { top: 50%; bottom: auto; left: 0; right: auto; }
 	.xs-position-right-boundry { top: 50%; bottom: auto; left: auto; right: 0; }

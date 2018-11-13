@@ -9,33 +9,46 @@
 
 #}
 
-<!-- Desktop Section Nav -->
-<section class="nav-wrapper bg-white soft-half flush rounded shadowed hidden-xs hidden-sm">
-    <ul class="nav xs-nav-stacked nav-pills">
-        
-        {% for title, url in navPages.pages %}
-            <li role="presentation" class="{% if loop.index == 1 %}active{% endif %}"><a href="{{ url }}">{{ title }}</a></li>
-        {% endfor %}
+<!-- Mobile Secondary Nav -->
+<section class="bg-gray-darker hard flush shadowed">
+    <div class="soft-half text-right">
 
-    </ul>
+        <h2 class="h4 text-white flush pull-left" style="position: relative; top: 5px;">{% if pageTitle %}{{ pageTitle }}{% else %}{{ browserTitle }}{% endif %}</h2>
+
+        <a id="heading-25" role="button" data-toggle="collapse" data-parent="#accordion-15" href="#25" aria-expanded="true" aria-controls="25" class="btn btn-sm btn-primary hidden-md hidden-lg">
+            More <i class="fas fa-caret-down"></i>
+        </a>
+
+        <ul class="list-inline flush hidden-xs hidden-sm">
+            {% for title, url in navPages.pages %}
+                <li><a href="{{ url }}" class="btn btn-sm btn-link text-primary text-hover-white" data-scroll>{{ title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="25" class="bg-white panel-collapse collapse" role="tabpanel" aria-labelledby="heading-25">
+        <div class="panel-body soft hard-bottom clearfix">
+            <ul class="list-style-none hard">
+            {% for title, url in navPages.pages %}
+                <li><a href="{{ url }}" class="text-decoration-none" data-scroll><h3 class="h5 push-half-bottom">{{ title }}</h3></a></li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
 </section>
 
-<!-- Mobile Section Nav -->
-<section class="nav-wrapper bg-white rounded shadowed soft-half push-double-top xs-push-top flush-bottom flush-sides hidden-md hidden-lg">
-    <div class="btn-group width-full">
-
-        {% for title, url in navPages.pages %}{% if loop.index == 1 %}
-            <button type="button" class="btn btn-primary dropdown-toggle width-full" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ title }} <span class="caret"></span>
-            </button>
-        {% endif %}{% endfor %}
-
-        <ul class="dropdown-menu width-full">
-
-            {% for title, url in navPages.pages %}
-                <li role="presentation"><a href="{{ url }}">{{ title }}</a></li>
-            {% endfor %}
-
-        </ul>
+<section class="soft-half flush text-center hard hidden">
+    <div class="panel-group flush" id="accordion-15" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-primary">
+            <a id="heading-25" role="button" data-toggle="collapse" data-parent="#accordion-15" href="#25" aria-expanded="true" aria-controls="25" class="panel-heading display-block sans-serif strong text-decoration-none text-white">
+                KidSpring Home &nbsp;<i class="fas fa-caret-down"></i>
+            </a>
+            <div id="25" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-25">
+                <div class="panel-body soft-half">
+                    {% for title, url in navPages.pages %}
+                        <a href="{{ url }}" class="btn btn-block btn-sm btn-default">{{ title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
 </section>

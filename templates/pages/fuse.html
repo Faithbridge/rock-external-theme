@@ -1,12 +1,15 @@
-{% set browserTitle = "Fuse" %}
+{% set browserTitle = "Fuse Student Ministry" %}
 {% set pageTitle = "Fuse" %}
-{% set pageHeaderColorHex = "5A11CF" %}
+{% set pageHeaderColorHex = "553786" %}
 {% set navPages = {
     pages: {
       'About Fuse': '/fuse.html',
-      'Locations': '/locations.html',
+      'Fuse 2 Israel': '#israel',
       'Fuse Groups': '/fuse-groups.html',
-      'Watch & Read': '/watch-and-read.html'
+      'Devotionals': '/fuse-devotionals.html',
+      'Sermons': '/fuse-sermons.html',
+      'Serve at Fuse': 'fuse-serving.html',
+      'Locations': '/fuse-locations.html'
     }
 } %}
 
@@ -16,13 +19,15 @@
 {% block content %}
 
     {% set blockData = { 
+        id: '1',
         title: '',
         copy: "<p>Fuse is the student ministry at <a href='/'>NewSpring</a>. Fuse exists to show students how to love God and live the life He has for them.</p>",
-        grayscale: '',
+        grayscale: 'y',
+        backgroundColorHex: '553786',
         imageOverlayUrl: '//dg0ddngxdz549.cloudfront.net/fuse/icons/fuse.logo.white.png',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/fuse/about/fuse_groups_stock_web-26.jpg',
         backgroundVideoUrl: '//ns.video.s3.amazonaws.com/fuse/promotions/Fuse_Generic_hero_video_v3_copy',
-        imageOpacity: '1',
+        imageOpacity: '.2',
         linkUrl: '',
         linkText: '',
         linkClasses: '',
@@ -36,17 +41,19 @@
         </div>
     </section>
 
+    <div id="israel">
     {% set blockData = { 
         id: '1',
-        title: "See You at Gauntlet",
+        title: "Go To Israel",
         titleSize: 'h2',
-        copy: "<p>Here's how you can get involved!</p><p><b>Go.</b> If you're in middle or high school, sign up today and invite your friends.</p><p><b>Give.</b> Help students go to Gauntlet by giving to the Gauntlet Fund.</p><p><b>Serve.</b> Invest in the next generation and experience the miracles first hand.</p>",
+        copy: "<p>Join your Fuse and Rally family in Israel for a week of sightseeing, study, worship, and food. Lots of great Mediterranean food. <p>Space is limited, so apply for your spot today.</p></p>",
         tags: '',
-        imageUrl: '//dg0ddngxdz549.cloudfront.net/images/remote/http_images.newspring.cc/section/worship/app1024x10240000.gauntlet18.png',
+        imageUrl: '//dg0ddngxdz549.cloudfront.net/newspring/Israel/jerusalem.2x1.jpg',
         imageAlignment: 'left',
-        linkUrl: 'http://gauntlet.cc',
+        linkUrl: 'https://newspring.cc/israel-student',
         linkText: ''
     } %}{% include "partials/side-by-side.html" %}
+    </div>
 
     {% set blockData = { 
         id: '2',
@@ -93,7 +100,7 @@
                     parentIndex:"1",
                     index: "4",
                     title: "What can my child expect to do at Fuse?", 
-                    copy: "<p>Doors open half hour to an hour before the service starts. This gives students an opportunity to connect with friends and Fuse leaders, usually over a snack or a game. Then, we all head into service. Every service includes singing and a sermon — think Sunday but louder and with more energy.</p>"
+                    copy: "<p>Doors open a half hour to an hour before the service starts. This gives students an opportunity to connect with friends and Fuse leaders, usually over a snack or a game. Then, we all head into service. Every service includes singing and a sermon — think Sunday but louder and with more energy.</p>"
                 } %}{% include "partials/accordion-panel.html" %}
 
                 {% set blockData = { 
