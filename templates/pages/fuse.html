@@ -1,14 +1,15 @@
-{% set browserTitle = "Fuse" %}
+{% set browserTitle = "Fuse Student Ministry" %}
 {% set pageTitle = "Fuse" %}
 {% set pageHeaderColorHex = "553786" %}
 {% set navPages = {
     pages: {
-      'Home': '/fuse.html',
-      'Locations': '/fuse-locations.html',
+      'About Fuse': '/fuse.html',
+      'Fuse 2 Israel': '#israel',
       'Fuse Groups': '/fuse-groups.html',
       'Devotionals': '/fuse-devotionals.html',
       'Sermons': '/fuse-sermons.html',
-      'Serve at Fuse': 'fuse-serving.html'
+      'Serve at Fuse': 'fuse-serving.html',
+      'Locations': '/fuse-locations.html'
     }
 } %}
 
@@ -40,6 +41,7 @@
         </div>
     </section>
 
+    <div id="israel">
     {% set blockData = { 
         id: '1',
         title: "Go To Israel",
@@ -51,6 +53,7 @@
         linkUrl: 'https://newspring.cc/israel-student',
         linkText: ''
     } %}{% include "partials/side-by-side.html" %}
+    </div>
 
     {% set blockData = { 
         id: '2',

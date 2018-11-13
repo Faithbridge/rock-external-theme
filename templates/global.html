@@ -90,14 +90,14 @@
         </div>
 
         {% if navPages %}
-            <div id="navigation-secondary" class="position-fixed width-full" style="z-index: 10;">
+            <div id="navigation-secondary" class="position-fixed top-zero width-full" style="z-index: 10;">
                 {% include "partials/navigation-secondary.html" %}
             </div>
         {% endif %}
 
-        <div id="content" style="background-color: #{{ pageHeaderColorHex }}; opacity: .9;">
+        <div id="content" class="clearfix">
             
-            {% if pageTitle %}
+            {% if pageTitle and navPages == null %}
                 <div class="soft xs-soft-half hard-bottom xs-hard-bottom clearfix">
 
                     {% if pageTitle %}

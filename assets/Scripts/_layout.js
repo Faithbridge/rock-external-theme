@@ -3,17 +3,38 @@ document.addEventListener("DOMContentLoaded", function() {
 		// Get window width to determine if nav will be fixed to top/bottom
 		var windowWidth = window.innerWidth;
 
-		// Calculate navigation section height
-		var navHeight = document.querySelector('#navigation').offsetHeight;
+		var content = document.querySelector('#content');
+
+		var navigation = document.querySelector('#navigation');
+		if(navigation != null) {
+			 var navigationHeight = navigation.offsetHeight;
+		}
+
+		var navigationSecondary = document.querySelector('#navigation-secondary');
+		if(navigationSecondary != null) {
+			var navigationSecondaryHeight = navigationSecondary.offsetHeight;
+		}
 
 		if(windowWidth > 667) {
 			// Desktop
-			// document.querySelector('#content').style.marginBottom = '0';
-			// document.querySelector('#content').style.marginTop = navHeight + "px";
+			content.style.marginBottom = '0';
+			
+			if(navigationSecondary) {
+				navigationSecondary.style.marginTop = navigationHeight + "px";
+				content.style.marginTop = navigationHeight + navigationSecondaryHeight + "px";
+			} else {
+				content.style.marginTop = navigationHeight + "px";
+			}
 		} else {
 			// Mobile
-			// document.querySelector('#content').style.marginTop = '0';
-			// document.querySelector('#content').style.marginBottom = (navHeight + 15) + "px";
+			content.style.marginBottom = navigationHeight + "px";
+
+			if(navigationSecondary) {
+				navigationSecondary.style.marginTop = 0;
+				content.style.marginTop = navigationSecondaryHeight + "px";
+			} else {
+				content.style.marginTop = 0;
+			}
 		}
 		
 	}
