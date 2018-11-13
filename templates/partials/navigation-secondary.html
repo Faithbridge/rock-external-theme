@@ -9,33 +9,59 @@
 
 #}
 
-<!-- Desktop Section Nav -->
-<section class="nav-wrapper bg-white soft-half flush rounded shadowed hidden-xs hidden-sm">
-    <ul class="nav xs-nav-stacked nav-pills">
-        
-        {% for title, url in navPages.pages %}
-            <li role="presentation" class="{% if loop.index == 1 %}active{% endif %}"><a href="{{ url }}">{{ title }}</a></li>
-        {% endfor %}
-
-    </ul>
-</section>
-
-<!-- Mobile Section Nav -->
-<section class="nav-wrapper bg-white rounded shadowed soft-half push-double-top xs-push-top flush-bottom flush-sides hidden-md hidden-lg">
-    <div class="btn-group width-full">
-
-        {% for title, url in navPages.pages %}{% if loop.index == 1 %}
-            <button type="button" class="btn btn-primary dropdown-toggle width-full" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ title }} <span class="caret"></span>
-            </button>
-        {% endif %}{% endfor %}
-
-        <ul class="dropdown-menu width-full">
-
+<!-- Mobile Secondary Nav -->
+<section class="bg-white hard flush shadowed">
+    <div class="soft-half">
+        <div class="row floating floating-left">
+            <div class="col-xs-4 floating-item">
+                <h2 class="h5 flush">KidSpring</h2>
+            </div><div class="col-xs-8 floating-item text-right">
+                <a id="heading-25" role="button" data-toggle="collapse" data-parent="#accordion-15" href="#25" aria-expanded="true" aria-controls="25" class="btn btn-xs btn-primary">
+                    More <i class="fas fa-caret-down"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="25" class="bg-white panel-collapse collapse" role="tabpanel" aria-labelledby="heading-25">
+        <div class="panel-body soft-half">
             {% for title, url in navPages.pages %}
-                <li role="presentation"><a href="{{ url }}">{{ title }}</a></li>
+                <a href="{{ url }}" class="btn btn-block btn-sm btn-primary text-right">{{ title }}</a>
             {% endfor %}
-
-        </ul>
+        </div>
     </div>
 </section>
+
+<section class="soft-half flush text-center hard hidden">
+    <div class="panel-group flush" id="accordion-15" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-primary">
+            <a id="heading-25" role="button" data-toggle="collapse" data-parent="#accordion-15" href="#25" aria-expanded="true" aria-controls="25" class="panel-heading display-block sans-serif strong text-decoration-none text-white">
+                KidSpring Home &nbsp;<i class="fas fa-caret-down"></i>
+            </a>
+            <div id="25" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-25">
+                <div class="panel-body soft-half">
+                    {% for title, url in navPages.pages %}
+                        <a href="{{ url }}" class="btn btn-block btn-sm btn-default">{{ title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Desktop Secondary Nav -->
+<div class="bg-gray-darker soft-half-ends soft-sides hidden-xs hidden">
+    <div class="row floating floating-left">
+        <div class="col-md-3 col-sm-2 col-xs-12 floating-item">
+             <h1 class="h4 text-white flush">{% if pageTitle %}{{ pageTitle }}{% else %}{{ browserTitle }}{% endif %}</h1>
+        </div><div class="col-md-9 col-sm-10 col-xs-12 floating-item text-right">
+            <ul class="list-inline flush">
+                <li><a href="#" class="btn btn-sm btn-primary">Home</a></li>
+                <li><a href="#" class="btn btn-sm btn-link">Locations</a></li>
+                <li><a href="#" class="btn btn-sm btn-link">Fuse Groups</a></li>
+                <li><a href="#" class="btn btn-sm btn-link">Devotionals</a></li>
+                <li><a href="#" class="btn btn-sm btn-link">Sermons</a></li>
+                <li><a href="#" class="btn btn-sm btn-link">Serve at Fuse</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

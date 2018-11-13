@@ -5,23 +5,23 @@
 			<span>NewSpring Church</span>
 		</a>
 	</li><span class="pull-right xs-pull-none"><li>
-			<a href="#" data-toggle="modal" data-target="#navigation-modal" title="Menu"><i class="fas fa-fw fa-lg fa-bars"></i></a>
-		</li><li>
-			<a href="/locations.html" title="Locations"><i class="fas fa-fw fa-lg fa-map-marker-alt"></i></a>
-		</li><li>
-			<a href="#" data-toggle="modal" data-target="#search-modal" title="Search"><i class="fas fa-fw fa-lg fa-search"></i></a>
-		</li><li>
-			
-				{% if userImage and signedIn %}
-					<a href="/my-account.html" title="My Account">
-						<img src="{{ userImage }}" alt="" class="nav-icon circular" style="border: 2px solid rgba(255,255,255,1)">
-					</a>
-				{% else %}
-					<a href="/sign-in.html" title="Sign In">
-						<i class="fas fa-fw fa-lg fa-user-circle"></i>
-					</a>
-				{% endif %}
+		<a href="#" data-toggle="modal" data-target="#navigation-modal" title="Menu"><i class="fas fa-fw fa-lg fa-bars"></i></a>
+	</li><li>
+		<a href="/locations.html" title="Locations"><i class="fas fa-fw fa-lg fa-map-marker-alt"></i></a>
+	</li><li>
+		<a href="#" data-toggle="modal" data-target="#search-modal" title="Search"><i class="fas fa-fw fa-lg fa-search"></i></a>
+	</li><li>
 		
-			</a>
-		</li></span>
+			{% if userImage and signedIn %}
+				<a href="/my-account.html" title="My Account">
+					<img src="{{ userImage }}" alt="" class="nav-icon circular" style="border: 2px solid rgba(255,255,255,1)">
+				</a>
+			{% else %}
+				<a href="/sign-in.html" title="Sign In">
+					<i class="fas fa-fw fa-lg fa-user-circle"></i>
+				</a>
+			{% endif %}
+	
+		</a>
+	</li></span>
 </ul>

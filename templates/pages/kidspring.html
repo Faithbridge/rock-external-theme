@@ -1,7 +1,16 @@
 {% set browserTitle = "KidSpring" %}
 {% set pageTitle = "" %}
 {% set pageHeaderColorHex = "198AD3" %}
-
+{% set navPages = {
+    pages: {
+      'KidSpring Home': '/kidspring.html',
+      'Locations': '/fuse-locations.html',
+      'Fuse Groups': '/fuse-groups.html',
+      'Devotionals': '/fuse-devotionals.html',
+      'Sermons': '/fuse-sermons.html',
+      'Serve at Fuse': 'fuse-serving.html'
+    }
+} %}
 
 
 {% extends "full-width.html" %}
@@ -24,9 +33,14 @@
         videoId: 'mr4jl09jbd'
     } %}{% include "partials/hero.html" %}
 
+    <div class="soft-double-ends soft-sides xs-soft-bottom clearfix text-white">
+        <div class="text-constrained mx-auto text-center">
+            <h2 class="jumbo">KidSpring <span style="opacity: .5;">is a place where kids learn about</span> Jesus <span style="opacity: .5;">on their level.</span></h2>
+        </div>
+    </div>
+
     <section class="bg-white rounded shadowed">
         <div class="text-constrained center-block text-center">
-            <h2>A Place Where Kids Learn About Jesus On Their Level</h2>
             <p class="lead">Every Sunday, babies through fifth-grade kids experience safe, age-appropriate environments where the Bible is taught in a creative and relevant way.</p>
             <p>We would love for you and your family to visit KidSpring this Sunday. Join the fun, and experience a world where kids meet Jesus on their level!</p>
         </div>

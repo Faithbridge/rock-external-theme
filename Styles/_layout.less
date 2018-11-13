@@ -7,23 +7,6 @@ html {
 body { 
 	font-family: @font-family-serif;
 	background-color: @gray-lighter;
-	// padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-
-	padding-bottom: @nav-width - 1 !important;
-
-	&.is-live {
-		padding-bottom: @nav-width + 49 !important;
-	}
-
-	@media (min-width: @screen-sm-min) {
-		padding-bottom: 0 !important;
-		padding-top: @nav-width !important;
-
-		&.is-live {
-			padding-bottom: 0 !important;
-			padding-top: @nav-width + 50 !important;
-		}
-	}
 }
 
 #navigation {
@@ -71,7 +54,7 @@ body {
 
 	@media (max-width: @screen-sm-min) {
 		&:before {
-			padding-top: 100%;
+			padding-top: 75%;
 		}
 	}
 }

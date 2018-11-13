@@ -1,3 +1,4 @@
+  @import './_layout.js'
   @import './_append-query.js'
 	@import './_swiper.js'
 	@import './_navigation.js'

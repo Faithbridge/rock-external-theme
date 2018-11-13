@@ -83,13 +83,15 @@ bring-forward
             </p>
         {% endif %}
 
+        {% if blockData.videoId %}
+            <span class="wistia_embed wistia_async_{{ blockData.videoId }} popover=true popoverContent=link clickable text-center" style="display:inline; position:relative">
+                <a href="#" class="btn btn-primary">Watch Video <i class="fas fa-xs fa-play"></i></a>
+            </span>
+
+            <script src="https://fast.wistia.com/embed/medias/{{ blockData.videoId }}.jsonp" async></script>
+            <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+        {% endif %}
+
     </div>
-
-    {% if blockData.videoId %}
-        <div class="btn btn-play position-absolute position-bottom-boundry margin-bottom-negative margin-left-negative text-white shadowed"><span class="wistia_embed wistia_async_{{ blockData.videoId }} popover=true popoverContent=link" style="display:inline;position:relative"><i class="fas fa-fw fa-lg fa-play"></i></span></div>
-
-        <script src="https://fast.wistia.com/embed/medias/{{ blockData.videoId }}.jsonp" async></script>
-        <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-    {% endif %}
 
 </section>
