@@ -10,10 +10,10 @@
 #}
 
 <!-- Mobile Secondary Nav -->
-<section class="bg-white hard flush shadowed">
+<section class="bg-gray-darker hard flush shadowed">
     <div class="soft-half text-right">
 
-        <h2 class="h4 flush pull-left" style="position: relative; top: 5px;">{% if pageTitle %}{{ pageTitle }}{% else %}{{ browserTitle }}{% endif %}</h2>
+        <h2 class="h4 text-white flush pull-left" style="position: relative; top: 5px;">{% if pageTitle %}{{ pageTitle }}{% else %}{{ browserTitle }}{% endif %}</h2>
 
         <a href="#" data-toggle="modal" data-target="#navigation-secondary-modal" title="Sub Navigation" class="btn btn-sm btn-primary hidden-md hidden-lg">
             More
@@ -21,7 +21,7 @@
 
         <ul class="list-inline flush hidden-xs hidden-sm">
             {% for title, url in navPages.pages %}
-                <li><a href="{{ url }}" class="btn btn-sm btn-link" data-scroll>{{ title }}</a></li>
+                <li><a href="{{ url }}" class="btn btn-sm btn-link text-hover-white" data-scroll>{{ title }}</a></li>
             {% endfor %}
         </ul>
     </div>
