@@ -12,6 +12,7 @@
           slidesPerView: 3.3,
           spaceBetween: 15,
           centeredSlides: true,
+          roundLengths: true,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
