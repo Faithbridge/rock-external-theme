@@ -45,6 +45,15 @@ a {
 	text-decoration: underline;
 }
 
+.jumbo {
+	font-size: 54px;
+	letter-spacing: -2px !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, ol, ul {
+	margin-bottom: @base-spacing-unit;
+}
+
 h1, .h1, 
 h2, .h2, 
 h3, .h3, 
@@ -67,18 +76,9 @@ h6, .h6 {
 	}
 }
 
-.jumbo {
-	font-size: 52px;
-	letter-spacing: -1.5px !important;
-}
-
 h1, .h1, 
 h2, .h2 {
 	letter-spacing: -1px;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, ol, ul {
-	margin-bottom: @base-spacing-unit;
 }
 
 img { max-width: 100%; }
@@ -171,7 +171,7 @@ mark, .mark {
 }
 
 .hero {
-	padding: @base-spacing-unit*3 @base-spacing-unit;
+	padding: @base-spacing-unit*2 @base-spacing-unit;
 
 	@media (min-width: @screen-sm-min) {
 		padding: @base-spacing-unit*2.5 @base-spacing-unit;
