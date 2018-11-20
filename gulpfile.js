@@ -14,8 +14,8 @@ var gulp = require('gulp'),
 
 var lessSrc = './Styles/[^_]*.less',
     lessDest = './Styles/',
-    scriptsSrc = './Assets/Scripts/[^_]*.js',
-    scriptsDest = './Assets/Scripts/compiled/';
+    scriptsSrc = './Scripts/[^_]*.js',
+    scriptsDest = './Scripts/compiled/';
 
 gulp.task('default', ['scripts', 'styles', 'nunjucks', 'watch']);
 
@@ -29,7 +29,7 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     // Export
     .pipe(gulp.dest(scriptsDest))
-    .pipe(gulp.dest('./templates/compiled/scripts'))
+    .pipe(gulp.dest('./_compiled/scripts'))
     // Reload Browser
     .pipe(browserSync.reload({
       stream: true
@@ -47,7 +47,7 @@ gulp.task('styles', function () {
   	.pipe(sourcemaps.write())
     .pipe(cleanCSS({compatibility: 'ie8'}))
   	.pipe(gulp.dest(lessDest))
-    .pipe(gulp.dest('./templates/compiled/'))
+    .pipe(gulp.dest('./_compiled/'))
   	.pipe(browserSync.reload({
     		stream: true
   	}));
@@ -57,7 +57,7 @@ gulp.task('styles', function () {
 gulp.task('nunjucks', ['browserSync'], function() {
 
   // Gets .html and .nunjucks files in pages
-  gulp.src('./templates/pages/**/*.+(html|nunjucks)')
+  gulp.src('./Assets/Pages/**/*.+(html|nunjucks)')
   	.pipe(plumber())
 
   	// Renders template with nunjucks
@@ -66,7 +66,7 @@ gulp.task('nunjucks', ['browserSync'], function() {
   }))
 
 	// output files in app folder
-	.pipe(gulp.dest('./templates/compiled/'))
+	.pipe(gulp.dest('./_compiled/'))
 
   .pipe(browserSync.reload({
     stream: true
@@ -78,7 +78,7 @@ gulp.task('nunjucks', ['browserSync'], function() {
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-    	baseDir: './templates/compiled/'
+    	baseDir: './_compiled/'
     },
   })
 })
@@ -86,15 +86,14 @@ gulp.task('browserSync', function() {
 // Watch Styles Task
 gulp.task('watch', function(){
   gulp.watch('./Styles/*.less', ['styles']);
-  gulp.watch('./Assets/Scripts/*.js', ['scripts']);
-  gulp.watch('./templates/*.html', ['nunjucks']);
-  gulp.watch('./templates/pages/*.html', ['nunjucks']);
-  gulp.watch('./templates/partials/*.html', ['nunjucks']);
+  gulp.watch('./Scripts/*.js', ['scripts']);
+  gulp.watch('./Assets/Pages/*.html', ['nunjucks']);
+  gulp.watch('./Assets/Lava/*.html', ['nunjucks']);
 });
  
 // Web Server Task
 gulp.task('webserver', ['watch'], function() {
-  gulp.src('./templates/compiled/')
+  gulp.src('./_compiled/')
     .pipe(server({
     	defaultFile: 'index.html',
     	livereload: true,
