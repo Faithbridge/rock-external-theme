@@ -55,7 +55,7 @@ bring-forward
         <span class="hidden-md hidden-lg full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.mobileImageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
     {% endif %}
 
-    <div class="bring-forward center-block text-constrained text-center soft-double-top xs-soft-top">
+    <div class="bring-forward center-block text-constrained text-center soft-top push-half-top xs-flush-top xs-soft-top">
 
         {% if blockData.imageOverlayUrl %}
             <img src="{{ blockData.imageOverlayUrl }}" alt="" class="position-relative push-bottom" style="width: 70%; max-width: 250px;">

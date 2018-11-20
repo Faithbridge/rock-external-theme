@@ -12,6 +12,7 @@
           slidesPerView: 3.3,
           spaceBetween: 15,
           centeredSlides: true,
+          roundLengths: true,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -22,10 +23,10 @@
           },
           breakpoints: {
             1024: {
-              slidesPerView: 3,
+              slidesPerView: 2.3,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 2.3,
               pagination: {
                 dynamicBullets: true,
               },

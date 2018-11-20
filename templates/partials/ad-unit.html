@@ -4,6 +4,7 @@
     id: '',
     linkColorHex: '',
     backgroundColorHex: '',
+    alignment: '',
     grayscale: '',
     label: '',
     titleSize:'',
@@ -22,31 +23,30 @@
 
 {% if blockData.id %}
     <style>
-        #block-{{ blockData.id }} {
-            background-color: #{{ blockData.backgroundColorHex }};
-        }
-
         {% if blockData.backgroundColorHex %}
+            #block-{{ blockData.id }}, #block-{{ blockData.id }} a:not(.btn):not(.label) {
+                color: #fff;
+            }
+
+            #block-{{ blockData.id }} {
+                background-color: #{{ blockData.backgroundColorHex }};
+            }
+        
             #block-{{ blockData.id }} blockquote, blockquote footer, blockquote small, blockquote .small {
                 color: #fff;
             }
         {% endif %}
 
-        #block-{{ blockData.id }} a:not(.btn):not(.label) {
-            color: #{{ blockData.linkColorHex }};
-        }
+        {% if blockData.linkColorHex %}
+            #block-{{ blockData.id }} a:not(.btn):not(.label) {
+                color: #{{ blockData.linkColorHex }};
+            }
 
-        #block-{{ blockData.id }} .btn {
-            background-color: #{{ blockData.linkColorHex }};
-            border-color: #{{ blockData.linkColorHex }};
-        }
-
-        {% if blockData.backgroundColorHex %}
-            #block-{{ blockData.id }}, #block-{{ blockData.id }} a:not(.btn):not(.label) {
-                color: #fff;
+            #block-{{ blockData.id }} .btn {
+                background-color: #{{ blockData.linkColorHex }};
+                border-color: #{{ blockData.linkColorHex }};
             }
         {% endif %}
-
     </style>
 {% endif %}
 
@@ -56,10 +56,10 @@
     	<span class="full-screen background-cover background-center {% if blockData.grayscale %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
     {% endif %}
 
-    <div class="bring-forward center-block text-constrained text-center soft xs-soft-top xs-soft-half-sides xs-soft-bottom">
+    <div class="bring-forward {% if blockData.alignment == 'right' %}pull-right{% elseif blockData.alignment == 'left' %}{% else %}center-block text-center{% endif %} text-constrained soft xs-soft-top xs-soft-half-sides xs-soft-bottom">
 		
         {% if blockData.label %}
-            <p><small class="label label-default circular sans-serif">{{ blockData.label }}</small></p>
+            <p><small class="label label-default circular sans-serif letter-spacing-condensed">{{ blockData.label }}</small></p>
         {% endif %}
 
 		{% if blockData.title %}
@@ -80,7 +80,7 @@
         </div>
 
 		{% if blockData.linkUrl %}
-	        <p>
+	        <p class="push-half-bottom">
                 {% set buttonData = { 
                     buttonSize: '',
                     buttonColor: 'btn-primary',
@@ -109,7 +109,7 @@
                     {{ blockData.copy | safe }}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

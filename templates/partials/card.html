@@ -26,22 +26,24 @@
 
 #}
 
-{% if blockData.id and blockData.backgroundColorHex and blockData.linkColorHex %}
+{% if blockData.id %}
     <style>
-        #block-{{ blockData.id }} {
-            background-color: #{{ blockData.backgroundColorHex }};
-        }
+        {% if blockData.linkColorHex %}
+            #block-{{ blockData.id }} a:not(.btn):not(.label) {
+                color: #{{ blockData.linkColorHex }};
+            }
 
-        #block-{{ blockData.id }} a:not(.btn):not(.label) {
-            color: #{{ blockData.linkColorHex }};
-        }
-
-        #block-{{ blockData.id }} .btn {
-            background-color: #{{ blockData.linkColorHex }};
-            border-color: #{{ blockData.linkColorHex }};
-        }
+            #block-{{ blockData.id }} .btn {
+                background-color: #{{ blockData.linkColorHex }};
+                border-color: #{{ blockData.linkColorHex }};
+            }
+        {% endif %}
 
         {% if blockData.backgroundColorHex %}
+            #block-{{ blockData.id }} {
+                background-color: #{{ blockData.backgroundColorHex }};
+            }
+
             #block-{{ blockData.id }}, #block-{{ blockData.id }} a:not(.btn):not(.label) {
                 color: #fff;
             }
