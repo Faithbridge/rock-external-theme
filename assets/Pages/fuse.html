@@ -14,7 +14,7 @@
 } %}
 
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
 
@@ -32,7 +32,7 @@
         linkText: '',
         linkClasses: '',
         videoId: '7oqie6rx26'
-    } %}{% include "partials/hero.html" %}
+    } %}{% include "../Lava/hero.html" %}
 
     <section class="bg-white rounded shadowed">
         <div class="text-constrained center-block text-center">
@@ -52,7 +52,7 @@
         imageAlignment: 'left',
         linkUrl: 'https://newspring.cc/israel-student',
         linkText: ''
-    } %}{% include "partials/side-by-side.html" %}
+    } %}{% include "../Lava/side-by-side.html" %}
     </div>
 
     {% set blockData = { 
@@ -65,7 +65,7 @@
         imageAlignment: 'right',
         linkUrl: 'http://gauntlet.cc',
         linkText: 'Browse Sermons'
-    } %}{% include "partials/side-by-side.html" %}
+    } %}{% include "../Lava/side-by-side.html" %}
 
     <section class="bg-white rounded shadowed">
         <div class="center-block text-constrained">
@@ -80,42 +80,42 @@
                     index: "1",
                     title: "Who can attend Fuse?", 
                     copy: "<p>Fuse is for students in sixth to 12th grade.</p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
 
                 {% set blockData = { 
                     parentIndex:"1",
                     index: "2",
                     title: "When does Fuse meet?", 
                     copy: "<p>Fuse meets every Wednesday night at campuses across South Carolina. Find a <a href='http://newspringfuse.com/locations'>gathering time</a> and location near you.</p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
 
                 {% set blockData = { 
                     parentIndex:"1",
                     index: "3",
                     title: "Do Fuse volunteers have a background check?", 
                     copy: "<p>All Fuse volunteers must have an approved background check before serving at Fuse.</p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
 
                 {% set blockData = { 
                     parentIndex:"1",
                     index: "4",
                     title: "What can my child expect to do at Fuse?", 
                     copy: "<p>Doors open a half hour to an hour before the service starts. This gives students an opportunity to connect with friends and Fuse leaders, usually over a snack or a game. Then, we all head into service. Every service includes singing and a sermon — think Sunday but louder and with more energy.</p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
 
                 {% set blockData = { 
                     parentIndex:"1",
                     index: "5",
                     title: "Do you have to be a Christian to attend?", 
                     copy: "<p>Fuse welcomes everyone. We unashamedly preach and teach the Gospel, but we try hard to create an environment where everyone can belong at Fuse.</p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
 
                 {% set blockData = { 
                     parentIndex:"1",
                     index: "6",
                     title: "Who is teaching my child?", 
                     copy: "<p>Fuse messages come from a team of skilled communicators. Each week, your child will clearly hear what it means to follow Jesus. Watch some of our past messages <a href='#'>here.</a></p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
                 
             </div>
 

@@ -2,7 +2,7 @@
 {% set pageTitle = "" %}
 {% set pageHeaderColorHex = "" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
 
@@ -16,7 +16,7 @@
         linkUrl: '/help.html',
         linkText: 'Request Help',
         linkClasses: ''
-    } %}{% include "partials/hero.html" %}
+    } %}{% include "../Lava/hero.html" %}
 
     {% set blockData = { 
         id: '1',
@@ -28,7 +28,7 @@
         imageAlignment: 'right',
         linkUrl: '#',
         linkText: ''
-    } %}{% include "partials/side-by-side.html" %}
+    } %}{% include "../Lava/side-by-side.html" %}
 
     {% set blockData = { 
         id: '2',
@@ -40,6 +40,6 @@
         imageAlignment: 'left',
         linkUrl: 'https://rock.newspring.cc/workflows/152?Topic=Stewardship',
         linkText: 'Contact Us'
-    } %}{% include "partials/side-by-side.html" %}
+    } %}{% include "../Lava/side-by-side.html" %}
 
 {% endblock %}

@@ -2,7 +2,7 @@
 {% set pageTitle = "" %}
 {% set pageHeaderColorHex = "" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
 
@@ -22,7 +22,7 @@
     linkText: '',
     linkClasses: '',
     videoId: ''
-} %}{% include "partials/hero.html" %}
+} %}{% include "../Lava/hero.html" %}
 
 
 {% set blockData = { 
@@ -37,7 +37,7 @@
     imageOpacity: '',
     linkUrl: '#',
     linkText: 'Contact Us'
-} %}{% include "partials/ad-unit.html" %}
+} %}{% include "../Lava/ad-unit.html" %}
 
 <section class="hard flush-bottom">
 <div class="row">
@@ -49,7 +49,7 @@
 		    imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/connect/connect-3_2x1_2000_1000_90.jpg',
 		    imageOpacity: '',
 		    linkUrl: ''
-		} %}{% include "partials/image.html" %}
+		} %}{% include "../Lava/image.html" %}
 	</div>
 </div>
 </section>
@@ -75,7 +75,7 @@
 		    imageOpacity: '',
 		    linkUrl: '#',
 		    linkText: 'Learn More'
-		} %}{% include "partials/ad-unit.html" %}
+		} %}{% include "../Lava/ad-unit.html" %}
 	</div><div class="col-md-6 col-sm-12 col-xs-12">
 		{% set blockData = { 
 		    id: '4',
@@ -95,7 +95,7 @@
 		    imageOpacity: '',
 		    linkUrl: '#',
 		    linkText: 'Subscribe Now'
-		} %}{% include "partials/ad-unit.html" %}
+		} %}{% include "../Lava/ad-unit.html" %}
 	</div>
 </div>
 </section>

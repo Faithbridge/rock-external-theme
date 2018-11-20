@@ -123,7 +123,7 @@
     }
 ] %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
 
@@ -153,13 +153,13 @@
                 likes: 'y',
                 authorImageUrl: '//rock.newspring.cc/GetImage.ashx?guid=0e3f253b-4eba-49ee-b65b-721dc51e01a6&width=120',
                 metaData: 'Dan Lian'
-            } %}{% include "partials/card.html" %}
+            } %}{% include "../Lava/card.html" %}
         </div>{% endfor %}
     </div>
 </div>
 
 <div class="soft xs-soft-half hard-bottom clearfix">
-    {% include "partials/pagination.html" %}
+    {% include "../Lava/pagination.html" %}
 </div>
 
 {#
@@ -186,7 +186,7 @@
                     likes: 'y',
                     authorImageUrl: '//rock.newspring.cc/GetImage.ashx?guid=0e3f253b-4eba-49ee-b65b-721dc51e01a6&width=120',
                     metaData: 'Dan Lian'
-                } %}{% include "partials/card.html" %}
+                } %}{% include "../Lava/card.html" %}
             </div>{% endfor %}
         </div>
     </div>
@@ -201,6 +201,6 @@
     imageOpacity: '',
     linkUrl: '#',
     linkText: 'Subscribe Now'
-} %}{% include "partials/ad-unit.html" %}
+} %}{% include "../Lava/ad-unit.html" %}
 
 {% endblock %}

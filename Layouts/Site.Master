@@ -85,13 +85,13 @@
                 </a>
             {% endif %}
 
-            {% include "partials/navigation.html" %}
+            {% include "../Assets/Lava/navigation.html" %}
 
         </div>
 
         {% if navPages %}
             <div id="navigation-secondary" class="position-fixed top-zero width-full" style="z-index: 10;">
-                {% include "partials/navigation-secondary.html" %}
+                {% include "../Assets/Lava/navigation-secondary.html" %}
             </div>
         {% endif %}
 
@@ -109,7 +109,7 @@
                             subtitle: pageSubtitle,
                             tags: '',
                             copy: ''
-                        } %}{% include "partials/page-header.html" %}
+                        } %}{% include "../Assets/Lava/page-header.html" %}
                     {% endif %}
 
                 </div>
@@ -120,16 +120,16 @@
                 {% block globalContent %}
                 {% endblock %}
 
-                {% include "partials/footer.html" %}
+                {% include "../Assets/Lava/footer.html" %}
 
             </div>
             
         </div>
 
-        {% include "partials/navigation-modal.html" %}
-        {% include "partials/navigation-secondary-modal.html" %}
-        {% include "partials/search-modal.html" %}
-        {% include "partials/share-modal.html" %}
+        {% include "../Assets/Lava/navigation-modal.html" %}
+        {% include "../Assets/Lava/navigation-secondary-modal.html" %}
+        {% include "../Assets/Lava/search-modal.html" %}
+        {% include "../Assets/Lava/share-modal.html" %}
 
         <!-- Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

@@ -1,21 +1,36 @@
 {% set browserTitle = "Workflows" %}
 {% set pageTitle = "" %}
 
-{% extends "split.html" %}
-
-{% block hero %}
-    <div class="split-image-container bg-gray-darker">
-        <div class="split-image ratio-shuare background-center background-cover" style="background-image: url('//ns.images.s3.amazonaws.com/newspring/fpo/baptism.hero.2to1.jpg'); opacity: .8;"></div>
-    </div>
-{% endblock %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
+
+{% set blockData = { 
+    id: '',
+    title: "",
+    copy: "",
+    linkColorHex: '',
+    backgroundColorHex: '',
+    grayscale: '',
+    ratio: '',
+    imageUrl: '//ns.images.s3.amazonaws.com/newspring/fpo/baptism.hero.2to1.jpg',
+    imageOverlayUrl: '',
+    backgroundVideoUrl: '',
+    imageOpacity: '',
+    linkUrl: '',
+    linkText: '',
+    linkClasses: '',
+    buttonIcon: '',
+    videoId: ''
+} %}{% include "hero.html" %}
+
+<section class="bg-white soft xs-soft-half rounded shadowed">
 
     <h2>My Next Step Is Baptism</h2> 
     <p>We’re proud of you. Baptism is a powerful next step.</p>
     <p>Complete the form, and we’ll get in touch soon to talk about your baptism story!</p>
 
-    <div class="form-group campus-picker  required">
+    <div class="form-group campus-picker required">
         <label class="control-label" for="ctl00_main_ctl23_ctl02_ctl06_attribute_field_2845">Campus<a class="help" href="#" tabindex="-1"><i class="fa fa-question-circle"></i></a>
             <div class="alert alert-info help-message" style="display:none">
                 <small>At which campus would you like to be baptised?</small>
@@ -342,5 +357,6 @@
     <div class="actions">
         <a href="javascript:__doPostBack('ctl00$main$ctl23$ctl02$ctl06','Continue')" onclick="if ( Page_ClientValidate('WorkflowEntry_1111') ) { $(this).button('loading'); return true; } else { return false; }" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Continue" class="btn btn-primary">Continue</a> 
     </div>
+</section>
 
 {% endblock %}

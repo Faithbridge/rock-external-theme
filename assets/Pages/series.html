@@ -2,7 +2,7 @@
 {% set pageTitle = "Sermon Series" %}
 {% set pageHeaderColorHex = "5C1998" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% set sermons = [
 	{
@@ -88,7 +88,7 @@
 	    imageAlignment: 'left',
 	    linkUrl: '#sermons',
 	    linkText: 'Watch Sermons'
-	} %}{% include "partials/side-by-side.html" %}
+	} %}{% include "../Lava/side-by-side.html" %}
 
 	<section id="sermons" class="bg-gray-darker hard-sides soft-double-bottom rounded shadowed">
 		<div class="text-center">
@@ -121,7 +121,7 @@
 						    imageOpacity: '',
 						    linkUrl: '/sermon-entry.html',
 						    linkText: 'Watch Sermon'
-						} %}{% include "partials/card.html" %}
+						} %}{% include "../Lava/card.html" %}
 					</div>
 				{% endfor %}
 			</div>
@@ -148,6 +148,6 @@
 	    linkUrl: '#',
 	    linkText: 'Search',
 	    buttonIcon: 'fas fa-search'
-	} %}{% include "partials/ad-unit.html" %}
+	} %}{% include "../Lava/ad-unit.html" %}
 
 {% endblock %}

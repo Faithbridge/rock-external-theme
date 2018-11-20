@@ -3,7 +3,7 @@
 {% set pageSubtitle = '' %}
 {% set pageHeaderColorHex = "5C1998" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% set sermons = [
 	{
@@ -85,7 +85,7 @@
 					id: '2',
 				    videoId: sermon.videoId,
 				    linkColorHex: '5C1998'
-				} %}{% include "partials/video-embed.html" %}
+				} %}{% include "../Lava/video-embed.html" %}
 
 			</div><div class="col-md-4 col-sm-5 col-xs-12">
 
@@ -112,7 +112,7 @@
 					    orientation: '',
 						copy: '',
 					    linkUrl: ''
-					} %}{% include "partials/share-buttons.html" %}
+					} %}{% include "../Lava/share-buttons.html" %}
 
 				</div>
 
@@ -138,7 +138,7 @@
 	    imageAlignment: 'left',
 	    linkUrl: '/series.html',
 	    linkText: 'Watch Sermons'
-	} %}{% include "partials/side-by-side.html" %}
+	} %}{% include "../Lava/side-by-side.html" %}
 
 {% endif %}{% endfor %}
 
@@ -174,7 +174,7 @@
 						    imageOpacity: '',
 						    linkUrl: '/sermon-entry.html',
 						    linkText: 'Watch Sermon'
-						} %}{% include "partials/card.html" %}
+						} %}{% include "../Lava/card.html" %}
 					</div>
 				{% endfor %}
 			</div>

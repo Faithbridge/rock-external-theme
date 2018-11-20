@@ -11,7 +11,7 @@
     }
 } %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
     
@@ -26,7 +26,7 @@
         linkUrl: 'https://newspringnetwork.com',
         linkText: 'Visit NewSpring Network',
         linkClasses: ''
-    } %}{% include "partials/hero.html" %}
+    } %}{% include "../Lava/hero.html" %}
 
 
     {% set blockData = { 
@@ -37,7 +37,7 @@
         imageOpacity: '',
         linkUrl: 'https://newspringnetwork.com',
         linkText: 'Get Free Resources'
-    } %}{% include "partials/ad-unit.html" %}
+    } %}{% include "../Lava/ad-unit.html" %}
 
 
     {% set blockData = { 
@@ -49,6 +49,6 @@
         linkUrl: 'https://newspringnetwork.com',
         linkText: 'Visit NewSpring Network',
         backgroundColorHex: '303030'
-    } %}{% include "partials/ad-unit.html" %}
+    } %}{% include "../Lava/ad-unit.html" %}
 
 {% endblock %}

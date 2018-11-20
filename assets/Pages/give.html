@@ -2,7 +2,7 @@
 {% set pageTitle = "" %}
 {% set pageHeaderColorHex = "" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
 
@@ -17,7 +17,7 @@
         linkUrl: 'https://my.newspring.cc/give/now',
         linkText: 'Give Now',
         linkClasses: ''
-    } %}{% include "partials/hero.html" %}
+    } %}{% include "../Lava/hero.html" %}
 
     {% set blockData = { 
         id: '',
@@ -37,7 +37,7 @@
         imageAlignment: '',
         linkUrl: '#',
         linkText: 'Create a Schedule'
-    } %}{% include "partials/side-by-side.html" %}
+    } %}{% include "../Lava/side-by-side.html" %}
 
     {% set blockData = { 
         id: '',
@@ -57,7 +57,7 @@
         imageAlignment: 'left',
         linkUrl: '',
         linkText: ''
-    } %}{% include "partials/side-by-side.html" %}
+    } %}{% include "../Lava/side-by-side.html" %}
 
     <section class="bg-white rounded shadowed">
         <h2 class="text-center">How Much Should I Tithe?</h2>
@@ -128,7 +128,7 @@
 	    imageOpacity: '.6',
 	    linkUrl: '/finances.html',
 	    linkText: ''
-	} %}{% include "partials/ad-unit.html" %}
+	} %}{% include "../Lava/ad-unit.html" %}
 
 	<section class="bg-white rounded shadowed">
         <div class="text-constrained mx-auto">
@@ -171,7 +171,7 @@
         imageAlignment: '',
         linkUrl: 'http://ns.downloads.s3.amazonaws.com/give/53252.finance.cen.paper.otherwaystogive.pdf',
         linkText: 'Learn More'
-    } %}{% include "partials/side-by-side.html" %}
+    } %}{% include "../Lava/side-by-side.html" %}
 
 	<section class="bg-white rounded push-bottom">
         <div class="center-block text-constrained soft hard-bottom">
@@ -186,28 +186,28 @@
                     index: "1",
                     title: "How do I get a contribution statement or view my giving history?", 
                     copy: "<p>Giving history can be viewed at anytime in your <a href='https://my.newspring.cc/profile/settings'>giving profile.</a> Annual contribution statements are also mailed to you at the closing of each calendar year. Typically you will receive these by mid-February.</p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
 
                 {% set blockData = { 
                     parentIndex: '1',
                     index: "2",
                     title: "What is the deadline for annual contributions?", 
                     copy: "<p>All contributions must be received or postmarked by December 31 in order to be included on your contribution statement for that year. Any online contributions must also be initiated by December 31.</p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
 
                 {% set blockData = { 
                     parentIndex: '1',
                     index: "3",
                     title: "What address do I use to mail contributions to NewSpring Church?", 
                     copy: "<p>NewSpring Church<br>P.O. Box 1407<br>Anderson SC, 29622</p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
 
                 {% set blockData = { 
                     parentIndex: '1',
                     index: "4",
                     title: "Other Questions?", 
                     copy: "<p>If there is anything else we can help with, email us at <a href='mailto:giving@newspring.cc'>giving@newspring.cc!</a></p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
 
             </div>
 
@@ -223,6 +223,6 @@
         imageOpacity: '',
         linkUrl: 'https://my.newspring.cc/give/now',
         linkText: 'Give Now'
-    } %}{% include "partials/ad-unit.html" %}
+    } %}{% include "../Lava/ad-unit.html" %}
 
 {% endblock %}

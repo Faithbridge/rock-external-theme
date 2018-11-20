@@ -2,7 +2,7 @@
 {% set pageTitle = "" %}
 {% set pageHeaderColorHex = "" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
 
@@ -22,7 +22,7 @@
     linkText: '',
     linkClasses: '',
     videoId: ''
-} %}{% include "partials/hero.html" %}
+} %}{% include "../Lava/hero.html" %}
 
 {% set blockData = { 
     id: '2',
@@ -42,7 +42,7 @@
     imageAlignment: '',
     linkUrl: '#',
     linkText: 'Plan a Visit'
-} %}{% include "partials/side-by-side.html" %}
+} %}{% include "../Lava/side-by-side.html" %}
 
 {% set blockData = { 
     id: '3',
@@ -62,7 +62,7 @@
     imageAlignment: 'left',
     linkUrl: '/kidspring.html',
     linkText: 'Learn More'
-} %}{% include "partials/side-by-side.html" %}
+} %}{% include "../Lava/side-by-side.html" %}
 
 {% set blockData = { 
     id: '4',
@@ -82,7 +82,7 @@
     imageAlignment: '',
     linkUrl: '/fuse.html',
     linkText: 'Learn More'
-} %}{% include "partials/side-by-side.html" %}
+} %}{% include "../Lava/side-by-side.html" %}
 
 {% set blockData = { 
     id: '5',
@@ -102,7 +102,7 @@
     imageAlignment: 'left',
     linkUrl: '/connect.html',
     linkText: 'Sign Up Now'
-} %}{% include "partials/side-by-side.html" %}
+} %}{% include "../Lava/side-by-side.html" %}
 
 {% set blockData = { 
     id: '6',
@@ -122,7 +122,7 @@
     imageAlignment: '',
     linkUrl: '/worship.html',
     linkText: 'Learn More'
-} %}{% include "partials/side-by-side.html" %}
+} %}{% include "../Lava/side-by-side.html" %}
 
 {% set blockData = { 
     id: '',
@@ -135,6 +135,6 @@
     imageOpacity: '',
     linkUrl: '/network.html',
     linkText: 'Learn More'
-} %}{% include "partials/ad-unit.html" %}
+} %}{% include "../Lava/ad-unit.html" %}
 
 {% endblock %}

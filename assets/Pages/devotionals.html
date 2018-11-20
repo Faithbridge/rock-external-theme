@@ -2,7 +2,7 @@
 {% set pageTitle = "Devotionals" %}
 {% set pageHeaderColorHex = "2a4930" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% set studies = [
 	{
@@ -95,7 +95,7 @@
 	    linkUrl: '/devotional-entry.html',
 	    linkText: 'Read Now',
 	    buttonIcon: ''
-	} %}{% include "partials/ad-unit.html" %}
+	} %}{% include "../Lava/ad-unit.html" %}
 
 	<section id="devotionals" class="bg-gray-darker hard-sides soft-bottom rounded shadowed">
 		<div class="text-center">
@@ -130,7 +130,7 @@
 						    imageOpacity: '',
 						    linkUrl: '/study.html',
 						    linkText: 'Read Devotional'
-						} %}{% include "partials/card.html" %}
+						} %}{% include "../Lava/card.html" %}
 					</div>
 				{% endfor %}
 			</div>
@@ -169,7 +169,7 @@
 	    imageAlignment: 'left',
 	    linkUrl: '/devotional-entry.html',
 	    linkText: 'Read Now'
-	} %}{% include "partials/side-by-side.html" %}
+	} %}{% include "../Lava/side-by-side.html" %}
 
 
 	<div class="soft-sides xs-soft-half-sides">
@@ -197,13 +197,13 @@
 	                linkText: 'Begin Study',
 	                shares: 'y',
 	                likes: 'y'
-	            } %}{% include "partials/card.html" %}
+	            } %}{% include "../Lava/card.html" %}
 	        </div>{% endfor %}
 	    </div>
 	</div>
 
 	<div class="soft xs-soft-half hard-bottom clearfix">
-	    {% include "partials/pagination.html" %}
+	    {% include "../Lava/pagination.html" %}
 	</div>
 
 	#}
@@ -221,6 +221,6 @@
 	    buttonIcon: '',
 	    linkUrl: '#',
 	    linkText: 'Sign Up Now'
-	} %}{% include "partials/ad-unit.html" %}
+	} %}{% include "../Lava/ad-unit.html" %}
 
 {% endblock %}

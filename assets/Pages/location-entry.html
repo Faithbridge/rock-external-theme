@@ -2,7 +2,7 @@
 {% set pageTitle = "" %}
 {% set pageHeaderColorHex = "" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% set locations = [
     {
@@ -114,7 +114,7 @@
     linkText: 'Get Directions',
     linkClasses: '',
     videoId: ''
-} %}{% include "partials/hero.html" %}
+} %}{% include "../Lava/hero.html" %}
 
 <div class="soft-sides xs-soft-half-sides">
     <div class="row">
@@ -145,7 +145,7 @@
                 linkUrl: '',
                 linkText: '',
                 buttonIcon: ''
-            } %}{% include "partials/ad-unit.html" %}
+            } %}{% include "../Lava/ad-unit.html" %}
 
             <script src="https://fast.wistia.com/embed/medias/ov0de9h144.jsonp" async></script>
             <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
@@ -191,7 +191,7 @@
     imageAlignment: 'right',
     linkUrl: '/kidspring.html',
     linkText: 'Learn More'
-} %}{% include "partials/side-by-side.html" %}
+} %}{% include "../Lava/side-by-side.html" %}
 
 {% set blockData = { 
     id: '',
@@ -211,6 +211,6 @@
     imageAlignment: 'left',
     linkUrl: '/fuse.html',
     linkText: 'Learn More'
-} %}{% include "partials/side-by-side.html" %}
+} %}{% include "../Lava/side-by-side.html" %}
 
 {% endblock %}

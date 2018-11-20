@@ -2,7 +2,7 @@
 {% set pageTitle = "Sermons By Series" %}
 {% set pageHeaderColorHex = "" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% set seriesItems = [
 	{
@@ -108,13 +108,13 @@
 			    linkText: 'Watch Series',
 			    shares: 'y',
 	            likes: 'y'
-			} %}{% include "partials/card.html" %}
+			} %}{% include "../Lava/card.html" %}
 		</div>{% endfor %}
 	</div>
 </div>
 
 <div class="soft xs-soft-half hard-bottom clearfix">
-	{% include "partials/pagination.html" %}
+	{% include "../Lava/pagination.html" %}
 </div>
 
 {% set blockData = { 
@@ -124,6 +124,6 @@
     imageOpacity: '',
     linkUrl: '#',
     linkText: 'Subscribe Now'
-} %}{% include "partials/ad-unit.html" %}
+} %}{% include "../Lava/ad-unit.html" %}
 
 {% endblock %}

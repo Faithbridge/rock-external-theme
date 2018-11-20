@@ -2,7 +2,7 @@
 {% set pageTitle = "" %}
 {% set pageHeaderColorHex = "" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% set locations = [
     {
@@ -151,9 +151,9 @@
         linkUrl: '',
         linkText: '',
         linkClasses: ''
-    } %}{% include "partials/hero.html" %}
+    } %}{% include "../Lava/hero.html" %}
 
-    <section id="locations" class="bg-gray-darker hard-sides soft-double-top soft-bottom rounded shadowed">
+    <section id="locations" class="bg-gray-darker hard-sides rounded shadowed">
         <div class="text-center">
             <h2 class="text-white">Locations</h2>
         </div>
@@ -185,7 +185,7 @@
                             imageOpacity: '',
                             linkUrl: '/location-entry.html',
                             linkText: 'Learn More'
-                        } %}{% include "partials/card.html" %}
+                        } %}{% include "../Lava/card.html" %}
                     </div>
                 {% endfor %}
             </div>
@@ -247,7 +247,7 @@
                         index: question.id,
                         title: question.title, 
                         copy: question.copy
-                    } %}{% include "partials/accordion-panel.html" %}
+                    } %}{% include "../Lava/accordion-panel.html" %}
 
                 {% endfor %}
                 

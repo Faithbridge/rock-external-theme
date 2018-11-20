@@ -233,7 +233,7 @@
 
 
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% set leadTeam = [
     {
@@ -465,13 +465,13 @@
 	    title: '',
 	    personObject: leadTeam,
 	    sliderItemWidth: '300'
-	} %}{% include "partials/person-slider.html" %}
+	} %}{% include "../Lava/person-slider.html" %}
 
 	{% set blockData = { 
 	    id: '3',
 	    title: 'Lead Team Assistants',
 	    personObject: leadTeamAssistants,
 	    sliderItemWidth: '300'
-	} %}{% include "partials/person-slider.html" %}
+	} %}{% include "../Lava/person-slider.html" %}
 
 {% endblock %}

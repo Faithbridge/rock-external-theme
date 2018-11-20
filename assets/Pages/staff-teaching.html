@@ -231,7 +231,7 @@
     }
 } %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% set teachingTeam = [
     {
@@ -264,6 +264,6 @@
 	    title: '',
 	    personObject: teachingTeam,
 	    sliderItemWidth: '300'
-	} %}{% include "partials/person-slider.html" %}
+	} %}{% include "../Lava/person-slider.html" %}
 
 {% endblock %}

@@ -2,7 +2,7 @@
 {% set pageTitle = "" %}
 {% set pageHeaderColorHex = "2a4930" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% set creativeTeam = [
     {
@@ -255,6 +255,6 @@
 	    title: '',
 	    personObject: creativeTeam,
 	    sliderItemWidth: '300'
-	} %}{% include "partials/person-slider.html" %}
+	} %}{% include "../Lava/person-slider.html" %}
 
 {% endblock %}

@@ -2,7 +2,7 @@
 {% set pageTitle = "" %}
 {% set pageHeaderColorHex = "" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
 
@@ -22,7 +22,7 @@
     linkText: '',
     linkClasses: '',
     videoId: ''
-} %}{% include "partials/hero.html" %}
+} %}{% include "../Lava/hero.html" %}
 
 {% set blockData = { 
     id: '2',
@@ -35,7 +35,7 @@
     imageOpacity: '',
     linkUrl: '',
     linkText: ''
-} %}{% include "partials/ad-unit.html" %}
+} %}{% include "../Lava/ad-unit.html" %}
 
 {% set blockData = { 
     id: '3',
@@ -48,7 +48,7 @@
     imageOpacity: '',
     linkUrl: '',
     linkText: ''
-} %}{% include "partials/ad-unit.html" %}
+} %}{% include "../Lava/ad-unit.html" %}
 
 <section class="hard flush-bottom">
     <div class="row">
@@ -71,7 +71,7 @@
     		    imageOpacity: '',
     		    linkUrl: '#',
     		    linkText: 'Read Article'
-    		} %}{% include "partials/card.html" %}
+    		} %}{% include "../Lava/card.html" %}
     	</div><div class="col-md-4 col-sm-6 col-xs-12">
     		{% set blockData = { 
     		    id: '',
@@ -91,7 +91,7 @@
     		    imageOpacity: '',
     		    linkUrl: '#',
     		    linkText: 'Read Article'
-    		} %}{% include "partials/card.html" %}
+    		} %}{% include "../Lava/card.html" %}
     	</div><div class="col-md-4 col-sm-6 col-xs-12">
     		{% set blockData = { 
     		    id: '',
@@ -111,7 +111,7 @@
     		    imageOpacity: '',
     		    linkUrl: '#',
     		    linkText: 'Read Story'
-    		} %}{% include "partials/card.html" %}
+    		} %}{% include "../Lava/card.html" %}
     	</div>
     </div>
 </section>
@@ -128,7 +128,7 @@
     imageOpacity: '.0',
     linkUrl: '',
     linkText: ''
-} %}{% include "partials/ad-unit.html" %}
+} %}{% include "../Lava/ad-unit.html" %}
 
 
 {% set blockData = { 
@@ -149,6 +149,6 @@
     imageAlignment: '',
     linkUrl: '#',
     linkText: 'Get It Now'
-} %}{% include "partials/side-by-side.html" %}
+} %}{% include "../Lava/side-by-side.html" %}
 
 {% endblock %}

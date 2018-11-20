@@ -62,7 +62,7 @@ gulp.task('nunjucks', ['browserSync'], function() {
 
   	// Renders template with nunjucks
 	.pipe(nunjucksRender({
-		path: ['templates']
+		path: ['Layouts','Assets/Pages','Assets/Lava']
   }))
 
 	// output files in app folder

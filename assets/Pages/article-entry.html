@@ -118,7 +118,7 @@
     }
 ] %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
 
@@ -147,7 +147,7 @@
         title: 'Three fears expectant fathers face (and how to move past them)',
         imageUrl: '',
         linkUrl: 'https://newspring.cc/articles/3-fears-expectant-fathers-face-and-how-to-move-past-them'
-    } %}{% include "partials/call-to-action.html" %}
+    } %}{% include "../Lava/call-to-action.html" %}
     
     <p>I didn’t know what I was doing. They handed our child to us, said “Good luck!” and left us standing there, drowning in the pool of things that first-time parents don’t know. They didn’t warn us about the <a href="https://newspring.cc/articles/3-fears-expectant-fathers-face-and-how-to-move-past-them">tidal wave of questions</a> that would hit us as we got in our car and nervously drove away.</p>
 
@@ -155,7 +155,7 @@
         title: 'Financial Freedom Classes will teach you how to turn your dreams into a reality',
         imageUrl: '//dg0ddngxdz549.cloudfront.net/all/heroes/newspringnetwork/FLE1-1.jpg',
         linkUrl: '/financialfreedom'
-    } %}{% include "partials/call-to-action.html" %}
+    } %}{% include "../Lava/call-to-action.html" %}
 
     <p>I remember driving home thinking, “OK, I’m a dad. Now what?”</p>
 
@@ -218,7 +218,7 @@
             orientation: '',
             copy: '',
             linkUrl: ''
-        } %}{% include "partials/share-buttons.html" %}
+        } %}{% include "../Lava/share-buttons.html" %}
     </div>
 
     <div class="row">
@@ -269,7 +269,7 @@
                         imageOpacity: '',
                         linkUrl: '/article-entry.html',
                         linkText: 'Read Article'
-                    } %}{% include "partials/card.html" %}
+                    } %}{% include "../Lava/card.html" %}
                 </div>
             {% endfor %}
         </div>
@@ -293,6 +293,6 @@
     imageOpacity: '',
     linkUrl: '#',
     linkText: 'Subscribe Now'
-} %}{% include "partials/ad-unit.html" %}
+} %}{% include "../Lava/ad-unit.html" %}
 
 {% endblock %}

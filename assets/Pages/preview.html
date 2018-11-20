@@ -2,7 +2,7 @@
 {% set pageTitle = "" %}
 {% set pageHeaderColorHex = "6bac43" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% set sermons = [
 	{
@@ -76,7 +76,7 @@
     titleSize: '',
     title: 'Editorial Preview',
     tags: ''
-} %}{% include "partials/page-header.html" %}
+} %}{% include "../Lava/page-header.html" %}
 
 {% for sermon in sermons %}
 <section class="soft hard-bottom bg-white rounded shadowed clearfix">
@@ -114,6 +114,6 @@
 </section>
 {% endfor %}
 
-{% include "partials/pagination.html" %}
+{% include "../Lava/pagination.html" %}
 
 {% endblock %}

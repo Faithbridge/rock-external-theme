@@ -10,7 +10,7 @@
     }
 } %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
 
@@ -27,7 +27,7 @@
         linkText: '',
         linkClasses: '',
         videoId: '7oqie6rx26'
-    } %}{% include "partials/hero.html" %}
+    } %}{% include "../Lava/hero.html" %}
 
     {% set blockData = { 
         id: '2',
@@ -39,7 +39,7 @@
         imageAlignment: 'right',
         linkUrl: '#',
         linkText: 'Get Directions'
-    } %}{% include "partials/side-by-side.html" %}
+    } %}{% include "../Lava/side-by-side.html" %}
 
     {% set blockData = { 
         id: '4',
@@ -57,7 +57,7 @@
         linkUrl: 'https://www.flickr.com/photos/newspringchurch/',
         linkText: 'View Photos',
         buttonIcon: ''
-    } %}{% include "partials/ad-unit.html" %}
+    } %}{% include "../Lava/ad-unit.html" %}
 
     {% set blockData = { 
         id: '3',
@@ -69,6 +69,6 @@
         imageAlignment: 'left',
         linkUrl: '#',
         linkText: ''
-    } %}{% include "partials/side-by-side.html" %}
+    } %}{% include "../Lava/side-by-side.html" %}
 
 {% endblock %}

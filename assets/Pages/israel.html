@@ -2,7 +2,7 @@
 {% set pageTitle = "" %}
 {% set pageHeaderColorHex = "335cb9" %}
 
-{% extends "full-width.html" %}
+{% extends "FullWidth.aspx" %}
 
 {% block content %}
 
@@ -20,7 +20,7 @@
         linkText: '',
         linkClasses: '',
         videoId: 'mr4jl09jbd'
-    } %}{% include "partials/hero.html" %}
+    } %}{% include "../Lava/hero.html" %}
 
     <section class="bg-white rounded shadowed">
         <div class="text-constrained center-block text-center">
@@ -49,7 +49,7 @@
                 imageOpacity: '',
                 linkUrl: '#',
                 linkText: 'Learn More'
-            } %}{% include "partials/ad-unit.html" %}
+            } %}{% include "../Lava/ad-unit.html" %}
         </div><div class="col-md-6 col-sm-12 col-xs-12 xs-hard">
             {% set blockData = { 
                 id: '',
@@ -66,7 +66,7 @@
                 imageOpacity: '',
                 linkUrl: '#',
                 linkText: 'Learn More'
-            } %}{% include "partials/ad-unit.html" %}
+            } %}{% include "../Lava/ad-unit.html" %}
         </div>
     </div>
     </section>
@@ -82,14 +82,14 @@
                     index: "1",
                     title: "Lorem ipsum amet est dolore officia sit ea non?", 
                     copy: "<p>Play clothes are always welcome! KidSpring is a fun, active environment. Your kids will be playing, singing, and dancing as they learn about Jesus in small groups and large groups.</p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
 
                 {% set blockData = { 
                     parentIndex:"1",
                     index: "2",
                     title: "Cillum incididunt commodo do quis laborum sant?", 
                     copy: "<p>We'd love to have your family visit KidSpring during the week! If you're interested in a weekday tour or have any additional questions, please <a href='#'>let us know</a>.</p>"
-                } %}{% include "partials/accordion-panel.html" %}
+                } %}{% include "../Lava/accordion-panel.html" %}
 
             </div>
 
@@ -111,7 +111,7 @@
         imageAlignment: 'left',
         linkUrl: '#',
         linkText: 'Register Now'
-    } %}{% include "partials/side-by-side.html" %}
+    } %}{% include "../Lava/side-by-side.html" %}
 
     #}
 
