@@ -101,3 +101,9 @@ gulp.task('webserver', ['watch'], function() {
     	open: true
     }));
 });
+
+// Copy Task (Moves theme files to Rock directory)
+gulp.task('copy', function () {
+    gulp.src('./**/*')
+        .pipe(gulp.dest('../Rock/RockWeb/Themes/NewSpring/'));
+});
