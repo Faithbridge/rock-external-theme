@@ -104,6 +104,14 @@ gulp.task('webserver', ['watch'], function() {
 
 // Copy Task (Moves theme files to Rock directory)
 gulp.task('copy', function () {
-    gulp.src('./**/*')
-        .pipe(gulp.dest('../Rock/RockWeb/Themes/NewSpring/'));
+    gulp.src(['package.json','./gulpfile.js'])
+        .pipe(gulp.dest('../Rock/RockWeb/Themes/NewSpring'));
+    gulp.src(['Assets/**/*','!Assets/Pages','!Assets/Pages/*'])
+        .pipe(gulp.dest('../Rock/RockWeb/Themes/NewSpring/Assets'));
+    gulp.src(['Layouts/**/*'])
+        .pipe(gulp.dest('../Rock/RockWeb/Themes/NewSpring/Layouts'));
+    gulp.src(['Scripts/**/*'])
+        .pipe(gulp.dest('../Rock/RockWeb/Themes/NewSpring/Scripts'));
+    gulp.src(['Styles/**/*'])
+        .pipe(gulp.dest('../Rock/RockWeb/Themes/NewSpring/Styles'));
 });
