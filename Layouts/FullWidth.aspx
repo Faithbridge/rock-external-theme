@@ -2,9 +2,7 @@
 
 <asp:Content ID="ctMain" ContentPlaceHolderID="main" runat="server">
 
-    {% if pageHeaderColorHex %}
-        <div class="page-brand-bar" style="background-color: #{{ pageHeaderColorHex }}; opacity: .9;"></div>
-    {% endif %}
+    <div class="position-fixed top-zero right-zero bottom-zero left-zero" style="background-color: #{% if pageBackgroundColorHex %}{{ pageBackgroundColorHex }}{% else %}ececec{% endif %}; z-index: -1;"></div>
 
     <div class="soft-top xs-soft-half-top">
 
