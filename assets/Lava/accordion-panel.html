@@ -1,0 +1,21 @@
+{#
+
+{% set blockData = { 
+    parentIndex:"",
+    index: "",
+    title: "", 
+    copy: ""
+} %}{% include "accordion-panel.html" %}
+
+#}
+
+<div class="panel panel-primary">
+    <a id="heading-{{ blockData.index }}" role="button" data-toggle="collapse" data-parent="#accordion-{{ blockData.parentIndex }}" href="#{{ blockData.index }}" aria-expanded="true" aria-controls="{{ blockData.index }}" class="panel-heading display-block sans-serif strong text-decoration-none text-white">
+        {{ blockData.title }}
+    </a>
+    <div id="{{ blockData.index }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ blockData.index }}">
+        <div class="panel-body hard-bottom xs-soft xs-hard-bottom">
+            {{ blockData.copy | safe }}
+        </div>
+    </div>
+</div>

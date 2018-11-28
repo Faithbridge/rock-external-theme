@@ -2,6 +2,6 @@
 dest/
 node_modules/**
 /*.html
-templates/compiled/
-Assets/Scripts/compiled/
+/_compiled/
+Scripts/compiled/
 /**/*.css
