@@ -4,7 +4,10 @@
       <div class="modal-body soft hard-bottom">
         <i class="fa fa-times close" data-dismiss="modal" aria-hidden="true"></i>
 
-        <h1 class="h2">{% if pageTitle %}{{ pageTitle }}{% else %}{{ browserTitle }}{% endif %}</h1>
+        {% if navPages.title %}
+          <h1 class="h2">{{ navPages.title}}</h1>
+        {% endif %}
+        
         <hr class="flush-top push-bottom">
         <ul class="list-style-none hard">
           {% for title, url in navPages.pages %}

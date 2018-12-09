@@ -101,7 +101,7 @@
 
         <div id="content" class="clearfix">
             
-            {% if pageTitle and navPages == null %}
+            {% if pageTitle %}
                 <div class="soft xs-soft-half hard-bottom xs-hard-bottom clearfix">
 
                     {% if pageTitle %}
@@ -119,14 +119,12 @@
                 </div>
             {% endif %}
             
-            <div class="page-constrained mx-auto">
                 
-                {% block globalContent %}
-                {% endblock %}
+            {% block globalContent %}
+            {% endblock %}
 
-                {% include "footer.html" %}
+            {% include "footer.html" %}
 
-            </div>
             
         </div>
 
