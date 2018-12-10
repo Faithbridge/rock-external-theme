@@ -15,7 +15,9 @@
     <div class="soft-sides soft-half-ends xs-soft-half-sides text-right">
 
         {% if navPages.title %}
-            <h2 class="h4 text-white flush pull-left" style="position: relative; top: 5px;">{{ navPages.title }}</h2>
+            {% if navPages.titleLinkUrl %}<a href='{{ navPages.titleLinkUrl }}'>{% endif %}
+                <h2 class="h4 text-white flush pull-left" style="position: relative; top: 5px;">{{ navPages.title }}</h2>
+            {% if navPages.titleLinkUrl %}</a>{% endif %}
         {% endif %}
         
         <a href="#" data-toggle="modal" data-target="#navigation-secondary-modal" title="Sub Navigation" class="btn btn-sm btn-primary hidden-md hidden-lg">
