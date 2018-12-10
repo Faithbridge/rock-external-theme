@@ -1,4 +1,4 @@
-{% set browserTitle = "Serve at Fuse | Fuse" %}
+{% set browserTitle = "Serving | Fuse" %}
 {% set pageTitle = "" %}
 {% set pageBackgroundColorHex = "" %}
 {% set navPages = {
@@ -18,19 +18,19 @@
 {% block content %}
 
 {% set blockData = { 
-    id: '',
-    title: "Serve at Fuse",
-    copy: "",
+    id: '1',
+    title: "Serving",
+    copy: "<p>Each week at NewSpring, thousands of people just like you give their time to serve. Whether it’s helping kids learn about Jesus on their level at KidSpring, greeting first-time guests, or pitching in behind the scenes with Production, every volunteer is making a difference at NewSpring!</p>",
     linkColorHex: '',
-    backgroundColorHex: '',
+    backgroundColorHex: 'C74289',
     grayscale: '',
     ratio: '',
     imageUrl: '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/fuse/2018/fusewebsiteheroesfuseserving2x1_1700_850_90_c1.jpg',
     imageOverlayUrl: '',
     backgroundVideoUrl: '',
-    imageOpacity: '',
-    linkUrl: '',
-    linkText: '',
+    imageOpacity: '.5',
+    linkUrl: '#servingopportunities',
+    linkText: 'Start Serving',
     linkClasses: '',
     buttonIcon: '',
     videoId: ''
@@ -46,7 +46,7 @@
     titleSize:'',
     title: 'You Can Make a Difference', 
     subtitle: '',
-    copy: "<p>Each week at NewSpring, thousands of people just like you give their time to serve. Whether it’s helping kids learn about Jesus on their level at KidSpring, greeting first-time guests, or pitching in behind the scenes with Production, every volunteer is making a difference at NewSpring!</p><p>We know you’re busy, and a million things are competing for your time. But we also know you’ll meet new friends and grow in your relationship with Jesus when you start serving.</p><p>There’s a serving opportunity that suits your personality and availability. Take a look at a few of our ministries, and sign up to get more information!</p>",
+    copy: "<p>We know you’re busy, and a million things are competing for your time. But we also know you’ll meet new friends and grow in your relationship with Jesus when you start serving.</p><p>There’s a serving opportunity that suits your personality and availability. Take a look at a few of our ministries, and sign up to get more information!</p>",
     trimCopy: '',
     imageUrl: '',
     imageOpacity: '',
@@ -54,6 +54,10 @@
     linkText: '',
     buttonIcon: ''
 } %}{% include "ad-unit.html" %}
+
+<div id="servingopportunities">
+
+	<h2 class="text-center soft-ends xs-soft-half-top xs-hard-bottom">Serving Opportunities</h2>
 
 {% set blockData = { 
     id: '',
@@ -154,6 +158,8 @@
     linkUrl: 'https://rock.newspring.cc/Workflows/93?Interest=Production',
     linkText: 'Start Serving'
 } %}{% include "side-by-side.html" %}
+
+</div>
 
 {% set blockData = { 
     id: '',
