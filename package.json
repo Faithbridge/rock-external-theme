@@ -1,5 +1,5 @@
 {
-  "name": "rock-front-end",
+  "name": "rock-external-theme",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -24,12 +24,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NewSpring/rock-front-end.git"
+    "url": "git+https://github.com/NewSpring/rock-external-theme.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NewSpring/rock-front-end/issues"
+    "url": "https://github.com/NewSpring/rock-external-theme/issues"
   },
-  "homepage": "https://github.com/NewSpring/rock-front-end#readme"
+  "homepage": "https://github.com/NewSpring/rock-external-theme#readme"
 }
