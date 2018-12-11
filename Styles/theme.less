@@ -1,9 +1,13 @@
 @base-spacing-unit: 30px;
 @nav-width: 75px;
 
-// @import '_breakpoint-visual-utility';
-
-@import "_vars";
+// Load Master Styles
+// -------------------------
+@import "../../../Styles/Bootstrap/variables.less";
+@import "../../../Styles/_rock-core.less";
+@import "../../../Styles/_store.less";
+@import "../../../Styles/_rock-variables.less";
+@import "_variables";
 @import '_bootstrap-overrides';
 @import '_layout';
 @import '_navigation';
@@ -21,6 +25,7 @@
 @import '_images';
 @import '_colors';
 @import '_helpers';
+// @import '_breakpoint-visual-utility';
 
 section, footer {
 	margin-bottom: @base-spacing-unit/2;
