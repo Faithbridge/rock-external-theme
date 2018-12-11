@@ -1,57 +1,15 @@
-/*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+// Load Master Styles
+// -------------------------
+@import "../../../Styles/FontAwesome/font-awesome.less";
+@import "../../../Styles/Bootstrap/bootstrap.less";
 
-// Core variables and mixins
-@import "_variables";
-@import "../../../Styles/Bootstrap/mixins.less";
+@import "../../../Styles/_rock-variables.less";
+@import "_variables.less";
 @import "./_bootstrap-overrides.less";
 
-// Reset and dependencies
-@import "../../../Styles/Bootstrap/normalize.less";
-@import "../../../Styles/Bootstrap/print.less";
-@import "../../../Styles/Bootstrap/glyphicons.less";
+@navbar-default-bg: @nav-bg;
+@navbar-default-border: @nav-bg;
+@navbar-default-link-color: @nav-color;
+@navbar-default-color: @nav-color;
 
-// Core CSS
-@import "../../../Styles/Bootstrap/scaffolding.less";
-@import "../../../Styles/Bootstrap/type.less";
-@import "../../../Styles/Bootstrap/code.less";
-@import "../../../Styles/Bootstrap/grid.less";
-@import "../../../Styles/Bootstrap/tables.less";
-@import "../../../Styles/Bootstrap/forms.less";
-@import "../../../Styles/Bootstrap/buttons.less";
-
-// Components
-@import "../../../Styles/Bootstrap/component-animations.less";
-@import "../../../Styles/Bootstrap/dropdowns.less";
-@import "../../../Styles/Bootstrap/button-groups.less";
-@import "../../../Styles/Bootstrap/input-groups.less";
-@import "../../../Styles/Bootstrap/navs.less";
-@import "../../../Styles/Bootstrap/navbar.less";
-@import "../../../Styles/Bootstrap/breadcrumbs.less";
-@import "../../../Styles/Bootstrap/pagination.less";
-@import "../../../Styles/Bootstrap/pager.less";
-@import "../../../Styles/Bootstrap/labels.less";
-@import "../../../Styles/Bootstrap/badges.less";
-@import "../../../Styles/Bootstrap/jumbotron.less";
-@import "../../../Styles/Bootstrap/thumbnails.less";
-@import "../../../Styles/Bootstrap/alerts.less";
-@import "../../../Styles/Bootstrap/progress-bars.less";
-@import "../../../Styles/Bootstrap/media.less";
-@import "../../../Styles/Bootstrap/list-group.less";
-@import "../../../Styles/Bootstrap/panels.less";
-@import "../../../Styles/Bootstrap/responsive-embed.less";
-@import "../../../Styles/Bootstrap/wells.less";
-@import "../../../Styles/Bootstrap/close.less";
-
-// Components w/ JavaScript
-@import "../../../Styles/Bootstrap/modals.less";
-@import "../../../Styles/Bootstrap/tooltip.less";
-@import "../../../Styles/Bootstrap/popovers.less";
-@import "../../../Styles/Bootstrap/carousel.less";
-
-// Utility classes
-@import "../../../Styles/Bootstrap/utilities.less";
-@import "../../../Styles/Bootstrap/responsive-utilities.less";
+@import (reference) "_css-overrides.less";
