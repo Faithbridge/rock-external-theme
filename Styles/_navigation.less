@@ -78,7 +78,9 @@
 		}
     }
 
-	@media (min-width: @screen-sm-min + 1) {
+	@desk-nav-start: (@screen-sm-min + 1);
+	
+	@media (min-width: @desk-nav-start) {
 		li {
 			width: 25%;
 		}

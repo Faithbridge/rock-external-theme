@@ -2,23 +2,18 @@
 
 <asp:Content ID="ctMain" ContentPlaceHolderID="main" runat="server">
 
-    <div class="position-fixed top-zero right-zero bottom-zero left-zero" style="background-color: #{% if pageBackgroundColorHex %}{{ pageBackgroundColorHex }}{% else %}ececec{% endif %}; z-index: -1;"></div>
+    <Rock:Lava ID="PageColor" runat="server">
+            {% assign pageColor = CurrentPage | Attribute:'PageColor' %}
+            <div class="position-fixed top-zero right-zero bottom-zero left-zero" style="background-color: {{ pageColor }}; z-index: -1;"></div>
+    </Rock:Lava>
 
     <div class="soft xs-soft-half hard-bottom xs-hard-bottom clearfix">
 
-        <!-- Page Title -->
-        {% if pageTitle %}
-            {% set blockData = { 
-                id: '',
-                preTitle: '',
-                titleSize: '',
-                title: pageTitle,
-                subtitle: pageSubtitle,
-                tags: '',
-                copy: ''
-            } %}{% include "page-header.html" %}
+        <Rock:Lava ID="PageTitle" runat="server">
+        {% if CurrentPage.PageDisplayTitle == true %}
+            {[pageHeader]}
         {% endif %}
-        <Rock:PageIcon ID="PageIcon" runat="server" /> <h1><Rock:PageTitle ID="PageTitle" runat="server" /></h1>
+        </Rock:Lava>
 
         <!-- Breadcrumbs -->
         <Rock:PageBreadCrumbs ID="PageBreadCrumbs" runat="server" />

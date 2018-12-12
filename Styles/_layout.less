@@ -14,8 +14,9 @@ body {
 	bottom: 0;
 	width: 100%;
 	z-index: 100;
-
-	@media (min-width: @screen-sm-min) {
+	
+	@stuff: (@screen-sm-min + 1);
+	@media (min-width: @stuff) {
 		bottom: auto;
 		top: 0;
 	}

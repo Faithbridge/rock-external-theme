@@ -1,28 +1,27 @@
-{#
+{%- for item in Items -%}
+<!--
+    <pre>{{ ContentChannel | ToJSON }}</pre>
+-->
+{% assign id = item.Id %}
+{% assign linkColorHex = ContentChannel.linkColorHex %}
+{% assign backgroundColorHex = ContentChannel.backgroundColorHex %}
+{% assign grayscale = ContentChannel.grayscale %}
+{% assign ratio = ContentChannel.ratio %}
+{% assign imageUrl = item | Attribute:'Image','Url' %}
+{% assign imageOverlayUrl = ContentChannel.imageOverlayUrl %}
+{% assign backgroundVideoUrl = ContentChannel.backgroundVideoUrl %}
+{% assign imageOpacity = ContentChannel.imageOpacity %}
+{% assign linkUrl = ContentChannel.linkUrl %}
+{% assign linkText = ContentChannel.linkText %}
+{% assign linkClasses = ContentChannel.linkClasses %}
+{% assign buttonIcon = ContentChannel.buttonIcon %}
+{% assign videoId = ContentChannel.videoId %}
 
-{% set blockData = { 
-    id: '',
-    title: "",
-    copy: "",
-    linkColorHex: '',
-    backgroundColorHex: '',
-    grayscale: '',
-    ratio: '',
-    imageUrl: '',
-    imageOverlayUrl: '',
-    backgroundVideoUrl: '',
-    imageOpacity: '',
-    linkUrl: '',
-    linkText: '',
-    linkClasses: '',
-    buttonIcon: '',
-    videoId: ''
-} %}{% include "hero.html" %}
 
-#}
-
+<!--<pre>{{ item | ToJSON }}</pre>-->
 <!-- Hero -->
-<section {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="
+<section {% if id %}id="block-{{ id }}"{% endif %} class="
+shell
 hero
 bg-gray-dark
 position-relative 
@@ -32,66 +31,61 @@ text-white
 push-bottom
 xs-push-half-bottom
 bring-forward
-{% if blockData.ratio %}
-    ratio-{{ blockData.ratio }} hard
-{% endif %}" style="{% if blockData.backgroundColorHex %}background-color: #{{ blockData.backgroundColorHex }};{% endif %}">
+{% if ratio %}
+    ratio-{{ ratio }} hard
+{% endif %} flush-sides" style="{% if backgroundColorHex %}background-color: #{{ backgroundColorHex }};{% endif %}">
 
-    {% if blockData.backgroundVideoUrl %}
+    {% if backgroundVideoUrl %}
 
         <!-- Background Video -->
-        <video class="video display-block full-screen width-full rounded hidden-xs hidden-sm {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="object-fit: cover; min-width: 100%; min-height: 100%; height: 100%; opacity: {{ blockData.imageOpacity }};" width="1280" height="720" loop="" autoplay="">
-            <source src="{{ blockData.backgroundVideoUrl }}.mp4" type="video/mp4">
-            <source src="{{ blockData.backgroundVideoUrl }}.webm" type="video/webm">
+        <video class="video display-block full-screen width-full rounded hidden-xs hidden-sm {% if grayscale == 'y' %}grayscale{% endif %}" style="object-fit: cover; min-width: 100%; min-height: 100%; height: 100%; opacity: {{ imageOpacity }};" width="1280" height="720" loop="" autoplay="">
+            <source src="{{ backgroundVideoUrl }}.mp4" type="video/mp4">
+            <source src="{{ backgroundVideoUrl }}.webm" type="video/webm">
         </video>
 
     {% endif %}
     
     <!-- Background Image -->
-    {% if blockData.imageUrl %}
-        <span class="{% if blockData.mobileImageUrl %}hidden-sm hidden-xs{% endif %} full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
+    {% if imageUrl %}
+        <span class="{% if mobileImageUrl %}hidden-sm hidden-xs{% endif %} full-screen background-cover background-center rounded {% if backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ imageUrl }}'); {% if imageOpacity %}opacity: {{ imageOpacity }};{% endif %}"></span>
     {% endif %}
 
-    {% if blockData.mobileImageUrl %}
-        <span class="hidden-md hidden-lg full-screen background-cover background-center rounded {% if blockData.backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if blockData.grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ blockData.mobileImageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
+    {% if mobileImageUrl %}
+        <span class="hidden-md hidden-lg full-screen background-cover background-center rounded {% if backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if grayscale == 'y' %}grayscale{% endif %}" style="background-image: url('{{ mobileImageUrl }}'); {% if imageOpacity %}opacity: {{ imageOpacity }};{% endif %}"></span>
     {% endif %}
 
     <div class="bring-forward center-block text-constrained text-center soft-top push-half-top xs-flush-top xs-soft-top">
 
-        {% if blockData.imageOverlayUrl %}
-            <img src="{{ blockData.imageOverlayUrl }}" alt="" class="position-relative push-bottom" style="width: 70%; max-width: 250px;">
+        {% if imageOverlayUrl %}
+            <img src="{{ imageOverlayUrl }}" alt="" class="position-relative push-bottom" style="width: 70%; max-width: 250px;">
         {% endif %}
 
-        <span class="{% if blockData.textColorClass %}{{ blockData.textColorClass }}{% else %}text-white{% endif %}">
+        <span class="{% if textColorClass %}{{ textColorClass }}{% else %}text-white{% endif %}">
 
-            {% if blockData.title %}
-                <h1>{{ blockData.title }}</h1>
+            {% if item.Title %}
+                <h1>{{ item.Title }}</h1>
             {% endif %}
 
-            {{ blockData.copy | safe }}
+            {{ item.Content }}
 
         </span>
 
-        {% if blockData.linkUrl %}
+        {% if linkUrl %}
             <p>
-                {% set buttonData = { 
-                    buttonSize: '',
-                    buttonColor: 'btn-primary',
-                    buttonIcon: blockData.buttonIcon,
-                    linkUrl: blockData.linkUrl,
-                    linkText: blockData.linkText
-                } %}{% include "button.html" %}
+                
             </p>
         {% endif %}
 
-        {% if blockData.videoId %}
-            <span class="wistia_embed wistia_async_{{ blockData.videoId }} popover=true popoverContent=link clickable text-center" style="display:inline; position:relative">
+        {% if videoId %}
+            <span class="wistia_embed wistia_async_{{ videoId }} popover=true popoverContent=link clickable text-center" style="display:inline; position:relative">
                 <a href="#" class="btn btn-primary">Watch Video <i class="fas fa-xs fa-play"></i></a>
             </span>
 
-            <script src="https://fast.wistia.com/embed/medias/{{ blockData.videoId }}.jsonp" async></script>
+            <script src="https://fast.wistia.com/embed/medias/{{ videoId }}.jsonp" async></script>
             <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
         {% endif %}
 
     </div>
 
 </section>
+{%- endfor -%}

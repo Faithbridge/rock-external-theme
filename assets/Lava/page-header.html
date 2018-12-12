@@ -1,30 +1,14 @@
-{#
+{% assign tagCount = blockData.tags | length %}
 
-{% set blockData = { 
-    id: '',
-    preTitle: '',
-    titleSize: '',
-    title: '',
-    tags: {
-		'': ''
-	},
-    copy: ''
-} %}{% include "page-header.html" %}
-
-#}
-
-{% set tagCount = blockData.tags | length %}
-
-<section class="soft-half-top hard-bottom hard-sides push-half-bottom flush-sides xs-text-center">
+<section class="shell soft-half-top hard-bottom hard-sides push-half-bottom flush-sides xs-text-center">
     <div class="container-fluid hard-sides {% if pageHeaderColorHex %}text-white{% endif %}">
 
     	{% if blockData.preTitle %}
     		<p class="sans-serif stronger letter-spacing-condensed push-half-bottom xs-push-bottom">{{ blockData.preTitle | safe }}</p>
     	{% endif %}
 
-		{% if blockData.title %}
-        	<h1 class="{% if blockData.titleSize %}{{ blockData.titleSize }}{% else %}h2{% endif %} {% if tagCount >= 1 or blockData.copy %}push-half-bottom xs-push-bottom{% else %}flush{% endif %}">{{ blockData.title | safe }}</h1>
-        {% endif %}
+
+        <h1 class="flush">{{ CurrentPage.PageTitle}}</h1>
 
         {% if blockData.subtitle %}
             <p class="sans-serif stronger letter-spacing-condensed push-half-top flush-bottom {% if pageHeaderColorHex %}{% else %}text-gray-dark{% endif %}"><small>{{ blockData.subtitle | safe }}</small></p>

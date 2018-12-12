@@ -27,7 +27,7 @@
         <!-- Libraries -->
         <script src="<%# System.Web.Optimization.Scripts.Url("~/Scripts/Bundles/RockJQueryLatest" ) %>"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="<%# ResolveRockUrl("~~/Scripts/theme.js", true) %>" ></script>
+        <script src="<%# ResolveRockUrl("~~/Scripts/compiled/theme.js", true) %>" ></script>
 
         <!-- Set the viewport width to device width for mobile -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -41,20 +41,6 @@
 
         <script src="<%# ResolveRockUrl("~/Scripts/modernizr.js" ) %>" ></script>
 
-        <!-- App Icons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
-        <link rel="manifest" href="/assets/images/favicons/site.webmanifest">
-        <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#303030">
-        <link rel="apple-touch-startup-image" href="/assets/images/favicon/launch.png">
-
-        <meta name="msapplication-TileColor" content="#1c1c1c">
-        <meta name="theme-color" content="#ffffff">
-        <meta name="apple-mobile-web-app-title" content="NewSpring">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
         <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 
     </head>
@@ -67,24 +53,12 @@
                 <Rock:Zone Name="Header" runat="server" />
                 <Rock:Zone Name="Login" runat="server" />
 
-                <!-- LIVE BAR -->
-                <a href="#" class="display-block soft-half bg-primary shadowed text-decoration-none text-center">
-                    <small class="sans-serif stronger letter-spacing-condensed text-white pulse-opacity flush">NewSpring Church is Live. Watch Now.</small>
-                </a>
-
             </div>
 
             <Rock:Zone Name="Navigation" runat="server" />
-            {% if navPages %}
-                <div id="navigation-secondary" class="position-fixed top-zero width-full" style="z-index: 10;">
-                    {% include "navigation-secondary.html" %}
-                </div>
-            {% endif %}
+
 
             <div id="content" class="clearfix">
-                    
-                {% block globalContent %}
-                {% endblock %}
 
                 <asp:ContentPlaceHolder ID="feature" runat="server"></asp:ContentPlaceHolder>
                 <asp:ContentPlaceHolder ID="main" runat="server"></asp:ContentPlaceHolder>
