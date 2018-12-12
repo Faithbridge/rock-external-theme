@@ -4,9 +4,20 @@
 
     <div class="position-fixed top-zero right-zero bottom-zero left-zero" style="background-color: #{% if pageBackgroundColorHex %}{{ pageBackgroundColorHex }}{% else %}ececec{% endif %}; z-index: -1;"></div>
 
-    <div class="soft-top xs-soft-half-top">
+    <div class="soft xs-soft-half hard-bottom xs-hard-bottom clearfix">
 
         <!-- Page Title -->
+        {% if pageTitle %}
+            {% set blockData = { 
+                id: '',
+                preTitle: '',
+                titleSize: '',
+                title: pageTitle,
+                subtitle: pageSubtitle,
+                tags: '',
+                copy: ''
+            } %}{% include "page-header.html" %}
+        {% endif %}
         <Rock:PageIcon ID="PageIcon" runat="server" /> <h1><Rock:PageTitle ID="PageTitle" runat="server" /></h1>
 
         <!-- Breadcrumbs -->

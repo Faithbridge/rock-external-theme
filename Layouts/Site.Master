@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" Inherits="Rock.Web.UI.RockMasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Rock.Web.UI.RockMasterPage" %>
 <%@ Import Namespace="System.Web.Optimization" %>
 <!DOCTYPE html>
 
@@ -58,59 +58,40 @@
         <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 
     </head>
-    <body runat="server" id="body" class="{% if isLive == 'y' %}is-live{% endif %}">
+    <body runat="server" id="body" class="is-live">
 
         <form id="form1" runat="server">
-
 
             <div id="navigation">
 
                 <Rock:Zone Name="Header" runat="server" />
                 <Rock:Zone Name="Login" runat="server" />
-                <Rock:Zone Name="Navigation" runat="server" />
 
-                {% if isLive == 'y' %}
-                    <a href="#" class="display-block soft-half bg-primary shadowed text-decoration-none text-center">
-                        <small class="sans-serif stronger letter-spacing-condensed text-white pulse-opacity flush">NewSpring Church is Live. Watch Now.</small>
-                    </a>
-                {% endif %}
+                <!-- LIVE BAR -->
+                <a href="#" class="display-block soft-half bg-primary shadowed text-decoration-none text-center">
+                    <small class="sans-serif stronger letter-spacing-condensed text-white pulse-opacity flush">NewSpring Church is Live. Watch Now.</small>
+                </a>
 
             </div>
 
-            <div id="content">
-                
-                {% if pageTitle or navPages %}
-                <div class="soft xs-soft-half hard-bottom xs-hard-bottom clearfix">
-
-                    {% if pageTitle %}
-                        {% set blockData = { 
-                            id: '',
-                            preTitle: '',
-                            titleSize: '',
-                            title: pageTitle,
-                            subtitle: pageSubtitle,
-                            tags: '',
-                            copy: ''
-                        } %}{% include "page-header.html" %}
-                    {% endif %}
-                    
-                    {% if navPages %}
-                        {% include "navigation-secondary.html" %}
-                    {% endif %}
-
+            <Rock:Zone Name="Navigation" runat="server" />
+            {% if navPages %}
+                <div id="navigation-secondary" class="position-fixed top-zero width-full" style="z-index: 10;">
+                    {% include "navigation-secondary.html" %}
                 </div>
-                {% endif %}
-                
+            {% endif %}
+
+            <div id="content" class="clearfix">
+                    
+                {% block globalContent %}
+                {% endblock %}
 
                 <asp:ContentPlaceHolder ID="feature" runat="server"></asp:ContentPlaceHolder>
                 <asp:ContentPlaceHolder ID="main" runat="server"></asp:ContentPlaceHolder>
                 <Rock:Zone Name="Footer" runat="server" />
+
                 
             </div>
-
-            {% include "navigation-modal.html" %}
-            {% include "search-modal.html" %}
-            {% include "share-modal.html" %}
 
             <%-- controls for scriptmanager and update panel --%>
             <asp:ScriptManager ID="sManager" runat="server"/>
