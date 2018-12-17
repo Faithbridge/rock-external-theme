@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-body soft-half">
         <form action="">
-          <h2 class="push-half-ends text-center">Hello{% if signedIn and userFirstName %}, {{ userFirstName }}{% endif %}.</h2>
+          <h2 class="push-half-ends text-center">Hello{% if CurrentPerson != null %}, {{ CurrentPerson.NickName }}{% endif %}.</h2>
           <input class="form-control input input text-center" type="text" placeholder="What can we help you find?">
         </form>
       </div>

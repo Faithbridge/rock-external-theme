@@ -60,7 +60,7 @@
 @font-family-serif:       "ff-meta-serif-web-pro", Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-sans-serif;
+@font-family-base:        @font-family-serif;
 
 @font-size-base:          18px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
@@ -632,6 +632,8 @@
 @modal-header-border-color:   #e5e5e5;
 //** Modal footer border color
 @modal-footer-border-color:   @modal-header-border-color;
+//** Modal footer background color
+@modal-footer-bg: @gray-darker;
 
 @modal-lg:                    1200px;
 @modal-md:                    700px;

@@ -1,112 +1,98 @@
-{#
+{%- for item in Items -%}
 
-{% set blockData = { 
-    id: '',
-    linkColorHex: '',
-    backgroundColorHex: '',
-    alignment: '',
-    grayscale: '',
-    label: '',
-    titleSize:'',
-    title: '', 
-    subtitle: '',
-    copy: "",
-    trimCopy: '',
-    imageUrl: '',
-    imageOpacity: '',
-    linkUrl: '',
-    linkText: '',
-    buttonIcon: ''
-} %}{% include "ad-unit.html" %}
+{% assign id = item.Id %}
+{% assign videoId = item | Attribute:'Video','RawValue' %}
+{% assign backgroundColor = ContentChannel.BackgroundColor %}
+{% assign foregroundColor = ContentChannel.ForegroundColor %}
+{% assign label = item | Attribute:'Label' %}
+{% assign subtitle =  item | Attribute:'Subtitle' %}
+{% assign trimCopy = item | Attribute:'TrimCopy' %}
+{% assign grayscale = item | Attribute:'Grayscale' %}
+{% assign imageUrl = item | Attribute:'imageUrl','Url' %}
+{% assign imageOpacity = item | Attribute:'ImageOpacity' | DividedBy:'100' %}
+{% assign alignment = item | Attribute:'TextAlignment' %}
+{% assign linkText = item | Attribute:'LinkText' %}
+{% assign linkUrl = item | Attribute:'LinkUrl','RawValue' %}
+{% assign lava = item | Attribute:'Lava' %}
 
-#}
-
-{% if blockData.id %}
+{% if id != null and id != '' %}
     <style>
-        {% if blockData.backgroundColorHex %}
-            #block-{{ blockData.id }}, #block-{{ blockData.id }} a:not(.btn):not(.label) {
+        {% if backgroundColor != null and backgroundColor != '' %}
+            #block-{{ id }}, #block-{{ id }} a:not(.btn):not(.label) {
                 color: #fff;
             }
 
-            #block-{{ blockData.id }} {
-                background-color: #{{ blockData.backgroundColorHex }};
+            #block-{{ id }} {
+                background-color: {{ backgroundColor }};
             }
         
-            #block-{{ blockData.id }} blockquote, blockquote footer, blockquote small, blockquote .small {
+            #block-{{ id }} blockquote, blockquote footer, blockquote small, blockquote .small {
                 color: #fff;
             }
         {% endif %}
 
-        {% if blockData.linkColorHex %}
-            #block-{{ blockData.id }} a:not(.btn):not(.label) {
-                color: #{{ blockData.linkColorHex }};
+        {% if foregroundColor != null and foregroundColor != '' %}
+            #block-{{ id }} a:not(.btn):not(.label) {
+                color: {{ foregroundColor }};
             }
 
-            #block-{{ blockData.id }} .btn {
-                background-color: #{{ blockData.linkColorHex }};
-                border-color: #{{ blockData.linkColorHex }};
+            #block-{{ id }} .btn {
+                background-color: {{ foregroundColor }};
+                border-color: {{ foregroundColor }};
             }
         {% endif %}
     </style>
 {% endif %}
 
-<section {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="shell bg-white position-relative overflow-hidden xs-soft-half-sides xs-soft-top xs-hard-bottom xs-push-half-bottom rounded shadowed">
+<section {% if id != null and id != '' %}id="block-{{ id }}"{% endif %} class="shell bg-white position-relative overflow-hidden flush-sides soft-double-top xs-soft-half-sides xs-soft-top xs-hard-bottom xs-push-half-bottom rounded shadowed">
 	
-	{% if blockData.imageUrl %}
-    	<span class="full-screen background-cover background-center {% if blockData.grayscale %}grayscale{% endif %}" style="background-image: url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></span>
+	{% if imageUrl != null and imageUrl != '' %}
+    	<span class="full-screen background-cover background-center {% if grayscale == 'Yes' %}grayscale{% endif %}" style="background-image: url('{{ imageUrl }}'); {% if imageOpacity != null and imageOpacity != '' %}opacity: {{ imageOpacity }};{% endif %}"></span>
     {% endif %}
 
-    <div class="bring-forward {% if blockData.alignment == 'right' %}pull-right{% elseif blockData.alignment == 'left' %}{% else %}center-block text-center{% endif %} text-constrained soft xs-soft-top xs-soft-half-sides xs-soft-bottom">
+    <div class="bring-forward {% if alignment == 'right' %}pull-right{% elseif alignment == 'left' %}{% else %}center-block text-center{% endif %} text-constrained soft xs-soft-top xs-soft-half-sides xs-soft-bottom">
 		
-        {% if blockData.label %}
-            <p><small class="label label-default circular sans-serif letter-spacing-condensed">{{ blockData.label }}</small></p>
+        {% if label != null and label != '' %}
+            <p><small class="label label-default circular sans-serif letter-spacing-condensed">{{ label }}</small></p>
         {% endif %}
 
-		{% if blockData.title %}
-        	<h2 class="{{ blockData.titleSize }} push-half-bottom">{{ blockData.title }}</h2>
-        {% endif %}
+        <h2 class="{% if titleSize != null and titleSize != '' %}{{ titleSize }}{% endif %} push-half-bottom">{{ item.Title }}</h2>
 
-        {% if blockData.subtitle %}
-            <p class="sans-serif stronger text-uppercase letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
+        {% if subtitle != null and subtitle != '' %}
+            <p class="sans-serif stronger text-uppercase letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ subtitle }}</small></p>
         {% endif %}
 
 		<div>
-            {% if blockData.trimCopy %}
-                {% set length = blockData.copy | length %}
-                {{ blockData.copy | safe | truncate(200) }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
+            {% if trimCopy == 'Yes' %}
+                {% assign length = item.Content | Size %}
+                {{ item.Content | Truncate:200,'...' }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ id }}-modal">Read More</a>{% endif %}
             {% else %}
-                {{ blockData.copy | safe }}
+                {{ item.Content }}
             {% endif %}
         </div>
 
-		{% if blockData.linkUrl %}
-	        <p class="push-half-bottom">
-                {% set buttonData = { 
-                    buttonSize: '',
-                    buttonColor: 'btn-primary',
-                    buttonIcon: blockData.buttonIcon,
-                    linkUrl: blockData.linkUrl,
-                    linkText: blockData.linkText
-                } %}{% include "button.html" %}
-	        </p>
+		{% if linkUrl != null and linkUrl != '' %}
+            <p>
+                <a href="{{ linkUrl }}" class="btn btn-primary" role="button" data-scroll>{% if linkText != null and linkText != '' %}{{ linkText }}{% else %}Learn More{% endif %}</a>
+            </p>
         {% endif %}
 
     </div>
 </section>
 
-{% if blockData.trimCopy %}
+{% if trimCopy == 'Yes' %}
     {% if length > 200 %}
-    <div class="modal fade" id="{{ blockData.id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="{{ id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <a href="#" class="text-gray-darker pull-right" data-dismiss="modal" aria-label="Close">
                         <i class="fa fa-lg fa-times"></i>
                     </a>
-                    <h3 class="flush">{{ blockData.title }}</h3>
+                    <h3 class="flush">{{ item.Title }}</h3>
                 </div>
                 <div class="modal-body soft hard-bottom">
-                    {{ blockData.copy | safe }}
+                    {{ item.Content }}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -116,3 +102,5 @@
     </div>
     {% endif %}
 {% endif %}
+
+{%- endfor -%}

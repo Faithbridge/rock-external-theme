@@ -4,8 +4,8 @@
       <div class="modal-body soft hard-bottom">
         <i class="fa fa-times close" data-dismiss="modal" aria-hidden="true"></i>
         <h1 class="h2">
-          {% if signedIn %}
-            Hello{% if userFirstName %} {{ userFirstName }}{% endif %}.
+          {% if CurrentPerson != null %}
+            Hello {{ CurrentPerson.NickName }}.
           {% else %}
             Hello!
           {% endif %}

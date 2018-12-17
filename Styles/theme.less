@@ -55,6 +55,10 @@ a {
 	letter-spacing: -2px !important;
 }
 
+legend {
+	font-weight: 700;
+}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, ol, ul {
 	margin-bottom: @base-spacing-unit;
 }
@@ -203,31 +207,32 @@ mark, .mark {
 	}
 }
 
-.modal {
-	display: none;
-	align-items: center;
-	justify-content: center;
-	z-index: -1;
+// .modal {
+// 	display: none;
+// 	align-items: center;
+// 	justify-content: center;
+// 	z-index: -1;
 
-	&.in {
-		display: flex;
-		z-index: @zindex-modal;
-	}
-}
+// 	&.in {
+// 		display: flex;
+// 		z-index: @zindex-modal;
+// 	}
+// }
 
-.modal-dialog {
-	max-width: 700px;
-	max-height: 90%;
-}
+// .modal-dialog {
+// 	max-width: 700px;
+// 	max-height: 90%;
+// }
 
-.modal-open {
-	.content {
-		overflow: hidden;
-	}
-}
+// .modal-open {
+// 	.content {
+// 		overflow: hidden;
+// 	}
+// }
 
 #cms-admin-footer,
-.zone-configuration-bar {
+.zone-configuration-bar,
+.block-configuration-bar {
 	font-family: "colfax-web",Helvetica,Arial,sans-serif;
 }
 

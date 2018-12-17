@@ -1,149 +1,113 @@
-{#
+{%- for item in Items -%}
+<!--<pre>{{ ContentChannel | ToJSON }}</pre>-->
+{% assign id = item.Id %}
+{% assign videoId = item | Attribute:'Video','RawValue' %}
+{% assign backgroundColor = ContentChannel.BackgroundColor %}
+{% assign foregroundColor = ContentChannel.ForegroundColor %}
+{% assign label = item | Attribute:'Label' %}
+{% assign subtitle =  item | Attribute:'Subtitle' %}
+{% assign trimCopy = item | Attribute:'TrimCopy' %}
+{% assign grayscale = item | Attribute:'Grayscale' %}
+{% assign imageUrl = '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/connect/NewConnect_561x1_2000_2000_90.jpg' %}
+{% assign imageOpacity = item | Attribute:'ImageOpacity' | DividedBy:'100' %}
+{% assign imageAlignment = item | Attribute:'ImageAlignment' %}
+{% assign linkText = item | Attribute:'LinkText' %}
+{% assign linkUrl = item | Attribute:'LinkUrl','RawValue' %}
 
-{% set blockData = { 
-    id: '',
-    linkColorHex: '',
-    backgroundColorHex: '',
-    grayscale: '',
-    label: '',
-    titleSize:'',
-    title: "",
-    subtitle: "",
-    copy: "",
-    trimCopy: '',
-    tags: {
-      '': ''
-    },
-    videoId:'',
-    imageUrl: '',
-    imageOpacity: '',
-    imageAlignment: '',
-    linkUrl: '',
-    linkText: ''
-} %}{% include "side-by-side.html" %}
+<!--<pre>{{ item | ToJSON }}</pre>-->
+<section {% if id %}id="block-{{ id }}"{% endif %} class="hard position-relative rounded shadowed overflow-hidden bg-white push-bottom xs-push-half-bottom">
 
-#}
+    {% if imageUrl != null and imageUrl != '' %}
+        {% if linkUrl != null and linkUrl != '' and videoId == '' %}<a href="{{ linkUrl }}">{% endif %}
 
-{% if blockData.id %}
-    <style>
-        #block-{{ blockData.id }} {
-            background-color: #{{ blockData.backgroundColorHex }};
-        }
+            <div class="split {% if imageAlignment == 'Left' %}split-left{% else %}split-right{% endif %} background-center background-cover sm-push-bottom xs-push-bottom" style="z-index: 1;">
 
-        #block-{{ blockData.id }} a:not(.btn):not(.label) {
-            color: #{{ blockData.linkColorHex }};
-        }
-
-        #block-{{ blockData.id }} h2 a:not(.btn):not(.label) {
-            color: #303030;
-        }
-
-        #block-{{ blockData.id }} .btn {
-            background-color: #{{ blockData.linkColorHex }};
-            border-color: #{{ blockData.linkColorHex }};
-        }
-
-        #block-{{ blockData.id }} .btn-play {
-            border-color: #fff;
-        }
-
-    </style>
-{% endif %}
-
-<section {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="hard position-relative rounded shadowed overflow-hidden bg-white push-bottom xs-push-half-bottom">
-
-    {% if blockData.imageUrl %}
-        {% if blockData.linkUrl and blockData.videoId == '' %}<a href="{{ blockData.linkUrl }}">{% endif %}
-
-            <div class="split {% if blockData.imageAlignment == 'left' %}split-left{% else %}split-right{% endif %} background-center background-cover sm-push-bottom xs-push-bottom" style="z-index: 1;">
-
-                {% if blockData.imageUrl %}
-                    <div class="full-screen background-cover background-center {% if blockData.grayscale %}grayscale{% endif %}" style="background-image:url('{{ blockData.imageUrl }}'); {% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}"></div>
+                {% if imageUrl != null and imageUrl != '' %}
+                    <div class="full-screen background-cover background-center {% if grayscale == 'Yes' %}grayscale{% endif %}" style="background-image:url('{{ imageUrl }}'); {% if imageOpacity != null and imageOpacity != '' %}opacity: {{ imageOpacity }};{% endif %}"></div>
                 {% endif %}
 
-                {% if blockData.videoId %}
+                {% if videoId != null and videoId != '' %}
                     <div class="btn btn-play position-absolute 
-                    {% if blockData.imageAlignment == 'left' %}
+                    {% if imageAlignment == 'Left' %}
                         position-right-boundry margin-right-negative
                     {% else %}
                         position-left-boundry margin-left-negative sm-margin-top-auto
-                    {% endif %} margin-top-negative sm-margin-bottom-negative sm-margin-left-negative xs-margin-bottom-negative xs-margin-left-negative sm-position-bottom-boundry xs-position-bottom-boundry text-white shadowed"><span class="wistia_embed wistia_async_{{ blockData.videoId }} popover=true popoverContent=link" style="display:inline;position:relative"><i class="fas fa-fw fa-lg fa-play"></i></span></div>
+                    {% endif %} margin-top-negative sm-margin-bottom-negative sm-margin-left-negative xs-margin-bottom-negative xs-margin-left-negative sm-position-bottom-boundry xs-position-bottom-boundry text-white shadowed"><span class="wistia_embed wistia_async_{{ videoId }} popover=true popoverContent=link" style="display:inline;position:relative"><i class="fas fa-fw fa-lg fa-play"></i></span></div>
 
-                    <script src="https://fast.wistia.com/embed/medias/{{ blockData.videoId }}.jsonp" async></script>
+                    <script src="https://fast.wistia.com/embed/medias/{{ videoId }}.jsonp" async></script>
                     <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
                 {% endif %}
 
             </div>
 
-        {% if blockData.linkUrl %}</a>{% endif %}
-    {% endif %}
-    
+        {% if linkUrl != null and linkUrl != '' %}</a>{% endif %}
+    {% endif %}    
 
-    <div class="row {% if blockData.imageAlignment == 'left' %}text-right{% else %}text-left{% endif %} flush"><!-- Section Padding and Alignement Classes -->
+    <div class="row {% if imageAlignment == 'Left' %}text-right{% else %}text-left{% endif %} flush"><!-- Section Padding and Alignement Classes -->
         <div class="col-xs-12 col-sm-12 col-md-6 text-left soft-ends xs-hard-ends"><!-- Text Alignment Classes -->
-            <div class="bg-white soft-double soft-bottom sm-soft xs-soft-ends xs-soft-sides sm-text-center xs-text-center">
+            <div class="bg-white soft-double soft-bottom sm-soft xs-soft-ends xs-soft-sides xs-text-center sm-text-center md-text-left">
 
-                {% if blockData.videoId %}<div class="{% if blockData.imageAlignment == 'left' %}soft-left{% else %}soft-right{% endif %} sm-hard-sides sm-soft-top xs-hard-sides xs-soft-top">{% endif %}
+                {% if videoId != null and videoId != '' %}<div class="{% if imageAlignment == 'Left' %}soft-left{% else %}soft-right{% endif %} sm-hard-sides sm-soft-top xs-hard-sides xs-soft-top">{% endif %}
                     
-                    {% if blockData.label %}
-                        <p><small class="label label-default sans-serif circular">{{ blockData.label }}</small></p>
+                    {% if label != null and label != '' %}
+                        <p><small class="label label-default sans-serif circular">{{ label }}</small></p>
                     {% endif %}
                     
-                    {% if blockData.title %}
-                        <h2 class="{{ blockData.titleSize }} block-title push-half-bottom">
-                            {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
-                                {{ blockData.title }}
-                            {% if blockData.linkUrl %}</a>{% endif %}
+                    {% if item.Title %}
+                        <h2 class="block-title push-half-bottom">
+                            {% if linkUrl != null and linkUrl != '' %}<a href="{{ linkUrl }}">{% endif %}
+                                {{ item.Title }}
+                            {% if linkUrl != null and linkUrl != '' %}</a>{% endif %}
                         </h2>
                     {% endif %}
 
-                    {% if blockData.subtitle %}
-                        <p class="sans-serif stronger text-uppercase letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
+                    {% if subtitle != null and subtitle != '' %}
+                        <p class="sans-serif stronger text-uppercase letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ subtitle }}</small></p>
                     {% endif %}
 
-                    {% set tagCount = blockData.tags | length %}
+                    {% assign tagCount = tags | length %}
                     {% if tagCount != 0 %}
                         <p class="tag-list sans-serif text-gray-darker push-half-bottom">
-                            <small>{% for id, title in blockData.tags %}
+                            <small>{% for id, title in tags %}
                                 <a href="#" class="stronger text-decoration-none letter-spacing-condensed no-breaks"><i class="fas fa-sm fa-tag"></i> {{ title }}</a>
                             {% endfor %}</small>
                         </p>
                     {% endif %}
                     
                     <div>
-                        {% if blockData.trimCopy %}
-                            {% set length = blockData.copy | length %}
-                            {{ blockData.copy | safe | truncate(200) }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ blockData.id }}-modal">Read More</a>{% endif %}
+                        {% if trimCopy == 'Yes' %}
+                            {% assign length = item.Content | Size %}
+                            {{ item.Content | Truncate:200,'...') }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ id }}-modal">Read More</a>{% endif %}
                         {% else %}
-                            {{ blockData.copy | safe }}
+                            {{ item.Content }}
                         {% endif %}
                     </div>
 
-                    {% if blockData.linkUrl %}
+                    {% if linkUrl != null and linkUrl != '' %}
                         <p>
-                            <a href="{{ blockData.linkUrl }}" class="btn btn-primary" role="button" data-scroll>{% if blockData.linkText %}{{ blockData.linkText }}{% else %}Learn More{% endif %}</a>
+                            <a href="{{ linkUrl }}" class="btn btn-primary" role="button" data-scroll>{% if linkText != null and linkText != '' %}{{ linkText }}{% else %}Learn More{% endif %}</a>
                         </p>
                     {% endif %}
 
-                {% if blockData.videoId %}</div>{% endif %}
+                {% if videoId != null and videoId != '' %}</div>{% endif %}
             </div>
         </div>
     </div>
 </section>
 
-{% if blockData.trimCopy %}
+{% if trimCopy == 'Yes' %}
     {% if length > 200 %}
-    <div class="modal fade" id="{{ blockData.id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="{{ id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <a href="#" class="text-gray-darker pull-right" data-dismiss="modal" aria-label="Close">
                         <i class="fa fa-lg fa-times"></i>
                     </a>
-                    <h3 class="flush">{{ blockData.title }}</h3>
+                    <h3 class="flush">{{ item.Title }}</h3>
                 </div>
                 <div class="modal-body soft hard-bottom">
-                    {{ blockData.copy | safe }}
+                    {{ item.Content | safe }}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Close</button>
@@ -153,3 +117,5 @@
     </div>
     {% endif %}
 {% endif %}
+
+{% endfor %}

@@ -1,11 +1,12 @@
 <!-- Mobile Secondary Nav -->
+{%- if Page.DisplayChildPages == 'true' and Page.Pages != empty -%}
 <section class="bg-gray-darker hard flush shadowed">
     <div class="soft-sides soft-half-ends xs-soft-half-sides text-right">
 
-        {% if navPages.title %}
-            {% if navPages.titleLinkUrl %}<a href='{{ navPages.titleLinkUrl }}'>{% endif %}
-                <h2 class="h4 text-white flush pull-left" style="position: relative; top: 5px;">{{ navPages.title }}</h2>
-            {% if navPages.titleLinkUrl %}</a>{% endif %}
+        {% if title != null and title != '' %}
+            {% if titlelinkurl != null and titlelinkurl != "" %}<a href='{{ titlelinkurl }}'>{% endif %}
+                <h2 class="h4 text-white flush pull-left" style="position: relative; top: 5px;">{{ title }}</h2>
+            {% if titlelinkurl != null and titlelinkurl != "" %}</a>{% endif %}
         {% endif %}
         
         <a href="#" data-toggle="modal" data-target="#navigation-secondary-modal" title="Sub Navigation" class="btn btn-sm btn-primary hidden-md hidden-lg">
@@ -13,18 +14,28 @@
         </a>
 
         <ul class="list-inline flush hidden-xs hidden-sm">
-            {% for title, url in navPages.pages %}
-                <li><a href="{{ url }}" class="btn btn-sm btn-link text-hover-white" data-scroll>{{ title }}</a></li>
-            {% endfor %}
+            {%- for includedPage in IncludePageList -%}
+                <li><a href="{{ includedPage | Property:'Value' }}" class="{%- if includedPage.IsParentOfCurrent == 'true' -%}active{% endif %} btn btn-sm btn-link text-hover-white" data-scroll>{{ includedPage | Property:'Key' }}</a></li>
+            {%- endfor -%}
+
+            {%- for childPage in Page.Pages -%}
+                <li><a href="{{ childPage.Url }}" class="{%- if childPage.IsParentOfCurrent == 'true' -%}active{% endif %} btn btn-sm btn-link text-hover-white" data-scroll>{{ childPage.Title }}</a></li>
+            {%- endfor -%}
         </ul>
     </div>
+
     <div id="25" class="bg-white panel-collapse collapse hidden-md hidden-lg hidden" role="tabpanel" aria-labelledby="heading-25">
         <div class="panel-body soft hard-bottom clearfix">
             <ul class="list-style-none hard">
-            {% for title, url in navPages.pages %}
-                <li><a href="{{ url }}" class="text-decoration-none" data-scroll><h3 class="h5 push-half-bottom">{{ title }}</h3></a></li>
-            {% endfor %}
+                {%- for includedPage in IncludePageList -%}
+                <li><a href="{{ includedPage | Property:'Value' }}" class="{%- if childPage.IsParentOfCurrent == 'true' -%}active{% endif %} text-decoration-none" data-scroll><h3 class="h5 push-half-bottom">{{ includedPage | Property:'Key' }}</h3></a></li>
+                {%- endfor -%}
+
+                {%- for childPage in Page.Pages -%}
+                    <li><a href="{{ childPage.Url }}" class="{%- if childPage.IsParentOfCurrent == 'true' -%}active{% endif %} text-decoration-none" data-scroll><h3 class="h5 push-half-bottom">{{ childPage.Title }}</h3></a></li>
+                {%- endfor -%}
             </ul>
         </div>
     </div>
 </section>
+{%- endif -%}

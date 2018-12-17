@@ -44,7 +44,7 @@
         <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 
     </head>
-    <body runat="server" id="body" class="is-live">
+    <body runat="server" id="body">
 
         <form id="form1" runat="server">
 
@@ -79,6 +79,11 @@
                         <div class="updateprogress-bg modal-backdrop"></div>
                     </ProgressTemplate>
             </asp:UpdateProgress>
+
+            <Rock:Lava ID="PageTitle" runat="server">
+                {% include '~~/Assets/Lava/navigation-modal.html' %}
+                {% include '~~/Assets/Lava/search-modal.html' %}
+            </Rock:Lava>
 
         </form>
 

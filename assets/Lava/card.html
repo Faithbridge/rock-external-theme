@@ -1,54 +1,43 @@
-{#
+{%- for item in Items -%}
 
-{% set blockData = { 
-    id: '',
-    backgroundColorHex: '',
-    linkColorHex: '',
-    grayscale: '',
-    count: '',
-    type: '',
-    label: '',
-    textAlignment: '',
-    titleSize: '',
-    title: '', 
-    subtitle: "",
-    copy: "",
-    trimCopy: '',
-    tags: {
-      '': ''
-    },
-    imageShape: '',
-    imageUrl: '',
-    imageOpacity: '',
-    linkUrl: '',
-    linkText: ''
-} %}{% include "card.html" %}
+{% assign id = item.Id %}
+{% assign videoId = item | Attribute:'Video','RawValue' %}
+{% assign backgroundColor = ContentChannel.BackgroundColor %}
+{% assign foregroundColor = ContentChannel.ForegroundColor %}
+{% assign label = item | Attribute:'Label' %}
+{% assign subtitle =  item | Attribute:'Subtitle' %}
+{% assign trimCopy = item | Attribute:'TrimCopy' %}
+{% assign grayscale = item | Attribute:'Grayscale' %}
+{% assign imageUrl = item | Attribute:'imageUrl','Url' %}
+{% assign imageOpacity = item | Attribute:'ImageOpacity' | DividedBy:'100' %}
+{% assign alignment = item | Attribute:'TextAlignment' %}
+{% assign linkText = item | Attribute:'LinkText' %}
+{% assign linkUrl = item | Attribute:'LinkUrl','RawValue' %}
+{% assign lava = item | Attribute:'Lava' %}
 
-#}
-
-{% if blockData.id %}
+{% if id != null and id != '' %}
     <style>
-        {% if blockData.linkColorHex %}
-            #block-{{ blockData.id }} a:not(.btn):not(.label) {
-                color: #{{ blockData.linkColorHex }};
+        {% if foregroundColor != null and foregroundColor != '' %}
+            #block-{{ id }} a:not(.btn):not(.label) {
+                color: {{ foregroundColor }};
             }
 
-            #block-{{ blockData.id }} .btn {
-                background-color: #{{ blockData.linkColorHex }};
-                border-color: #{{ blockData.linkColorHex }};
+            #block-{{ id }} .btn {
+                background-color: {{ foregroundColor }};
+                border-color: {{ foregroundColor }};
             }
         {% endif %}
 
-        {% if blockData.backgroundColorHex %}
-            #block-{{ blockData.id }} {
-                background-color: #{{ blockData.backgroundColorHex }};
+        {% if backgroundColor != null and backgroundColor != '' %}
+            #block-{{ id }} {
+                background-color: {{ backgroundColor }};
             }
 
-            #block-{{ blockData.id }}, #block-{{ blockData.id }} a:not(.btn):not(.label) {
+            #block-{{ id }}, #block-{{ id }} a:not(.btn):not(.label) {
                 color: #fff;
             }
 
-            #block-{{ blockData.id }} .btn, #block-{{ blockData.id }} .label {
+            #block-{{ id }} .btn, #block-{{ id }} .label {
                 background-color: #fff;
                 border-color: #fff;
                 color: #1c1c1c;
@@ -58,89 +47,77 @@
     </style>
 {% endif %}
 
-<div {% if blockData.id %}id="block-{{ blockData.id }}"{% endif %} class="panel panel-default {% if blockData.textAlignment %}text-{{ blockData.textAlignment }}{% endif %}">
+<div {% if id != null and id != '' %}id="block-{{ id }}"{% endif %} class="panel panel-default {% if alignment != null and alignment != '' %}text-{{ alignment }}{% endif %}">
 
-    {% if blockData.imageUrl %}
-        {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}" class="panel-image">{% endif %}
-            {% if blockData.count %}
-                <span class="card-count sans-serif strong rounded bg-gray-lighter text-gray-darker text-center">{{ blockData.count }}</span>
+    {% if imageUrl != null and imageUrl != '' %}
+        {% if linkUrl != null and linkUrl != '' %}<a href="{{ linkUrl }}" class="panel-image">{% endif %}
+            {% if count != null and count != '' %}
+                <span class="card-count sans-serif strong rounded bg-gray-lighter text-gray-darker text-center">{{ count }}</span>
             {% endif %}
 
-            {% if blockData.imageShape %}
-                <div class="position-relative {% if blockData.imageShape != 'circle' %}ratio-{{ blockData.imageShape }}{% else %}ratio-square circular push-double-sides push-double-top{% endif %} background-cover background-center" style="background-image:url('{{ blockData.imageUrl }}');"></div>
-            {% else %}
-                <img src="{{ blockData.imageUrl }}" alt="" class="{% if blockData.grayscale %}grayscale{% endif %}" style="{% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}">
-            {% endif %}
+            <img src="{{ blockData.imageUrl }}" alt="" class="{% if blockData.grayscale %}grayscale{% endif %}" style="{% if blockData.imageOpacity %}opacity: {{ blockData.imageOpacity }};{% endif %}">
 
-            {% if blockData.type %}
-                <div class="label bg-gray-light text-white position-absolute bottom-zero left-zero push-left bring-forward sans-serif stronger circular" style="border: 3px solid #fff;"><small>{{ blockData.type }}</small></div>
+            {% if type != null and type != '' %}
+                <div class="label bg-gray-light text-white position-absolute bottom-zero left-zero push-left bring-forward sans-serif stronger circular" style="border: 3px solid #fff;"><small>{{ type }}</small></div>
             {% endif %}
     
-        {% if blockData.linkUrl %}</a>{% endif %}
+        {% if linkUrl != null and linkUrl != '' %}</a>{% endif %}
     {% endif %}
 
     <div class="panel-body xs-soft xs-hard-bottom">
 
-        {% if blockData.label %}
-            <p><small class="label bg-gray-light sans-serif circular">{{ blockData.label }}</small></p>
+        {% if label != null and label != '' %}
+            <p><small class="label bg-gray-light sans-serif circular">{{ label }}</small></p>
         {% endif %}
         
-        {% if blockData.title %}
-            <h2 class="{{ blockData.titleSize }} push-half-bottom">
-                {% if blockData.linkUrl %}<a href="{{ blockData.linkUrl }}">{% endif %}
-                    {{ blockData.title }}
-                {% if blockData.linkUrl %}</a>{% endif %}
-            </h2>
+        <h2 class="{% if titleSize != null and titleSize != '' %}{{ titleSize }}{% endif %} push-half-bottom">
+            {% if linkUrl != null and linkUrl != '' %}<a href="{{ linkUrl }}">{% endif %}
+                {{ item.Title }}
+            {% if linkUrl != null and linkUrl != '' %}</a>{% endif %}
+        </h2>
+
+        {% if subtitle != null and subtitle != '' %}
+            <p class="sans-serif stronger letter-spacing-condensed text-uppercase text-gray-light push-half-bottom"><small>{{ subtitle }}</small></p>
         {% endif %}
 
-        {% if blockData.subtitle %}
-            <p class="sans-serif stronger letter-spacing-condensed text-uppercase text-gray-light push-half-bottom"><small>{{ blockData.subtitle | safe }}</small></p>
-        {% endif %}
-
-        {% set tagCount = blockData.tags | length %}
-        {% if tagCount != 0 %}
+        {% assign tagCount = tags | Size %}
+        {% if tagCount > 0 %}
             <p class="tag-list sans-serif push-half-bottom">
-                <small>{% for id, title in blockData.tags %}
+                <small>{% for id, title in tags %}
                     <a href="#" class="stronger text-decoration-none letter-spacing-condensed no-breaks"><i class="fas fa-sm fa-tag"></i> {{ title }}</a>
                 {% endfor %}</small>
             </p>
         {% endif %}
 
-        {% if blockData.trimCopy %}
-            {% set length = blockData.copy | length %}
-            {{ blockData.copy | safe | truncate(140) }}{% if length > 140 %} <a href="#" data-toggle="modal" data-target="#modal-{{ blockData.id }}">read more</a>{% endif %}
+        {% if trimCopy != null and trimCopy != '' %}
+            {% assign length = item.Content | Size %}
+            {{ item.Content | Truncate:140,'...' }}{% if length > 140 %} <a href="#" data-toggle="modal" data-target="#modal-{{ id }}">read more</a>{% endif %}
         {% else %}
-            {{ blockData.copy | safe }}
+            {{ item.Content }}
         {% endif %}
 
-        {% if blockData.linkUrl %}
+        {% if linkUrl != null and linkUrl != '' %}
             <p>
-                {% set buttonData = { 
-                    buttonSize: 'btn-sm',
-                    buttonColor: 'btn-primary',
-                    buttonIcon: '',
-                    linkUrl: blockData.linkUrl,
-                    linkText: blockData.linkText
-                } %}{% include "button.html" %}
+                <a href="{{ linkUrl }}" class="btn btn-primary" role="button" data-scroll>{% if linkText != null and linkText != '' %}{{ linkText }}{% else %}Learn More{% endif %}</a>
             </p>
         {% endif %}
 
     </div>
 </div>
 
-{% if blockData.trimCopy %}
+{% if trimCopy != null and trimCopy != '' %}
     {% if length > 140 %}
-    <div class="modal fade" id="modal-{{ blockData.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="modal-{{ id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <a href="#" class="text-gray-darker pull-right" data-dismiss="modal" aria-label="Close">
                         <i class="fa fa-lg fa-times"></i>
                     </a>
-                    <h3 class="flush">{{ blockData.title }}</h3>
+                    <h3 class="flush">{{ item.Title }}</h3>
                 </div>
                 <div class="modal-body soft hard-bottom">
-                    {{ blockData.copy | safe }}
+                    {{ item.Content }}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Close</button>
@@ -150,3 +127,4 @@
     </div>
     {% endif %}
 {% endif %}
+{%- endfor -%}
