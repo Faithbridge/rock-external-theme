@@ -1,63 +1,46 @@
-{%- for item in Items -%}
-<!--<pre>{{ ContentChannel | ToJSON }}</pre>-->
-{% assign id = item.Id %}
-{% assign videoId = item | Attribute:'Video','RawValue' %}
-{% assign backgroundColor = ContentChannel.BackgroundColor %}
-{% assign foregroundColor = ContentChannel.ForegroundColor %}
-{% assign label = item | Attribute:'Label' %}
-{% assign subtitle =  item | Attribute:'Subtitle' %}
-{% assign trimCopy = item | Attribute:'TrimCopy' %}
-{% assign grayscale = item | Attribute:'Grayscale' %}
-{% assign imageUrl = '//dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/connect/NewConnect_561x1_2000_2000_90.jpg' %}
-{% assign imageOpacity = item | Attribute:'ImageOpacity' | DividedBy:'100' %}
-{% assign imageAlignment = item | Attribute:'ImageAlignment' %}
-{% assign linkText = item | Attribute:'LinkText' %}
-{% assign linkUrl = item | Attribute:'LinkUrl','RawValue' %}
-
-<!--<pre>{{ item | ToJSON }}</pre>-->
 <section {% if id %}id="block-{{ id }}"{% endif %} class="hard position-relative rounded shadowed overflow-hidden bg-white push-bottom xs-push-half-bottom">
 
-    {% if imageUrl != null and imageUrl != '' %}
-        {% if linkUrl != null and linkUrl != '' and videoId == '' %}<a href="{{ linkUrl }}">{% endif %}
+    {% if imageurl != null and imageurl != '' %}
+        {% if linkurl != null and linkurl != '' and videoid == '' %}<a href="{{ linkurl }}">{% endif %}
 
-            <div class="split {% if imageAlignment == 'Left' %}split-left{% else %}split-right{% endif %} background-center background-cover sm-push-bottom xs-push-bottom" style="z-index: 1;">
+            <div class="split {% if imagealignment == 'Left' %}split-left{% else %}split-right{% endif %} background-center background-cover sm-push-bottom xs-push-bottom" style="z-index: 1;">
 
-                {% if imageUrl != null and imageUrl != '' %}
-                    <div class="full-screen background-cover background-center {% if grayscale == 'Yes' %}grayscale{% endif %}" style="background-image:url('{{ imageUrl }}'); {% if imageOpacity != null and imageOpacity != '' %}opacity: {{ imageOpacity }};{% endif %}"></div>
+                {% if imageurl != null and imageurl != '' %}
+                    <div class="full-screen background-cover background-center {% if grayscale == 'Yes' %}grayscale{% endif %}" style="background-image:url('{{ imageurl }}'); {% if imageopacity != null and imageopacity != '' %}opacity: {{ imageopacity }};{% endif %}"></div>
                 {% endif %}
 
-                {% if videoId != null and videoId != '' %}
+                {% if videoid != null and videoid != '' %}
                     <div class="btn btn-play position-absolute 
-                    {% if imageAlignment == 'Left' %}
+                    {% if imagealignment == 'Left' %}
                         position-right-boundry margin-right-negative
                     {% else %}
                         position-left-boundry margin-left-negative sm-margin-top-auto
-                    {% endif %} margin-top-negative sm-margin-bottom-negative sm-margin-left-negative xs-margin-bottom-negative xs-margin-left-negative sm-position-bottom-boundry xs-position-bottom-boundry text-white shadowed"><span class="wistia_embed wistia_async_{{ videoId }} popover=true popoverContent=link" style="display:inline;position:relative"><i class="fas fa-fw fa-lg fa-play"></i></span></div>
+                    {% endif %} margin-top-negative sm-margin-bottom-negative sm-margin-left-negative xs-margin-bottom-negative xs-margin-left-negative sm-position-bottom-boundry xs-position-bottom-boundry text-white shadowed"><span class="wistia_embed wistia_async_{{ videoid }} popover=true popoverContent=link" style="display:inline;position:relative"><i class="fas fa-fw fa-lg fa-play"></i></span></div>
 
-                    <script src="https://fast.wistia.com/embed/medias/{{ videoId }}.jsonp" async></script>
+                    <script src="https://fast.wistia.com/embed/medias/{{ videoid }}.jsonp" async></script>
                     <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
                 {% endif %}
 
             </div>
 
-        {% if linkUrl != null and linkUrl != '' %}</a>{% endif %}
+        {% if linkurl != null and linkurl != '' %}</a>{% endif %}
     {% endif %}    
 
-    <div class="row {% if imageAlignment == 'Left' %}text-right{% else %}text-left{% endif %} flush"><!-- Section Padding and Alignement Classes -->
+    <div class="row {% if imagealignment == 'Left' %}text-right{% else %}text-left{% endif %} flush"><!-- Section Padding and Alignement Classes -->
         <div class="col-xs-12 col-sm-12 col-md-6 text-left soft-ends xs-hard-ends"><!-- Text Alignment Classes -->
             <div class="bg-white soft-double soft-bottom sm-soft xs-soft-ends xs-soft-sides xs-text-center sm-text-center md-text-left">
 
-                {% if videoId != null and videoId != '' %}<div class="{% if imageAlignment == 'Left' %}soft-left{% else %}soft-right{% endif %} sm-hard-sides sm-soft-top xs-hard-sides xs-soft-top">{% endif %}
+                {% if videoid != null and videoid != '' %}<div class="{% if imagealignment == 'Left' %}soft-left{% else %}soft-right{% endif %} sm-hard-sides sm-soft-top xs-hard-sides xs-soft-top">{% endif %}
                     
                     {% if label != null and label != '' %}
                         <p><small class="label label-default sans-serif circular">{{ label }}</small></p>
                     {% endif %}
                     
-                    {% if item.Title %}
+                    {% if title != null and title != '' %}
                         <h2 class="block-title push-half-bottom">
-                            {% if linkUrl != null and linkUrl != '' %}<a href="{{ linkUrl }}">{% endif %}
-                                {{ item.Title }}
-                            {% if linkUrl != null and linkUrl != '' %}</a>{% endif %}
+                            {% if linkurl != null and linkurl != '' %}<a href="{{ linkurl }}">{% endif %}
+                                {{ title }}
+                            {% if linkurl != null and linkurl != '' %}</a>{% endif %}
                         </h2>
                     {% endif %}
 
@@ -74,28 +57,30 @@
                         </p>
                     {% endif %}
                     
-                    <div>
-                        {% if trimCopy == 'Yes' %}
-                            {% assign length = item.Content | Size %}
-                            {{ item.Content | Truncate:200,'...') }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ id }}-modal">Read More</a>{% endif %}
-                        {% else %}
-                            {{ item.Content }}
-                        {% endif %}
-                    </div>
+                    {% if content != null and content != '' %}
+                        <div>
+                            {% if trimcopy == 'Yes' %}
+                                {% assign length = content | Size %}
+                                {{ content | Truncate:200,'...') }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ id }}-modal">Read More</a>{% endif %}
+                            {% else %}
+                                {{ content }}
+                            {% endif %}
+                        </div>
+                    {% endif %}
 
-                    {% if linkUrl != null and linkUrl != '' %}
+                    {% if linkurl != null and linkurl != '' %}
                         <p>
-                            <a href="{{ linkUrl }}" class="btn btn-primary" role="button" data-scroll>{% if linkText != null and linkText != '' %}{{ linkText }}{% else %}Learn More{% endif %}</a>
+                            <a href="{{ linkurl }}" class="btn btn-primary" role="button" data-scroll>{% if linktext != null and linktext != '' %}{{ linktext }}{% else %}Learn More{% endif %}</a>
                         </p>
                     {% endif %}
 
-                {% if videoId != null and videoId != '' %}</div>{% endif %}
+                {% if videoid != null and videoid != '' %}</div>{% endif %}
             </div>
         </div>
     </div>
 </section>
 
-{% if trimCopy == 'Yes' %}
+{% if trimcopy == 'Yes' %}
     {% if length > 200 %}
     <div class="modal fade" id="{{ id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -104,10 +89,12 @@
                     <a href="#" class="text-gray-darker pull-right" data-dismiss="modal" aria-label="Close">
                         <i class="fa fa-lg fa-times"></i>
                     </a>
-                    <h3 class="flush">{{ item.Title }}</h3>
+                    {% if title != null and title != '' %}
+                        <h3 class="flush">{{ title }}</h3>
+                    {% endif %}
                 </div>
                 <div class="modal-body soft hard-bottom">
-                    {{ item.Content | safe }}
+                    {{ content }}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Close</button>
@@ -117,5 +104,3 @@
     </div>
     {% endif %}
 {% endif %}
-
-{% endfor %}

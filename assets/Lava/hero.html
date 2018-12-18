@@ -1,24 +1,3 @@
-{%- for item in Items -%}
-<!--
-    <pre>{{ ContentChannel | ToJSON }}</pre>
--->
-{% assign id = item.Id %}
-{% assign ratio = item | Attribute:'Ratio','RawValue' %}
-{% assign videoId = item | Attribute:'Video','RawValue' %}
-{% assign backgroundColor = ContentChannel.BackgroundColor %}
-{% assign foregroundColor = ContentChannel.ForegroundColor %}
-{% assign imageOpacity = item | Attribute:'ImageOpacity' | DividedBy:'100' %}
-{% assign grayscale = item | Attribute:'Grayscale' %}
-
-{% assign imageUrl = '' %}
-{% assign imageOverlayUrl = '' %}
-{% assign backgroundVideoUrl = '' %}
-{% assign linkText = item | Attribute:'LinkText' %}
-{% assign linkUrl = item | Attribute:'LinkUrl','RawValue' %}
-
-<!--<pre>{{ item | ToJSON }}</pre>-->
-
-
 <section {% if id %}id="block-{{ id }}"{% endif %} class="
 shell
 hero
@@ -32,58 +11,59 @@ xs-push-half-bottom
 bring-forward
 {% if ratio != null and ratio != '' %}
     ratio-{{ ratio }} hard
-{% endif %} flush-sides" style="{% if backgroundColor %}background-color: {{ backgroundColor }};{% endif %}">
+{% endif %} flush-sides" style="{% if backgroundcolor %}background-color: {{ backgroundcolor }};{% endif %}">
 
-    {% if backgroundVideoUrl != null and backgroundVideoUrl != '' %}
+    {% if backgroundvideourl != null and backgroundvideourl != '' %}
 
         <!-- Background Video -->
-        <video class="video display-block full-screen width-full rounded hidden-xs hidden-sm {% if grayscale == 'Yes' %}grayscale{% endif %}" style="object-fit: cover; min-width: 100%; min-height: 100%; height: 100%; opacity: {{ imageOpacity }};" width="1280" height="720" loop="" autoplay="">
-            <source src="{{ backgroundVideoUrl }}.mp4" type="video/mp4">
-            <source src="{{ backgroundVideoUrl }}.webm" type="video/webm">
+        <video class="video display-block full-screen width-full rounded hidden-xs hidden-sm {% if grayscale == 'Yes' %}grayscale{% endif %}" style="object-fit: cover; min-width: 100%; min-height: 100%; height: 100%; opacity: {{ imageopacity }};" width="1280" height="720" loop="" autoplay="">
+            <source src="{{ backgroundvideourl }}.mp4" type="video/mp4">
+            <source src="{{ backgroundvideourl }}.webm" type="video/webm">
         </video>
 
     {% endif %}
     
     <!-- Background Image -->
-    {% if imageUrl != null and imageUrl != '' %}
-        <span class="{% if mobileImageUrl %}hidden-sm hidden-xs{% endif %} full-screen background-cover background-center rounded {% if backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if grayscale == 'Yes' %}grayscale{% endif %}" style="background-image: url('{{ imageUrl }}'); {% if imageOpacity %}opacity: {{ imageOpacity }};{% endif %}"></span>
+    {% if imageurl != null and imageurl != '' %}
+        <span class="{% if mobileimageurl %}hidden-sm hidden-xs{% endif %} full-screen background-cover background-center rounded {% if backgroundvideourl %}hidden-md hidden-lg{% endif %} {% if grayscale == 'Yes' %}grayscale{% endif %}" style="background-image: url('{{ imageurl }}'); {% if imageopacity %}opacity: {{ imageopacity }};{% endif %}"></span>
     {% endif %}
 
-    {% if mobileImageUrl != null and mobileImageUrl != '' %}
-        <span class="hidden-md hidden-lg full-screen background-cover background-center rounded {% if backgroundVideoUrl %}hidden-md hidden-lg{% endif %} {% if grayscale == 'Yes' %}grayscale{% endif %}" style="background-image: url('{{ mobileImageUrl }}'); {% if imageOpacity %}opacity: {{ imageOpacity }};{% endif %}"></span>
+    {% if mobileimageurl != null and mobileimageurl != '' %}
+        <span class="hidden-md hidden-lg full-screen background-cover background-center rounded {% if backgroundvideourl %}hidden-md hidden-lg{% endif %} {% if grayscale == 'Yes' %}grayscale{% endif %}" style="background-image: url('{{ mobileimageurl }}'); {% if imageopacity %}opacity: {{ imageopacity }};{% endif %}"></span>
     {% endif %}
 
     <div class="bring-forward center-block text-constrained text-center soft-top push-half-top xs-flush-top xs-soft-top">
 
-        {% if imageOverlayUrl != null and imageOverlayUrl != '' %}
-            <img src="{{ imageOverlayUrl }}" alt="" class="position-relative push-bottom" style="width: 70%; max-width: 250px;">
+        {% if imageoverlayurl != null and imageoverlayurl != '' %}
+            <img src="{{ imageoverlayurl }}" alt="" class="position-relative push-bottom" style="width: 70%; max-width: 250px;">
         {% endif %}
 
 
-        {% if item.Title != null and item.Title != '' %}
-            <h1>{{ item.Title }}</h1>
+        {% if title != null and title != '' %}
+            <h1>{{ title }}</h1>
         {% endif %}
 
-        {{ item.Content }}
+        {{ content }}
 
-        {% if linkUrl != null and linkUrl != '' %}
+        {% if linkurl != null and linkurl != '' %}
             <p>
-                <a href="{{ linkUrl }}" class="btn btn-primary" role="button" data-scroll>{% if linkText != null and linkText != '' %}{{ linkText }}{% else %}Learn More{% endif %}</a>
+                <a href="{{ linkurl }}" class="btn btn-primary" role="button" data-scroll>{% if linktext != null and linktext != '' %}{{ linktext }}{% else %}Learn More{% endif %}</a>
             </p>
         {% endif %}
 
-        {{ item.HTML }}
-
-        {% if videoId != null and videoId != '' %}
-            <span class="wistia_embed wistia_async_{{ videoId }} popover=true popoverContent=link clickable text-center" style="display:inline; position:relative">
+        {% if videoid != null and videoid != '' %}
+            <span class="wistia_embed wistia_async_{{ videoid }} popover=true popoverContent=link clickable text-center" style="display:inline; position:relative">
                 <a href="#" class="btn btn-primary">Watch Video <i class="fas fa-xs fa-play"></i></a>
             </span>
 
-            <script src="https://fast.wistia.com/embed/medias/{{ videoId }}.jsonp" async></script>
+            <script src="https://fast.wistia.com/embed/medias/{{ videoid }}.jsonp" async></script>
             <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+        {% endif %}
+
+        {% if lava != null and lava != '' %}
+            {{ lava }}
         {% endif %}
 
     </div>
 
 </section>
-{%- endfor -%}

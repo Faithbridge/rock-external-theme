@@ -1,29 +1,12 @@
-{%- for item in Items -%}
-
-{% assign id = item.Id %}
-{% assign videoId = item | Attribute:'Video','RawValue' %}
-{% assign backgroundColor = ContentChannel.BackgroundColor %}
-{% assign foregroundColor = ContentChannel.ForegroundColor %}
-{% assign label = item | Attribute:'Label' %}
-{% assign subtitle =  item | Attribute:'Subtitle' %}
-{% assign trimCopy = item | Attribute:'TrimCopy' %}
-{% assign grayscale = item | Attribute:'Grayscale' %}
-{% assign imageUrl = item | Attribute:'imageUrl','Url' %}
-{% assign imageOpacity = item | Attribute:'ImageOpacity' | DividedBy:'100' %}
-{% assign alignment = item | Attribute:'TextAlignment' %}
-{% assign linkText = item | Attribute:'LinkText' %}
-{% assign linkUrl = item | Attribute:'LinkUrl','RawValue' %}
-{% assign lava = item | Attribute:'Lava' %}
-
 {% if id != null and id != '' %}
     <style>
-        {% if backgroundColor != null and backgroundColor != '' %}
+        {% if backgroundcolor != null and backgroundcolor != '' %}
             #block-{{ id }}, #block-{{ id }} a:not(.btn):not(.label) {
                 color: #fff;
             }
 
             #block-{{ id }} {
-                background-color: {{ backgroundColor }};
+                background-color: {{ backgroundcolor }};
             }
         
             #block-{{ id }} blockquote, blockquote footer, blockquote small, blockquote .small {
@@ -31,14 +14,14 @@
             }
         {% endif %}
 
-        {% if foregroundColor != null and foregroundColor != '' %}
+        {% if foregroundcolor != null and foregroundcolor != '' %}
             #block-{{ id }} a:not(.btn):not(.label) {
-                color: {{ foregroundColor }};
+                color: {{ foregroundcolor }};
             }
 
             #block-{{ id }} .btn {
-                background-color: {{ foregroundColor }};
-                border-color: {{ foregroundColor }};
+                background-color: {{ foregroundcolor }};
+                border-color: {{ foregroundcolor }};
             }
         {% endif %}
     </style>
@@ -46,8 +29,8 @@
 
 <section {% if id != null and id != '' %}id="block-{{ id }}"{% endif %} class="shell bg-white position-relative overflow-hidden flush-sides soft-double-top xs-soft-half-sides xs-soft-top xs-hard-bottom xs-push-half-bottom rounded shadowed">
 	
-	{% if imageUrl != null and imageUrl != '' %}
-    	<span class="full-screen background-cover background-center {% if grayscale == 'Yes' %}grayscale{% endif %}" style="background-image: url('{{ imageUrl }}'); {% if imageOpacity != null and imageOpacity != '' %}opacity: {{ imageOpacity }};{% endif %}"></span>
+	{% if imageurl != null and imageurl != '' %}
+    	<span class="full-screen background-cover background-center {% if grayscale == 'Yes' %}grayscale{% endif %}" style="background-image: url('{{ imageurl }}'); {% if imageopacity != null and imageopacity != '' %}opacity: {{ imageopacity }};{% endif %}"></span>
     {% endif %}
 
     <div class="bring-forward {% if alignment == 'right' %}pull-right{% elseif alignment == 'left' %}{% else %}center-block text-center{% endif %} text-constrained soft xs-soft-top xs-soft-half-sides xs-soft-bottom">
@@ -56,31 +39,39 @@
             <p><small class="label label-default circular sans-serif letter-spacing-condensed">{{ label }}</small></p>
         {% endif %}
 
-        <h2 class="{% if titleSize != null and titleSize != '' %}{{ titleSize }}{% endif %} push-half-bottom">{{ item.Title }}</h2>
+        {% if title != null and title != '' %}
+            <h2 class="{% if titlesize != null and titlesize != '' %}{{ titlesize }}{% endif %} push-half-bottom">{{ title }}</h2>
+        {% endif %}
 
         {% if subtitle != null and subtitle != '' %}
             <p class="sans-serif stronger text-uppercase letter-spacing-condensed text-gray-light push-half-bottom"><small>{{ subtitle }}</small></p>
         {% endif %}
 
-		<div>
-            {% if trimCopy == 'Yes' %}
-                {% assign length = item.Content | Size %}
-                {{ item.Content | Truncate:200,'...' }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ id }}-modal">Read More</a>{% endif %}
-            {% else %}
-                {{ item.Content }}
-            {% endif %}
-        </div>
+        {% if content != null and content != '' %}
+            <div>
+                {% if trimcopy == 'Yes' %}
+                    {% assign length = content | Size %}
+                    {{ content | Truncate:200,'...' }}{% if length > 200 %} <a href="#" data-toggle="modal" data-target="#{{ id }}-modal">Read More</a>{% endif %}
+                {% else %}
+                    {{ content }}
+                {% endif %}
+            </div>
+        {% endif %}
 
-		{% if linkUrl != null and linkUrl != '' %}
+		{% if linkurl != null and linkurl != '' %}
             <p>
-                <a href="{{ linkUrl }}" class="btn btn-primary" role="button" data-scroll>{% if linkText != null and linkText != '' %}{{ linkText }}{% else %}Learn More{% endif %}</a>
+                <a href="{{ linkurl }}" class="btn btn-primary" role="button" data-scroll>{% if linktext != null and linktext != '' %}{{ linktext }}{% else %}Learn More{% endif %}</a>
             </p>
+        {% endif %}
+
+        {% if lava != null and lava != '' %}
+            {{ lava }}
         {% endif %}
 
     </div>
 </section>
 
-{% if trimCopy == 'Yes' %}
+{% if trimcopy == 'Yes' %}
     {% if length > 200 %}
     <div class="modal fade" id="{{ id }}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -89,10 +80,12 @@
                     <a href="#" class="text-gray-darker pull-right" data-dismiss="modal" aria-label="Close">
                         <i class="fa fa-lg fa-times"></i>
                     </a>
-                    <h3 class="flush">{{ item.Title }}</h3>
+                    {% if title != null and title != '' %}
+                        <h3 class="flush">{{ title }}</h3>
+                    {% endif %}
                 </div>
                 <div class="modal-body soft hard-bottom">
-                    {{ item.Content }}
+                    {{ content }}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -102,5 +95,3 @@
     </div>
     {% endif %}
 {% endif %}
-
-{%- endfor -%}
